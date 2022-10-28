@@ -2230,12 +2230,31 @@ ol {
 	margin-bottom: 0;
 }
 
+.product-details .pd-color .pd-color-choose .cc-item label.cc-red {
+	background: #ee2121;
+}
+
+.product-details .pd-color .pd-color-choose .cc-item label.cc-white {
+    background: #decece;
+}
+
+.product-details .pd-color .pd-color-choose .cc-item label.cc-black {
+    background: #000000;
+}
+
+.product-details .pd-color .pd-color-choose .cc-item label.cc-gray {
+    background: #C0C0C0;
+}
+
 .product-details .pd-color .pd-color-choose .cc-item label.cc-yellow {
-	background: #EEEE21;
+    background: #FFFF00;
 }
 
 .product-details .pd-color .pd-color-choose .cc-item label.cc-violet {
 	background: #8230E3;
+}
+.product-details .pd-color .pd-color-choose .cc-item label.cc-blue {
+    background: #3039e3;
 }
 
 .product-details .pd-size-choose {
@@ -3885,6 +3904,42 @@ ol {
 	margin-top: -2px;
 	font-size: 14px;
 	color: #6B6B6B;
+}
+/* Rating */
+
+.rate {
+    float: left;
+    height: 46px;
+    padding: 0 10px;
+}
+.rate:not(:checked) > input {
+    display: none;
+}
+.rate:not(:checked) > label {
+    float:right;
+    width:1em;
+    overflow:hidden;
+    white-space:nowrap;
+    cursor:pointer;
+    font-size:30px;
+    color:#ccc;
+}
+.rate:not(:checked) > label:before {
+    content: '★ ';
+}
+.rate > input:checked ~ label {
+    color: #ffc700;
+}
+.rate:not(:checked) > label:hover,
+.rate:not(:checked) > label:hover ~ label {
+    color: #deb217;
+}
+.rate > input:checked + label:hover,
+.rate > input:checked + label:hover ~ label,
+.rate > input:checked ~ label:hover,
+.rate > input:checked ~ label:hover ~ label,
+.rate > label:hover ~ input:checked ~ label {
+    color: #c59b08;
 }
 
 /* ------------------------------ Responsive Media Styles ---------------------------- */
