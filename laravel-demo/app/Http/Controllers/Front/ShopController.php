@@ -33,4 +33,9 @@ class ShopController extends Controller
 
         return redirect()->back();
     }
+
+    public function index()
+    {
+        return view( view: 'front.shop.index');
+    }
 }

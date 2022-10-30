@@ -19,4 +19,3 @@ Route::get('/', function () {
 
 Route::get('shop/product/{id}', [App\Http\Controllers\Front\ShopController::class, 'show']);
 Route::post('shop/product/{id}', [App\Http\Controllers\Front\ShopController::class, 'postComment']);
-
