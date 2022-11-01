@@ -56,7 +56,7 @@
         Product Slider
     --------------------*/
    $(".product-slider").owlCarousel({
-        loop: true,
+        loop: false,
         margin: 25,
         nav: true,
         items: 4,
@@ -248,3 +248,19 @@
 	});
 
 })(jQuery);
+
+
+const product_smartPhone = $(".product-slider.SmartPhone");
+
+$('.filter-control').on('click','.item', function () {
+  const $item = $(this);
+  const filter = $item.data('tag');
+  const category = $item.data('category');
+
+  $item.siblings().removeClass('active');
+  $item.addClass('active');
+
+  if (category === 'SmartPhone') {
+    product_smartPhone.owlCarousel2_filter(filter);
+  }
+})
