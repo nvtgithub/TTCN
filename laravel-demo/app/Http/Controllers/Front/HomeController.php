@@ -12,6 +12,6 @@ class HomeController extends Controller
     {
         $featuredProducts = [];
 
-        // return view( view: 'front.index', compact( var_name: 'featuredProducts'));
+        return view('front.index', compact('featuredProducts'));
     }
 }
