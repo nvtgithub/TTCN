@@ -86,7 +86,8 @@
       <div class="col-lg-8 offset-lg-1">
         <div class="filter-control">
           <ul>
-            <li class="active item" data-tag=".Apple" data-category="SmartPhone">Apple</li>
+            <li class="active item" data-tag="*" data-category="SmartPhone">All</li>
+            <li class="item" data-tag=".Apple" data-category="SmartPhone">Apple</li>
             <li class="item" data-tag=".SamSung" data-category="SmartPhone">SamSung</li>
             <li class="item" data-tag=".Oppo" data-category="SmartPhone">Oppo</li>
             <li class="item" data-tag=".Xiaomi" data-category="SmartPhone">Xiaomi</li>
@@ -94,7 +95,7 @@
         </div>
         <div class="product-slider owl-carousel SmartPhone">
           @foreach ($featuredProducts['SmartPhone'] as $product)
-          <div class="product-item">
+          <div class="product-item item {{$product->tag}}">
             <div class="pi-pic">
               <img src="front/img/products/{{ $product->productImages[0]->path}}" alt="">
 
@@ -124,7 +125,7 @@
               <div class="product-price">
                 @if ($product->discount != null)
                 {{number_format($product->discount)}} VNĐ
-                <span>${{$product->price}}</span>
+                <span>${{number_format($product->price)}}</span>
                 @else
                 {{number_format($product->price)}} VNĐ
                 @endif
@@ -222,7 +223,7 @@
               <div class="product-price">
                 @if ($product->discount != null)
                 {{number_format($product->discount)}} VNĐ
-                <span>${{$product->price}}</span>
+                <span>{{number_format($product->price)}} VNĐ</span>
                 @else
                 {{number_format($product->price)}} VNĐ
                 @endif
@@ -289,7 +290,7 @@
               <div class="product-price">
                 @if ($product->discount != null)
                 {{number_format($product->discount)}} VNĐ
-                <span>${{$product->price}}</span>
+                <span>{{number_format($product->price)}} VNĐ</span>
                 @else
                 {{number_format($product->price)}} VNĐ
                 @endif
@@ -356,7 +357,7 @@
               <div class="product-price">
                 @if ($product->discount != null)
                 {{number_format($product->discount)}} VNĐ
-                <span>${{$product->price}}</span>
+                <span>{{number_format($product->price)}} VNĐ</span>
                 @else
                 {{number_format($product->price)}} VNĐ
                 @endif
@@ -423,7 +424,7 @@
               <div class="product-price">
                 @if ($product->discount != null)
                 {{number_format($product->discount)}} VNĐ
-                <span>${{$product->price}}</span>
+                <span>{{number_format($product->price)}} VNĐ</span>
                 @else
                 {{number_format($product->price)}} VNĐ
                 @endif
