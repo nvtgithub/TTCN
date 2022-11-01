@@ -1492,7 +1492,8 @@ ol {
 
 .owl-carousel .owl-item img {
 	display: block;
-	width: auto;
+	max-height: 193px;
+  object-fit: contain;
 }
 
 /*---------------------
