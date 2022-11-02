@@ -30,8 +30,8 @@ class ProductRepository extends BaseRepository implements ProductRepositoryInter
 
   public function getProductOnIndex()
   {
-    $product = $this->model->paginate();
+    $product2 = $this->model->paginate(3);
 
-    return $product;
+    return $product2;
   }
 }
