@@ -3,5 +3,5 @@
 @section('title', 'Shop')
 
 @section('body')
-   
+    
 @endsection
