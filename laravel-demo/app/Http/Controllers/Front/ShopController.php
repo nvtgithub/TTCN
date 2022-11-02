@@ -36,6 +36,6 @@ class ShopController extends Controller
 
     public function index()
     {
-        return view( view: 'front.shop.index');
+        return view('front.shop.index');
     }
 }
