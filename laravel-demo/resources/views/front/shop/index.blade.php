@@ -26,15 +26,8 @@
                     <div class="filter-widget">
                         <h4 class="fw-title">Categories</h4>
                         <ul class="filter-catagories">
-                            <li>
-                                <a href="">Laptop</a>
-                            </li>
-                            <li>
-                                <a href="">Woman</a>
-                            </li>
-                            <li>
-                                <a href="">...</a>
-                            </li>
+                          
+                          <li><a href="shop/category/"></a></li>
                         </ul>
                     </div>
                     <div class="filter-widget">

@@ -15,41 +15,51 @@ use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
 {
-    /**
-     * Register any application services.
-     *
-     * @return void
-     */
-    public function register()
-    {
-        //Product
-        $this->app->singleton(
-            ProductRepositoryInterface::class,
-            ProductRepository::class
-        );
-        $this->app->singleton(
-            ProductServiceInterface::class,
-            ProductService::class
-        );
+  /**
+   * Register any application services.
+   *
+   * @return void
+   */
+  public function register()
+  {
+    //Product
+    $this->app->singleton(
+      ProductRepositoryInterface::class,
+      ProductRepository::class
+    );
+    $this->app->singleton(
+      ProductServiceInterface::class,
+      ProductService::class
+    );
 
-        //ProductComment
-        $this->app->singleton(
-            ProductCommentRepositoryInterface::class,
-            ProductCommentRepository::class
-        );
-        $this->app->singleton(
-            ProductCommentServiceInterface::class,
-            ProductCommentService::class
-        );
-    }
+    //ProductComment
+    $this->app->singleton(
+      ProductCommentRepositoryInterface::class,
+      ProductCommentRepository::class
+    );
+    $this->app->singleton(
+      ProductCommentServiceInterface::class,
+      ProductCommentService::class
+    );
 
-    /**
-     * Bootstrap any application services.
-     *
-     * @return void
-     */
-    public function boot()
-    {
-        //
-    }
+    // ProductCategory
+    $this->app->singleton(
+      ProductCategoryRepositoryInterface::class,
+      ProductCategoryRepository::class
+    );
+    $this->app->singleton(
+      ProductCategoryServiceInterface::class,
+      ProductCategoryService::class
+    );
+  }
+
+  /**
+   * Bootstrap any application services.
+   *
+   * @return void
+   */
+  public function boot()
+  {
+    //
+  }
 }
