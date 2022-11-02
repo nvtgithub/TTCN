@@ -312,6 +312,7 @@
     <!-- Footer Section End -->
 
     <!-- Js Plugins -->
+    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
     <script src="front/js/jquery-3.3.1.min.js"></script>
     <script src="front/js/bootstrap.min.js"></script>
     <script src="front/js/jquery-ui.min.js"></script>

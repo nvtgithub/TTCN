@@ -46,4 +46,9 @@ class ProductService extends BaseService implements ProductServiceInterface
             "Accessory" => $this->repository->getFeatureProductByCategory( categoryId: 4),
         ];
     }
+
+    public function getProductOnIndex()
+    {
+        return $this->repository->getProductOnIndex();
+    }
 }
