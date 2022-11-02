@@ -9,5 +9,5 @@ interface ProductRepositoryInterface extends RepositoryInterface
 {
     public function getRelatedProducts($product, $limit = 4);
     public function getFeatureProductByCategory(int $categoryId);
-    public function getProductOnIndex();
+    public function getProductOnIndex($request);
 }
