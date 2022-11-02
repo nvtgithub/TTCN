@@ -22,7 +22,7 @@
     <section class="product-shop spad">
         <div class="container">
             <div class="row">
-                <div class="col-lg-3 col-md-6 col-sm-8 order-2 order-lg-1 products-sidebar-filter">
+                <div class="col-lg-3 col-md-6 col-sm-8 order-2 order-1 products-sidebar-filter">
                     <div class="filter-widget">
                         <h4 class="fw-title">Categories</h4>
                         <ul class="filter-catagories">
@@ -149,7 +149,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-9 order-1 order-lg-2">
+                <div class="col-lg-9 order-lg-1 order-lg-2">
                     <div class="product-show-option">
                         <div class="row">
                             <div class="col-lg-7 col-md-7">
