@@ -107,6 +107,16 @@
                                     {{ request('color') == 'green' ? 'checked' : ''}} >
                                 <label for="cs-green" class="cs-green {{ request('color') == 'green' ? 'font-weight-bold' : '' }}">Green</label>
                             </div>
+                            <div class="cs-item">
+                                <input type="radio" id="cs-white" name="color" value="white" onchange="this.form.submit();"
+                                    {{ request('color') == 'white' ? 'checked' : ''}} >
+                                <label for="cs-white" class="cs-white {{ request('color') == 'white' ? 'font-weight-bold' : '' }}">White</label>
+                            </div>
+                            <div class="cs-item">
+                                <input type="radio" id="cs-pink" name="color" value="pink" onchange="this.form.submit();"
+                                    {{ request('color') == 'pink' ? 'checked' : ''}} >
+                                <label for="cs-pink" class="cs-pink {{ request('color') == 'ping' ? 'font-weight-bold' : '' }}">Pink</label>
+                            </div>
                         </div>
                     </div>
                     <div class="filter-widget">

@@ -1897,6 +1897,15 @@ ol {
 	background: #81D742;
 }
 
+.filter-widget .fw-color-choose .cs-item label.cs-white:before {
+	background: white;
+	border: 1px solid black;
+}
+
+.filter-widget .fw-color-choose .cs-item label.cs-pink:before {
+	background: pink;
+}
+
 .filter-widget .fw-color-choose .cs-item label:before {
 	position: absolute;
 	left: 0;
