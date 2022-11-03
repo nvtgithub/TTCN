@@ -96,52 +96,47 @@
                                 </a>
                             </li>
                             <li class="cart-icon">
-                                <a href="$">
+                                <a href="./cart">
                                     <i class="icon_bag_alt"></i>
-                                    <span>3</span>
+                                    <span>{{ Cart::count()  }}</span>
                                 </a>
                                 <div class="cart-hover">
                                     <div class="select-items">
                                         <table>
                                             <tbody>
-                                                <tr>
-                                                    <td class="si-pic"><img src="front/img/select-product-1.jpg" alt=""></td>
-                                                    <td class="si-text">
-                                                        <div class="product-selected">
-                                                            <p>$60.00 x 1</p>
-                                                            <h6>Kabino Beside Table</h6>
-                                                        </div>
-                                                    </td>
-                                                    <td class="si-close">
-                                                        <i class="si-close"></i>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="si-pic"><img src="front/img/select-product-2.jpg" alt=""></td>
-                                                    <td class="si-text">
-                                                        <div class="product-selected">
-                                                            <p>$60.00 x 1</p>
-                                                            <h6>Kabino Beside Table</h6>
-                                                        </div>
-                                                    </td>
-                                                    <td class="si-close">
-                                                        <i class="si-close"></i>
-                                                    </td>
-                                                </tr>
+                                                @foreach(Cart::content() as $cart)
+                                                    <tr>
+                                                        <td class="si-pic"><img width="70px" src="front/img/products/{{ $cart->options->images[0]->path }}" alt=""></td>
+                                                        <td class="si-text">
+                                                            <div class="product-selected">
+                                                                <h8>{{ $cart->name }}</h8>
+                                                                <p>{{ $cart->price }} VNĐ x {{ $cart->qty }}</p>                                                         
+                                                            </div>
+                                                        </td>
+                                                        <td class="si-close">
+                                                            <i class="si-close">
+                                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bag-x" viewBox="0 0 16 16">
+                                                                    <path fill-rule="evenodd" d="M6.146 8.146a.5.5 0 0 1 .708 0L8 9.293l1.146-1.147a.5.5 0 1 1 .708.708L8.707 10l1.147 1.146a.5.5 0 0 1-.708.708L8 10.707l-1.146 1.147a.5.5 0 0 1-.708-.708L7.293 10 6.146 8.854a.5.5 0 0 1 0-.708z"/>
+                                                                    <path d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1zm3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4h-3.5zM2 5h12v9a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V5z"/>
+                                                                </svg>
+                                                            </i>
+                                                        </td>
+                                                    </tr>
+                                                @endforeach
                                             </tbody>
                                         </table>
                                     </div>
                                     <div class="select-total">
                                         <span>total:</span>
-                                        <h5>$120.00</h5>
+                                        <h5>{{ Cart::total() }}</h5>
                                     </div>
                                     <div class="select-button">
-                                        <a href="shopping-cart.html" class="primary-btn view-card">VIEW CARD </a>
+                                        <a href="./cart" class="primary-btn view-card">VIEW CARD </a>
                                         <a href="check-out.html" class="primary-btn check-out">CHECK OUT </a>
                                     </div>
                                 </div>
                             </li>
-                            <li class="cart-price">$150.00</li>
+                            <li class="cart-price">{{ Cart::total() }}</li>
                         </ul>
                     </div>
                 </div>
@@ -181,7 +176,7 @@
                         <li><a href="">Pages</a>
                             <ul class="dropdown">
                                 <li><a href="blog-details.html">Blog Details</a></li>
-                                <li><a href="shopping-cart.html">Shopping Cart</a></li>
+                                <li><a href="./cart">Shopping Cart</a></li>
                                 <li><a href="check-out-html">Checkout</a></li>
                                 <li><a href="faq.html">Faq</a></li>
                                 <li><a href="register.html">Register</a></li>

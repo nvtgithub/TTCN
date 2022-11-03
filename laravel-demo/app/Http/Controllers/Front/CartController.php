@@ -17,6 +17,15 @@ class CartController extends Controller
         $this->productService = $productService;
     }
 
+    public function index()
+    {
+        $carts = Cart::content();
+        $total = Cart::total();
+        $subtotal = Cart::subtotal();
+
+        return view('front.shop.cart', compact('carts', 'total', 'subtotal'));
+    }
+
     public function add($id)
     {
         $product = $this->productService->find($id);
