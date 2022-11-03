@@ -18,7 +18,7 @@ class ShopController extends Controller
     ProductServiceInterface $productService,
     ProductCommentServiceInterface $productCommentService,
     ProductCategoryServiceInterface $productCategoryService
-  ) 
+  )
   {
     $this->productService = $productService;
     $this->productCommentService = $productCommentService;
@@ -44,6 +44,6 @@ class ShopController extends Controller
   {
     $categories = $this->productCategoryService->all();
     $products = $this->productService->getProductOnIndex($request);
-    return view('front.shop.index', compact(var_name: 'products', var_names: 'categories'));
+    return view('front.shop.index', compact( 'products', 'categories'));
   }
 }

@@ -19,6 +19,6 @@ class HomeController extends Controller
     {
         $featuredProducts = $this->productService->getFeaturedProducts();
 
-        return view('front.index', compact(var_name: 'featuredProducts'));
+        return view('front.index', compact('featuredProducts'));
     }
 }

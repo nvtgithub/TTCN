@@ -39,11 +39,12 @@ class ProductService extends BaseService implements ProductServiceInterface
     public function getFeaturedProducts()
     {
         return [
-            "SmartPhone" => $this->repository->getFeatureProductByCategory( categoryId: 1),
-            "Laptop" => $this->repository->getFeatureProductByCategory( categoryId: 2),
-            "SmartWatch" => $this->repository->getFeatureProductByCategory( categoryId: 3),
-            "HeadPhone" => $this->repository->getFeatureProductByCategory( categoryId: 4),
-            "Accessory" => $this->repository->getFeatureProductByCategory( categoryId: 4),
+            "SmartPhone" => $this->repository->getFeatureProductByCategory( 1),
+            "Laptop" => $this->repository->getFeatureProductByCategory( 2),
+            "SmartWatch" => $this->repository->getFeatureProductByCategory( 3),
+            "HeadPhone" => $this->repository->getFeatureProductByCategory(  4),
+            "Accessory" => $this->repository->getFeatureProductByCategory(  5),
+
         ];
     }
 
