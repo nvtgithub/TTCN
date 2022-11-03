@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 use App\Services\Product\ProductServiceInterface;
 use App\Services\ProductComment\ProductCommentServiceInterface;
 use App\Services\ProductCategory\ProductCategoryServiceInterface;
+use App\Services\Trademarks\TrademarksService;
+use App\Services\Trademarks\TrademarksServiceInterface;
 use Illuminate\Http\Request;
 
 class ShopController extends Controller
@@ -13,16 +15,19 @@ class ShopController extends Controller
   private $productService;
   private $productCommentService;
   private $productCategoryService;
+  private $trademarksService;
 
   public function __construct(
     ProductServiceInterface $productService,
     ProductCommentServiceInterface $productCommentService,
-    ProductCategoryServiceInterface $productCategoryService
-  )
+    ProductCategoryServiceInterface $productCategoryService,
+    TrademarksServiceInterface $trademarksService
+    )
   {
     $this->productService = $productService;
     $this->productCommentService = $productCommentService;
     $this->productCategoryService = $productCategoryService;
+    $this->trademarksService = $trademarksService;
   }
 
   public function show($id)
@@ -43,14 +48,17 @@ class ShopController extends Controller
   public function index(Request $request)
   {
     $categories = $this->productCategoryService->all();
+    $trademarks = $this->trademarksService->all();
     $products = $this->productService->getProductOnIndex($request);
-    return view('front.shop.index', compact( 'products', 'categories'));
+    return view('front.shop.index', compact( 'products', 'categories', 'trademarks'));
   }
 
   public function category($categoryName, Request $request)
   {
     $categories = $this->productCategoryService->all();
+    $trademarks = $this->trademarksService->all();
+    
     $products = $this->productService->getProductByCategory($categoryName, $request);
-    return view('front.shop.index', compact( 'products', 'categories'));
+    return view('front.shop.index', compact( 'products', 'categories', 'trademarks'));
   }
 }

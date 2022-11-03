@@ -36,34 +36,16 @@
                 <div class="filter-widget">
                     <h4 class="fw-title">Brand</h4>
                     <div class="fw-brand-check">
-                        <div class="bc-item">
-                            <label for="bc-calvin">
-                                Calvin Klein
-                                <input type="checkbox" id="bc-calvin">
-                                <span class="checkmark"></span>
-                            </label>
-                        </div>
-                        <div class="bc-item">
-                            <label for="bc-abc">
-                                abc
-                                <input type="checkbox" id="bc-abc">
-                                <span class="checkmark"></span>
-                            </label>
-                        </div>
-                        <div class="bc-item">
-                            <label for="bc-xyz">
-                                xyz
-                                <input type="checkbox" id="bc-xyz">
-                                <span class="checkmark"></span>
-                            </label>
-                        </div>
-                        <div class="bc-item">
-                            <label for="bc-123">
-                                123
-                                <input type="checkbox" id="bc-123">
-                                <span class="checkmark"></span>
-                            </label>
-                        </div>
+
+                        @foreach($trademarks as $trademark)
+                            <div class="bc-item">
+                                <label for="bc-{{ trademark->id }}">
+                                    {{ trademark->name }}
+                                    <input type="checkbox" id="bc-{{ trademark->id }}">
+                                    <span class="checkmark"></span>
+                                </label>
+                            </div>
+                        @endforeach
                     </div>
                 </div>
                 <div class="filter-widget">

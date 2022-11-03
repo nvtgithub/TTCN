@@ -9,12 +9,16 @@ use App\Repositories\ProductCategory\ProductCategoryRepository;
 use App\Repositories\ProductCategory\ProductCategoryRepositoryInterface;
 use App\Repositories\ProductComment\ProductCommentRepository;
 use App\Repositories\ProductComment\ProductCommentRepositoryInterface;
+use App\Repositories\Trademarks\TrademarksRepository;
+use App\Repositories\Trademarks\TrademarksRepositoryInterface;
 use App\Services\Product\ProductService;
 use App\Services\Product\ProductServiceInterface;
 use App\Services\ProductCategory\ProductCategoryService;
 use App\Services\ProductCategory\ProductCategoryServiceInterface;
 use App\Services\ProductComment\ProductCommentService;
 use App\Services\ProductComment\ProductCommentServiceInterface;
+use App\Services\Trademarks\TrademarksService;
+use App\Services\Trademarks\TrademarksServiceInterface;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -54,6 +58,16 @@ class AppServiceProvider extends ServiceProvider
     $this->app->singleton(
       ProductCategoryServiceInterface::class,
       ProductCategoryService::class
+    );
+
+     // Trademarks
+     $this->app->singleton(
+      TrademarksRepositoryInterface::class,
+      TrademarksRepository::class
+    );
+    $this->app->singleton(
+      TrademarksServiceInterface::class,
+      TrademarksService::class
     );
   }
 
