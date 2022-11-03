@@ -115,7 +115,7 @@
                             <div class="cs-item">
                                 <input type="radio" id="cs-pink" name="color" value="pink" onchange="this.form.submit();"
                                     {{ request('color') == 'pink' ? 'checked' : ''}} >
-                                <label for="cs-pink" class="cs-pink {{ request('color') == 'ping' ? 'font-weight-bold' : '' }}">Pink</label>
+                                <label for="cs-pink" class="cs-pink {{ request('color') == 'pink' ? 'font-weight-bold' : '' }}">Pink</label>
                             </div>
                         </div>
                     </div>
