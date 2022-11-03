@@ -4,6 +4,9 @@ namespace App\Repositories\Product;
 
 use App\Repositories\BaseRepository;
 use App\Models\Product;
+use App\Models\ProductCategory;
+use GuzzleHttp\Psr7\Request;
+use Illuminate\Http\Request as HttpRequest;
 
 class ProductRepository extends BaseRepository implements ProductRepositoryInterface
 {
@@ -30,12 +33,25 @@ class ProductRepository extends BaseRepository implements ProductRepositoryInter
 
   public function getProductOnIndex($request)
   {
+    $search = $request->search ?? '';
+    $products = $this->model->where('name', 'like', '%' . $search . '%');
+    $products = $this->sortAndPagination($products, $request);
+    return $products;
+  }
+
+  public function getProductByCategory($categoryName, $request)
+  {
+    $products = ProductCategory::where('name', $categoryName)->first()->products->toQuery();
+    $products = $this->sortAndPagination($products, $request);
+
+    return $products;
+  }
+
+  private function sortAndPagination($products, HttpRequest $request)
+  {
     $perPage = $request->show ?? 3;
     $sortBy = $request->sort_by ?? 'latest';
-    $search = $request->search ?? '';
-
-    $products = $this->model->where('name', 'like', '%' . $search . '%');
-
+    
     switch ($sortBy) {
       case 'latest':
         $products = $products->orderBy('id');
@@ -61,7 +77,6 @@ class ProductRepository extends BaseRepository implements ProductRepositoryInter
     }
 
     $products = $products->paginate($perPage);
-
     $products->appends(['sort_by' => $sortBy, 'show => $perPage']);
 
     return $products;
