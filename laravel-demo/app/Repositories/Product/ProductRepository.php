@@ -35,13 +35,16 @@ class ProductRepository extends BaseRepository implements ProductRepositoryInter
   {
     $search = $request->search ?? '';
     $products = $this->model->where('name', 'like', '%' . $search . '%');
+    $products = $this->filter($products, $request);
     $products = $this->sortAndPagination($products, $request);
+    
     return $products;
   }
 
   public function getProductByCategory($categoryName, $request)
   {
     $products = ProductCategory::where('name', $categoryName)->first()->products->toQuery();
+    $products = $this->filter($products, $request);
     $products = $this->sortAndPagination($products, $request);
 
     return $products;
@@ -78,6 +81,16 @@ class ProductRepository extends BaseRepository implements ProductRepositoryInter
 
     $products = $products->paginate($perPage);
     $products->appends(['sort_by' => $sortBy, 'show => $perPage']);
+
+    return $products;
+  }
+
+  private function filter($products, HttpRequest $request)
+  {
+    //Trademark
+    $trademarks = $request->trademark ?? [];
+    $trademark_ids = array_keys($trademarks);
+    $products  = $trademark_ids != null ? $products->whereIn('trademark_id', $trademark_ids) : $products;
 
     return $products;
   }
