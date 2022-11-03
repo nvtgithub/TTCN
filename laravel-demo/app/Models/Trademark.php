@@ -6,16 +6,16 @@ use App\Services\Product\ProductService;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Brand extends Model
+class Trademark extends Model
 {
     use HasFactory;
 
-    protected $table = 'brands';
+    protected $table = 'trademarks';
     protected $primaryKey = 'id';
     protected $guarded = [];
 
     public function products()
     {
-        return $this->hasMany(Product::class,'brand_id','id');
+        return $this->hasMany(Product::class,'trademark_id','id');
     }
 }

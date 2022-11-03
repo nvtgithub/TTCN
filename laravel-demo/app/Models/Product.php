@@ -13,9 +13,9 @@ class Product extends Model
     protected $primaryKey = 'id';
     protected $guarded = [];
 
-    public function brand()
+    public function trademark()
     {
-        return $this->belongsTo(Brand::class,'brand_id','id');
+        return $this->belongsTo(Trademark::class,'trademark_id','id');
     }
 
     public function productCategory()
