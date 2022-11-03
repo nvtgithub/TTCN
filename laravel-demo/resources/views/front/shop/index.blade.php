@@ -39,9 +39,9 @@
 
                         @foreach($trademarks as $trademark)
                             <div class="bc-item">
-                                <label for="bc-{{ trademark->id }}">
-                                    {{ trademarks->name }}
-                                    <input type="checkbox" id="bc-{{ trademark->id }}">
+                                <label for="bc-{{ $trademark->id }}">
+                                    {{ $trademark->name }}
+                                    <input type="checkbox" id="bc-{{ $trademark->id }}">
                                     <span class="checkmark"></span>
                                 </label>
                             </div>
