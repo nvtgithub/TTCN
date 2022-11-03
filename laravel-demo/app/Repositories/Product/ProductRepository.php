@@ -87,11 +87,19 @@ class ProductRepository extends BaseRepository implements ProductRepositoryInter
 
   private function filter($products, HttpRequest $request)
   {
-    //Trademark
+    //Trademark:
     $trademarks = $request->trademark ?? [];
     $trademark_ids = array_keys($trademarks);
     $products  = $trademark_ids != null ? $products->whereIn('trademark_id', $trademark_ids) : $products;
 
+    //Price:
+    $priceMin = $request->price_min;
+    $priceMax = $request->price_max;
+    $priceMin = str_replace('VNĐ', '', $priceMin);
+    $priceMax = str_replace('VNĐ', '', $priceMax);
+    $products = ($priceMin != null && $priceMax != null) 
+        ? $products->whereBetween('price', [$priceMin, $priceMax])
+        : $products;
     return $products;
   }
 }
