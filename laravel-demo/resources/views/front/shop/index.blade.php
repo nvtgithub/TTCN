@@ -40,7 +40,7 @@
                         @foreach($trademarks as $trademark)
                             <div class="bc-item">
                                 <label for="bc-{{ trademark->id }}">
-                                    {{ trademark->name }}
+                                    {{ trademarks->name }}
                                     <input type="checkbox" id="bc-{{ trademark->id }}">
                                     <span class="checkmark"></span>
                                 </label>

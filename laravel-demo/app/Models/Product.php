@@ -13,7 +13,7 @@ class Product extends Model
     protected $primaryKey = 'id';
     protected $guarded = [];
 
-    public function trademark()
+    public function trademarks()
     {
         return $this->belongsTo(Trademark::class,'trademark_id','id');
     }

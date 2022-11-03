@@ -6,7 +6,7 @@ use App\Services\Product\ProductService;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Trademark extends Model
+class Trademarks extends Model
 {
     use HasFactory;
 
