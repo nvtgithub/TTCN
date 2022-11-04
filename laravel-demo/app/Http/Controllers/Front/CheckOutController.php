@@ -56,21 +56,51 @@ class CheckOutController extends Controller
             Cart::destroy();
 
             //04. Trả về kết quả thông báo
-            return redirect('checkout/result')->with('notification', 'Success! You will pay on delivery. Please check your email.');
+            return redirect('checkout/result')
+                ->with('notification', 'Success! You will pay on delivery. Please check your email.');
         }
 
         if($request->payment_type == 'online_payment') {
             //01. Lấy URL thanh toán VNPay
             $data_url = VNPay::vnpay_create_payment([
-                'vnp_TnxRef' => $order->id, //ID của đơn hàng
-                'vnp_OrderInfor' => 'Mổ tả đơn hàng ở đây ...',
-                'vnp_Amount' => Cart::total(0, '',''), //Tổng giá của đơn hàng
+                'vnp_TxnRef' => $order->id, //ID của đơn hàng
+                'vnp_OrderInfo' => 'Mô tả đơn hàng ... ',
+                'vnp_Amount' => Cart::total(0, '', ''), //Tổng giá của đơn hàng
             ]);
 
             //02. CHuyển hướng tới URL lấy được
             return redirect()->to($data_url);
         } 
 
+    }
+
+    public function vnPayCheck(Request $request) 
+    {
+        //01. Lấy data từ URL (do VNPay gửi về qua $vnp_Returnurl)
+        $vnp_ResponseCode = $request->get('vnp_ResponseCode'); //Mã phản hồi kết quả thanh toán. 00= thành công
+        $vnp_TxnRef = $request->get('vnp_TxnRef'); //order_id
+        $vnp_Amount = $request->get('vnp_Amount'); //Số tiền thanh toán
+
+        //02. Kiểm tra data, xem kết quả giáo dịch trả về từ VNPay hợp lệ không:
+        if($vnp_ResponseCode != null )
+        {
+            //Nếu kết quả thành công:
+            if($vnp_ResponseCode == 00)
+            {
+                //Xóa giỏ hàng
+                Cart::destroy();
+
+                //Thông báo kết quả
+                return redirect('checkout/result')->with('notification', 'Success! Has paid online. Please check your email.');
+            } else {
+                //Nếu không thành công
+                //Xóa đơn hàng dã thêm vào database
+                $this->orderService->delete($vnp_TxnRef);
+
+                //Thông báo lỗi
+                return redirect('checkout/result')->with('notification', 'ERROR! Payment failed or canceled.');
+            }
+        }
     }
 
     public function result()
