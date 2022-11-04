@@ -26,22 +26,30 @@ class CartController extends Controller
         return view('front.shop.cart', compact('carts', 'total', 'subtotal'));
     }
 
-    public function add($id)
+    public function add(Request $request)
     {
-        $product = $this->productService->find($id);
+        if ($request->ajax()) {
+            $product = $this->productService->find($request->productId);
 
-        Cart::add([
-            'id' => $product->id,
-            'name' => $product->name,
-            'qty' => 1,
-            'price' => $product->discount ?? $product->price,
-            'weight' => $product-> weight ?? 0,
-            'options' => [
-                'images' => $product->productImages,
-            ]
-        ]);
+            $response['cart'] = Cart::add([
+                'id' => $product->id,
+                'name' => $product->name,
+                'qty' => 1,
+                'price' => $product->discount ?? $product->price,
+                'weight' => $product-> weight ?? 0,
+                'options' => [
+                    'images' => $product->productImages,
+                ],
+            ]);
 
-        dd(Cart::content());
+            $response['count'] = Cart::count();
+            $response['total'] = Cart::total();
+
+
+            return $response;
+        }
+
+        // dd(Cart::content());
 
         return back();
     }

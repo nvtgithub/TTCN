@@ -10,7 +10,7 @@
               </div>
               <ul>
                 <li class="w-icon active">
-                  <a href="cart/add/{{ $product->id }}"><i class="icon_bag_alt"></i></a>
+                  <a href="javascript:addCart({{ $product->id }})"><i class="icon_bag_alt"></i></a>
                 </li>
                 <li class="quick-view">
                   <a href="shop/product/{{$product->id}}">+ Quick View</a>

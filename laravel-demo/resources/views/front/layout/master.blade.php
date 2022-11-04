@@ -98,18 +98,18 @@
                             <li class="cart-icon">
                                 <a href="./cart">
                                     <i class="icon_bag_alt"></i>
-                                    <span>{{ Cart::count()  }}</span>
+                                    <span class="cart-count">{{ Cart::count() }}</span>
                                 </a>
                                 <div class="cart-hover">
                                     <div class="select-items">
                                         <table>
                                             <tbody>
                                                 @foreach(Cart::content() as $cart)
-                                                    <tr>
+                                                    <tr data-rowId="{{ $cart->rowId }}">
                                                         <td class="si-pic"><img width="70px" src="front/img/products/{{ $cart->options->images[0]->path }}" alt=""></td>
                                                         <td class="si-text">
                                                             <div class="product-selected">
-                                                                <h8>{{ $cart->name }}</h8>
+                                                                <h6>{{ $cart->name }}</h6>
                                                                 <p>{{ $cart->price }} VNĐ x {{ $cart->qty }}</p>                                                         
                                                             </div>
                                                         </td>
@@ -128,7 +128,7 @@
                                     </div>
                                     <div class="select-total">
                                         <span>total:</span>
-                                        <h5>{{ Cart::total() }}</h5>
+                                        <h5>{{ Cart::total() }} VNĐ</h5>
                                     </div>
                                     <div class="select-button">
                                         <a href="./cart" class="primary-btn view-card">VIEW CARD </a>
@@ -136,7 +136,7 @@
                                     </div>
                                 </div>
                             </li>
-                            <li class="cart-price">{{ Cart::total() }}</li>
+                            <li class="cart-price">{{ Cart::total() }} VNĐ</li>
                         </ul>
                     </div>
                 </div>
