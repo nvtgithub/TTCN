@@ -14,7 +14,7 @@ class CheckOutController extends Controller
     private $orderService;
     private $orderDetailService;
 
-    public function __construct(OrderServiceInterface $orderService, OrderDetailServiceInterfaceServiceInterface $orderDetailService)
+    public function __construct(OrderServiceInterface $orderService, OrderDetailServiceInterface $orderDetailService)
     {
         $this->orderService = $orderService;
         $this->orderDetailService = $orderDetailService;
@@ -29,15 +29,30 @@ class CheckOutController extends Controller
         return view('front.checkout.index', compact('carts', 'total', 'subtotal'));
     }
 
-    public function addOrder()
+    public function addOrder(Request $request)
     {
         //01. Thêm đơn hàng 
-        
+        $order =  $this->orderService->create($request->all());
 
         //02. Thêm chi tiết đơn hàng
+        $carts = Cart::content(); 
+
+        foreach ($carts as $cart) {
+            $data = [
+                'order_id' => $order->id,
+                'product_id' => $cart->id,
+                'qty' => $cart->qty,
+                'price' => $cart->price,
+                'total' => $cart->qty * $cart->price,
+            ];
+
+            $this->orderDetailService->create($data);
+        }
 
         //03. Xóa giỏ hàng
+        Cart::destroy();
 
         //04. Trả về kết quả thông báo
+        return "Success!";
     }
 }

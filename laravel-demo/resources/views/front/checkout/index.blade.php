@@ -24,7 +24,7 @@
                                 <input name="last_name" type="text" id="last">
                             </div>
                             <div class="col-lg-12">
-                                <label for="cun-name">Company Name</label>
+                                <label for="cun-name">Company Name (Optional)</label>
                                 <input name="company_name" type="text" id="cun-name">
                             </div>
                             <div class="col-lg-12">
@@ -36,7 +36,7 @@
                                 <input name="street_address" type="text" id="street" class="street-first">
                             </div>
                             <div class="col-lg-12">
-                                <label for="zip">Postcode / ZIP (Optional)/label>
+                                <label for="zip">Postcode / ZIP (Optional)</label>
                                 <input name="postcode_zip" type="text" id="zip">
                             </div>
                             <div class="col-lg-12">
@@ -50,6 +50,10 @@
                             <div class="col-lg-6">
                                 <label for="phone">Phone <span>*</span></label>
                                 <input name="phone" type="text" id="phone">
+                            </div>
+                            <div class="col-lg-12">
+                                <label for="note">Note (Optional)</label>
+                                <input name="note" type="textarea" id="note">
                             </div>
                             <div class="col-lg-12">
                                 <div class="create-item">

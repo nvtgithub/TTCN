@@ -18,15 +18,16 @@ class CreateOrdersTable extends Migration
 
             $table->string('first_name');
             $table->string('last_name');
+            $table->string('company_name')->nullable();
             $table->string('country');
-            $table->string('city');
-            $table->string('town');
             $table->string('street_address');
+            $table->string('postcode_zip')->nullable();
+            $table->string('town_city');
             $table->string('email');
             $table->string('phone');
-            $table->string('status');
+            $table->string('payment_type');
             $table->string('note')->nullable();
-
+            
             $table->timestamps();
         });
     }
