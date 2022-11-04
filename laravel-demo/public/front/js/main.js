@@ -248,6 +248,10 @@
 			}
 		}
 		$button.parent().find('input').val(newVal);
+
+        //update cart:
+        var rowId = $button.parent().find('input').data('rowid');
+        updateCart(rowId, newVal);
 	});
 
 })(jQuery);
@@ -411,7 +415,7 @@ function updateCart(rowId, qty) {
             $('.cart-total span').text(response['total'] + 'VNĐ');
 
 
-            alert('Update successfull\nProduct: '+ response['cart'].name);
+            // alert('Update successfull\nProduct: '+ response['cart'].name);
             console.log(response)
         },
         error: function (response) {

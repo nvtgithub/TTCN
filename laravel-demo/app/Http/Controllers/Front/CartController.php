@@ -74,4 +74,18 @@ class CartController extends Controller
     {
         Cart::destroy();
     }
+
+    public function update(Request $request)
+    {
+        if($request->ajax())
+        {
+            $response['cart'] = Cart::update($request->rowId, $request->qty);
+        
+            $response['count'] = Cart::count();
+            $response['total'] = Cart::total();
+            $response['subtotal'] = Cart::subtotal();
+
+            return $response;
+        }
+    }
 }

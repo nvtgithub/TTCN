@@ -26,7 +26,7 @@
                             </thead>
                             <tbody>
                                 @foreach($carts as $cart)
-                                    <tr data-rowId="{{ $cart->rowId }}">
+                                    <tr data-rowid="{{ $cart->rowId }}">
                                         <td class="cart-pic first-row">
                                             <img width="100%" src="front/img/products/{{ $cart->options->images[0]->path }}" alt="">
                                         </td>
