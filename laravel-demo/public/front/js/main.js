@@ -378,3 +378,45 @@ function destroyCart() {
         },
     });
 }
+
+function updateCart(rowId, qty) {
+    $.ajax({
+        type: "GET",
+        url: "cart/update",
+        data: {rowId: rowId, qty: qty},
+        success: function (response) {
+            //Xử lý phần cart hover (trang master-page)
+            $('.cart-count').text(response['count']);
+            $('.cart-price').text(response['total'] + ' VNĐ');
+            $('.select-total h5').text(response['total'] + ' VNĐ');
+
+            var cartHover_tbody = $('.select-items tbody');
+            var cartHover_existItem = cartHover_tbody.find("tr" + "[data-rowId='" + rowId + "']");
+            if (qty === 0 ) {
+                cartHover_existItem.remove();
+            } else {
+                cartHover_existItem.find('.product-selected p').text(response['cart'].price.toFixed(2) + 'VNĐ' + ' x ' + response['cart'].qty);
+            }
+                                                                
+            //Xử lý ở trong trnag "shop/cart"
+            var cart_tbody = $('.cart-table tbody');
+            var cart_existItem = cart_tbody.find("tr" + "[data-rowId='" + rowId + "']");
+            if (qty === 0 ) {
+                cart_existItem.remove();
+            } else {
+                cart_existItem.find('.total-price').text((response['cart'].price * response['cart'].qty).toFixed(2) + 'VNĐ');S
+            }
+
+            $('.subtotal span').text(response['subtotal'] + 'VNĐ');
+            $('.cart-total span').text(response['total'] + 'VNĐ');
+
+
+            alert('Update successfull\nProduct: '+ response['cart'].name);
+            console.log(response)
+        },
+        error: function (response) {
+            alert('Update failed');
+            console.log(response)
+        },
+    });
+}
