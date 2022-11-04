@@ -7,7 +7,9 @@
     <div class="shopping-cart spad">
         <div class="container">
             <div class="row">
-                <div class="col-lg-12">
+
+                @if(Cart::count() > 0)
+                    <div class="col-lg-12">
                     <div class="cart-table">
                         <table>
                             <thead>
@@ -17,7 +19,9 @@
                                     <th>Price</th>
                                     <th>Quantity</th>
                                     <th>Total</th>
-                                    <th>Delete</th>
+                                    <th>
+                                        <i onclick="confirm('Are you sure to delete all carts?') === true ? destroyCart() : ''" style="cursor: poiter" class="ti-close"></i>
+                                    </th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -70,7 +74,13 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                    </div>
+                @else
+                    <div class="col-lg-12">
+                        <h4>Your cart is empty!</h4>
+                    </div>
+                @endif
+
             </div>
         </div>
     </div>
