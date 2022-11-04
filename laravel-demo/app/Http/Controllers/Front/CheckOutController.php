@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Services\Order\OrderServiceInterface;
 use App\Services\OrderDetail\OrderDetailService;
 use App\Services\OrderDetail\OrderDetailServiceInterface;
+use App\Utilities\VNPay;
 use Gloudemans\Shoppingcart\Facades\Cart;
 use Illuminate\Http\Request;
 
@@ -49,11 +50,27 @@ class CheckOutController extends Controller
             $this->orderDetailService->create($data);
         }
 
-        //03. Xóa giỏ hàng
-        Cart::destroy();
+        if($request->payment_type == 'pay_later') 
+        {
+            //03. Xóa giỏ hàng
+            Cart::destroy();
 
-        //04. Trả về kết quả thông báo
-        return redirect('checkout/result')->with('notification', 'Success! You will pay on delivery. Please check your email.');
+            //04. Trả về kết quả thông báo
+            return redirect('checkout/result')->with('notification', 'Success! You will pay on delivery. Please check your email.');
+        }
+
+        if($request->payment_type == 'online_payment') {
+            //01. Lấy URL thanh toán VNPay
+            $data_url = VNPay::vnpay_create_payment([
+                'vnp_TnxRef' => $order->id, //ID của đơn hàng
+                'vnp_OrderInfor' => 'Mổ tả đơn hàng ở đây ...',
+                'vnp_Amount' => Cart::total(0, '',''), //Tổng giá của đơn hàng
+            ]);
+
+            //02. CHuyển hướng tới URL lấy được
+            return redirect()->to($data_url);
+        } 
+
     }
 
     public function result()
