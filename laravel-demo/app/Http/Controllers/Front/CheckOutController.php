@@ -3,11 +3,23 @@
 namespace App\Http\Controllers\Front;
 
 use App\Http\Controllers\Controller;
+use App\Services\Order\OrderServiceInterface;
+use App\Services\OrderDetail\OrderDetailService;
+use App\Services\OrderDetail\OrderDetailServiceInterface;
 use Gloudemans\Shoppingcart\Facades\Cart;
 use Illuminate\Http\Request;
 
 class CheckOutController extends Controller
 {
+    private $orderService;
+    private $orderDetailService;
+
+    public function __construct(OrderServiceInterface $orderService, OrderDetailServiceInterfaceServiceInterface $orderDetailService)
+    {
+        $this->orderService = $orderService;
+        $this->orderDetailService = $orderDetailService;
+    }
+
     public function index() 
     {
         $carts = Cart::content();

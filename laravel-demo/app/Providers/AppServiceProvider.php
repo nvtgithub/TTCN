@@ -3,6 +3,10 @@
 namespace App\Providers;
 
 use App\Models\ProductComment;
+use App\Repositories\Order\OrderRepository;
+use App\Repositories\Order\OrderRepositoryInterface;
+use App\Repositories\OrderDetail\OrderDetailRepository;
+use App\Repositories\OrderDetail\OrderDetailRepositoryInterface;
 use App\Repositories\Product\ProductRepository;
 use App\Repositories\Product\ProductRepositoryInterface;
 use App\Repositories\ProductCategory\ProductCategoryRepository;
@@ -11,6 +15,10 @@ use App\Repositories\ProductComment\ProductCommentRepository;
 use App\Repositories\ProductComment\ProductCommentRepositoryInterface;
 use App\Repositories\Trademarks\TrademarksRepository;
 use App\Repositories\Trademarks\TrademarksRepositoryInterface;
+use App\Services\Order\OrderService;
+use App\Services\Order\OrderServiceInterface;
+use App\Services\OrderDetail\OrderDetailService;
+use App\Services\OrderDetail\OrderDetailServiceInterface;
 use App\Services\Product\ProductService;
 use App\Services\Product\ProductServiceInterface;
 use App\Services\ProductCategory\ProductCategoryService;
@@ -68,6 +76,26 @@ class AppServiceProvider extends ServiceProvider
     $this->app->singleton(
       TrademarksServiceInterface::class,
       TrademarksService::class
+    );
+
+    // Order
+    $this->app->singleton(
+      OrderRepositoryInterface::class,
+      OrderRepository::class
+    );
+    $this->app->singleton(
+      OrderServiceInterface::class,
+      OrderService::class
+    );
+
+    // Order Detail
+    $this->app->singleton(
+      OrderDetailRepositoryInterface::class,
+      OrderDetailRepository::class
+    );
+    $this->app->singleton(
+      OrderDetailServiceInterface::class,
+      OrderDetailService::class
     );
   }
 
