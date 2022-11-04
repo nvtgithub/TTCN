@@ -290,11 +290,11 @@ function addCart(productId) {
                 '<td class="si-text">\n' +
                 '  <div class="product-selected">\n' +
                 '        <h6>' + response['cart'].name + '</h6>\n' +
-                '        <p>' + response['cart'].price.toFixed(2) + 'VNĐ' + ' x ' + response['cart'].qty + '</p>\n' +                                                         
+                '        <p>' + response['cart'].price.toFixed(2) + 'VNĐ' + ' x ' + response['cart'].qty  + '</p>\n' +                                                         
                 '    </div>\n'+
                 '</td>\n' +
                 '<td class="si-close">\n'+
-                '    <i class="si-close">\n' +
+                '    <i onclick="removeCart(\'' + response['cart'].rowId + '\')" class="si-close">\n' +
                 '        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bag-x" viewBox="0 0 16 16">\n' +
                 '            <path fill-rule="evenodd" d="M6.146 8.146a.5.5 0 0 1 .708 0L8 9.293l1.146-1.147a.5.5 0 1 1 .708.708L8.707 10l1.147 1.146a.5.5 0 0 1-.708.708L8 10.707l-1.146 1.147a.5.5 0 0 1-.708-.708L7.293 10 6.146 8.854a.5.5 0 0 1 0-.708z"/>\n' +
                 '            <path d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1zm3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4h-3.5zM2 5h12v9a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V5z"/>\n' +
@@ -311,6 +311,37 @@ function addCart(productId) {
         },
         error: function (response) {
             alert('Add failed');
+            console.log(response)
+        },
+    });
+}
+
+function removeCart(rowId) {
+    $.ajax({
+        type: "GET",
+        url: "cart/delete",
+        data: {rowId: rowId},
+        success: function (response) {
+            //Xử lý phần cart hover (trang master-page)
+            $('.cart-count').text(response['count']);
+            $('.cart-price').text(response['total'] + ' VNĐ');
+            $('.select-total h5').text(response['total'] + ' VNĐ');
+
+            var cartHover_tbody = $('.select-items tbody');
+            var cartHover_existItem = cartHover_tbody.find("tr" + "[data-rowId='" + rowId + "']");
+        
+            cartHover_existItem.remove();
+
+            //Xử lý ở trong trnag "shop/cart"
+            var cart_tbody = $('.cart-table tbody');
+            var cart_exitItem = cart_tbody.find("tr" + "[data-rowId='" + rowId + "']");
+            cart_exitItem.remove();
+
+            alert('Add successfull\nProduct: '+ response['cart'].name);
+            console.log(response)
+        },
+        error: function (response) {
+            alert('Delete failed');
             console.log(response)
         },
     });

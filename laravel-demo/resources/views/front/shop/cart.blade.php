@@ -17,12 +17,12 @@
                                     <th>Price</th>
                                     <th>Quantity</th>
                                     <th>Total</th>
-                                    <th><i class="ti-close"></i></th>
+                                    <th>Delete</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 @foreach($carts as $cart)
-                                    <tr>
+                                    <tr data-rowId="{{ $cart->rowId }}">
                                         <td class="cart-pic first-row">
                                             <img width="100%" src="front/img/products/{{ $cart->options->images[0]->path }}" alt="">
                                         </td>
@@ -38,7 +38,9 @@
                                             </div>
                                         </td>
                                         <td class="total-price first-row">{{ number_format($cart->price, 2) }} VNĐ</td>
-                                        <td class="close-td first-row"><i class="ti-close"></i></td>
+                                        <td class="close-td first-row">
+                                            <i onclick="removeCart('{{ $cart->rowId }}')" class="ti-close"></i>
+                                        </td>
                                     </tr>
                                 @endforeach
                             </tbody>
