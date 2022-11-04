@@ -55,4 +55,10 @@ class CheckOutController extends Controller
         //04. Trả về kết quả thông báo
         return "Success!";
     }
+
+    public function result()
+    {
+        $notification = '';
+        return view('front.checkout.result', compact('notification'));
+    }
 }

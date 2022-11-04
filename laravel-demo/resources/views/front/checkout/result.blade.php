@@ -9,8 +9,6 @@
             <form action="" method="post" class="checkout-form">
             @csrf    
             <div class="row">
-
-                @if(Cart::count() > 0)
                     <div class="col-lg-6">
                         <div class="checkout-content">
                             <a href="login.html" class="content-btn">Click Here To Login</a>
@@ -111,11 +109,6 @@
                             </div>
                         </div>
                     </div>
-                @else
-                    <div class="col-lg-12">
-                        <h4>Your cart is empty!</h4>
-                    </div>
-                @endif
                 </div>
             </form>
         </div>
