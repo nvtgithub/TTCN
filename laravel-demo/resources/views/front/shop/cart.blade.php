@@ -70,7 +70,7 @@
                                     <li class="subtotal">Subotal <span>{{ $total }}</span></li>
                                     <li class="cart-total">Total <span>{{ $subtotal }}</span></li>
                                 </ul>
-                                <a href="check-out.html" class="proceed-btn">PROCEED TO CHECK OUT</a>
+                                <a href="./checkout" class="proceed-btn">PROCEED TO CHECK OUT</a>
                             </div>
                         </div>
                     </div>
@@ -85,4 +85,5 @@
         </div>
     </div>
     <!-- Shopping Cart Section End -->
+    
 @endsection

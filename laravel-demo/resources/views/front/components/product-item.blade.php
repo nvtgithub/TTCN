@@ -1,4 +1,4 @@
-<div class="product-item item {{$product->tag}} col-3">
+<div class="product-item item {{$product->tag}}">
             <div class="pi-pic">
               <img src="front/img/products/{{ $product->productImages[0]->path}}" alt="">
 
