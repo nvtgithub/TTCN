@@ -64,14 +64,13 @@ class CheckOutController extends Controller
             //01. Lấy URL thanh toán VNPay
             $data_url = VNPay::vnpay_create_payment([
                 'vnp_TxnRef' => $order->id, //ID của đơn hàng
-                'vnp_OrderInfo' => 'Mô tả đơn hàng ... ',
+                'vnp_OrderInfo' => '',
                 'vnp_Amount' => Cart::total(0, '', ''), //Tổng giá của đơn hàng
             ]);
 
             //02. CHuyển hướng tới URL lấy được
             return redirect()->to($data_url);
-        } 
-
+        }  
     }
 
     public function vnPayCheck(Request $request) 
@@ -89,7 +88,7 @@ class CheckOutController extends Controller
             {
                 //Xóa giỏ hàng
                 Cart::destroy();
-
+                
                 //Thông báo kết quả
                 return redirect('checkout/result')->with('notification', 'Success! Has paid online. Please check your email.');
             } else {
