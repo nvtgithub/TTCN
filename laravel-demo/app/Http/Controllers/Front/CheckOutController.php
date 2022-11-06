@@ -132,6 +132,5 @@ class CheckOutController extends Controller
                 $message->subject('Thông báo đặt hàng');
             }
         );
-
     }
 }

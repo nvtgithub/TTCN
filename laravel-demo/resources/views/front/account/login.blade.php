@@ -1,6 +1,6 @@
 @extends('front.layout.master')
 
-@section('title', 'Result')
+@section('title', 'Login')
 
 @section('body')
     <!-- Breadcrumb Section Begin -->
@@ -31,7 +31,7 @@
                                 {{ session('notification') }}
                             </div>
                         @endif
-                        
+
                         <form action="" method="post">
                             @csrf    
                             <div class="group-input">
@@ -55,7 +55,7 @@
                             <button type="submit" class="site-btn login-btn">Đăng nhập</button>
                         </form>
                         <div class="switch-login">
-                            <a href="register.html" class="or-login">Tạo tài khoản</a>
+                            <a href="./account/register" class="or-login">Tạo tài khoản</a>
                         </div>
                     </div>
                 </div>

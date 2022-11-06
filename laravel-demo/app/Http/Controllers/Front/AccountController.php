@@ -36,4 +36,9 @@ class AccountController extends Controller
 
         return back();
     }
+
+    public function register()
+    {
+        return view('front.account.register');
+    }
 }
