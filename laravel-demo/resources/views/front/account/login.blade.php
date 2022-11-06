@@ -25,6 +25,13 @@
                 <div class="col-lg-6 offset-lg-3">
                     <div class="login-form">
                         <h2>Đăng nhập</h2>
+
+                        @if(session('notification'))
+                            <div class="alert alert-warning" role="alert">
+                                {{ session('notification') }}
+                            </div>
+                        @endif
+                        
                         <form action="" method="post">
                             @csrf    
                             <div class="group-input">

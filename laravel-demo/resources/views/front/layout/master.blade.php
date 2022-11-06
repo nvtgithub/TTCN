@@ -47,7 +47,17 @@
                 </div>
 
                 <div class="ht-right">
-                    <a href="./account/login" class="login-panel"><i class="fa fa-user"></i>Đăng nhập</a>
+
+                    @if(Auth::check())
+                        <a href="./account/logout" class="login-panel">
+                            <i class="fa fa-user"></i>
+                            {{ Auth::user()->name}} - Đăng xuất
+                        </a>
+                    @else
+                        <a href="./account/login" class="login-panel"><i class="fa fa-user"></i>Đăng nhập</a>
+                    @endif
+
+
                     <div class="lan-selector">
                         <select class="language_drop" name="countries" id="countries" style="width:300px;">
                             <option value='yt' data-image="front/img/flag-1.jpg" data-imagecss="flag yt"
