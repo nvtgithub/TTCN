@@ -37,3 +37,7 @@ Route::prefix('checkout')->group(function () {
 
     Route::get('/vnPayCheck', [App\Http\Controllers\Front\CheckOutController::class, 'vnPayCheck']); 
 });
+
+Route::prefix('account')->group(function () {
+    Route::get('login', [App\Http\Controllers\Front\AccountController::class, 'login']);
+});

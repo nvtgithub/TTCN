@@ -47,7 +47,7 @@
                 </div>
 
                 <div class="ht-right">
-                    <a href="login.html" class="login-panel"><i class="fa fa-user"></i>Đăng nhập</a>
+                    <a href="./account/login" class="login-panel"><i class="fa fa-user"></i>Đăng nhập</a>
                     <div class="lan-selector">
                         <select class="language_drop" name="countries" id="countries" style="width:300px;">
                             <option value='yt' data-image="front/img/flag-1.jpg" data-imagecss="flag yt"
@@ -180,7 +180,7 @@
                                 <li><a href="./checkout">Thanh toán</a></li>
                                 <li><a href="faq.html">Câu hỏi thường gặp</a></li>
                                 <li><a href="register.html">Đăng ký</a></li>
-                                <li><a href="login.html ">Đăng nhập</a></li>
+                                <li><a href="./account/login">Đăng nhập</a></li>
                             </ul>
                         </li>
                     </ul>
