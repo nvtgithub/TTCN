@@ -9,6 +9,7 @@ use App\Services\OrderDetail\OrderDetailServiceInterface;
 use App\Utilities\VNPay;
 use Gloudemans\Shoppingcart\Facades\Cart;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 
 class CheckOutController extends Controller
 {
@@ -52,6 +53,11 @@ class CheckOutController extends Controller
 
         if($request->payment_type == 'pay_later') 
         {
+            //Gửi email:
+            $total = Cart::total();
+            $subtotal = Cart::subtotal();
+            $this->sendEmail($order, $total, $subtotal); //gọi hàm xử lý email đã định nghĩa
+
             //03. Xóa giỏ hàng
             Cart::destroy();
 
@@ -86,6 +92,12 @@ class CheckOutController extends Controller
             //Nếu kết quả thành công:
             if($vnp_ResponseCode == 00)
             {
+                //Gửi email:
+                $order = $this->orderService->find($vnp_TxnRef);
+                $total = Cart::total();
+                $subtotal = Cart::subtotal();
+                $this->sendEmail($order, $total, $subtotal); //gọi hàm xử lý email đã định nghĩa
+
                 //Xóa giỏ hàng
                 Cart::destroy();
                 
@@ -106,5 +118,20 @@ class CheckOutController extends Controller
     {
         $notification = session('notification');
         return view('front.checkout.result', compact('notification'));
+    }
+
+    public function sendEmail($order, $total, $subtotal)
+    {
+        $email_to = $order->email;
+
+        Mail::send('front.checkout.email', compact('order', 'total', 'subtotal'), 
+            function ($message) use ($email_to)
+            {
+                $message->from('minhthinh06112001@gmail.com', 'Electronicstore');
+                $message->to($email_to, $email_to);
+                $message->subject('Thông báo đặt hàng');
+            }
+        );
+
     }
 }
