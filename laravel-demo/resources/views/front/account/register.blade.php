@@ -25,6 +25,13 @@
                 <div class="col-lg-6 offset-lg-3">
                     <div class="register-form">
                         <h2>Đăng ký</h2>
+                        
+                        @if(session('notification'))
+                            <div class="alert alert-warning" role="alert">
+                                {{ session('notification') }}
+                            </div>  
+                        @endif                  
+
                         <form action="" method="post">
                             @csrf
                             <div class="group-input">
@@ -33,7 +40,7 @@
                             </div>
                             <div class="group-input">
                                 <label for="email">Địa chỉ email *</label>
-                                <input type="email" id="email">
+                                <input type="email" id="email" name="email">
                             </div>
                             <div class="group-input">
                                 <label for="pass">Mật khẩu *</label>

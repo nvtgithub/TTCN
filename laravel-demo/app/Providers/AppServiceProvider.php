@@ -15,6 +15,8 @@ use App\Repositories\ProductComment\ProductCommentRepository;
 use App\Repositories\ProductComment\ProductCommentRepositoryInterface;
 use App\Repositories\Trademarks\TrademarksRepository;
 use App\Repositories\Trademarks\TrademarksRepositoryInterface;
+use App\Repositories\User\UserRepository;
+use App\Repositories\User\UserRepositoryInterface;
 use App\Services\Order\OrderService;
 use App\Services\Order\OrderServiceInterface;
 use App\Services\OrderDetail\OrderDetailService;
@@ -27,6 +29,8 @@ use App\Services\ProductComment\ProductCommentService;
 use App\Services\ProductComment\ProductCommentServiceInterface;
 use App\Services\Trademarks\TrademarksService;
 use App\Services\Trademarks\TrademarksServiceInterface;
+use App\Services\User\UserService;
+use App\Services\User\UserServiceInterface;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -96,6 +100,16 @@ class AppServiceProvider extends ServiceProvider
     $this->app->singleton(
       OrderDetailServiceInterface::class,
       OrderDetailService::class
+    );
+
+    // User
+    $this->app->singleton(
+      UserRepositoryInterface::class,
+      UserRepository::class
+    );
+    $this->app->singleton(
+      UserServiceInterface::class,
+      UserService::class
     );
   }
 
