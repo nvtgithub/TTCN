@@ -55,7 +55,7 @@
                                     <p>{{ $product->content }}</p>
 
                                     @if($product->discount != null)
-                                        <h4>{{ number_format($product->discount, 0, '.', '.') }} ₫ <span>{{ number_format($product->price, 0, '.', '.') }} ₫</span></h4>
+                                        <h4>{{ number_format($product->discount, 0, '.', '.') }} VNĐ <span>{{ number_format($product->price, 0, '.', '.') }} VNĐ</span></h4>
                                     @else
                                         <h4>{{ number_format($product->price, 0, '.', '.') }} ₫</h4>
                                     @endif
@@ -76,10 +76,10 @@
                                     <div class="pro-qty ">
                                         <input type="text" value="1">
                                     </div>
-                                    <a href="#" class="primary-btn pd-cart">Add To Cart</a>
+                                    <a href="#" class="primary-btn pd-cart">Thêm vào giỏ hàng</a>
                                 </div>
                                 <ul class="pd-tags">
-                                    <li><span>CATEGORIES</span>: {{ $product->productCategory->name }}</li>
+                                    <li><span>Loại sản phẩm</span>: {{ $product->productCategory->name }}</li>
                                     <li><span>TAGS</span>: {{ $product->tag }}</li>
                                 </ul>
                                 <div class="pd-share">
@@ -97,13 +97,13 @@
                         <div class="tab-item">
                             <ul class="nav" role="tablist">
                                 <li>
-                                    <a class="active" href="#tab-1" data-toggle="tab" role="tab">DESCRIPTION</a>
+                                    <a class="active" href="#tab-1" data-toggle="tab" role="tab">MÔ TẢ SẢN PHẨM</a>
                                 </li>
                                 <li>
-                                    <a href="#tab-2" data-toggle="tab" role="tab">SPECIFICATIONS</a>
+                                    <a href="#tab-2" data-toggle="tab" role="tab">THÔNG SỐ KỸ THUẬT</a>
                                 </li>
                                 <li>
-                                    <a href="#tab-3" data-toggle="tab" role="tab">Customer Reviews ({{ count($product->productComments) }})</a>
+                                    <a href="#tab-3" data-toggle="tab" role="tab">Phản hồi của khách hàng ({{ count($product->productComments) }})</a>
                                 </li>
                             </ul>
                         </div>
@@ -118,7 +118,7 @@
                                     <div class="specification-table">
                                         <table>
                                             <tr>
-                                                <td class="p-catagory">Customer Rating</td>
+                                                <td class="p-catagory">Đánh giả của khách hàng</td>
                                                 <td>
                                                     <div class="pd-rating">
 
@@ -135,31 +135,31 @@
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <td class="p-catagory">Price</td>
+                                                <td class="p-catagory">Giá</td>
                                                 <td>
-                                                    <div class="p-price">{{ number_format($product->price, 0, '.', '.') }} ₫</div>
+                                                    <div class="p-price">{{ number_format($product->price, 0, '.', '.') }} VNĐ</div>
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <td class="p-catagory">Add To Cart</td>
+                                                <td class="p-catagory">Thêm vào giỏ hàng</td>
                                                 <td>
-                                                    <div class="cart-add">+ add to cart</div>
+                                                    <div class="cart-add">+ thêm vào giỏ hàng</div>
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <td class="p-catagory">Availability</td>
+                                                <td class="p-catagory">Khả dụng</td>
                                                 <td>
-                                                    <div class="p-stock">{{ $product->qty }} in stock</div>
+                                                    <div class="p-stock">{{ $product->qty }} sản phẩm trong kho</div>
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <td class="p-catagory">Weight</td>
+                                                <td class="p-catagory">Cân nặng</td>
                                                 <td>
                                                     <div class="p-weight">{{ $product->weight }}kg</div>
                                                 </td>
                                             </tr>a
                                             <tr>
-                                                <td class="p-catagory">Color</td>
+                                                <td class="p-catagory">Màu sắc</td>
                                                 <td>
                                                     @foreach(array_unique(array_column($product->productDetails->toArray(), 'color')) as $productColor)
                                                         <span class="cs-{{ $productColor }}"></span>
@@ -203,7 +203,7 @@
                                             @endforeach
                                         </div>
                                         <div class="leave-comment">
-                                            <h4>Leave A Comment</h4>
+                                            <h4>Đề lại bình luận</h4>
                                             <form action="" method="post" class="comment-form">
                                                 @csrf
                                                 <input type="hidden" name="product_id" value="{{ $product->id }}">
@@ -219,21 +219,21 @@
                                                     <div class="col-lg-12">
                                                         <textarea placeholder="Messages" name="messages"></textarea>
                                                         <div class="personal-rating">
-                                                            <h6>Your Rating</h6>
+                                                            <h6>Đánh giá của bạn</h6>
                                                             <div class="rate">
                                                                 <input type="radio" id="star5" name="rating" value="5" />
-                                                                <label for="star5" title="text">5 stars</label>
+                                                                <label for="star5" title="text">5 sao</label>
                                                                 <input type="radio" id="star4" name="rating" value="4" />
-                                                                <label for="star4" title="text">4 stars</label>
+                                                                <label for="star4" title="text">4 sao</label>
                                                                 <input type="radio" id="star3" name="rating" value="3" />
-                                                                <label for="star3" title="text">3 stars</label>
+                                                                <label for="star3" title="text">3 sao</label>
                                                                 <input type="radio" id="star2" name="rating" value="2" />
-                                                                <label for="star2" title="text">2 stars</label>
+                                                                <label for="star2" title="text">2 sao</label>
                                                                 <input type="radio" id="star1" name="rating" value="1" />
-                                                                <label for="star1" title="text">1 star</label>
+                                                                <label for="star1" title="text">1 sao</label>
                                                             </div>
                                                         </div>
-                                                        <button type="submit" class="site-btn">Send message</button>
+                                                        <button type="submit" class="site-btn">Gửi tin nhắn</button>
                                                     </div>
                                                 </div>
                                             </form>
@@ -255,7 +255,7 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="section-title">
-                        <h2>Related Products</h2>
+                        <h2>Các sản phẩm liên quan</h2>
                     </div>
                 </div>
             </div>

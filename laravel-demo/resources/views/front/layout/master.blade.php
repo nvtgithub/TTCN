@@ -47,7 +47,7 @@
                 </div>
 
                 <div class="ht-right">
-                    <a href="login.html" class="login-panel"><i class="fa fa-user"></i>Login</a>
+                    <a href="login.html" class="login-panel"><i class="fa fa-user"></i>Đăng nhập</a>
                     <div class="lan-selector">
                         <select class="language_drop" name="countries" id="countries" style="width:300px;">
                             <option value='yt' data-image="front/img/flag-1.jpg" data-imagecss="flag yt"
@@ -79,7 +79,7 @@
                     <div class="col-lg-7 col-md-7">
                       <form action="shop">
                         <div class="advanced-search">
-                            <button type="button" class="category-btn">All Categories</button>
+                            <button type="button" class="category-btn">Loại sản phẩm</button>
                             <div class="input-group">
                                 <input name="search" value="{{request('search')}}" type="text" placeholder="Tìm kiếm">
                                 <button type="submit"><i class="ti-search"></i></button>
@@ -131,8 +131,8 @@
                                         <h5>{{ Cart::total() }} VNĐ</h5>
                                     </div>
                                     <div class="select-button">
-                                        <a href="./cart" class="primary-btn view-card">VIEW CARD </a>
-                                        <a href="./checkout" class="primary-btn check-out">CHECK OUT </a>
+                                        <a href="./cart" class="primary-btn view-card">Xem giỏ hàng </a>
+                                        <a href="./checkout" class="primary-btn check-out">Thanh toán</a>
                                     </div>
                                 </div>
                             </li>
@@ -148,7 +148,7 @@
                 <div class="nav-depart">
                     <div class="depart-btn">
                         <i class="ti-menu"></i>
-                        <span>All department</span>
+                        <span>Các mặt hàng</span>
                         <ul class="depart-hover">
                             <li class="active"><a href="#">category-1</a></li>
                             <li><a href="#">category-2</a></li>
@@ -163,24 +163,24 @@
                 </div>
                 <nav class="nav-menu mobile-menu">
                     <ul>
-                        <li class="{{ (request()->segment(1) == '') ? 'active' : '' }}"><a href="./">Home</a></li>
+                        <li class="{{ (request()->segment(1) == '') ? 'active' : '' }}"><a href="./">Trang chủ</a></li>
                         <li class="{{ (request()->segment(1) == 'shop') ? 'active' : '' }}"><a href="./shop">Shop</a></li>
-                        <li><a href="">Collection</a>
+                        <li><a href="">Bộ sưu tập</a>
                             <ul class="dropdown">
                                 <li><a href="">Laptop</a></li>
                                 <li><a href="">Smartphone</a></li>
                             </ul>
                         </li>
                         <li><a href="blog.html">Blog</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                        <li><a href="">Pages</a>
+                        <li><a href="contact.html">Thông tin</a></li>
+                        <li><a href="">Trang</a>
                             <ul class="dropdown">
-                                <li><a href="blog-details.html">Blog Details</a></li>
-                                <li><a href="./cart">Shopping Cart</a></li>
-                                <li><a href="./checkout">Checkout</a></li>
-                                <li><a href="faq.html">Faq</a></li>
-                                <li><a href="register.html">Register</a></li>
-                                <li><a href="login.html ">Login</a></li>
+                                <li><a href="blog-details.html">Các bài viết</a></li>
+                                <li><a href="./cart">Giỏ hàng</a></li>
+                                <li><a href="./checkout">Thanh toán</a></li>
+                                <li><a href="faq.html">Câu hỏi thường gặp</a></li>
+                                <li><a href="register.html">Đăng ký</a></li>
+                                <li><a href="login.html ">Đăng nhập</a></li>
                             </ul>
                         </li>
                     </ul>

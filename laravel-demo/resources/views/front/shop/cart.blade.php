@@ -14,13 +14,13 @@
                         <table>
                             <thead>
                                 <tr>
-                                    <th>Image</th>
-                                    <th class="p-name text-center">Product Name</th>
-                                    <th>Price</th>
-                                    <th>Quantity</th>
-                                    <th>Total</th>
+                                    <th>Hình ảnh</th>
+                                    <th class="p-name text-center">Tên sản phẩm</th>
+                                    <th>Giá</th>
+                                    <th>Số lượng</th>
+                                    <th>Thành tiền</th>
                                     <th>
-                                        <i onclick="confirm('Are you sure to delete all carts?') === true ? destroyCart() : ''" style="cursor: poiter" class="ti-close"></i>
+                                        <i onclick="confirm('Bạn có muốn xóa toàn bộ sản phẩm trong giỏ hàng?') === true ? destroyCart() : ''" style="cursor: poiter" class="ti-close"></i>
                                     </th>
                                 </tr>
                             </thead>
@@ -53,31 +53,31 @@
                     <div class="row">
                         <div class="col-lg-4">
                             <div class="cart-buttons">
-                                <a href="#" class="primary-btn continue-shop">Continue shopping</a>
-                                <a href="#" class="primary-btn up-cart">Update cart</a>
+                                <a href="#" class="primary-btn continue-shop">Tiếp tục mua sắm</a>
+                                <a href="#" class="primary-btn up-cart">Cập nhật giỏ hàng</a>
                             </div>
                             <div class="discount-coupon">
-                                <h6>Discount Codes</h6>
+                                <h6>Mã giảm giá</h6>
                                 <form action="#" class="coupon-form">
-                                    <input type="text" placeholder="Enter your codes">
-                                    <button type="submit" class="site-btn coupon-btn">Apply</button>
+                                    <input type="text" placeholder="Nhập mã giảm giá">
+                                    <button type="submit" class="site-btn coupon-btn">Áp dụng</button>
                                 </form>
                             </div>
                         </div>
                         <div class="col-lg-4 offset-lg-4">
                             <div class="proceed-checkout">
                                 <ul>
-                                    <li class="subtotal">Subotal <span>{{ $total }}</span></li>
-                                    <li class="cart-total">Total <span>{{ $subtotal }}</span></li>
+                                    <li class="subtotal">Thành tiền <span>{{ $total }}</span></li>
+                                    <li class="cart-total">Tổng tiền <span>{{ $subtotal }}</span></li>
                                 </ul>
-                                <a href="./checkout" class="proceed-btn">PROCEED TO CHECK OUT</a>
+                                <a href="./checkout" class="proceed-btn">Tiến hành thanh toán</a>
                             </div>
                         </div>
                     </div>
                     </div>
                 @else
                     <div class="col-lg-12">
-                        <h4>Your cart is empty!</h4>
+                        <h4>Giỏ hàng trống!</h4>
                     </div>
                 @endif
 

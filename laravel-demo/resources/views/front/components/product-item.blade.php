@@ -13,7 +13,7 @@
                   <a href="javascript:addCart({{ $product->id }})"><i class="icon_bag_alt"></i></a>
                 </li>
                 <li class="quick-view">
-                  <a href="shop/product/{{$product->id}}">+ Quick View</a>
+                  <a href="shop/product/{{$product->id}}">+ Chi tiết sản phẩm</a>
                 </li>
                 <li class="w-icon">
                   <a href=""><i class="fa fa-random"></i></a>

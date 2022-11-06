@@ -403,7 +403,7 @@
             </div>
             <div class="sb-text">
               <h6>FREE SHIPPING</h6>
-              <p>For all order over 99$</p>
+              <p>Đối với những sản phẩm trên 20tr VNĐ</p>
             </div>
           </div>
         </div>
@@ -424,8 +424,8 @@
               <img src="front/img/icon-3.png" alt="">
             </div>
             <div class="sb-text">
-              <h6>SECURE PAYMENT</h6>
-              <p>100% secure payment</p>
+              <h6>THANH TOÁN AN TOÀN</h6>
+              <p>100% bảo mật thanh toán</p>
             </div>
           </div>
         </div>
