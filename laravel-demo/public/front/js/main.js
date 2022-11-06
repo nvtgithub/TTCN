@@ -310,11 +310,11 @@ function addCart(productId) {
                 cartHover_tbody.append(newItem);
             }
 
-            alert('Add successfull\nProduct: '+ response['cart'].name);
+            alert('Thêm thành công\nSản phẩm: '+ response['cart'].name);
             console.log(response)
         },
         error: function (response) {
-            alert('Add failed');
+            alert('Thêm thất bại! ');
             console.log(response)
         },
     });
@@ -341,11 +341,11 @@ function removeCart(rowId) {
             var cart_exitItem = cart_tbody.find("tr" + "[data-rowId='" + rowId + "']");
             cart_exitItem.remove();
 
-            alert('Add successfull\nProduct: '+ response['cart'].name);
+            alert('Thêm thành công\nSản phẩm: '+ response['cart'].name);
             console.log(response)
         },
         error: function (response) {
-            alert('Delete failed');
+            alert('Xóa thất bại');
             console.log(response)
         },
     });
@@ -373,11 +373,11 @@ function destroyCart() {
             $('.cart-total span').text('0');
 
 
-            alert('Add successfull\nProduct: '+ response['cart'].name);
+            alert('Thêm thành công\nSản phẩm: '+ response['cart'].name);
             console.log(response)
         },
         error: function (response) {
-            alert('Delete failed');
+            alert('Xóa thất bại!');
             console.log(response)
         },
     });
@@ -419,7 +419,7 @@ function updateCart(rowId, qty) {
             console.log(response)
         },
         error: function (response) {
-            alert('Update failed');
+            alert('Cập nhật thất bại!');
             console.log(response)
         },
     });
