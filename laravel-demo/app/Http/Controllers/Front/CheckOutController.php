@@ -120,14 +120,14 @@ class CheckOutController extends Controller
         return view('front.checkout.result', compact('notification'));
     }
 
-    public function sendEmail($order, $total, $subtotal)
+    private function sendEmail($order, $total, $subtotal)
     {
         $email_to = $order->email;
 
         Mail::send('front.checkout.email', compact('order', 'total', 'subtotal'), 
             function ($message) use ($email_to)
             {
-                $message->from('minhthinh06112001@gmail.com', 'Electronicstore');
+                $message->from('electronicstorek64cnpm@gmail.com', 'Electronicstore');
                 $message->to($email_to, $email_to);
                 $message->subject('Thông báo đặt hàng');
             }
