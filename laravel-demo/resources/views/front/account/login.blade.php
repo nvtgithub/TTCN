@@ -9,8 +9,8 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="breadcrumb-text">
-                        <a href="#"><i class="fa fa-home">Home</i></a>
-                        <span>Login</span>
+                        <a href="#"><i class="fa fa-home">Trang chủ</i></a>
+                        <span>Đăng nhập</span>
                     </div>
                 </div>
             </div>
@@ -24,30 +24,31 @@
             <div class="row">
                 <div class="col-lg-6 offset-lg-3">
                     <div class="login-form">
-                        <h2>Login</h2>
-                        <form action="#">
+                        <h2>Đăng nhập</h2>
+                        <form action="" method="post">
+                            @csrf    
                             <div class="group-input">
-                                <label for="username">Username or email address *</label>
-                                <input type="text" id="username">
+                                <label for="email">Địa chỉ email *</label>
+                                <input type="email" id="email" name="email">
                             </div>
                             <div class="group-input">
-                                <label for="pass">Password *</label>
-                                <input type="text" id="pass">
+                                <label for="pass">Mật khẩu *</label>
+                                <input type="password" id="pass" name="password">
                             </div>
                             <div class="group-input gi-check">
                                 <div class="gi-more">
                                     <label for="save-pass">
-                                        Save Password
-                                        <input type="checkbox" id="save-pass">
+                                        Lưu mật khẩu
+                                        <input type="checkbox" id="save-pass" name="remember">
                                         <span class="checkmark"></span>
                                     </label>
-                                    <a href="#" class="forget-pass">Forget your Password</a>
+                                    <a href="#" class="forget-pass">Quên mật khẩu</a>
                                 </div>
                             </div>
-                            <button type="submit" class="site-btn login-btn">Sign In</button>
+                            <button type="submit" class="site-btn login-btn">Đăng nhập</button>
                         </form>
                         <div class="switch-login">
-                            <a href="register.html" class="or-login">Or Create An Account</a>
+                            <a href="register.html" class="or-login">Tạo tài khoản</a>
                         </div>
                     </div>
                 </div>
