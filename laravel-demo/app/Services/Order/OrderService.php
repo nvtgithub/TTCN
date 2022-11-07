@@ -14,4 +14,8 @@ class OrderService extends BaseService implements OrderServiceInterface
         $this->repository = $OrderRepository;
     }
 
+    public function getOrderByUserId($userId)
+    {
+        return $this->repository->getOrderByUserId($userId);
+    }
 }

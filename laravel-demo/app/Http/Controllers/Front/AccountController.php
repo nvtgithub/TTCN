@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Front;
 
 use App\Http\Controllers\Controller;
+use App\Services\Order\OrderService;
 use App\Services\User\UserServiceInterface;
 use App\Utilities\Constant;
 use Illuminate\Http\Request;
@@ -11,10 +12,12 @@ use Illuminate\Support\Facades\Auth;
 class AccountController extends Controller
 {
     private $userService;
+    private $orderService;
 
-    public function __construct(UserServiceInterface $userService)
+    public function __construct(UserServiceInterface $userService, OrderService $orderService)
     {
         $this->userService = $userService;        
+        $this->orderService = $orderService;        
     }
 
     public function login()
@@ -72,6 +75,8 @@ class AccountController extends Controller
 
     public function myOrderIndex() 
     {
-        return view('front.account.my-order.index');
+        $orders = $this->orderService->getOrderByUserId(Auth::id());
+
+        return view('front.account.my-order.index', compact('orders'));
     }
 }
