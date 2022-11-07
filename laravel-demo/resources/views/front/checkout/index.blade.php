@@ -17,9 +17,11 @@
                         </div>
                         <h4>Chi tiết thanh toán</h4>
                         <div class="row">
+                            <input type="hidden" id="user_id" name="user_id" value="{{ Auth::user()->id ?? '' }}">
+
                             <div class="col-lg-6">
                                 <label for="fir">Họ <span>*</span></label>
-                                <input name="first_name" type="text" id="fir">
+                                <input name="first_name" type="text" id="fir" value="{{ Auth::user()->name ?? '' }}">
                             </div>
                             <div class="col-lg-6">
                                 <label for="last">Tên <span>*</span></label>
@@ -27,35 +29,31 @@
                             </div>
                             <div class="col-lg-12">
                                 <label for="cun-name">Tên công ty (có thể bỏ trống)</label>
-                                <input name="company_name" type="text" id="cun-name">
+                                <input name="company_name" type="text" id="cun-name" value="{{ Auth::user()->company_name ?? '' }}">
                             </div>
                             <div class="col-lg-12">
                                 <label for="cun">Đất nước <span>*</span></label>
-                                <input name="country" type="text" id="cun">
+                                <input name="country" type="text" id="cun" value="{{ Auth::user()->country ?? '' }}">
                             </div>
                             <div class="col-lg-12">
                                 <label for="street">Địa chỉ <span>*</span></label>
-                                <input name="street_address" type="text" id="street" class="street-first">
+                                <input name="street_address" type="text" id="street" class="street-first" value="{{ Auth::user()->street_address ?? '' }}">
                             </div>
                             <div class="col-lg-12">
                                 <label for="zip">Mã bưu điện / ZIP (có thể bỏ trống)</label>
-                                <input name="postcode_zip" type="text" id="zip">
+                                <input name="postcode_zip" type="text" id="zip" value="{{ Auth::user()->postcode_zip ?? '' }}">
                             </div>
                             <div class="col-lg-12">
                                 <label for="town">Tỉnh / Thành phố <span>*</span></label>
-                                <input name="town_city" type="text" id="town">
+                                <input name="town_city" type="text" id="town" value="{{ Auth::user()->town_city ?? '' }}">
                             </div>
                             <div class="col-lg-6">
                                 <label for="email">Địa chỉ email <span>*</span></label>
-                                <input name="email" type="text" id="email">
+                                <input name="email" type="text" id="email" value="{{ Auth::user()->email ?? '' }}">
                             </div>
                             <div class="col-lg-6">
                                 <label for="phone">Số điện thoại <span>*</span></label>
-                                <input name="phone" type="text" id="phone">
-                            </div>
-                            <div class="col-lg-12">
-                                <label for="note">Ghi chú (có thể bỏ trống)</label>
-                                <input name="note" type="textarea" id="note">
+                                <input name="phone" type="text" id="phone" value="{{ Auth::user()->phone ?? '' }}">
                             </div>
                             <div class="col-lg-12">
                                 <div class="create-item">
@@ -70,7 +68,7 @@
                     </div>
                     <div class="col-lg-6">
                         <div class="checkout-content">
-                            <input type="text" placeholder="Enter Your Coupon Codes">
+                            <input type="text" placeholder="Nhập mã giảm giá của bạn">
                         </div>
                         <div class="place-order">
                             <h4>Đơn hàng của bạn</h4>

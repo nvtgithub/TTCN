@@ -16,7 +16,6 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         // \App\Models\User::factory(10)->create();
-
         DB::table('users')->insert([
             [
                 'id' => 1,
@@ -26,7 +25,17 @@ class DatabaseSeeder extends Seeder
                 'avatar' => null,
                 'level' => 2,
                 'description' => null,
+
+                'company_name' => 'TNHH ABC',
+                'country' => 'Việt Nam',
+                'street_address' => 'Trâu quỳ, gia lâm, HN',
+                'postcode_zip' =>'',
+                'town_city' => 'Hà nội',
+                'phone' => '0987654321',
             ],
+        ]);
+    
+        DB::table('users')->insert([
             [
                 'id' => 2,
                 'name' => 'admin2',
