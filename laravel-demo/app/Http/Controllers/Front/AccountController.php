@@ -69,4 +69,9 @@ class AccountController extends Controller
 
         return redirect('account/login')->with('notification', 'Đăng ký thành công!');
     }
+
+    public function myOrderIndex() 
+    {
+        return view('front.account.my-order.index');
+    }
 }

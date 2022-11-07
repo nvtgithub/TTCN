@@ -185,7 +185,7 @@
                         <li><a href="contact.html">Thông tin</a></li>
                         <li><a href="">Trang</a>
                             <ul class="dropdown">
-                                <li><a href="blog-details.html">Các bài viết</a></li>
+                                <li><a href="./account/my-order">Đơn hàng của tôi</a></li>
                                 <li><a href="./cart">Giỏ hàng</a></li>
                                 <li><a href="./checkout">Thanh toán</a></li>
                                 <li><a href="faq.html">Câu hỏi thường gặp</a></li>
