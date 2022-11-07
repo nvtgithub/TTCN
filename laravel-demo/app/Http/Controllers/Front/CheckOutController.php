@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Services\Order\OrderServiceInterface;
 use App\Services\OrderDetail\OrderDetailService;
 use App\Services\OrderDetail\OrderDetailServiceInterface;
+use App\Utilities\Constant;
 use App\Utilities\VNPay;
 use Gloudemans\Shoppingcart\Facades\Cart;
 use Illuminate\Http\Request;
@@ -34,7 +35,9 @@ class CheckOutController extends Controller
     public function addOrder(Request $request)
     {
         //01. Thêm đơn hàng 
-        $order =  $this->orderService->create($request->all());
+        $data = $request->all();
+        $data['status'] = Constant::order_status_ReceiveOrders;
+        $order =  $this->orderService->create($data);
 
         //02. Thêm chi tiết đơn hàng
         $carts = Cart::content(); 
@@ -63,7 +66,7 @@ class CheckOutController extends Controller
 
             //04. Trả về kết quả thông báo
             return redirect('checkout/result')
-                ->with('notification', 'Success! You will pay on delivery. Please check your email.');
+                ->with('notification', 'Đặt hàng thành công! Bạn sẽ thanh toán khi nhận hàng. Vui lòng kiểm tra email của bạn.');
         }
 
         if($request->payment_type == 'online_payment') {
@@ -92,6 +95,11 @@ class CheckOutController extends Controller
             //Nếu kết quả thành công:
             if($vnp_ResponseCode == 00)
             {
+                //Cập nhật trạng thái Order:
+                $this->orderService->update([
+                    'status' => Constant::order_status_Paid,
+                ], $vnp_TxnRef);
+
                 //Gửi email:
                 $order = $this->orderService->find($vnp_TxnRef);
                 $total = Cart::total();
@@ -102,14 +110,14 @@ class CheckOutController extends Controller
                 Cart::destroy();
                 
                 //Thông báo kết quả
-                return redirect('checkout/result')->with('notification', 'Success! Has paid online. Please check your email.');
+                return redirect('checkout/result')->with('notification', 'Đặt hàng thành công! Bạn đã thanh toán trực tuyến. Vui lòng kiểm tra email của bạn');
             } else {
                 //Nếu không thành công
                 //Xóa đơn hàng dã thêm vào database
                 $this->orderService->delete($vnp_TxnRef);
 
                 //Thông báo lỗi
-                return redirect('checkout/result')->with('notification', 'ERROR! Payment failed or canceled.');
+                return redirect('checkout/result')->with('notification', 'ERROR! Thanh toán không thành công hoặc bị hủy.');
             }
         }
     }
