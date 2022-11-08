@@ -79,4 +79,11 @@ class AccountController extends Controller
 
         return view('front.account.my-order.index', compact('orders'));
     }
+
+    public function myOrderShow($id)
+    {
+        $order = $this->orderService->find($id);
+
+        return view('front.account.my-order.show', compact('order'));
+    }
 }
