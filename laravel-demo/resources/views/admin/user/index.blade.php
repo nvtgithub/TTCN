@@ -81,7 +81,7 @@
                                                                     <img width="40" class="rounded-circle"
                                                                         data-toggle="tooltip" title="Image"
                                                                         data-placement="bottom"
-                                                                        src="front/img/user/{{ $user->avatar ?? 'default-avatar.jpg' }}" alt="">
+                                                                        src="front/img/users/{{ $user->avatar ?? 'default-avatar.png' }}" alt="">
                                                                 </div>
                                                             </div>
                                                             <div class="widget-content-left flex2">
