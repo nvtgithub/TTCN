@@ -36,7 +36,8 @@ class AccountController extends Controller
         $remember = $request->remember;
 
         if (Auth::attempt($credentials, $remember)) {
-            return redirect('');
+            //return redirect('');
+            return redirect()->intended(''); //Mặc định là : trnag chủ
         } else {
             return back()->with('notification', 'Đăng nhập thất bại: Email hoặc mật khẩu không chính xác');
         }
