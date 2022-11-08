@@ -13,6 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+//Front (client)
 Route::get('/', [App\Http\Controllers\Front\HomeController::class, 'index']);
 
 Route::prefix('shop')->group(function () {
@@ -51,4 +52,9 @@ Route::prefix('account')->group(function () {
         Route::get('/', [App\Http\Controllers\Front\AccountController::class, 'myOrderIndex']);   
         Route::get('{id}', [App\Http\Controllers\Front\AccountController::class, 'myOrderShow']);   
     });
+});
+
+//Dashboard (Admin)
+Route::prefix('admin')->group(function () {
+    Route::resource('user', App\Http\Controllers\Admin\UserController::class);
 });
