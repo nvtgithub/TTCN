@@ -2,10 +2,10 @@
                     <div class="filter-widget">
                         <h4 class="fw-title">Sản phẩm</h4>
                         <ul class="filter-catagories">
-                            
+
                             @foreach($categories as $category)
                                 <li><a href="shop/category/{{ $category->name }}">{{ $category->name }}</a></li>
-                            @endforeach  
+                            @endforeach
 
                         </ul>
                     </div>
@@ -17,10 +17,10 @@
                                 <div class="bc-item">
                                     <label for="bc-{{ $trademark->id }}">
                                         {{ $trademark->name }}
-                                        <input 
+                                        <input
                                             {{ (request("trademark")[$trademark->id] ?? '') == 'on' ? 'checked' : ''}}
-                                            type="checkbox" 
-                                            id="bc-{{ $trademark->id }}" 
+                                            type="checkbox"
+                                            id="bc-{{ $trademark->id }}"
                                             name="trademark[{{ $trademark->id }}]"
                                             onchange="this.form.submit();"
                                             >
@@ -37,11 +37,13 @@
                                 <div class="price-input">
                                     <input type="text" id="minamount" name="price_min">
                                     <input type="text" id="maxamount" name="price_max">
+                                    <span>VNĐ</span>
                                 </div>
                             </div>
-                            <div class="price-range ui-slider ui-corner-all ui-slider-horizontal ui-widget ui-widget-content" 
-                                data-min="10" data-max="999" data-min-value="{{ str_replace('VNĐ', '', request('price_min')) }}" 
-                                data-max-value="{{ str_replace('VNĐ', '', request('price_max')) }}">
+                            <div class="price-range ui-slider ui-corner-all ui-slider-horizontal ui-widget ui-widget-content"
+                                data-min="100000" data-max="100000000"
+                                data-min-value="{{ str_replace('', '', request('price_min')) }}"
+                                data-max-value="{{ str_replace('', '', request('price_max')) }}">
                                 <div class="ui-slider-range ui-corner-all ui-widget-header"></div>
                                 <span tabindex="0" class="ui-slider-handle ui-corner-all ui-state-default"></span>
                                 <span tabindex="0" class="ui-slider-handle ui-corner-all ui-state-default"></span>
@@ -93,6 +95,5 @@
                                 <label for="cs-pink" class="cs-pink {{ request('color') == 'pink' ? 'font-weight-bold' : '' }}">Hồng</label>
                             </div>
                         </div>
-                    </div>         
-                </form>              
-            
+                    </div>
+                </form>
