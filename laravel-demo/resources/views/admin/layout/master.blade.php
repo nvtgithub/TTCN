@@ -1453,33 +1453,33 @@
 
                             <li class="mm-active">
                                 <a href="#">
-                                    <i class="metismenu-icon pe-7s-plugin"></i>Applications
+                                    <i class="metismenu-icon pe-7s-plugin"></i>Quản lý hệ thống
                                     <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
                                 </a>
                                 <ul>
                                     <li>
                                         <a href="./admin/user.html" class="mm-active">
-                                            <i class="metismenu-icon"></i>User
+                                            <i class="metismenu-icon"></i>Người dùng
                                         </a>
                                     </li>
                                     <li>
                                         <a href="./admin/order.html">
-                                            <i class="metismenu-icon"></i>Order
+                                            <i class="metismenu-icon"></i>Đơn hàng
                                         </a>
                                     </li>
                                     <li>
                                         <a href="./admin/product.html">
-                                            <i class="metismenu-icon"></i>Product
+                                            <i class="metismenu-icon"></i>Sản phẩm
                                         </a>
                                     </li>
                                     <li>
                                         <a href="./admin/category.html">
-                                            <i class="metismenu-icon"></i>Category
+                                            <i class="metismenu-icon"></i>Danh mục
                                         </a>
                                     </li>
                                     <li>
                                         <a href="./admin/brand.html">
-                                            <i class="metismenu-icon"></i>Brand
+                                            <i class="metismenu-icon"></i>Thương hiệu
                                         </a>
                                     </li>
                                 </ul>

@@ -35,7 +35,7 @@ class UserController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.user.create');
     }
 
     /**
@@ -46,7 +46,17 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        if($request->get('password') != $request->get('password_confirmation')) {
+            return back()
+                ->with('notification', 'ERROR: Mật khẩu không khớp vui lòng thử lại');
+        }
+
+        $data = $request->all();
+        $data['password'] = bcrypt($request->get('password'));
+
+        $user = $this->userService->create($data);
+
+        return redirect('admin/user/'. $user->id);
     }
 
     /**
