@@ -14,7 +14,7 @@
                                 <div>
                                     User
                                     <div class="page-title-subheading">
-                                        View, create, update, delete and manage.
+                                        Xem, tạo mới, cập nhật, xóa và quản lý
                                     </div>
                                 </div>
                             </div>
@@ -28,7 +28,7 @@
                                 <span class="btn-icon-wrapper pr-2 opacity-8">
                                     <i class="fa fa-edit fa-w-20"></i>
                                 </span>
-                                <span>Edit</span>
+                                <span>Chỉnh sửa</span>
                             </a>
                         </li>
 
@@ -39,7 +39,7 @@
                                     <span class="btn-icon-wrapper pr-2 opacity-8">
                                         <i class="fa fa-trash fa-w-20"></i>
                                     </span>
-                                    <span>Delete</span>
+                                    <span>Xóa</span>
                                 </button>
                             </form>
                         </li>
@@ -125,7 +125,7 @@
                                     </div>
 
                                     <div class="position-relative row form-group">
-                                        <label for="level" class="col-md-3 text-md-right col-form-label">Level</label>
+                                        <label for="level" class="col-md-3 text-md-right col-form-label">Cấp</label>
                                         <div class="col-md-9 col-xl-8">
                                             <p>{{ \App\Utilities\Constant::$user_level[$user->level] }}</p>
                                         </div>

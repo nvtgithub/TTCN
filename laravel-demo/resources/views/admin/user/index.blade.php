@@ -14,7 +14,7 @@
                                 <div>
                                     User
                                     <div class="page-title-subheading">
-                                        View, create, update, delete and manage.
+                                        Xem, tạo mới, cập nhật, xóa và quản lý.
                                     </div>
                                 </div>
                             </div>
@@ -39,11 +39,11 @@
                                     <form>
                                         <div class="input-group">
                                             <input type="search" name="search" id="search"
-                                                placeholder="Search everything" class="form-control">
+                                                placeholder="Tìm kiếm người dùng" class="form-control">
                                             <span class="input-group-append">
                                                 <button type="submit" class="btn btn-primary">
                                                     <i class="fa fa-search"></i>&nbsp;
-                                                    Search
+                                                    Tìm kiếm
                                                 </button>
                                             </span>
                                         </div>
@@ -62,10 +62,10 @@
                                         <thead>
                                             <tr>
                                                 <th class="text-center">ID</th>
-                                                <th>Full Name</th>
+                                                <th>Họ và tên</th>
                                                 <th class="text-center">Email</th>
-                                                <th class="text-center">Level</th>
-                                                <th class="text-center">Actions</th>
+                                                <th class="text-center">Cấp</th>
+                                                <th class="text-center">Hành động</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -97,7 +97,7 @@
                                                 <td class="text-center">
                                                     <a href="./admin/user/{{ $user->id }}"
                                                         class="btn btn-hover-shine btn-outline-primary border-0 btn-sm">
-                                                        Details
+                                                        Xem chi tiết
                                                     </a>
                                                     <a href="./admin/user/{{ $user->id }}/edit" data-toggle="tooltip" title="Edit"
                                                         data-placement="bottom" class="btn btn-outline-warning border-0 btn-sm">
@@ -141,13 +141,13 @@
                                         <div class="hidden sm:flex-1 sm:flex sm:items-center sm:justify-between">
                                             <div>
                                                 <p class="text-sm text-gray-700 leading-5">
-                                                    Showing
+                                                    Hiển thị
                                                     <span class="font-medium">1</span>
-                                                    to
+                                                    -
                                                     <span class="font-medium">5</span>
-                                                    of
+                                                    trên tổng
                                                     <span class="font-medium">9</span>
-                                                    results
+                                                    kết quả
                                                 </p>
                                             </div>
 
