@@ -26,11 +26,9 @@
     <div class="col-md-12">
         <div class="main-card mb-3 card">
             <div class="card-body">
-                <form method="post" action="admin/user" enctype="multipart/form-data">
+                <form method="post" action="/admin/user/{{ $user->id }}" enctype="multipart/form-data">
                     @csrf
-
-                    @include('admin.components.notification')
-
+                    @method('PUT')
                     <div class="position-relative row form-group">
                         <label for="image"
                             class="col-md-3 text-md-right col-form-label">Avatar</label>
@@ -38,10 +36,10 @@
                             <img style="height: 200px; cursor: pointer;"
                                 class="thumbnail rounded-circle" data-toggle="tooltip"
                                 title="Click để chọn hình ảnh" data-placement="bottom"
-                                src="dashboard/assets/images/add-image-icon.jpg" alt="Avatar">
+                                src="front/img/users/{{ $user->avatar == null ? 'default-avatar.png' : $user->avatar }}" alt="Avatar">
                             <input name="image" type="file" onchange="changeImg(this)"
                                 class="image form-control-file" style="display: none;" value="">
-                            <input type="hidden" name="image_old" value="">
+                            <input type="hidden" name="image_old" value="{{ $user->avatar }}">
                             <small class="form-text text-muted">
                                 Chọn hình ảnh đại diện (Cần thiết)
                             </small>
@@ -52,7 +50,7 @@
                         <label for="name" class="col-md-3 text-md-right col-form-label">Họ tên</label>
                         <div class="col-md-9 col-xl-8">
                             <input required name="name" id="name" placeholder="Họ và tên" type="text"
-                                class="form-control" value="">
+                                class="form-control" value="{{ $user->name }}">
                         </div>
                     </div>
 
@@ -61,7 +59,7 @@
                             class="col-md-3 text-md-right col-form-label">Email</label>
                         <div class="col-md-9 col-xl-8">
                             <input required name="email" id="email" placeholder="Email" type="email"
-                                class="form-control" value="">
+                                class="form-control" value="{{ $user->email }}">
                         </div>
                     </div>
 
@@ -90,7 +88,7 @@
                         <div class="col-md-9 col-xl-8">
                             <input name="company_name" id="company_name"
                                 placeholder="Nhập vào tên công ty" type="text" class="form-control"
-                                value="">
+                                value="{{ $user->company_name }}">
                         </div>
                     </div>
 
@@ -99,7 +97,7 @@
                             class="col-md-3 text-md-right col-form-label">Đất nước</label>
                         <div class="col-md-9 col-xl-8">
                             <input name="country" id="country" placeholder="Đất nước"
-                                type="text" class="form-control" value="">
+                                type="text" class="form-control" value="{{ $user->country }}">
                         </div>
                     </div>
 
@@ -110,7 +108,7 @@
                         <div class="col-md-9 col-xl-8">
                             <input name="street_address" id="street_address"
                                 placeholder="Nhập vào địa chỉ" type="text" class="form-control"
-                                value="">
+                                value="{{ $user->street_address }}">
                         </div>
                     </div>
 
@@ -121,7 +119,7 @@
                         <div class="col-md-9 col-xl-8">
                             <input name="postcode_zip" id="postcode_zip"
                                 placeholder="Nhập vào mã bưu điện" type="text" class="form-control"
-                                value="">
+                                value="{{ $user->postcode_zip }}">
                         </div>
                     </div>
 
@@ -131,7 +129,7 @@
                         </label>
                         <div class="col-md-9 col-xl-8">
                             <input name="town_city" id="town_city" placeholder="Tỉnh / Thành phố"
-                                type="text" class="form-control" value="">
+                                type="text" class="form-control" value="{{ $user->town_city }}">
                         </div>
                     </div>
 
@@ -140,7 +138,7 @@
                             class="col-md-3 text-md-right col-form-label">Số điện thoại</label>
                         <div class="col-md-9 col-xl-8">
                             <input required name="phone" id="phone" placeholder="Số điện thoại" type="tel"
-                                class="form-control" value="">
+                                class="form-control" value="{{ $user->phone }}">
                         </div>
                     </div>
 
@@ -152,7 +150,7 @@
                                 <option value="">-- Cấp --</option>
                                 
                                 @foreach(\App\Utilities\Constant::$user_level as $key => $value)
-                                    <option value={{ $key }}>
+                                    <option value={{ $key }} {{ $user->level == $key ? 'selected' : ''}}>
                                         {{ $value }}
                                     </option>              
                                 @endforeach
@@ -183,7 +181,7 @@
                                 <span class="btn-icon-wrapper pr-2 opacity-8">
                                     <i class="fa fa-download fa-w-20"></i>
                                 </span>
-                                <span>Lưu</span>
+                                <span>Save</span>
                             </button>
                         </div>
                     </div>
