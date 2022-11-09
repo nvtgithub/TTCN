@@ -140,6 +140,15 @@ class UserController extends Controller
      */
     public function destroy(User $user)
     {
-        //
+        $this->userService->delete($user->id);
+
+        //Xóa file
+        $file_name = $user->avatar;
+        if($file_name != '')
+        {
+            unlink('front/img/users/' . $file_name);
+        }
+
+        return redirect('admin/user');
     }
 }
