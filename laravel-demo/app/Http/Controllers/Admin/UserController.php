@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Models\User;
 use App\Http\Controllers\Controller;
 use App\Services\User\UserServiceInterface;
+use App\Utilities\Common;
 use Illuminate\Http\Request;
 
 class UserController extends Controller
@@ -53,6 +54,11 @@ class UserController extends Controller
 
         $data = $request->all();
         $data['password'] = bcrypt($request->get('password'));
+
+        //Xử lý file:
+        if($request->hasFile('image')) {
+            $data['avatar'] = Common::uploadFile($request->file('image'), 'front/img/users');
+        }
 
         $user = $this->userService->create($data);
 
