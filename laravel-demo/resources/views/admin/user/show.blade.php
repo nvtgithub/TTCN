@@ -133,7 +133,7 @@
 
                                     <div class="position-relative row form-group">
                                         <label for="description"
-                                            class="col-md-3 text-md-right col-form-label">Description</label>
+                                            class="col-md-3 text-md-right col-form-label">Mô tả</label>
                                         <div class="col-md-9 col-xl-8">
                                             <p>{{ $user->description }}</p>
                                         </div>

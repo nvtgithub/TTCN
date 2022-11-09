@@ -96,7 +96,40 @@ class UserController extends Controller
      */
     public function update(Request $request, User $user)
     {
-        //
+        $data = $request->all();
+
+        //xử lý mật khẩu
+        if($request->get('password') != null)
+        {
+            if($request->get('password') != $request->get('password_confirmation'))
+            {
+                return back()
+                    ->with('notification', 'ERROR: Mật khẩu không khớp');          
+            }
+
+            $data['password'] = bcrypt($request->get('password'));
+        } else {
+            unset($data['password']);
+        }
+
+        //xử lý file ảnh
+        if($request->hasFile('image'))
+        {
+            //Thêm file mới
+            $data['avatar'] = Common::uploadFile($request->file('image'), path: 'front/img/users');
+
+            //Xóa file cũ
+            $file_name_old = $request->get('image_old');
+            if($file_name_old != '')
+            {
+                unlink('front/img/users/' . $file_name_old);
+            }
+        }
+
+        //cập nhật dữ liệu
+        $this->userService->update($data, $user->id);
+
+        return redirect('admin/user/' . $user->id);
     }
 
     /**

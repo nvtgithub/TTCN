@@ -29,6 +29,9 @@
                 <form method="post" action="/admin/user/{{ $user->id }}" enctype="multipart/form-data">
                     @csrf
                     @method('PUT')
+
+                    @include('admin.components.notification')
+
                     <div class="position-relative row form-group">
                         <label for="image"
                             class="col-md-3 text-md-right col-form-label">Avatar</label>
@@ -161,9 +164,9 @@
 
                     <div class="position-relative row form-group">
                         <label for="description"
-                               class="col-md-3 text-md-right col-form-label">Description</label>
+                               class="col-md-3 text-md-right col-form-label">Mô tả</label>
                         <div class="col-md-9 col-xl-8">
-                            <textarea name="description" id="description" class="form-control"></textarea>
+                            <textarea name="description" id="description" class="form-control" value>{{ $user->description }}</textarea>
                         </div>
                     </div>
 
