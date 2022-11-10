@@ -30,4 +30,11 @@ class HomeController extends Controller
             return back()->with('notification', 'Đăng nhập thất bại: Email hoặc mật khẩu không chính xác');
         }
     }
+
+    public function logout()
+    {
+        Auth::logout();
+
+        return redirect('admin/login');
+    }
 }

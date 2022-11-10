@@ -64,4 +64,6 @@ Route::prefix('admin')->group(function () {
         Route::get('', [App\Http\Controllers\Admin\HomeController::class, 'getLogin']);   
         Route::post('', [App\Http\Controllers\Admin\HomeController::class, 'postLogin']);   
     });
+
+    Route::get('logout', [App\Http\Controllers\Admin\HomeController::class, 'logout']);   
 });
