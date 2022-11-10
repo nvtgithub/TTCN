@@ -56,5 +56,12 @@ Route::prefix('account')->group(function () {
 
 //Dashboard (Admin)
 Route::prefix('admin')->group(function () {
+    Route::redirect('', 'admin/user');
+   
     Route::resource('user', App\Http\Controllers\Admin\UserController::class);
+
+    Route::prefix('login')->group(function () {
+        Route::get('', [App\Http\Controllers\Admin\HomeController::class, 'getLogin']);   
+        Route::post('', [App\Http\Controllers\Admin\HomeController::class, 'postLogin']);   
+    });
 });
