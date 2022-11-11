@@ -1473,7 +1473,7 @@
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="./admin/category.html">
+                                        <a href="/admin/category">
                                             <i class="metismenu-icon"></i>Danh mục
                                         </a>
                                     </li>
