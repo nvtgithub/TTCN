@@ -1,9 +1,8 @@
 @extends('admin.layout.master')
 
-@section('title', 'Category')
+@section('title', 'trademark')
 
 @section('body')
-
 <!-- Main -->
 <div class="app-main__inner">
   <div class="app-page-title">
@@ -13,7 +12,7 @@
           <i class="pe-7s-ticket icon-gradient bg-mean-fruit"></i>
         </div>
         <div>
-          Category
+          trademark
           <div class="page-title-subheading">
             View, create, update, delete and manage.
           </div>
@@ -21,7 +20,7 @@
       </div>
 
       <div class="page-title-actions">
-        <a href="admin/category/create" class="btn-shadow btn-hover-shine mr-3 btn btn-primary">
+        <a href="admin/trademark/create" class="btn-shadow btn-hover-shine mr-3 btn btn-primary">
           <span class="btn-icon-wrapper pr-2 opacity-7">
             <i class="fa fa-plus fa-w-20"></i>
           </span>
@@ -39,7 +38,7 @@
 
           <form>
             <div class="input-group">
-              <input type="search" name="search" id="search" value="{{request('search')}}" placeholder="Search everything" class="form-control">
+              <input type="search" name="search" value="{{request('search')}}" id="search" placeholder="Search everything" class="form-control">
               <span class="input-group-append">
                 <button type="submit" class="btn btn-primary">
                   <i class="fa fa-search"></i>&nbsp;
@@ -67,28 +66,28 @@
               </tr>
             </thead>
             <tbody>
-
-              @foreach ($productCategories as $product)
+              @foreach ($trademarks as $trademark)
               <tr>
-                <td class="text-center text-muted">#{{$product->id}}</td>
+                <td class="text-center text-muted">#{{$trademark->id}}</td>
                 <td>
                   <div class="widget-content p-0">
                     <div class="widget-content-wrapper">
                       <div class="widget-content-left flex2">
-                        <div class="widget-heading">{{$product->name}}</div>
+                        <div class="widget-heading">{{$trademark->name}}</div>
                       </div>
                     </div>
                   </div>
                 </td>
+
                 <td class="text-center">
-                  <a href="/admin/category/{{$product->id}}/edit" data-toggle="tooltip" title="Edit" data-placement="bottom" class="btn btn-outline-warning border-0 btn-sm">
+                  <a href="admin/trademark/{{$trademark->id}}/edit" data-toggle="tooltip" title="Edit" data-placement="bottom" class="btn btn-outline-warning border-0 btn-sm">
                     <span class="btn-icon-wrapper opacity-8">
                       <i class="fa fa-edit fa-w-20"></i>
                     </span>
                   </a>
-                  <form class="d-inline" action="/admin/category/{{$product->id}}" method="post">
-                    @csrf
-                    @method('DELETE')
+                  <form class="d-inline" action="admin/trademark/{{$trademark->id}}" method="post">
+                  @csrf  
+                  @method('DELETE')
                     <button class="btn btn-hover-shine btn-outline-danger border-0 btn-sm" type="submit" data-toggle="tooltip" title="Delete" data-placement="bottom" onclick="return confirm('Do you really want to delete this item?')">
                       <span class="btn-icon-wrapper opacity-8">
                         <i class="fa fa-trash fa-w-20"></i>
@@ -105,7 +104,7 @@
         </div>
 
         <div class="d-block card-footer">
-          {{$productCategories->links()}}
+          {{$trademarks->links()}}
         </div>
 
       </div>

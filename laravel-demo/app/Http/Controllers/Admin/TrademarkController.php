@@ -3,17 +3,16 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Services\Trademarks\TrademarksServiceInterface;
 use Illuminate\Http\Request;
-use App\Services\ProductCategory\ProductCategoryServiceInterface;
-use Facade\FlareClient\View;
 
-class ProductCategoryController extends Controller
+class TrademarkController extends Controller
 {
-  private $productCategoryService;
+  private $trademarkService;
 
-  public function __construct(ProductCategoryServiceInterface $productCategoryService)
+  public function __construct(TrademarksServiceInterface $trademarkService)
   {
-    $this->productCategoryService = $productCategoryService;
+    $this->trademarkService = $trademarkService;
   }
   /**
    * Display a listing of the resource.
@@ -22,8 +21,8 @@ class ProductCategoryController extends Controller
    */
   public function index(Request $request)
   {
-    $productCategories = $this->productCategoryService->searchAndPaginate('name', $request->get('search'));
-    return view('admin.category.index', compact('productCategories'));
+    $trademarks = $this->trademarkService->searchAndPaginate('name', $request->get('search'));
+    return view('admin.trademark.index', compact('trademarks'));
   }
 
   /**
@@ -33,7 +32,7 @@ class ProductCategoryController extends Controller
    */
   public function create()
   {
-    return view('admin.category.create');
+    return view('admin.trademark.create');
   }
 
   /**
@@ -45,8 +44,8 @@ class ProductCategoryController extends Controller
   public function store(Request $request)
   {
     $data = $request->all();
-    $this->productCategoryService->create($data);
-    return redirect('admin/category');
+    $this->trademarkService->create($data);
+    return redirect('admin/trademark');
   }
 
   /**
@@ -68,8 +67,8 @@ class ProductCategoryController extends Controller
    */
   public function edit($id)
   {
-    $productCategory = $this->productCategoryService->find($id);
-    return view('admin.category.edit', compact('productCategory'));
+    $trademark = $this->trademarkService->find($id);
+    return view('admin.trademark.edit', compact('trademark'));
   }
 
   /**
@@ -82,8 +81,8 @@ class ProductCategoryController extends Controller
   public function update(Request $request, $id)
   {
     $data = $request->all();
-    $this->productCategoryService->update($data, $id);
-    return redirect('admin/category');
+    $this->trademarkService->update($data, $id);
+    return redirect('admin/trademark');
   }
 
   /**
@@ -94,8 +93,7 @@ class ProductCategoryController extends Controller
    */
   public function destroy($id)
   {
-    $this->productCategoryService->delete($id);
-    return redirect('admin/category');
-    
+    $this->trademarkService->delete($id);
+    return redirect('admin/trademark');
   }
 }
