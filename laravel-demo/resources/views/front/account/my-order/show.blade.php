@@ -87,7 +87,7 @@
                                     @endforeach
 
                                     <li class="total-price">
-                                        Tổng giấ trị đơn hàng
+                                        Tổng giá trị đơn hàng
                                         <span>{{ array_sum(array_column($order->orderDetails->toArray(), 'total')) }} VNĐ</span>
                                     </li>
                                 </ul>
