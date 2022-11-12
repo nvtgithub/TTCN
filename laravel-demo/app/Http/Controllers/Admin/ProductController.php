@@ -57,7 +57,7 @@ class ProductController extends Controller
     $data = $request->all();
     $data['qty'] = 0; //Khi tạo mới sản phẩm, số lượng = 0
     $product = $this->productService->create($data);
-    return redirect('admin/product/'.$product->id);
+    return redirect('admin/product/' . $product->id);
   }
 
   /**

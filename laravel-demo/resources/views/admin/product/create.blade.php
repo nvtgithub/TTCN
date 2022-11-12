@@ -27,18 +27,21 @@
     <div class="col-md-12">
       <div class="main-card mb-3 card">
         <div class="card-body">
-          <form method="post" action="admin/product" enctype="multipart/form-data"></form>
+          <form method="post" action="admin/product" enctype="multipart/form-data">
+
           @csrf
           <div class="position-relative row form-group">
-            <label for="brand_id" class="col-md-3 text-md-right col-form-label">Thương hiệu</label>
+            <label for="trademark_id" class="col-md-3 text-md-right col-form-label">Thương hiệu</label>
             <div class="col-md-9 col-xl-8">
-              <select required name="brand_id" id="brand_id" class="form-control">
+              <select required name="trademark_id" id="trademark_id" class="form-control">
                 <option value="">-- Thương hiệu --</option>
+                
                 @foreach ($trademarks as $trademark)
-                <option value={{$trademark->id}}>
-                  {{$trademark->name}}
-                </option>
+                  <option value={{$trademark->id}}>
+                    {{$trademark->name}}
+                  </option>
                 @endforeach
+
               </select>
             </div>
           </div>
@@ -48,11 +51,13 @@
             <div class="col-md-9 col-xl-8">
               <select required name="product_category_id" id="product_category_id" class="form-control">
                 <option value="">-- Danh mục sản phẩm --</option>
-                @foreach ($productCategories as $category)
-                <option value={{$category->id}}>
-                  {{$category->name}}
-                </option>
+                
+                @foreach ($productCategories as $productCategorie)
+                  <option value={{$productCategorie->id}}>
+                    {{$productCategorie->name}}
+                  </option>
                 @endforeach
+
               </select>
             </div>
           </div>
@@ -140,7 +145,7 @@
               </button>
             </div>
           </div>
-          </form>
+        </form>
         </div>
       </div>
     </div>
