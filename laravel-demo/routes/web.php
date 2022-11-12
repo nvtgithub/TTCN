@@ -60,7 +60,7 @@ Route::prefix('admin')->group(function () {
 
   Route::resource('user', App\Http\Controllers\Admin\UserController::class);
   Route::resource('category', App\Http\Controllers\Admin\ProductCategoryController::class);
-  Route::resource('trademark', App\Http\Controllers\Admin\TrademarkController::class);
+  Route::resource('trademark', App\Http\Controllers\Admin\TrademarksController::class);
   Route::resource('product', App\Http\Controllers\Admin\ProductController::class);
 
   Route::prefix('login')->group(function () {

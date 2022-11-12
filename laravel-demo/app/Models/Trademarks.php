@@ -8,14 +8,14 @@ use Illuminate\Database\Eloquent\Model;
 
 class Trademarks extends Model
 {
-    use HasFactory;
+  use HasFactory;
 
-    protected $table = 'trademarks';
-    protected $primaryKey = 'id';
-    protected $guarded = [];
+  protected $table = 'trademarks';
+  protected $primaryKey = 'id';
+  protected $guarded = [];
 
-    public function products()
-    {
-        return $this->hasMany(Product::class,'trademark_id','id');
-    }
+  public function products()
+  {
+    return $this->hasMany(Product::class, 'trademark_id', 'id');
+  }
 }

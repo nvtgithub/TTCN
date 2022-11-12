@@ -6,13 +6,13 @@ use App\Http\Controllers\Controller;
 use App\Services\Trademarks\TrademarksServiceInterface;
 use Illuminate\Http\Request;
 
-class TrademarkController extends Controller
+class TrademarksController extends Controller
 {
-  private $trademarkService;
+  private $trademarksService;
 
-  public function __construct(TrademarksServiceInterface $trademarkService)
+  public function __construct(TrademarksServiceInterface $trademarksService)
   {
-    $this->trademarkService = $trademarkService;
+    $this->trademarksService = $trademarksService;
   }
   /**
    * Display a listing of the resource.
@@ -21,7 +21,7 @@ class TrademarkController extends Controller
    */
   public function index(Request $request)
   {
-    $trademarks = $this->trademarkService->searchAndPaginate('name', $request->get('search'));
+    $trademarks = $this->trademarksService->searchAndPaginate('name', $request->get('search'));
     return view('admin.trademark.index', compact('trademarks'));
   }
 
@@ -44,7 +44,7 @@ class TrademarkController extends Controller
   public function store(Request $request)
   {
     $data = $request->all();
-    $this->trademarkService->create($data);
+    $this->trademarksService->create($data);
     return redirect('admin/trademark');
   }
 
@@ -67,7 +67,7 @@ class TrademarkController extends Controller
    */
   public function edit($id)
   {
-    $trademark = $this->trademarkService->find($id);
+    $trademark = $this->trademarksService->find($id);
     return view('admin.trademark.edit', compact('trademark'));
   }
 
@@ -81,7 +81,7 @@ class TrademarkController extends Controller
   public function update(Request $request, $id)
   {
     $data = $request->all();
-    $this->trademarkService->update($data, $id);
+    $this->trademarksService->update($data, $id);
     return redirect('admin/trademark');
   }
 
@@ -93,7 +93,7 @@ class TrademarkController extends Controller
    */
   public function destroy($id)
   {
-    $this->trademarkService->delete($id);
+    $this->trademarksService->delete($id);
     return redirect('admin/trademark');
   }
 }

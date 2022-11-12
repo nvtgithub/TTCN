@@ -1,5 +1,8 @@
+@extends('admin.layout.master')
 
+@section('title', 'Product')
 
+@section('body')
 <!-- Main -->
 <div class="app-main__inner">
 
@@ -28,35 +31,28 @@
             <div class="position-relative row form-group">
               <label class="col-md-3 text-md-right col-form-label">Product Name</label>
               <div class="col-md-9 col-xl-8">
-                <input disabled placeholder="Product Name" type="text"
-                  class="form-control" value="Calvin Klein">
+                <input disabled placeholder="Product Name" type="text" class="form-control" value="Calvin Klein">
               </div>
             </div>
 
             <div class="position-relative row form-group">
               <label for="color" class="col-md-3 text-md-right col-form-label">Color</label>
               <div class="col-md-9 col-xl-8">
-                <input required name="color" id="color" placeholder="Color"
-                  type="text"
-                  class="form-control" value="">
+                <input required name="color" id="color" placeholder="Color" type="text" class="form-control" value="">
               </div>
             </div>
 
             <div class="position-relative row form-group">
               <label for="size" class="col-md-3 text-md-right col-form-label">Size</label>
               <div class="col-md-9 col-xl-8">
-                <input required name="size" id="size" placeholder="Size"
-                  type="text"
-                  class="form-control" value="">
+                <input required name="size" id="size" placeholder="Size" type="text" class="form-control" value="">
               </div>
             </div>
 
             <div class="position-relative row form-group">
               <label for="qty" class="col-md-3 text-md-right col-form-label">Qty</label>
               <div class="col-md-9 col-xl-8">
-                <input required name="qty" id="qty" placeholder="Qty"
-                  type="text"
-                  class="form-control" value="">
+                <input required name="qty" id="qty" placeholder="Qty" type="text" class="form-control" value="">
               </div>
             </div>
 
@@ -69,8 +65,7 @@
                   <span>Cancel</span>
                 </a>
 
-                <button type="submit"
-                  class="btn-shadow btn-hover-shine btn btn-primary">
+                <button type="submit" class="btn-shadow btn-hover-shine btn btn-primary">
                   <span class="btn-icon-wrapper pr-2 opacity-8">
                     <i class="fa fa-download fa-w-20"></i>
                   </span>
@@ -85,3 +80,5 @@
   </div>
 </div>
 <!-- End Main -->
+
+@endsection
