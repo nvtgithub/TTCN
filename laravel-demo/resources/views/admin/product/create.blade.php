@@ -91,7 +91,7 @@
           </div>
 
           <div class="position-relative row form-group">
-            <label for="weight" class="col-md-3 text-md-right col-form-label">Kích thước</label>
+            <label for="weight" class="col-md-3 text-md-right col-form-label">Khối lượng</label>
             <div class="col-md-9 col-xl-8">
               <input required name="weight" id="weight" placeholder="Weight" type="text" class="form-control" value="">
             </div>
@@ -115,7 +115,7 @@
             <label for="featured" class="col-md-3 text-md-right col-form-label">Featured</label>
             <div class="col-md-9 col-xl-8">
               <div class="position-relative form-check pt-sm-2">
-                <input name="featured" id="featured" type="checkbox" value="1" class="form-check-input">
+                <input name="featured" id="featured" type="checkbox" value="1" class="form-check-input" checked>
                 <label for="featured" class="form-check-label">Featured</label>
               </div>
             </div>
@@ -134,14 +134,14 @@
                 <span class="btn-icon-wrapper pr-1 opacity-8">
                   <i class="fa fa-times fa-w-20"></i>
                 </span>
-                <span>Cancel</span>
+                <span>Hủy</span>
               </a>
 
               <button type="submit" class="btn-shadow btn-hover-shine btn btn-primary">
                 <span class="btn-icon-wrapper pr-2 opacity-8">
                   <i class="fa fa-download fa-w-20"></i>
                 </span>
-                <span>Save</span>
+                <span>Lưu</span>
               </button>
             </div>
           </div>
@@ -152,4 +152,9 @@
   </div>
 </div>
 <!-- End Main -->
+
+<script src="https://cdn.ckeditor.com/4.14.1/standard/ckeditor.js"></script>
+<script>
+  CKEDITOR.replace('description');
+</script>
 @endsection

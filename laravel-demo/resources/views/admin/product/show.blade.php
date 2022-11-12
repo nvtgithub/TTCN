@@ -135,7 +135,7 @@
           <div class="position-relative row form-group">
             <label for="description" class="col-md-3 text-md-right col-form-label">Mô tả</label>
             <div class="col-md-9 col-xl-8">
-              <p>{{$product->description}}</p>
+              <p>{!! $product->description !!}</p>
             </div>
           </div>
         </div>
