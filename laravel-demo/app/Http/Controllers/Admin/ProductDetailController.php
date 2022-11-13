@@ -103,8 +103,10 @@ class ProductDetailController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($product_id, $product_detail_id)
     {
-        //
+        ProductDetail::find($product_detail_id)->delete();
+
+        return redirect('admin/product/' . $product_id . '/detail');
     }
 }
