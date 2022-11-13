@@ -14,9 +14,9 @@
           <i class="pe-7s-ticket icon-gradient bg-mean-fruit"></i>
         </div>
         <div>
-          Product
+          Sản phẩm
           <div class="page-title-subheading">
-            View, create, update, delete and manage.
+          Xem chi tiết, tạo mới, cập nhật, xóa và quản lý.
           </div>
         </div>
       </div>
@@ -44,14 +44,14 @@
           <div class="position-relative row form-group">
             <label for="brand_id" class="col-md-3 text-md-right col-form-label">Ảnh </label>
             <div class="col-md-9 col-xl-8">
-              <p><a href="./product-image.html">Manage images</a></p>
+              <p><a href="./product-image.html">Quản lý hình ảnh</a></p>
             </div>
           </div>
 
           <div class="position-relative row form-group">
-            <label for="brand_id" class="col-md-3 text-md-right col-form-label">Product Details</label>
+            <label for="brand_id" class="col-md-3 text-md-right col-form-label">Chi tiết sản phẩm</label>
             <div class="col-md-9 col-xl-8">
-              <p><a href="./product-detail.html">Manage details</a></p>
+              <p><a href="./product-detail.html">Quản lý chi tiết</a></p>
             </div>
           </div>
 

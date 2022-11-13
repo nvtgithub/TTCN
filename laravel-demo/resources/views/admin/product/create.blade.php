@@ -14,9 +14,9 @@
           <i class="pe-7s-ticket icon-gradient bg-mean-fruit"></i>
         </div>
         <div>
-          Product
+          Sản phẩm
           <div class="page-title-subheading">
-            View, create, update, delete and manage.
+            Xem chi tiết, tạo mới, cập nhật, xóa và quản lý.
           </div>
         </div>
       </div>
@@ -65,42 +65,42 @@
           <div class="position-relative row form-group">
             <label for="name" class="col-md-3 text-md-right col-form-label">Tên sản phẩm</label>
             <div class="col-md-9 col-xl-8">
-              <input required name="name" id="name" placeholder="Name" type="text" class="form-control" value="">
+              <input required name="name" id="name" placeholder="Tên sản phẩm" type="text" class="form-control" value="">
             </div>
           </div>
 
           <div class="position-relative row form-group">
             <label for="content" class="col-md-3 text-md-right col-form-label">Nội dung</label>
             <div class="col-md-9 col-xl-8">
-              <input required name="content" id="content" placeholder="Content" type="text" class="form-control" value="">
+              <input required name="content" id="content" placeholder="Nội dung sản phẩm" type="text" class="form-control" value="">
             </div>
           </div>
 
           <div class="position-relative row form-group">
             <label for="price" class="col-md-3 text-md-right col-form-label">Giá bán</label>
             <div class="col-md-9 col-xl-8">
-              <input required name="price" id="price" placeholder="Price" type="text" class="form-control" value="">
+              <input required name="price" id="price" placeholder="Giá bán" type="text" class="form-control" value="">
             </div>
           </div>
 
           <div class="position-relative row form-group">
             <label for="discount" class="col-md-3 text-md-right col-form-label">Giá khuyến mãi</label>
             <div class="col-md-9 col-xl-8">
-              <input required name="discount" id="discount" placeholder="Discount" type="text" class="form-control" value="">
+              <input required name="discount" id="discount" placeholder="Giá khuyến mãi" type="text" class="form-control" value="">
             </div>
           </div>
 
           <div class="position-relative row form-group">
             <label for="weight" class="col-md-3 text-md-right col-form-label">Khối lượng</label>
             <div class="col-md-9 col-xl-8">
-              <input required name="weight" id="weight" placeholder="Weight" type="text" class="form-control" value="">
+              <input required name="weight" id="weight" placeholder="Khối lượng sản phẩm" type="text" class="form-control" value="">
             </div>
           </div>
 
           <div class="position-relative row form-group">
             <label for="sku" class="col-md-3 text-md-right col-form-label">SKU</label>
             <div class="col-md-9 col-xl-8">
-              <input required name="sku" id="sku" placeholder="SKU" type="text" class="form-control" value="">
+              <input required name="sku" id="sku" placeholder="Mã SKU" type="text" class="form-control" value="">
             </div>
           </div>
 
@@ -124,7 +124,7 @@
           <div class="position-relative row form-group">
             <label for="description" class="col-md-3 text-md-right col-form-label">Mô tả</label>
             <div class="col-md-9 col-xl-8">
-              <textarea class="form-control" name="description" id="description" placeholder="Description"></textarea>
+              <textarea class="form-control" name="description" id="description" placeholder="Mô tả sản phẩm"></textarea>
             </div>
           </div>
 

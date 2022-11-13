@@ -13,9 +13,9 @@
           <i class="pe-7s-ticket icon-gradient bg-mean-fruit"></i>
         </div>
         <div>
-          Category
+          Danh mục
           <div class="page-title-subheading">
-            View, create, update, delete and manage.
+            Xem chi tiết, tạo mới, cập nhật, xóa và quản lý.
           </div>
         </div>
       </div>
@@ -51,8 +51,8 @@
 
           <div class="btn-actions-pane-right">
             <div role="group" class="btn-group-sm btn-group">
-              <button class="btn btn-focus">This week</button>
-              <button class="active btn btn-focus">Anytime</button>
+              <button class="btn btn-focus">Tuẩn này</button>
+              <button class="active btn btn-focus">Tất cả</button>
             </div>
           </div>
         </div>
@@ -62,8 +62,8 @@
             <thead>
               <tr>
                 <th class="text-center">ID</th>
-                <th>Name</th>
-                <th class="text-center">Actions</th>
+                <th>Tên</th>
+                <th class="text-center">Hành động</th>
               </tr>
             </thead>
             <tbody>
