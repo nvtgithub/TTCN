@@ -112,7 +112,7 @@ class UserController extends Controller
     //xử lý file ảnh
     if ($request->hasFile('image')) {
       //Thêm file mới
-      $data['avatar'] = Common::uploadFile($request->file('image'), path: 'front/img/users');
+      $data['avatar'] = Common::uploadFile($request->file('image'), 'front/img/users');
 
       //Xóa file cũ
       $file_name_old = $request->get('image_old');
