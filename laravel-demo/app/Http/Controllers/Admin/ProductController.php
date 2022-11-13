@@ -4,15 +4,23 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Services\Product\ProductServiceInterface;
+use App\Services\ProductCategory\ProductCategoryServiceInterface;
+use App\Services\Trademarks\TrademarksService;
+use App\Services\Trademarks\TrademarksServiceInterface;
 use Illuminate\Http\Request;
 
 class ProductController extends Controller
 {
 
   private $productService;
-  public function __construct(ProductServiceInterface $productService)
+  private $trademarksService;
+  private $productCategoryService;
+
+  public function __construct(ProductServiceInterface $productService, TrademarksServiceInterface $trademarksService, ProductCategoryServiceInterface $productCategoryService)
   {
     $this->productService = $productService;
+    $this->trademarksService = $trademarksService;
+    $this->productCategoryService = $productCategoryService;
   }
 
   /**
@@ -33,7 +41,9 @@ class ProductController extends Controller
    */
   public function create()
   {
-    //
+    $trademarks = $this->trademarksService->all();
+    $productCategories = $this->productCategoryService->all();
+    return view('admin.product.create', compact('trademarks', 'productCategories'));
   }
 
   /**
@@ -44,7 +54,10 @@ class ProductController extends Controller
    */
   public function store(Request $request)
   {
-    //
+    $data = $request->all();
+    $data['qty'] = 0; //Khi tạo mới sản phẩm, số lượng = 0
+    $product = $this->productService->create($data);
+    return redirect('admin/product/' . $product->id);
   }
 
   /**
@@ -67,7 +80,12 @@ class ProductController extends Controller
    */
   public function edit($id)
   {
-    //
+    $product = $this->productService->find($id);
+
+    $trademarks = $this->trademarksService->all();
+    $productCategories = $this->productCategoryService->all();
+    
+    return view('admin.product.edit', compact('product', 'trademarks', 'productCategories'));
   }
 
   /**
@@ -79,7 +97,10 @@ class ProductController extends Controller
    */
   public function update(Request $request, $id)
   {
-    //
+    $data = $request->all();
+    $this->productService->update($data, $id);
+
+    return redirect('admin/product/' . $id);
   }
 
   /**
@@ -90,6 +111,8 @@ class ProductController extends Controller
    */
   public function destroy($id)
   {
-    //
+     $this->productService->delete($id);
+     
+     return redirect('admin/product');
   }
 }

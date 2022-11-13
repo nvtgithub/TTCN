@@ -12,9 +12,9 @@
           <i class="pe-7s-ticket icon-gradient bg-mean-fruit"></i>
         </div>
         <div>
-          trademark
+          Thương hiệu
           <div class="page-title-subheading">
-            View, create, update, delete and manage.
+            Xem chi tiết, tạo mới, cập nhật, xóa và quản lý.
           </div>
         </div>
       </div>
@@ -24,7 +24,7 @@
           <span class="btn-icon-wrapper pr-2 opacity-7">
             <i class="fa fa-plus fa-w-20"></i>
           </span>
-          Create
+          Thêm mới
         </a>
       </div>
     </div>
@@ -38,11 +38,11 @@
 
           <form>
             <div class="input-group">
-              <input type="search" name="search" value="{{request('search')}}" id="search" placeholder="Search everything" class="form-control">
+              <input type="search" name="search" value="{{request('search')}}" id="search" placeholder="Tìm kiếm thương hiệu" class="form-control">
               <span class="input-group-append">
                 <button type="submit" class="btn btn-primary">
                   <i class="fa fa-search"></i>&nbsp;
-                  Search
+                  Tìm kiếm
                 </button>
               </span>
             </div>
@@ -50,8 +50,8 @@
 
           <div class="btn-actions-pane-right">
             <div role="group" class="btn-group-sm btn-group">
-              <button class="btn btn-focus">This week</button>
-              <button class="active btn btn-focus">Anytime</button>
+              <button class="btn btn-focus">Tuần này</button>
+              <button class="active btn btn-focus">Tất cả</button>
             </div>
           </div>
         </div>
@@ -61,8 +61,8 @@
             <thead>
               <tr>
                 <th class="text-center">ID</th>
-                <th>Name</th>
-                <th class="text-center">Actions</th>
+                <th>Tên</th>
+                <th class="text-center">Hành động</th>
               </tr>
             </thead>
             <tbody>
@@ -88,7 +88,7 @@
                   <form class="d-inline" action="admin/trademark/{{$trademark->id}}" method="post">
                   @csrf  
                   @method('DELETE')
-                    <button class="btn btn-hover-shine btn-outline-danger border-0 btn-sm" type="submit" data-toggle="tooltip" title="Delete" data-placement="bottom" onclick="return confirm('Do you really want to delete this item?')">
+                    <button class="btn btn-hover-shine btn-outline-danger border-0 btn-sm" type="submit" data-toggle="tooltip" title="Delete" data-placement="bottom" onclick="return confirm('Bạn có muốn xóa thương hiệu này?')">
                       <span class="btn-icon-wrapper opacity-8">
                         <i class="fa fa-trash fa-w-20"></i>
                       </span>
@@ -97,7 +97,6 @@
                 </td>
               </tr>
               @endforeach
-
 
             </tbody>
           </table>

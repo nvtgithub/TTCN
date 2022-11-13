@@ -50,8 +50,8 @@
 
           <div class="btn-actions-pane-right">
             <div role="group" class="btn-group-sm btn-group">
-              <button class="btn btn-focus">This week</button>
-              <button class="active btn btn-focus">Anytime</button>
+              <button class="btn btn-focus">Tuần này</button>
+              <button class="active btn btn-focus">Tất cả</button>
             </div>
           </div>
         </div>

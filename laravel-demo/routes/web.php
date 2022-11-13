@@ -60,8 +60,11 @@ Route::prefix('admin')->group(function () {
 
   Route::resource('user', App\Http\Controllers\Admin\UserController::class);
   Route::resource('category', App\Http\Controllers\Admin\ProductCategoryController::class);
-  Route::resource('trademark', App\Http\Controllers\Admin\TrademarkController::class);
+  Route::resource('trademark', App\Http\Controllers\Admin\TrademarksController::class);
+  Route::resource('product/{product_id}/image', App\Http\Controllers\Admin\ProductImageController::class);
+  Route::resource('product/{product_id}/detail', App\Http\Controllers\Admin\ProductDetailController::class);
   Route::resource('product', App\Http\Controllers\Admin\ProductController::class);
+  Route::resource('order', App\Http\Controllers\Admin\OrderController::class);
 
   Route::prefix('login')->group(function () {
     Route::get('', [\App\Http\Controllers\Admin\HomeController::class, 'getLogin']);
