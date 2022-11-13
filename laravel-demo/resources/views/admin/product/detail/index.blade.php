@@ -105,7 +105,7 @@
                                 </div>
 
                                 <div class="d-block card-footer">
-                                    
+
                                 </div>
 
                             </div>

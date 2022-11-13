@@ -38,7 +38,7 @@
 
           <form>
             <div class="input-group">
-              <input type="search" name="search" value="{{request('search')}}" id="search" placeholder="Search everything" class="form-control">
+              <input type="search" name="search" value="{{request('search')}}" id="search" placeholder="Tìm kiếm sản phẩm" class="form-control">
               <span class="input-group-append">
                 <button type="submit" class="btn btn-primary">
                   <i class="fa fa-search"></i>&nbsp;
