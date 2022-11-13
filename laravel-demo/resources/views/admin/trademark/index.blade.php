@@ -88,7 +88,7 @@
                   <form class="d-inline" action="admin/trademark/{{$trademark->id}}" method="post">
                   @csrf  
                   @method('DELETE')
-                    <button class="btn btn-hover-shine btn-outline-danger border-0 btn-sm" type="submit" data-toggle="tooltip" title="Delete" data-placement="bottom" onclick="return confirm('Do you really want to delete this item?')">
+                    <button class="btn btn-hover-shine btn-outline-danger border-0 btn-sm" type="submit" data-toggle="tooltip" title="Delete" data-placement="bottom" onclick="return confirm('Bạn có muốn xóa thương hiệu này?')">
                       <span class="btn-icon-wrapper opacity-8">
                         <i class="fa fa-trash fa-w-20"></i>
                       </span>
@@ -97,7 +97,6 @@
                 </td>
               </tr>
               @endforeach
-
 
             </tbody>
           </table>
