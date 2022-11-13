@@ -35,7 +35,7 @@
                                             <span class="input-group-append">
                                                 <button type="submit" class="btn btn-primary">
                                                     <i class="fa fa-search"></i>&nbsp;
-                                                    Search
+                                                    Tìm kiếm
                                                 </button>
                                             </span>
                                         </div>
@@ -102,9 +102,9 @@
                                                     </div>
                                                 </td>
                                                 <td class="text-center">
-                                                    <a href="./order-show.html"
+                                                    <a href="./admin/order/{{ $order->id }}"
                                                         class="btn btn-hover-shine btn-outline-primary border-0 btn-sm">
-                                                        Details
+                                                        Chi tiết
                                                     </a>
                                                 </td>
                                             </tr>
