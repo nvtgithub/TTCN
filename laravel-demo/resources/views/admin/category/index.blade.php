@@ -25,7 +25,7 @@
           <span class="btn-icon-wrapper pr-2 opacity-7">
             <i class="fa fa-plus fa-w-20"></i>
           </span>
-          Create
+          Thêm mới 
         </a>
       </div>
     </div>
@@ -43,7 +43,7 @@
               <span class="input-group-append">
                 <button type="submit" class="btn btn-primary">
                   <i class="fa fa-search"></i>&nbsp;
-                  Search
+                  Tìm kiếm
                 </button>
               </span>
             </div>
