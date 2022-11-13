@@ -25,12 +25,11 @@
     <div class="col-md-12">
         <div class="main-card mb-3 card">
             <div class="card-body">
-                <form method="post" action="admin/product/{{ $product->id }}/detail" enctype="multipart/form-data">
+                <form method="post" action="admin/product/{{ $product->id }}/detail/{{ $productDetail->id }}" enctype="multipart/form-data">
                     @csrf
-
-                    <input type="hidden" name="product_id" value="{{ $product->id }}">
+                    @method('PUT')
                     <div class="position-relative row form-group">
-                        <label class="col-md-3 text-md-right col-form-label">Product Name</label>
+                        <label class="col-md-3 text-md-right col-form-label">Tên sản phẩm</label>
                         <div class="col-md-9 col-xl-8">
                             <input disabled placeholder="Product Name" type="text"
                                 class="form-control" value="{{ $product->name }}">
@@ -38,21 +37,21 @@
                     </div>
 
                     <div class="position-relative row form-group">
-                        <label for="color" class="col-md-3 text-md-right col-form-label">Màu</label>
+                        <label for="color" class="col-md-3 text-md-right col-form-label">Màu sắc</label>
                         <div class="col-md-9 col-xl-8">
                             <input required name="color" id="color" placeholder="Color" type="text"
-                                class="form-control" value="">
+                                class="form-control" value="{{ $productDetail->color }}">
                         </div>
                     </div>
 
                     <div class="position-relative row form-group">
                         <label for="qty" class="col-md-3 text-md-right col-form-label">Số lượng</label>
                         <div class="col-md-9 col-xl-8">
-                            <input required name="qty" id="qty" placeholder="Số lượng" type="text"
-                                class="form-control" value="">
+                            <input required name="qty" id="qty" placeholder="Size" type="text"
+                                class="form-control" value="{{ $productDetail->qty }}">
                         </div>
                     </div>
-
+                    
                     <div class="position-relative row form-group mb-1">
                         <div class="col-md-9 col-xl-8 offset-md-2">
                             <a href="#" class="border-0 btn btn-outline-danger mr-1">

@@ -72,9 +72,13 @@ class ProductDetailController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($product_id, $product_detail_id)
     {
-        //
+        $product = $this->productService->find($product_id);
+        
+        $productDetail = ProductDetail::find($product_detail_id);
+
+        return view('admin.product.detail.edit', compact('product', 'productDetail'));
     }
 
     /**
@@ -84,9 +88,13 @@ class ProductDetailController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, $product_id, $product_detail_id)
     {
-        //
+        $data = $request->all();
+
+        ProductDetail::find($product_detail_id)->update($data);
+
+        return redirect('admin/product/' . $product_id . '/detail');
     }
 
     /**
