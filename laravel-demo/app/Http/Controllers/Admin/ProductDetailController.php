@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\ProductDetail;
 use App\Services\Product\ProductServiceInterface;
 use Illuminate\Http\Request;
 
@@ -24,7 +25,7 @@ class ProductDetailController extends Controller
     {
         $product  = $this->productService->find($product_id);
         $productDetails = $product->productDetails;
-        
+
         return view('admin.product.detail.index', compact('product', 'productDetails'));
     }
 
@@ -33,9 +34,11 @@ class ProductDetailController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create($product_id)
     {
-        //
+        $product = $this->productService->find($product_id);
+
+        return view('admin.product.detail.create', compact('product'));
     }
 
     /**
@@ -44,9 +47,12 @@ class ProductDetailController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request, $product_id)
     {
-        //
+        $data = $request->all();
+        ProductDetail::create($data);
+
+        return redirect('admin/product/' . $product_id . '/detail');
     }
 
     /**

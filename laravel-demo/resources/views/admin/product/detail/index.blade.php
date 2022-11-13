@@ -20,7 +20,7 @@
                             </div>
 
                             <div class="page-title-actions">
-                                <a href="./product-detail-create.html" class="btn-shadow btn-hover-shine mr-3 btn btn-primary">
+                                <a href="./admin/product/{{ $product->id }}/detail/create" class="btn-shadow btn-hover-shine mr-3 btn btn-primary">
                                     <span class="btn-icon-wrapper pr-2 opacity-7">
                                         <i class="fa fa-plus fa-w-20"></i>
                                     </span>
@@ -39,11 +39,11 @@
                                     <form>
                                         <div class="input-group">
                                             <input type="search" name="search" id="search"
-                                                placeholder="Search everything" class="form-control">
+                                                placeholder="Tìm kiếm" class="form-control">
                                             <span class="input-group-append">
                                                 <button type="submit" class="btn btn-primary">
                                                     <i class="fa fa-search"></i>&nbsp;
-                                                    Search
+                                                    Tìm kiếm
                                                 </button>
                                             </span>
                                         </div>
@@ -62,7 +62,7 @@
                                         <thead>
                                             <tr>
                                                 <th class="pl-4">Tên sản phẩm</th>
-                                                <th>Color</th>
+                                                <th>Màu sắc</th>
                                                 <th>Số lượng</th>
                                                 <th class="text-center">Hành động</th>
                                             </tr>
