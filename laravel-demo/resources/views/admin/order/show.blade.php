@@ -64,7 +64,7 @@
                                                     </td>
                                                     <td class="text-center">{{ $orderDetail->amount }}</td>
                                                     <td class="text-center">
-                                                        {{ $orderDetail->total }} VNĐ
+                                                        {{ number_format($orderDetail->total,0, '.', '.' )}} VNĐ
                                                     </td>
                                                 </tr>
                                                 @endforeach
@@ -168,5 +168,5 @@
                         </div>
                     </div>
                 </div>
-                <!-- End Main --> 
+                <!-- End Main -->
 @endsection

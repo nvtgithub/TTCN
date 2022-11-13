@@ -169,8 +169,12 @@
           </nav>
         </div>
 
+        <div class="d-block card-footer">
+            {{$users->links()}}
+          </div>
       </div>
     </div>
+
   </div>
 </div>
 <!-- End Main -->

@@ -115,8 +115,8 @@
                                 </div>
 
                                 <div class="d-block card-footer">
-                                    {{ $orders->links() }}
-                                </div>
+                                    {{$orders->links()}}
+                                  </div>
 
                             </div>
                         </div>
