@@ -30,7 +30,7 @@
 
                     <input type="hidden" name="product_id" value="{{ $product->id }}">
                     <div class="position-relative row form-group">
-                        <label class="col-md-3 text-md-right col-form-label">Product Name</label>
+                        <label class="col-md-3 text-md-right col-form-label">Tên sản phẩm</label>
                         <div class="col-md-9 col-xl-8">
                             <input disabled placeholder="Product Name" type="text"
                                 class="form-control" value="{{ $product->name }}">

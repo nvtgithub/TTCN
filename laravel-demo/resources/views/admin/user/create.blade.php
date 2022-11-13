@@ -15,7 +15,7 @@
             <div>
                 User
                 <div class="page-title-subheading">
-                    View, create, update, delete and manage.
+                    Xem, tạo mới, cập nhật, xóa và quản lý.
                 </div>
             </div>
         </div>
@@ -150,11 +150,11 @@
                         <div class="col-md-9 col-xl-8">
                             <select required name="level" id="level" class="form-control">
                                 <option value="">-- Cấp --</option>
-                                
+
                                 @foreach(\App\Utilities\Constant::$user_level as $key => $value)
                                     <option value={{ $key }}>
                                         {{ $value }}
-                                    </option>              
+                                    </option>
                                 @endforeach
 
                             </select>
@@ -163,7 +163,7 @@
 
                     <div class="position-relative row form-group">
                         <label for="description"
-                               class="col-md-3 text-md-right col-form-label">Description</label>
+                               class="col-md-3 text-md-right col-form-label">Mô tả</label>
                         <div class="col-md-9 col-xl-8">
                             <textarea name="description" id="description" class="form-control"></textarea>
                         </div>

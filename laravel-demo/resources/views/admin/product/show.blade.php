@@ -105,7 +105,7 @@
           </div>
 
           <div class="position-relative row form-group">
-            <label for="weight" class="col-md-3 text-md-right col-form-label">Weight</label>
+            <label for="weight" class="col-md-3 text-md-right col-form-label">Cân nặng</label>
             <div class="col-md-9 col-xl-8">
               <p>{{$product->weight}}</p>
             </div>
@@ -126,7 +126,7 @@
           </div>
 
           <div class="position-relative row form-group">
-            <label for="featured" class="col-md-3 text-md-right col-form-label">Featured</label>
+            <label for="featured" class="col-md-3 text-md-right col-form-label">Nổi bật</label>
             <div class="col-md-9 col-xl-8">
               <p>{{$product->featured ? 'Yes' : 'No'}}</p>
             </div>

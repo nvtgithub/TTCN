@@ -15,7 +15,7 @@
             <div>
                 User
                 <div class="page-title-subheading">
-                    View, create, update, delete and manage.
+                    Xem, tạo mới, cập nhật, xóa và quản lý.
                 </div>
             </div>
         </div>
@@ -151,11 +151,11 @@
                         <div class="col-md-9 col-xl-8">
                             <select required name="level" id="level" class="form-control">
                                 <option value="">-- Cấp --</option>
-                                
+
                                 @foreach(\App\Utilities\Constant::$user_level as $key => $value)
                                     <option value={{ $key }} {{ $user->level == $key ? 'selected' : ''}}>
                                         {{ $value }}
-                                    </option>              
+                                    </option>
                                 @endforeach
 
                             </select>
@@ -184,7 +184,7 @@
                                 <span class="btn-icon-wrapper pr-2 opacity-8">
                                     <i class="fa fa-download fa-w-20"></i>
                                 </span>
-                                <span>Save</span>
+                                <span>Lưu</span>
                             </button>
                         </div>
                     </div>
