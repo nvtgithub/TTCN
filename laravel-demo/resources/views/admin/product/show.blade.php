@@ -51,7 +51,7 @@
           <div class="position-relative row form-group">
             <label for="brand_id" class="col-md-3 text-md-right col-form-label">Chi tiết sản phẩm</label>
             <div class="col-md-9 col-xl-8">
-              <p><a href="./product-detail.html">Quản lý chi tiết</a></p>
+              <p><a href="./admin/product/{{ $product->id }}/detail">Quản lý chi tiết</a></p>
             </div>
           </div>
 

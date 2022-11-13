@@ -28,7 +28,7 @@
             <div class="card-body">
 
                 <div class="position-relative row form-group">
-                    <label for="name" class="col-md-3 text-md-right col-form-label">Product Name</label>
+                    <label for="name" class="col-md-3 text-md-right col-form-label">Tên sản phẩm</label>
                     <div class="col-md-9 col-xl-8">
                         <input disabled placeholder="Product Name" type="text"
                             class="form-control" value="Calvin Klein">
@@ -36,15 +36,18 @@
                 </div>
 
                 <div class="position-relative row form-group">
-                    <label for="" class="col-md-3 text-md-right col-form-label">Images</label>
+                    <label for="" class="col-md-3 text-md-right col-form-label">Hình ảnh</label>
                     <div class="col-md-9 col-xl-8">
                         <ul class="text-nowrap" id="images">
                             
                             @foreach($productImages as $productImage)
                             <li class="float-left d-inline-block mr-2 mb-2" style="position: relative; width: 32%;">
-                                <form action="" method="post">
+                                <form action="./admin/product/{{ $product->id }}/image/{{ $productImage->id }}" method="post">
+                                    @csrf
+                                    @method('DELETE')
+
                                     <button type="submit" 
-                                        onclick="return confirm('Do you really want to delete this item?')"
+                                        onclick="return confirm('Bạn có muốn xóa hình ảnh này?')"
                                         class="btn btn-sm btn-outline-danger border-0 position-absolute">
                                         <i class="fas fa-times"></i>
                                     </button>
@@ -57,18 +60,19 @@
                             @endforeach
 
                             <li class="float-left d-inline-block mr-2 mb-2" style="width: 32%;">
-                                <form method="post" enctype="multipart/form-data">
+                                <form method="post" action="admin/product/{{ $product->id }}/image" enctype="multipart/form-data">
+                                    @csrf
                                     <div style="width: 100%; max-height: 220px; overflow: hidden;">
                                         <img style="width: 100%; cursor: pointer;" 
                                             class="thumbnail"
                                             data-toggle="tooltip" title="Click to add image" data-placement="bottom"
                                             src="./dashboard/assets/images/add-image-icon.jpg" alt="Add Image">
 
-                                        <input name="image" type="file" onchange="changeImg(this);"
+                                        <input name="image" type="file" onchange="changeImg(this); this.form.submit()"
                                             accept="image/x-png,image/gif,image/jpeg"
                                             class="image form-control-file" style="display: none;">
 
-                                        <input type="hidden" name="product_id" value="">
+                                        <input type="hidden" name="product_id" value="{{ $product->id }}">
                                     </div>
                                 </form>
                             </li>
