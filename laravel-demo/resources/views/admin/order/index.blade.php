@@ -62,7 +62,7 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            
+
                                             @foreach($orders as $order)
                                             <tr>
                                                 <td class="text-center text-muted">{{ $order->id }}</td>
@@ -80,9 +80,9 @@
                                                             <div class="widget-content-left flex2">
                                                                 <div class="widget-heading">{{ $order->first_name . ' ' . $order->last_name }}</div>
                                                                 <div class="widget-subheading opacity-7">
-                                                                    
+
                                                                     {{ $order->orderDetails[0]->product->name }}
-                                                                    
+
                                                                     @if(count($order->orderDetails) > 1)
                                                                         (và {{ count($order->orderDetails )}} sản phẩm khác)
                                                                     @endif
@@ -95,7 +95,7 @@
                                                 <td class="text-center">
                                                     {{ $order->street_address . ' - ' . $order->town_city }}
                                                 </td>
-                                                <td class="text-center">{{ array_sum(array_column($order->orderDetails->toArray(), 'total')) }} VNĐ</td>
+                                                <td class="text-center">{{ number_format(array_sum(array_column($order->orderDetails->toArray(), 'total')),0, '.', '.') }} VNĐ</td>
                                                 <td class="text-center">
                                                     <div class="badge badge-dark">
                                                         {{ \App\Utilities\Constant::$order_status[$order->status] }}
@@ -109,7 +109,7 @@
                                                 </td>
                                             </tr>
                                             @endforeach
-                                            
+
                                         </tbody>
                                     </table>
                                 </div>
