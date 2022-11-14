@@ -48,7 +48,7 @@
         <div class="single-banner">
           <img src="front/img/banner-1.jpg" alt="">
           <div class="inner-text">
-            <h4>Men's</h4>
+            <h4>SmartPhone</h4>
           </div>
         </div>
       </div>
@@ -56,7 +56,7 @@
         <div class="single-banner">
           <img src="front/img/banner-2.jpg" alt="">
           <div class="inner-text">
-            <h4>Women's</h4>
+            <h4>Laptop</h4>
           </div>
         </div>
       </div>
@@ -64,7 +64,7 @@
         <div class="single-banner">
           <img src="front/img/banner-3.jpg" alt="">
           <div class="inner-text">
-            <h4>Kid's</h4>
+            <h4>HeadPhone</h4>
           </div>
         </div>
       </div>
@@ -78,8 +78,8 @@
   <div class="container-fluid">
     <div class="row">
       <div class="col-lg-3">
-        <div class="product-large set-bg" data-setbg="front/img/products/women-large.jpg">
-          <h2>Apple</h2>
+        <div class="product-large set-bg" data-setbg="front/img/products/SmartPhone.jpg">
+          <h2>SmartPhone</h2>
           <a href="#">Discover More</a>
         </div>
       </div>
@@ -95,7 +95,7 @@
         </div>
         <div class="product-slider owl-carousel SmartPhone">
           @foreach ($featuredProducts['SmartPhone'] as $product)
-            @include('front.components.product-item')
+          @include('front.components.product-item')
           @endforeach
         </div>
       </div>
@@ -157,12 +157,12 @@
         </div>
         <div class="product-slider owl-carousel">
           @foreach ($featuredProducts['Laptop'] as $product)
-            @include('front.components.product-item')
+          @include('front.components.product-item')
           @endforeach
         </div>
       </div>
       <div class="col-lg-3 offset-lg-1">
-        <div class="product-large set-bg" data-setbg="front/img/products/man-large.jpg">
+        <div class="product-large set-bg" data-setbg="front/img/products/laptop.jpg">
           <h2>Laptop</h2>
           <a href="#">Discover More</a>
         </div>
@@ -188,13 +188,13 @@
         </div>
         <div class="product-slider owl-carousel">
           @foreach ($featuredProducts['SmartWatch'] as $product)
-            @include('front.components.product-item')
+          @include('front.components.product-item')
           @endforeach
         </div>
       </div>
       <div class="col-lg-3 offset-lg-1">
-        <div class="product-large set-bg" data-setbg="front/img/products/man-large.jpg">
-          <h2>Laptop</h2>
+        <div class="product-large set-bg" data-setbg="front/img/products/smartwatch.jpg">
+          <h2>SmartWatch</h2>
           <a href="#">Discover More</a>
         </div>
       </div>
@@ -219,13 +219,13 @@
         </div>
         <div class="product-slider owl-carousel">
           @foreach ($featuredProducts['HeadPhone'] as $product)
-            @include('front.components.product-item')
+          @include('front.components.product-item')
           @endforeach
         </div>
       </div>
       <div class="col-lg-3 offset-lg-1">
-        <div class="product-large set-bg" data-setbg="front/img/products/man-large.jpg">
-          <h2>Laptop</h2>
+        <div class="product-large set-bg" data-setbg="front/img/products/headphone.jpg">
+          <h2>HeadPhone</h2>
           <a href="#">Discover More</a>
         </div>
       </div>
@@ -250,13 +250,13 @@
         </div>
         <div class="product-slider owl-carousel">
           @foreach ($featuredProducts['Accessory'] as $product)
-            @include('front.components.product-item')
+          @include('front.components.product-item')
           @endforeach
         </div>
       </div>
       <div class="col-lg-3 offset-lg-1">
-        <div class="product-large set-bg" data-setbg="front/img/products/man-large.jpg">
-          <h2>Laptop</h2>
+        <div class="product-large set-bg" data-setbg="front/img/products/Accessories.jpg">
+          <h2>Accessories</h2>
           <a href="#">Discover More</a>
         </div>
       </div>
@@ -320,7 +320,7 @@
 <!-- Instagram Section End -->
 
 <!-- Latest Blog Section Begin -->
-<section class="latest-blog spad">
+<section class="latest-blog spad d-none">
   <div class="container">
     <div class="row">
       <div class="col-lg-12">
