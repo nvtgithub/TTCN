@@ -45,28 +45,34 @@
   <div class="container-fluid">
     <div class="row">
       <div class="col-lg-4">
-        <div class="single-banner">
-          <img src="front/img/banner-1.jpg" alt="">
-          <div class="inner-text">
-            <h4>SmartPhone</h4>
+        <a href="shop/category/Smartphone">
+          <div class="single-banner">
+            <img src="front/img/banner-1.jpg" alt="">
+            <div class="inner-text">
+              <h4>SmartPhone</h4>
+            </div>
           </div>
-        </div>
+        </a>
       </div>
       <div class="col-lg-4">
-        <div class="single-banner">
-          <img src="front/img/banner-2.jpg" alt="">
-          <div class="inner-text">
-            <h4>Laptop</h4>
+        <a href="shop/category/Laptop">
+          <div class="single-banner">
+            <img src="front/img/banner-2.jpg" alt="">
+            <div class="inner-text">
+              <h4>Laptop</h4>
+            </div>
           </div>
-        </div>
+        </a>
       </div>
       <div class="col-lg-4">
-        <div class="single-banner">
-          <img src="front/img/banner-3.jpg" alt="">
-          <div class="inner-text">
-            <h4>HeadPhone</h4>
+        <a href="shop/category/Headphone">
+          <div class="single-banner">
+            <img src="front/img/banner-3.jpg" alt="">
+            <div class="inner-text">
+              <h4>HeadPhone</h4>
+            </div>
           </div>
-        </div>
+        </a>
       </div>
     </div>
   </div>
@@ -80,17 +86,17 @@
       <div class="col-lg-3">
         <div class="product-large set-bg" data-setbg="front/img/products/SmartPhone.jpg">
           <h2>SmartPhone</h2>
-          <a href="#">Discover More</a>
+          <a href="shop/category/Smartphone">Xem thêm</a>
         </div>
       </div>
       <div class="col-lg-8 offset-lg-1">
         <div class="filter-control">
           <ul>
-            <li class="active item" data-tag="*" data-category="SmartPhone">All</li>
-            <li class="item" data-tag="Apple" data-category="SmartPhone">Apple</li>
-            <li class="item" data-tag="SamSung" data-category="SmartPhone">SamSung</li>
-            <li class="item" data-tag="Oppo" data-category="SmartPhone">Oppo</li>
-            <li class="item" data-tag="Xiaomi" data-category="SmartPhone">Xiaomi</li>
+            <li class="active item" data-tag="*" data-category="Smartphone">All</li>
+            <li class="item" data-tag=".Apple" data-category="Smartphone">Apple</li>
+            <li class="item" data-tag=".SamSung" data-category="Smartphone">SamSung</li>
+            <li class="item" data-tag=".Oppo" data-category="Smartphone">Oppo</li>
+            <li class="item" data-tag=".Xiaomi" data-category="Smartphone">Xiaomi</li>
           </ul>
         </div>
         <div class="product-slider owl-carousel SmartPhone">
@@ -149,13 +155,14 @@
       <div class="col-lg-8">
         <div class="filter-control">
           <ul>
-            <li class="active">Clothings</li>
-            <li>HandBag</li>
-            <li>Shoes</li>
-            <li>Accessories</li>
+            <li class="active item" data-tag="*" data-category="Laptop">All</li>
+            <li class="item" data-tag=".MacBook" data-category="Laptop">MacBook</li>
+            <li class="item" data-tag=".Hp" data-category="Laptop">Hp</li>
+            <li class="item" data-tag=".Lenovo" data-category="Laptop">Lenovo</li>
+            <li class="item" data-tag=".Acer" data-category="Laptop">Acer</li>
           </ul>
         </div>
-        <div class="product-slider owl-carousel">
+        <div class="product-slider owl-carousel Laptop">
           @foreach ($featuredProducts['Laptop'] as $product)
           @include('front.components.product-item')
           @endforeach
@@ -164,7 +171,7 @@
       <div class="col-lg-3 offset-lg-1">
         <div class="product-large set-bg" data-setbg="front/img/products/laptop.jpg">
           <h2>Laptop</h2>
-          <a href="#">Discover More</a>
+          <a href="shop/category/Laptop">Xem thêm</a>
         </div>
       </div>
 
@@ -195,7 +202,7 @@
       <div class="col-lg-3 offset-lg-1">
         <div class="product-large set-bg" data-setbg="front/img/products/smartwatch.jpg">
           <h2>SmartWatch</h2>
-          <a href="#">Discover More</a>
+          <a href="shop/category/Smartwatch">Discover More</a>
         </div>
       </div>
 
@@ -226,7 +233,7 @@
       <div class="col-lg-3 offset-lg-1">
         <div class="product-large set-bg" data-setbg="front/img/products/headphone.jpg">
           <h2>HeadPhone</h2>
-          <a href="#">Discover More</a>
+          <a href="shop/category/Headphone">Xem thêm</a>
         </div>
       </div>
 
@@ -257,7 +264,7 @@
       <div class="col-lg-3 offset-lg-1">
         <div class="product-large set-bg" data-setbg="front/img/products/Accessories.jpg">
           <h2>Accessories</h2>
-          <a href="#">Discover More</a>
+          <a href="shop/category/Accessory">Xem thêm</a>
         </div>
       </div>
 

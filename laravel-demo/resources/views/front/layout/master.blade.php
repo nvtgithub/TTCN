@@ -144,7 +144,7 @@
                   </div>
                 </div>
               </li>
-              <li class="cart-price">{{  Cart::total() }} VNĐ</li>
+              <li class="cart-price">{{ Cart::total() }} VNĐ</li>
             </ul>
           </div>
         </div>
@@ -245,9 +245,9 @@
               </a>
             </div>
             <ul>
-              <li>Address: Trau Quy Town, Gia Lam, Ha Noi</li>
+              <li>Địa chỉ: Trâu Qùy, Gia Lâm, Hà Nội</li>
               <li>Phone: +84 865.892.696</li>
-              <li>Email: tiennguyenvan@gmail.com</li>
+              <li>Email: electronicStore@gmail.com</li>
             </ul>
             <div class="footer-social">
               <a href=""><i class="fa fa-facebook"></i></a>
@@ -259,12 +259,11 @@
         </div>
         <div class="col-lg-2 offset-lg-1">
           <div class="footer-widget">
-            <h5>Infomation</h5>
+            <h5>Danh mục</h5>
             <ul>
-              <li><a href="">About Us</a></li>
-              <li><a href="">Checkout</a></li>
-              <li><a href="">Contact</a></li>
-              <li><a href="">Service</a></li>
+              @foreach($categories as $category)
+              <li><a href="shop/category/{{ $category->name }}">{{ $category->name }}</a></li>
+              @endforeach
             </ul>
           </div>
         </div>

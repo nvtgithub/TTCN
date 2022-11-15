@@ -847,7 +847,7 @@ ol {
 }
 
 .hero-items .single-hero-items h1 {
-  color: #252525;
+  color: white;
   font-size: 72px;
   font-weight: 700;
   margin-bottom: 6px;
@@ -857,6 +857,7 @@ ol {
 }
 
 .hero-items .single-hero-items p {
+  color: white;
   margin-bottom: 42px;
   position: relative;
   top: 100px;
