@@ -258,23 +258,24 @@
         updateCart(rowId, newVal);
     });
 
+    const product_smartPhone = $(".product-slider.SmartPhone");
+    
+    $('.filter-control').on('click', '.item', function() {
+        const $item = $(this);
+        const filter = $item.data('tag');
+        const category = $item.data('category');
+    
+        $item.siblings().removeClass('active');
+        $item.addClass('active');
+    
+        if (category === 'SmartPhone') {
+            product_smartPhone.owlCarousel2_filter(filter);
+        }
+    });
+    
 })(jQuery);
 
 
-const product_smartPhone = $(".product-slider.SmartPhone");
-
-$('.filter-control').on('click', '.item', function() {
-    const $item = $(this);
-    const filter = $item.data('tag');
-    const category = $item.data('category');
-
-    $item.siblings().removeClass('active');
-    $item.addClass('active');
-
-    if (category === 'SmartPhone') {
-        product_smartPhone.owlCarousel2_filter(filter);
-    }
-})
 
 function addCart(productId) {
     $.ajax({

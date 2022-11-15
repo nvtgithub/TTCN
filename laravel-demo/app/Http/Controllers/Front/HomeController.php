@@ -30,4 +30,13 @@ class HomeController extends Controller
     $categories = $this->productCategoryService->all();
     return view('front.contact', compact('categories'));
   }
+
+  public function category($categoryName, Request $request)
+  {
+    $categories = $this->productCategoryService->all();
+    $trademarks = $this->trademarksService->all();
+
+    $products = $this->productService->getProductByCategory($categoryName, $request);
+    return view('front.shop.index', compact('products', 'categories', 'trademarks'));
+  }
 }

@@ -87,10 +87,10 @@
         <div class="filter-control">
           <ul>
             <li class="active item" data-tag="*" data-category="SmartPhone">All</li>
-            <li class="item" data-tag=".Apple" data-category="SmartPhone">Apple</li>
-            <li class="item" data-tag=".SamSung" data-category="SmartPhone">SamSung</li>
-            <li class="item" data-tag=".Oppo" data-category="SmartPhone">Oppo</li>
-            <li class="item" data-tag=".Xiaomi" data-category="SmartPhone">Xiaomi</li>
+            <li class="item" data-tag="Apple" data-category="SmartPhone">Apple</li>
+            <li class="item" data-tag="SamSung" data-category="SmartPhone">SamSung</li>
+            <li class="item" data-tag="Oppo" data-category="SmartPhone">Oppo</li>
+            <li class="item" data-tag="Xiaomi" data-category="SmartPhone">Xiaomi</li>
           </ul>
         </div>
         <div class="product-slider owl-carousel SmartPhone">
