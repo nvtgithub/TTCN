@@ -118,7 +118,7 @@
                           <td class="si-text">
                             <div class="product-selected">
                               <h6>{{ $cart->name }}</h6>
-                              <p>{{ number_format($cart->price) }} VNĐ x {{ $cart->qty }}</p>
+                              <p>{{ number_format($cart->price, 0, '.', '.') }} VNĐ x {{ $cart->qty }}</p>
                             </div>
                           </td>
                           <td class="si-close">
@@ -269,22 +269,22 @@
         </div>
         <div class="col-lg-2">
           <div class="footer-widget">
-            <h5>My Account</h5>
+            <h5>Tiện ích</h5>
             <ul>
-              <li><a href="">My Account</a></li>
-              <li><a href="">Contact</a></li>
-              <li><a href="">Shopping Cart</a></li>
-              <li><a href="">Shop</a></li>
+              <li><a href="/shop">Shop</a></li>
+              <li><a href="/account/login">Đăng nhập</a></li>
+              <li><a href="/account/register">Đăng ký</a></li>
+              <li><a href="/cart">Giỏ hàng</a></li>
             </ul>
           </div>
         </div>
         <div class="col-lg-4">
           <div class="newslatter-item">
-            <h5>Join Our Newsletter Now</h5>
-            <p>Get E-mail updates about our latest shop and special offers.</p>
+            <h5>Tham gia Bản tin của chúng tôi ngay bây giờ</h5>
+            <p>Nhận thông tin cập nhật qua email về cửa hàng mới nhất của chúng tôi và các ưu đãi đặc biệt.</p>
             <form action="#" class="subscribe-form">
-              <input type="text" placeholder="Enter Your Mail">
-              <button type="button">Subscribe</button>
+              <input type="text" placeholder="Nhập Email">
+              <button type="button">Đăng ký</button>
             </form>
           </div>
         </div>

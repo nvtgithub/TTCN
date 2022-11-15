@@ -15,7 +15,7 @@
       <li class="quick-view">
         <a href="shop/product/{{$product->id}}">+ Chi tiết sản phẩm</a>
       </li>
-      <li class="w-icon">
+      <li class="w-icon d-none">
         <a href=""><i class="fa fa-random"></i></a>
       </li>
     </ul>

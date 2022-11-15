@@ -52,10 +52,6 @@
                     </div>
                     <div class="row">
                         <div class="col-lg-4">
-                            <div class="cart-buttons">
-                                <a href="#" class="primary-btn continue-shop">Tiếp tục mua sắm</a>
-                                <a href="#" class="primary-btn up-cart">Cập nhật giỏ hàng</a>
-                            </div>
                             <div class="discount-coupon">
                                 <h6>Mã giảm giá</h6>
                                 <form action="#" class="coupon-form">
