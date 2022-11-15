@@ -118,7 +118,7 @@
                           <td class="si-text">
                             <div class="product-selected">
                               <h6>{{ $cart->name }}</h6>
-                              <p>{{ $cart->price }} VNĐ x {{ $cart->qty }}</p>
+                              <p>{{ number_format($cart->price) }} VNĐ x {{ $cart->qty }}</p>
                             </div>
                           </td>
                           <td class="si-close">
@@ -144,7 +144,7 @@
                   </div>
                 </div>
               </li>
-              <li class="cart-price">{{ Cart::total() }} VNĐ</li>
+              <li class="cart-price">{{  Cart::total() }} VNĐ</li>
             </ul>
           </div>
         </div>
@@ -175,7 +175,7 @@
               </ul>
             </li>
             <li class="d-none"><a href="blog.html">Blog</a></li>
-            <li><a href="contact.html">Thông tin</a></li>
+            <li><a href="/contact">Thông tin</a></li>
             <li><a href="">Trang</a>
               <ul class="dropdown">
                 <li><a href="./account/my-order">Đơn hàng của tôi</a></li>

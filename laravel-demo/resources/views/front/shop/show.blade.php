@@ -75,7 +75,7 @@
                 <div class="pro-qty ">
                   <input type="text" value="1">
                 </div>
-                <a href="#" class="primary-btn pd-cart">Thêm vào giỏ hàng</a>
+                <a href="javascript:addCart({{ $product->id }})" class="primary-btn pd-cart">Thêm vào giỏ hàng</a>
               </div>
               <ul class="pd-tags">
                 <li><span>Loại sản phẩm</span>: {{ $product->productCategory->name }}</li>
@@ -139,23 +139,17 @@
                       </td>
                     </tr>
                     <tr>
-                      <td class="p-catagory">Thêm vào giỏ hàng</td>
-                      <td>
-                        <div class="cart-add">+ thêm vào giỏ hàng</div>
-                      </td>
-                    </tr>
-                    <tr>
                       <td class="p-catagory">Khả dụng</td>
                       <td>
                         <div class="p-stock">{{ $product->qty }} sản phẩm trong kho</div>
                       </td>
                     </tr>
                     <tr>
-                      <td class="p-catagory">Cân nặng</td>
+                      <td class="p-catagory">Kích thước màn hình</td>
                       <td>
-                        <div class="p-weight">{{ $product->weight }}kg</div>
+                        <div class="p-weight">{{ $product->weight }}inch</div>
                       </td>
-                    </tr>a
+                    </tr>
                     <tr>
                       <td class="p-catagory">Màu sắc</td>
                       <td>

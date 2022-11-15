@@ -25,4 +25,9 @@ class HomeController extends Controller
 
     return view('front.index', compact('featuredProducts', 'categories'));
   }
+
+  public function indexContact() {
+    $categories = $this->productCategoryService->all();
+    return view('front.contact', compact('categories'));
+  }
 }

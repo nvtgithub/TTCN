@@ -81,8 +81,9 @@ class AccountController extends Controller
   public function myOrderIndex()
   {
     $orders = $this->orderService->getOrderByUserId(Auth::id());
+    $categories = $this->productCategoryService->all();
 
-    return view('front.account.my-order.index', compact('orders'));
+    return view('front.account.my-order.index', compact('orders', 'categories'));
   }
 
   public function myOrderShow($id)

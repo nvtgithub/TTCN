@@ -33,7 +33,7 @@
                                         <td class="cart-title first-row text-center">
                                             <h5>{{ $cart->name }}</h5>
                                         </td>
-                                        <td class="p-price first-row">{{ number_format($cart->price, 2) }} VNĐ</td>
+                                        <td class="p-price first-row">{{ number_format($cart->price) }} VNĐ</td>
                                         <td class="qua-col first-row">
                                             <div class="quantity">
                                                 <div class="pro-qty">
@@ -41,7 +41,7 @@
                                                 </div>
                                             </div>
                                         </td>
-                                        <td class="total-price first-row">{{ number_format($cart->price, 2) }} VNĐ</td>
+                                        <td class="total-price first-row">{{ number_format($cart->price) }} VNĐ</td>
                                         <td class="close-td first-row">
                                             <i onclick="removeCart('{{ $cart->rowId }}')" class="ti-close"></i>
                                         </td>
