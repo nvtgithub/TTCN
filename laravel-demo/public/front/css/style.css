@@ -4612,3 +4612,29 @@ ol {
 .icon_heart_alt:hover {
   color: red;
 }
+
+.likes-product {
+  display: inline-block;
+  margin-top: 1rem;
+}
+
+.product {}
+
+.product .button-wishlist {
+  margin-right: 16px;
+}
+
+.product .button-wishlist i {
+  color: red;
+  transition: all 0.1s;
+}
+
+.product .button-wishlist i:hover {
+  color: #2773BE;
+  font-size: 18px;
+}
+
+.product .info_wishlist a:hover {
+  color: red;
+  text-decoration: underline;
+}

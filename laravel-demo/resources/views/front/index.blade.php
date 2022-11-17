@@ -274,7 +274,7 @@
 <!-- Accessory Section End -->
 
 <!-- Instagram Section Begin -->
-<div class="instagram-photo">
+<div class="instagram-photo d-none">
   <div class="insta-item set-bg" data-setbg="front/img/insta-1.jpg">
     <div class="inside-text">
       <i class="ti-instagram"></i>

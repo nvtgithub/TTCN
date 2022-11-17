@@ -296,7 +296,7 @@ function addCart(productId) {
       var cartHover_existItem = cartHover_tbody.find("tr" + "[data-rowId='" + response['cart'].rowId + "']");
 
       if (cartHover_existItem.length) {
-        cartHover_existItem.find('.product-selected p').text(response['cart'].price.toFixed(2) + 'VNĐ' + ' x ' + response['cart'].qty);
+        cartHover_existItem.find('.product-selected p').text(response['cart'].price.toFixed() + 'VNĐ' + ' x ' + response['cart'].qty);
       } else {
         var newItem =
           '<tr data-rowId="' + response['cart'].rowId + '">\n' +
@@ -304,7 +304,7 @@ function addCart(productId) {
           '<td class="si-text">\n' +
           '  <div class="product-selected">\n' +
           '        <h6>' + response['cart'].name + '</h6>\n' +
-          '        <p>' + response['cart'].price.toFixed(2) + 'VNĐ' + ' x ' + response['cart'].qty + '</p>\n' +
+          '        <p>' + response['cart'].price.toFixed() + 'VNĐ' + ' x ' + response['cart'].qty + '</p>\n' +
           '    </div>\n' +
           '</td>\n' +
           '<td class="si-close">\n' +
@@ -435,3 +435,67 @@ function updateCart(rowId, qty) {
     },
   });
 }
+
+// thêm yêu thích sản phẩm
+function view() {
+  if (localStorage.getItem('data') != null) {
+    var data = JSON.parse(localStorage.getItem('data'));
+    data.reverse();
+
+    document.getElementById('row_wishlist').style.overflowY = 'scroll';
+    document.getElementById('row_wishlist').style.maxHeight = '600px';
+
+    for (var i = 0; i < data.length; i++) {
+      var id = data[i].id;
+      var name = data[i].name;
+      var price = data[i].price;
+      var image = data[i].image;
+      var url = data[i].url;
+      $("#row_wishlist").append('<div class="row" style="margin:10px 0; max-height: 100px;"><div class="col-md-4"><img src="' + image + '" class="width:100%;"></div><div class="col-md-8 info_wishlist"><p>' + name + '</p><p style="color:#e7ab3c">' + price + '</p><button type="" style="outline: none;" class="button-wishlist " id="' + id + '" onclick="remove_wishlist(this.id)"><i class="icon_heart_alt"></i></button><a href="' + url + '">Xem</a></div></div>');
+    }
+  }
+}view();
+
+function add_wishlist(clicked_id) {
+  var id = clicked_id;
+  var name = document.getElementById('wishlist_productname' + id).value;
+  var price = document.getElementById('wishlist_productprice' + id).value;
+  var image = document.getElementById('wishlist_productimage' + id).src;
+  var url = document.getElementById('wishlist_producturl' + id).href;
+
+  var newItem = {
+    'id': id,
+    'name': name,
+    'price': price,
+    'image': image,
+    'url': url
+  }
+
+  if (localStorage.getItem('data') == null) {
+    localStorage.setItem('data', '[]');
+  }
+
+  var old_data = JSON.parse(localStorage.getItem('data'));
+
+  // check thông báo khi trùng sp yêu thích
+  var matches = $.grep(old_data, function (obj) {
+    return obj.id == id;
+  })
+
+  if (matches.length) {
+    alert('Sản phẩm đã yêu thích!');
+  } else {
+    old_data.push(newItem);
+    $("#row_wishlist").append('<div class="row" style="margin:10px 0; max-height: 100px;"><div class="col-md-4"><img src="' + image + '" class="width:100%;"></div><div class="col-md-8 info_wishlist"><p>' + name + '</p><p style="color:#e7ab3c">' + price + '</p><button type="" style="outline: none;" class="button-wishlist " id="' + id + '" onclick="remove_wishlist(this.id)"><i class="icon_heart_alt"></i></button><a href="' + url + '">Xem</a></div></div>');
+  }
+
+  localStorage.setItem('data', JSON.stringify(old_data));
+}
+
+function remove_wishlist(clicked_id) {
+  const items = JSON.parse(localStorage.getItem('data'));
+  const filtered = items.filter(data => data.id !== clicked_id);
+  localStorage.setItem('data', JSON.stringify(filtered));
+  location.reload();
+}
+
