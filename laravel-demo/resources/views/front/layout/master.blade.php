@@ -187,8 +187,6 @@
   </header>
   <!-- Header Section End -->
 
-
-
   <!-- --Body here-- -->
   @yield('body')
 
