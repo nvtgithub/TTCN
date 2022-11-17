@@ -16,6 +16,7 @@ use Illuminate\Support\Facades\Route;
 //Front (client)
 Route::get('/', [App\Http\Controllers\Front\HomeController::class, 'index']);
 Route::get('/contact', [App\Http\Controllers\Front\HomeController::class, 'indexContact']);
+Route::get('/favorite', [App\Http\Controllers\Front\HomeController::class, 'favoriteProducts']);
 
 Route::prefix('shop')->group(function () {
   Route::get('product/{id}', [App\Http\Controllers\Front\ShopController::class, 'show']);

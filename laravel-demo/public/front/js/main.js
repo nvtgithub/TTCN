@@ -451,7 +451,7 @@ function view() {
       var price = data[i].price;
       var image = data[i].image;
       var url = data[i].url;
-      $("#row_wishlist").append('<div class="row" style="margin:10px 0; max-height: 100px;"><div class="col-md-4"><img src="' + image + '" class="width:100%;"></div><div class="col-md-8 info_wishlist"><p>' + name + '</p><p style="color:#e7ab3c">' + price + '</p><button type="" style="outline: none;" class="button-wishlist " id="' + id + '" onclick="remove_wishlist(this.id)"><i class="icon_heart_alt"></i></button><a href="' + url + '">Xem</a></div></div>');
+      $("#row_wishlist").append('<tr><td class="cart-pic first-row"><img width="100%" src="' + image + '" alt=""></td><td class="cart-title first-row text-center"><h5>' + name + '</h5></td><td class="p-price first-row">' + price + '</td> <td class="cart-title first-row text-center"><a class="btn btn-primary" href="' + url + '">Xem chi tiết</a></td><td class="close-td first-row"><i id="' + id + '" onclick="remove_wishlist(this.id)" class="ti-close"></i></td></tr>');  
     }
   }
 }view();
@@ -483,11 +483,12 @@ function add_wishlist(clicked_id) {
   })
 
   if (matches.length) {
-    alert('Sản phẩm đã yêu thích!');
+    alert('Sản phẩm đã có trong mục yêu thích!');
   } else {
     old_data.push(newItem);
     alert('Đã thêm "'+ name +'" vào danh mục yêu thích');
-    $("#row_wishlist").append('<div class="row" style="margin:10px 0; max-height: 100px;"><div class="col-md-4"><img src="' + image + '" class="width:100%;"></div><div class="col-md-8 info_wishlist"><p>' + name + '</p><p style="color:#e7ab3c">' + price + '</p><button type="" style="outline: none;" class="button-wishlist " id="' + id + '" onclick="remove_wishlist(this.id)"><i class="icon_heart_alt"></i></button><a href="' + url + '">Xem</a></div></div>');
+    // $("#row_wishlist").append('<div class="row" style="margin:10px 0; max-height: 100px;"><div class="col-md-4"><img src="' + image + '" class="width:100%;"></div><div class="col-md-8 info_wishlist"><p>' + name + '</p><p style="color:#e7ab3c">' + price + '</p><button type="" style="outline: none;" class="button-wishlist " id="' + id + '" onclick="remove_wishlist(this.id)"><i class="icon_heart_alt"></i></button><a href="' + url + '">Xem</a></div></div>');
+    $("#row_wishlist").append('<tr><td class="cart-pic first-row"><img width="100%" src="' + image + '" alt=""></td><td class="cart-title first-row text-center"><h5>' + name + '</h5></td><td class="p-price first-row">' + price + '</td> <td class="cart-title first-row text-center"><a class="btn btn-primary" href="' + url + '">Xem chi tiết</a></td><td class="close-td first-row"><i id="' + id + '" onclick="remove_wishlist(this.id)" class="ti-close"></i></td></tr>');  
   }
 
   localStorage.setItem('data', JSON.stringify(old_data));

@@ -31,6 +31,11 @@ class HomeController extends Controller
     return view('front.contact', compact('categories'));
   }
 
+  public function favoriteProducts() {
+    $categories = $this->productCategoryService->all();
+    return view('front.favorite', compact('categories'));
+  }
+
   public function category($categoryName, Request $request)
   {
     $categories = $this->productCategoryService->all();

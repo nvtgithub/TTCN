@@ -168,16 +168,10 @@
           <ul>
             <li class="{{ (request()->segment(1) == '') ? 'active' : '' }}"><a href="./">Trang chủ</a></li>
             <li class="{{ (request()->segment(1) == 'shop') ? 'active' : '' }}"><a href="./shop">Shop</a></li>
-            <li class="d-none"><a href="">Bộ sưu tập</a>
-              <ul class="dropdown">
-                <li><a href="">Laptop</a></li>
-                <li><a href="">Smartphone</a></li>
-              </ul>
-            </li>
-            <li class="d-none"><a href="blog.html">Blog</a></li>
             <li><a href="/contact">Thông tin</a></li>
             <li><a href="">Trang</a>
               <ul class="dropdown">
+                <li><a href="./favorite">Sản phẩm yêu thích</a></li>
                 <li><a href="./account/my-order">Đơn hàng của tôi</a></li>
                 <li><a href="./checkout">Thanh toán</a></li>
                 <li><a href="account/register">Đăng ký</a></li>
