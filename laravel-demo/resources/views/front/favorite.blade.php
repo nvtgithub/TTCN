@@ -7,7 +7,7 @@
     <section class="product-shop spad">
         <div class="container">
             <div class="product-list">
-                <div class="row" id="row_wishlist">
+                <div class="row" id="favorite">
                 
                 </div>
             </div>

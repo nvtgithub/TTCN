@@ -82,6 +82,11 @@
 </form>
 
 <div class="filter-widget likes-product">
+  <h4 class="fw-title">Sản phẩm đã yêu thích</h4>
+  <div class="product">
+    <div id="row_wishlist" class="row">
+    </div>
+  </div>
 </div>
 
 <script>

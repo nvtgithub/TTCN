@@ -68,6 +68,4 @@
   </div>
 </section>
 <!-- Product Shop Section End -->
-
-
 @endsection

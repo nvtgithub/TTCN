@@ -487,7 +487,9 @@ function view() {
       ' </div>' +
       ' </div>';
 
-      $("#row_wishlist").append(item);  
+
+      $("#row_wishlist").append('<div class="row" style="margin:10px 0; max-height: 100px;"><div class="col-md-4"><img src="' + image + '" class="width:100%;"></div><div class="col-md-8 info_wishlist"><p>' + name + '</p><p style="color:#e7ab3c">' + price + '</p><button type="" style="outline: none;" class="button-wishlist " id="' + id + '" onclick="remove_wishlist(this.id)"><i class="icon_heart_alt"></i></button><a href="' + url + '">Xem</a></div></div>');  
+      $("#favorite").append(item);  
     }
   }
 }view();
@@ -523,7 +525,7 @@ function add_wishlist(clicked_id) {
   } else {
     old_data.push(newItem);
     alert('Đã thêm "'+ name +'" vào danh mục yêu thích');
-    // $("#row_wishlist").append('<div class="row" style="margin:10px 0; max-height: 100px;"><div class="col-md-4"><img src="' + image + '" class="width:100%;"></div><div class="col-md-8 info_wishlist"><p>' + name + '</p><p style="color:#e7ab3c">' + price + '</p><button type="" style="outline: none;" class="button-wishlist " id="' + id + '" onclick="remove_wishlist(this.id)"><i class="icon_heart_alt"></i></button><a href="' + url + '">Xem</a></div></div>');
+    
     var item = 
     '<div class="col-lg-3 col-sm-6">'+
     '<div class="product-item item {{$product->tag}}">' +
@@ -558,7 +560,8 @@ function add_wishlist(clicked_id) {
     ' </div>' +
     ' </div>';
 
-      $("#row_wishlist").append(item);  
+    $("#row_wishlist").append('<div class="row" style="margin:10px 0; max-height: 100px;"><div class="col-md-4"><img src="' + image + '" class="width:100%;"></div><div class="col-md-8 info_wishlist"><p>' + name + '</p><p style="color:#e7ab3c">' + price + '</p><button type="" style="outline: none;" class="button-wishlist " id="' + id + '" onclick="remove_wishlist(this.id)"><i class="icon_heart_alt"></i></button><a href="' + url + '">Xem</a></div></div>');
+    $("#favorite").append(item);  
   }
 
   localStorage.setItem('data', JSON.stringify(old_data));
