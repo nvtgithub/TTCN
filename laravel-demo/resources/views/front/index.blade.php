@@ -10,10 +10,10 @@
       <div class="container">
         <div class="row">
           <div class="col-lg-5">
-            <span>Bag,kids</span>
+            <span>SmartPhone</span>
             <h1>Black Friday</h1>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos, fugit aliquam unde id recusandae aspernatur accusantium labore odio. Deleniti impedit ratione in cupiditate debitis quis est voluptatibus officiis iure dolore?</p>
-            <a href="#" class="primary-btn">Show Now</a>
+            <p>Sự kiện siêu sale, mua nhiều giảm giá!</p>
+            <a href="shop/category/SmartPhone" class="primary-btn">Xem ngay</a>
           </div>
         </div>
         <div class=off-card>
@@ -25,10 +25,10 @@
       <div class="container">
         <div class="row">
           <div class="col-lg-5">
-            <span>Bag,kids</span>
+            <span>Laptop</span>
             <h1>Black Friday</h1>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos, fugit aliquam unde id recusandae aspernatur accusantium labore odio. Deleniti impedit ratione in cupiditate debitis quis est voluptatibus officiis iure dolore?</p>
-            <a href="#" class="primary-btn">Show Now</a>
+            <p>Sự kiện siêu sale, mua nhiều giảm giá!</p>
+            <a href="shop/category/Laptop" class="primary-btn">Xem ngay</a>
           </div>
         </div>
         <div class=off-card>
