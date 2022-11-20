@@ -111,7 +111,7 @@
 <!-- SmartPhone Section End -->
 
 <!-- Deal Of The Week Section Begin -->
-<section class="deal-of-week set-bg spad" data-setbg="front/img/banner-dealofweek.png">
+<section class="deal-of-week set-bg spad" data-setbg="front/img/banner-dealofweek1.png">
   <div class="container">
     <div class="col-lg-6 text-center">
       <div class="section-title">
@@ -120,7 +120,6 @@
         </p>
         <div class="product-price">
           30.490.000 VNĐ 
-          <span>/Laptop</span>
         </div>
       </div>
       <div class="countdown-timer" id="countdown">
