@@ -271,10 +271,10 @@
     $item.addClass('active');
 
     if (category === 'SmartPhone') {
-      product_smartPhone.owlCarousel2_filter(filter);
+      product_smartPhone.owlcarousel2_filter(filter);
     }
     if (category === 'Laptop') {
-      product_Laptop.owlCarousel2_filter(filter);
+      product_Laptop.owlcarousel2_filter(filter);
     }
   });
 

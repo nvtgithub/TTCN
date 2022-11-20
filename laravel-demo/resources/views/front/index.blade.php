@@ -111,17 +111,16 @@
 <!-- SmartPhone Section End -->
 
 <!-- Deal Of The Week Section Begin -->
-<section class="deal-of-week set-bg spad" data-setbg="front/img/time-bg.jpg">
+<section class="deal-of-week set-bg spad" data-setbg="front/img/banner-dealofweek.png">
   <div class="container">
     <div class="col-lg-6 text-center">
       <div class="section-title">
-        <h2>Deal Of The Week</h2>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem impedit repellat sequi! Earum necessitatibus libero voluptatem. Necessitatibus sequi porro quibusdam optio laborum culpa. Perferendis provident nobis, aliquam laborum ipsa
-          voluptas.
+        <h2>Sản phẩm yêu thích trong tuần</h2>
+        <p>MacBook Air M1 Là máy tính xách tay mỏng và nhẹ nhất của Apple – nay thay đổi ngoạn mục với chip Apple M1 mạnh mẽ. Tạo ra một cú nhảy vọt về hiệu năng CPU và đồ họa, cùng thời lượng pin lên đến 18 giờ.
         </p>
         <div class="product-price">
-          $35.00
-          <span>/ HanBag</span>
+          30.490.000 VNĐ 
+          <span>/Laptop</span>
         </div>
       </div>
       <div class="countdown-timer" id="countdown">
@@ -142,7 +141,7 @@
           <p>Secs</p>
         </div>
       </div>
-      <a href="" class="primary-btn">Show Now </a>
+      <a href="shop/product/5" class="primary-btn">Xem ngay </a>
     </div>
   </div>
 </section>

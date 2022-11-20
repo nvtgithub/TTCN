@@ -100,7 +100,6 @@
               <li class="heart-icon">
                 <a href="#">
                   <i class="icon_heart_alt"></i>
-                  <span>1</span>
                 </a>
               </li>
               <li class="cart-icon">
@@ -164,7 +163,7 @@
             </ul>
           </div>
         </div>
-        <nav class="nav-menu mobile-menu">
+        <nav class="nav-menu mobile-menu" style="float: right;">
           <ul>
             <li class="{{ (request()->segment(1) == '') ? 'active' : '' }}"><a href="./">Trang chủ</a></li>
             <li class="{{ (request()->segment(1) == 'shop') ? 'active' : '' }}"><a href="./shop">Shop</a></li>
