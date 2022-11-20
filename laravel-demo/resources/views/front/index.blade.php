@@ -111,7 +111,7 @@
 <!-- SmartPhone Section End -->
 
 <!-- Deal Of The Week Section Begin -->
-<section class="deal-of-week set-bg spad" data-setbg="front/img/banner-dealofweek1.png">
+<section class="deal-of-week set-bg spad" data-setbg="front/img/banner-dealofweek.png">
   <div class="container">
     <div class="col-lg-6 text-center">
       <div class="section-title">
