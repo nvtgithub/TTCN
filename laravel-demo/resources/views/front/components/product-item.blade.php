@@ -1,4 +1,4 @@
-<div class="product-item item {{$product->tag}}">
+<div class="product-item item {{$product->tag}} shadow-sm">
   <div class="pi-pic">
     <img id="wishlist_productimage{{$product->id}}" src="front/img/products/{{ $product->productImages[0]->path ?? ''}}" alt="">
 
