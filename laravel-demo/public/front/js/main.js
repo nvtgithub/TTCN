@@ -149,6 +149,57 @@
     $(this).html(event.strftime("<div class='cd-item'><span>%D</span> <p>Days</p> </div>" + "<div class='cd-item'><span>%H</span> <p>Hrs</p> </div>" + "<div class='cd-item'><span>%M</span> <p>Mins</p> </div>" + "<div class='cd-item'><span>%S</span> <p>Secs</p> </div>"));
   });
 
+  //Sản phẩm yêu thích
+  if (localStorage.getItem('data') != null) {
+    var data = JSON.parse(localStorage.getItem('data'));
+    data.reverse();
+
+    for (var i = 0; i < data.length; i++) {   
+      var id = data[i].id;
+      var name = data[i].name;
+      var price = data[i].price;
+      var image = data[i].image;
+      var url = data[i].url;
+
+      var item = 
+      '<div class="col-lg-3 col-sm-6">'+
+      '<div class="product-item item {{$product->tag}} shadow-sm p-3">' +
+      '  <div class="pi-pic">' +
+      '     <img style=" max-height: 150px;" id="wishlist_productimage'+ id +'" src="'+ image +'" alt="">' +
+      '<div class="icon">' +
+      '<button type="" style="outline: none;" class="button-wishlist" id="'+ id +'" onclick="remove_wishlist(this.id)">' +
+      '<i class="ti-close"></i>'+
+      '</button>'+
+      '</div>'+
+      '    <ul>'+
+      '      <li class="w-icon active">'+
+      '        <a href="javascript:addCart('+ id +')"><i class="icon_bag_alt"></i></a>'+
+      '      </li>'+
+      '      <li class="quick-view">'+
+      '        <a href="'+ url +'">+ Chi tiết sản phẩm</a>'+
+      '      </li>'+
+      '      <li class="w-icon d-none">'+
+      '        <a href=""><i class="fa fa-random"></i></a>'+
+      '      </li>'+
+      '    </ul>'+
+      '  </div>'+
+      '  <div class="pi-text">'+
+      '    <a id="wishlist_producturl'+ id +'" href="shop/product/'+ id +'">'+
+      '      <h5>'+ name +'</h5>'+
+      '      <input type="hidden" name="" value="'+ name +'" id="wishlist_productname'+ id +'">'+
+      '    </a>'+
+      '    <div class="product-price">'+
+      '      ' + price + ' VNĐ'+
+      '      <input type="hidden" name="" value="'+ price +' VNĐ" id="wishlist_productprice'+ id +'">'+
+      '    </div>'+
+      '  </div>'+
+      ' </div>' +
+      ' </div>';
+
+      $("#favorite").append(item);  
+    }
+  }
+
 
   /*----------------------------------------------------
    Language Flag js
@@ -452,44 +503,7 @@ function view() {
       var image = data[i].image;
       var url = data[i].url;
 
-      var item = 
-      '<div class="col-lg-3 col-sm-6">'+
-      '<div class="product-item item {{$product->tag}}">' +
-      '  <div class="pi-pic">' +
-      '     <img id="wishlist_productimage'+ id +'" src="'+ image +'" alt="">' +
-      '<div class="icon">' +
-      '<button type="" style="outline: none;" class="button-wishlist" id="'+ id +'" onclick="remove_wishlist(this.id)">' +
-      '<i class="ti-close"></i>'+
-      '</button>'+
-      '</div>'+
-      '    <ul>'+
-      '      <li class="w-icon active">'+
-      '        <a href="javascript:addCart('+ id +')"><i class="icon_bag_alt"></i></a>'+
-      '      </li>'+
-      '      <li class="quick-view">'+
-      '        <a href="'+ url +'">+ Chi tiết sản phẩm</a>'+
-      '      </li>'+
-      '      <li class="w-icon d-none">'+
-      '        <a href=""><i class="fa fa-random"></i></a>'+
-      '      </li>'+
-      '    </ul>'+
-      '  </div>'+
-      '  <div class="pi-text">'+
-      '    <a id="wishlist_producturl'+ id +'" href="shop/product/'+ id +'">'+
-      '      <h5>'+ name +'</h5>'
-      '      <input type="hidden" name="" value="'+ name +'" id="wishlist_productname'+ id +'">'+
-      '    </a>'+
-      '    <div class="product-price">'+
-      '      ' + price + ' VNĐ'+
-      '      <input type="hidden" name="" value="'+ price +' VNĐ" id="wishlist_productprice'+ id +'">'+
-      '    </div>'+
-      '  </div>'+
-      ' </div>' +
-      ' </div>';
-
-
       $("#row_wishlist").append('<div class="row" style="margin:10px 0; max-height: 100px;"><div class="col-md-4"><img src="' + image + '" class="width:100%;"></div><div class="col-md-8 info_wishlist"><p>' + name + '</p><p style="color:#e7ab3c">' + price + '</p><button type="" style="outline: none;" class="button-wishlist " id="' + id + '" onclick="remove_wishlist(this.id)"><i class="icon_heart_alt"></i></button><a href="' + url + '">Xem</a></div></div>');  
-      $("#favorite").append(item);  
     }
   }
 }view();
@@ -525,43 +539,8 @@ function add_wishlist(clicked_id) {
   } else {
     old_data.push(newItem);
     alert('Đã thêm "'+ name +'" vào danh mục yêu thích');
-    
-    var item = 
-    '<div class="col-lg-3 col-sm-6">'+
-    '<div class="product-item item {{$product->tag}}">' +
-    '  <div class="pi-pic">' +
-    '     <img id="wishlist_productimage'+ id +'" src="'+ image +'" alt="">' +
-    '<div class="icon">' +
-    '<button type="" style="outline: none;" class="button-wishlist" id="'+ id +'" onclick="remove_wishlist(this.id)">' +
-    '<i class="ti-close"></i>'+
-    '</button>'+
-    '</div>'+
-    '    <ul>'+
-    '      <li class="w-icon active">'+
-    '        <a href="javascript:addCart('+ id +')"><i class="icon_bag_alt"></i></a>'+
-    '      </li>'+
-    '      <li class="quick-view">'+
-    '        <a href="'+ url +'">+ Chi tiết sản phẩm</a>'+
-    '      </li>'+
-    '      <li class="w-icon d-none">'+
-    '        <a href=""><i class="fa fa-random"></i></a>'+
-    '      </li>'+
-    '    </ul>'+
-    '  </div>'+
-    '  <div class="pi-text">'+
-    '    <a id="wishlist_producturl'+ id +'" href="shop/product/'+ id +'">'+
-    '      <h5>'+ name +'</h5>'
-    '      <input type="hidden" name="" value="'+ name +'" id="wishlist_productname'+ id +'">'+
-    '    </a>'+
-    '    <div class="product-price">'+ price + ' VNĐ'+
-    '      <input type="hidden" name="" value="'+ price +' VNĐ" id="wishlist_productprice'+ id +'">'+
-    '    </div>'+
-    '  </div>'+
-    ' </div>' +
-    ' </div>';
 
     $("#row_wishlist").append('<div class="row" style="margin:10px 0; max-height: 100px;"><div class="col-md-4"><img src="' + image + '" class="width:100%;"></div><div class="col-md-8 info_wishlist"><p>' + name + '</p><p style="color:#e7ab3c">' + price + '</p><button type="" style="outline: none;" class="button-wishlist " id="' + id + '" onclick="remove_wishlist(this.id)"><i class="icon_heart_alt"></i></button><a href="' + url + '">Xem</a></div></div>');
-    $("#favorite").append(item);  
   }
 
   localStorage.setItem('data', JSON.stringify(old_data));

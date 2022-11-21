@@ -23,6 +23,7 @@
   <link rel="stylesheet" href="front/css/jquery-ui.min.css" type="text/css">
   <link rel="stylesheet" href="front/css/slicknav.min.css" type="text/css">
   <link rel="stylesheet" href="front/css/style.css" type="text/css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </head>
 
 <body>
