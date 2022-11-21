@@ -92,10 +92,13 @@
                                                         </div>
                                                     </div>
                                                 </td>
+                                                <!-- địa chỉ -->
                                                 <td class="text-center">
                                                     {{ $order->street_address . ' - ' . $order->town_city }}
                                                 </td>
+                                                <!-- tổng tiền -->
                                                 <td class="text-center">{{ number_format(array_sum(array_column($order->orderDetails->toArray(), 'total')),0, '.', '.') }} VNĐ</td>
+                                                <!-- trạng thái đơn hàng -->
                                                 <td class="text-center">
                                                     <div class="badge badge-dark">
                                                         {{ \App\Utilities\Constant::$order_status[$order->status] }}

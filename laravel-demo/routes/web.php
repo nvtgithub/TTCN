@@ -67,6 +67,7 @@ Route::prefix('admin')->group(function () {
   Route::resource('product/{product_id}/detail', App\Http\Controllers\Admin\ProductDetailController::class);
   Route::resource('product', App\Http\Controllers\Admin\ProductController::class);
   Route::resource('order', App\Http\Controllers\Admin\OrderController::class);
+  // Route::post('order_{{id}}', [App\Http\Controllers\Admin\OrderController::class, 'Confirmed']);
 
   Route::prefix('login')->group(function () {
     Route::get('', [\App\Http\Controllers\Admin\HomeController::class, 'getLogin']);
