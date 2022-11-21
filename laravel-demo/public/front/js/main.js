@@ -150,7 +150,7 @@
   });
 
   //Sản phẩm yêu thích
-  if (localStorage.getItem('data') != null) {
+  if (localStorage.getItem('data').length != null) {
     var data = JSON.parse(localStorage.getItem('data'));
     data.reverse();
 
@@ -196,8 +196,31 @@
       ' </div>' +
       ' </div>';
 
-      $("#favorite").append(item);  
+      var selectItems = 
+              '<tr>'+
+              '<td class="si-pic"><img width="70px" src="'+ image +'" alt=""></td>'+
+              '<td class="si-text">'+
+              '  <div class="product-selected">'+
+              '    <h6>'+ name +'</h6>'+
+              '    <p>'+ price +'</p>'+
+              '  </div>'+
+              '</td>'+
+              '<td class="si-close">'+
+              '  <svg id="' + id + '" onclick="remove_wishlist(this.id)" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x" viewBox="0 0 16 16">'+
+              '    <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>'+
+              '  </svg>'+
+              '</td>'+
+              '</tr>';
+
+      $("#show_product_favorite").append(selectItems);      
+      $("#favorite").append(item);     
     }
+
+    $("#product_favorite_count").append(data.length);   
+  }
+  else 
+  {
+    $("#product_favorite_count").append('0'); 
   }
 
 
@@ -502,7 +525,7 @@ function view() {
       var price = data[i].price;
       var image = data[i].image;
       var url = data[i].url;
-
+      
       $("#row_wishlist").append('<div class="row" style="margin:10px 0; max-height: 100px;"><div class="col-md-4"><img src="' + image + '" class="width:100%;"></div><div class="col-md-8 info_wishlist"><p>' + name + '</p><p style="color:#e7ab3c">' + price + '</p><button type="" style="outline: none;" class="button-wishlist " id="' + id + '" onclick="remove_wishlist(this.id)"><i class="icon_heart_alt"></i></button><a href="' + url + '">Xem</a></div></div>');  
     }
   }
@@ -539,17 +562,41 @@ function add_wishlist(clicked_id) {
   } else {
     old_data.push(newItem);
     alert('Đã thêm "'+ name +'" vào danh mục yêu thích');
+    
 
+    var selectItems = 
+              '<tr>'+
+              '<td class="si-pic"><img width="70px" src="'+ image +'" alt=""></td>'+
+              '<td class="si-text">'+
+              '  <div class="product-selected">'+
+              '    <h6>'+ name +'</h6>'+
+              '    <p>'+ price +'</p>'+
+              '  </div>'+
+              '</td>'+
+              '<td class="si-close">'+
+              '  <svg id="' + id + '" onclick="remove_wishlist(this.id)" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x" viewBox="0 0 16 16">'+
+              '    <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>'+
+              '  </svg>'+
+              '</td>'+
+              '</tr>';
+
+    $("#show_product_favorite").append(selectItems);      
     $("#row_wishlist").append('<div class="row" style="margin:10px 0; max-height: 100px;"><div class="col-md-4"><img src="' + image + '" class="width:100%;"></div><div class="col-md-8 info_wishlist"><p>' + name + '</p><p style="color:#e7ab3c">' + price + '</p><button type="" style="outline: none;" class="button-wishlist " id="' + id + '" onclick="remove_wishlist(this.id)"><i class="icon_heart_alt"></i></button><a href="' + url + '">Xem</a></div></div>');
   }
 
   localStorage.setItem('data', JSON.stringify(old_data));
+  $("#product_favorite_count").replaceWith('<span id="product_favorite_count">'+ old_data.length +'</span>');  
+  console.log('aa', old_data.length);
 }
 
 function remove_wishlist(clicked_id) {
   const items = JSON.parse(localStorage.getItem('data'));
   const filtered = items.filter(data => data.id !== clicked_id);
   localStorage.setItem('data', JSON.stringify(filtered));
+
   location.reload();
 }
+
+
+
 

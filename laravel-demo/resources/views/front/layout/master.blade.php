@@ -97,10 +97,20 @@
           </div>
           <div class="col-lg-3 col-md-3 text-right">
             <ul class="nav-right">
-              <li class="heart-icon">
-                <a href="#">
+              <li class="heart-icon cart-icon">
+                <a href="./favorite">
                   <i class="icon_heart_alt"></i>
+                  <span id="product_favorite_count"></span>
                 </a>
+                <div class="cart-hover">
+                  <div class="select-items" style="max-height: 250px; overflow-y: scroll;">
+                    <table >
+                      <tbody id="show_product_favorite">            
+                        
+                      </tbody>
+                    </table>
+                  </div>           
+                </div>
               </li>
               <li class="cart-icon">
                 <a href="./cart">
@@ -170,7 +180,6 @@
             <li><a href="/contact">Thông tin</a></li>
             <li><a href="">Trang</a>
               <ul class="dropdown">
-                <li><a href="./favorite">Sản phẩm yêu thích</a></li>
                 <li><a href="./account/my-order">Đơn hàng của tôi</a></li>
                 <li><a href="./checkout">Thanh toán</a></li>
                 <li><a href="account/register">Đăng ký</a></li>
