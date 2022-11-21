@@ -2502,6 +2502,10 @@ ol {
   width: 100%;
 }
 
+.specification-table table tr td:first-child {
+  width: 300px;
+}
+
 .specification-table table tr td {
   border: 1px solid #EFF0F2;
   text-align: center;
