@@ -1176,7 +1176,7 @@ ol {
 }
 
 .product-item:hover .pi-pic .icon {
-  top: 15px;
+  top: 0;
   opacity: 1;
 }
 
