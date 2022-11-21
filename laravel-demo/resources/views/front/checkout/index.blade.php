@@ -21,11 +21,11 @@
 
                             <div class="col-lg-6">
                                 <label for="fir">Họ <span>*</span></label>
-                                <input name="first_name" type="text" id="fir" value="{{ Auth::user()->name ?? '' }}">
+                                <input name="first_name" type="text" id="fir" value="{{ Auth::user()->name ?? '' }}" required>
                             </div>
                             <div class="col-lg-6">
                                 <label for="last">Tên <span>*</span></label>
-                                <input name="last_name" type="text" id="last">
+                                <input name="last_name" type="text" id="last" required>
                             </div>
                             <div class="col-lg-12">
                                 <label for="cun-name">Tên công ty (có thể bỏ trống)</label>
@@ -33,11 +33,11 @@
                             </div>
                             <div class="col-lg-12">
                                 <label for="cun">Đất nước <span>*</span></label>
-                                <input name="country" type="text" id="cun" value="{{ Auth::user()->country ?? '' }}">
+                                <input name="country" type="text" id="cun" value="{{ Auth::user()->country ?? '' }}" required>
                             </div>
                             <div class="col-lg-12">
                                 <label for="street">Địa chỉ <span>*</span></label>
-                                <input name="street_address" type="text" id="street" class="street-first" value="{{ Auth::user()->street_address ?? '' }}">
+                                <input name="street_address" type="text" id="street" class="street-first" value="{{ Auth::user()->street_address ?? '' }}" required>
                             </div>
                             <div class="col-lg-12">
                                 <label for="zip">Mã bưu điện / ZIP (có thể bỏ trống)</label>
@@ -45,15 +45,15 @@
                             </div>
                             <div class="col-lg-12">
                                 <label for="town">Tỉnh / Thành phố <span>*</span></label>
-                                <input name="town_city" type="text" id="town" value="{{ Auth::user()->town_city ?? '' }}">
+                                <input name="town_city" type="text" id="town" value="{{ Auth::user()->town_city ?? '' }}" required>
                             </div>
                             <div class="col-lg-6">
                                 <label for="email">Địa chỉ email <span>*</span></label>
-                                <input name="email" type="text" id="email" value="{{ Auth::user()->email ?? '' }}">
+                                <input name="email" type="text" id="email" value="{{ Auth::user()->email ?? '' }}" required>
                             </div>
                             <div class="col-lg-6">
                                 <label for="phone">Số điện thoại <span>*</span></label>
-                                <input name="phone" type="text" id="phone" value="{{ Auth::user()->phone ?? '' }}">
+                                <input name="phone" type="text" id="phone" value="{{ Auth::user()->phone ?? '' }}" required>
                             </div>
                             <div class="col-lg-12">
                                 <div class="create-item">
