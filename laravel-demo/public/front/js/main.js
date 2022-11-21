@@ -189,7 +189,7 @@
       '      <input type="hidden" name="" value="'+ name +'" id="wishlist_productname'+ id +'">'+
       '    </a>'+
       '    <div class="product-price">'+
-      '      ' + price + ' VNĐ'+
+      '      ' + price + '' +
       '      <input type="hidden" name="" value="'+ price +' VNĐ" id="wishlist_productprice'+ id +'">'+
       '    </div>'+
       '  </div>'+
