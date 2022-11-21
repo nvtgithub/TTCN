@@ -77,9 +77,9 @@
           </div>
 
           <div class="position-relative row form-group">
-            <label for="content" class="col-md-3 text-md-right col-form-label">Nội dung</label>
+            <label for="content" class="col-md-3 text-md-right col-form-label">Thông số lỹ thuật</label>
             <div class="col-md-9 col-xl-8">
-              <p>{{$product->content}}</p>
+              <p>{!!$product->content!!}</p>
             </div>
           </div>
 

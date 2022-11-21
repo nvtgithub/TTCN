@@ -51,8 +51,7 @@
                   <span>({{ count($product->productComments)}})</span>
               </div>
               <div class="pd-desc">
-                <p>{{ $product->content }}</p>
-
+                
                 @if($product->discount != null)
                 <h4>{{ number_format($product->discount, 0, '.', '.') }} VNĐ <span>{{ number_format($product->price, 0, '.', '.') }} VNĐ</span></h4>
                 @else
@@ -115,56 +114,8 @@
               </div>
               <div class="tab-pane fade" id="tab-2" role="tabpanel">
                 <div class="specification-table">
-                  <table>
-                    <tr>
-                      <td class="p-catagory">Đánh giả của khách hàng</td>
-                      <td>
-                        <div class="pd-rating">
-
-                          @for($i =1; $i<=5; $i++) @if($i <=$product->avgRating)
-                            <i class="fa fa-star"></i>
-                            @else
-                            <i class="fa fa-star-o"></i>
-                            @endif
-                            @endfor
-
-                            <span>({{ count($product->productComments) }})</span>
-                        </div>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td class="p-catagory">Giá</td>
-                      <td>
-                        <div class="p-price">{{ number_format($product->price, 0, '.', '.') }} VNĐ</div>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td class="p-catagory">Khả dụng</td>
-                      <td>
-                        <div class="p-stock">{{ $product->qty }} sản phẩm trong kho</div>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td class="p-catagory">Kích thước màn hình</td>
-                      <td>
-                        <div class="p-weight">{{ $product->weight }}inch</div>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td class="p-catagory">Màu sắc</td>
-                      <td>
-                        @foreach(array_unique(array_column($product->productDetails->toArray(), 'color')) as $productColor)
-                        <span class="cs-{{ $productColor }}"></span>
-                        @endforeach
-                      </td>
-                    </tr>
-                    <tr>
-                      <td class="p-catagory">Sku</td>
-                      <td>
-                        <div class="p-code">{{ $product->sku }}</div>
-                      </td>
-                    </tr>
-                  </table>
+                  
+                  {!! $product->content !!}
                 </div>
               </div>
               <div class="tab-pane fade" id="tab-3" role="tabpanel">
