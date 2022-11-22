@@ -67,6 +67,8 @@ Route::prefix('admin')->middleware('CheckAdminLogin')->group(function () {
   Route::resource('product/{product_id}/detail', App\Http\Controllers\Admin\ProductDetailController::class);
   Route::resource('product', App\Http\Controllers\Admin\ProductController::class);
   Route::resource('order', App\Http\Controllers\Admin\OrderController::class);
+  Route::resource('revenu_day', App\Http\Controllers\Admin\RevenusDayController::class);
+  Route::resource('revenu_month', App\Http\Controllers\Admin\RevenusMonthController::class);
   // Route::post('order_{{id}}', [App\Http\Controllers\Admin\OrderController::class, 'Confirmed']);
 
   Route::prefix('login')->group(function () {

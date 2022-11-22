@@ -1263,6 +1263,25 @@
                   </li>
                 </ul>
               </li>
+
+              <li class="mm-active">
+                <a href="#">
+                  <i class="metismenu-icon pe-7s-plugin"></i>Quản lý doanh thu
+                  <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
+                </a>
+                <ul>
+                  <li>
+                    <a href="/admin/revenu_day" class="">
+                      <i class="metismenu-icon"></i>Doanh thu theo ngày
+                    </a>
+                  </li>
+                  <li>
+                    <a href="/admin/revenu_month" class="">
+                      <i class="metismenu-icon"></i>Doanh thu theo tháng
+                    </a>
+                  </li>
+                </ul>
+              </li>
             </ul>
           </div>
         </div>

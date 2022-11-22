@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
-class RevenusController extends Controller
+class RevenusMonthController extends Controller
 {
   /**
    * Display a listing of the resource.
@@ -15,9 +15,14 @@ class RevenusController extends Controller
    */
   public function index()
   {
-    
-
-    
+    $orders = DB::table('orders')->join('order_details', 'orders.id', '=', 'order_details.order_id')->where('status', '=', 7)->select(
+      DB::raw("DATE_FORMAT(orders.created_at, '%m-%Y') as month"),
+      DB::raw("sum(total) as Total"),
+      DB::raw("count(status) as Status"),
+    )
+      ->groupBy("month")->orderBy('month', 'DESC')
+      ->paginate(5);
+    return view('admin.revenu.revenu_month', compact('orders'));
   }
 
   /**

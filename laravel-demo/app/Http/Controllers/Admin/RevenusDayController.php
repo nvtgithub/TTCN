@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
-class RevenusController extends Controller
+class RevenusDayController extends Controller
 {
   /**
    * Display a listing of the resource.
@@ -15,9 +15,16 @@ class RevenusController extends Controller
    */
   public function index()
   {
-    
-
-    
+    $Revenus = DB::table('orders')->join('order_details', 'orders.id', '=', 'order_details.order_id')->where('status', '=', 7)->select(
+      DB::raw("DATE_FORMAT(orders.created_at, '%d-%m-%Y') as day"),
+      DB::raw("sum(total) as Total"),
+      // "ProductName as ProductName",
+      DB::raw("sum(order_details.qty) as quantity")
+    )
+      ->groupBy("day")->orderBy('day', 'DESC')
+      // ->groupBy("ProductName")
+      ->paginate(10);
+    return view('admin.revenu.revenu_day', compact('Revenus'));
   }
 
   /**
