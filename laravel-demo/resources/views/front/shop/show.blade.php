@@ -216,6 +216,3 @@
 
 
 @endsection
-<script>
-  if()
-</script>
