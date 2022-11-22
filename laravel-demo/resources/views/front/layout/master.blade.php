@@ -39,7 +39,7 @@
         <div class="ht-left">
           <div class="mail-service">
             <i class="fa fa-envelope ">
-              tiennguyenvan23@gmail.com</i>
+              electronicstorek64cnpm@gmail.com</i>
           </div>
           <div class="phone-service">
             <i class="fa fa-phone"><span class="ml-2">0865892696</span> </i>
@@ -295,7 +295,7 @@
         <div class="row">
           <div class="col-lg-12">
             <div class="copyright-text">
-              Copyright ©2022 All rights reserved |This website is made <i class="fa fa-heart-o" aria-hidden="true"></i> by Ngoc Anh, Nguyen Tien, Minh Thinh, Quang Huy
+              Copyright ©2022 Được thiết kế bởi: <i class="fa fa-heart-o" aria-hidden="true"></i> Ngoc Anh, Nguyen Tien, Minh Thinh, Quang Huy
             </div>
             <div class="payment-pic">
               <img src="front/img/payment-method.png" alt="">
