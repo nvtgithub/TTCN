@@ -35,6 +35,7 @@ class ProductRepository extends BaseRepository implements ProductRepositoryInter
   {
     $search = $request->search ?? '';
     $products = $this->model->where('name', 'like', '%' . $search . '%');
+    $products = $this->model->where('featured', true);
     $products = $this->filter($products, $request);
     $products = $this->sortAndPagination($products, $request);
     

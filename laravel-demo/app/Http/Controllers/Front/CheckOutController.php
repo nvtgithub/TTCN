@@ -125,7 +125,8 @@ class CheckOutController extends Controller
   public function result()
   {
     $notification = session('notification');
-    return view('front.checkout.result', compact('notification'));
+    $categories = $this->productCategoryService->all();
+    return view('front.checkout.result', compact('notification', 'categories'));
   }
 
   private function sendEmail($order, $total, $subtotal)
