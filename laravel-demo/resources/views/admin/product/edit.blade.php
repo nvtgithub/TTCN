@@ -114,14 +114,14 @@
             <div class="position-relative row form-group">
               <label for="featured" class="col-md-3 text-md-right col-form-label">Nổi bật</label>
               <div class="col-md-9 col-xl-8">
-                <div class="position-relative form-check pt-sm-2">
+                <div class="position-relative form-check form-check-inline">
                   <input name="featured" id="featured_yes" type="radio" class="form-check-input" value="1" {{ $product->featured == '1' ? 'checked' : ''}}>
-                  <label for="yes" class="form-check-label">Có</label>
-                </div>
-                <div class="position-relative form-check pt-sm-2">
-                <input name="featured" id="featured_no" type="radio" class="form-check-input" value="0" {{ $product->featured == '0' ? 'checked' : ''}}>
-                  <label for="no" class="form-check-label">Không</label>
-                </div>             
+                  <label for="yes" class="form-check-label">Mặc định</label>
+                </div>      
+                <div class="position-relative form-check form-check-inline">                  
+                  <input name="featured" id="featured_no" type="radio" class="form-check-input" value="0" {{ $product->featured == '0' ? 'checked' : ''}}>
+                  <label for="no" class="form-check-label">Ẩn</label>
+                </div>    
               </div>
             </div>
 
