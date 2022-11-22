@@ -87,7 +87,7 @@
             <div class="position-relative row form-group">
               <label for="discount" class="col-md-3 text-md-right col-form-label">Giá khuyến mãi</label>
               <div class="col-md-9 col-xl-8">
-                <input required name="discount" id="discount" placeholder="Giá khuyến mãi" type="text" class="form-control" value="">
+                <input name="discount" id="discount" placeholder="Giá khuyến mãi" type="text" class="form-control" value="">
               </div>
             </div>
 
