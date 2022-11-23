@@ -6,6 +6,7 @@ use App\Models\User;
 use App\Http\Controllers\Controller;
 use App\Services\User\UserServiceInterface;
 use App\Utilities\Common;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 
 class UserController extends Controller
@@ -46,6 +47,17 @@ class UserController extends Controller
    */
   public function store(Request $request)
   {
+    $emails = DB::table('users')->pluck('email');
+
+    foreach($emails as $email)
+    {
+        if($email == $request->get('email'))
+        {
+          return back()
+          ->with('notification', 'ERROR: Tài khoản đã tồn tại!');
+        }
+    }
+
     if ($request->get('password') != $request->get('password_confirmation')) {
       return back()
         ->with('notification', 'ERROR: Mật khẩu không khớp vui lòng thử lại');

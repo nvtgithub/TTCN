@@ -69,7 +69,7 @@
                         <label for="password"
                             class="col-md-3 text-md-right col-form-label">Mật khẩu</label>
                         <div class="col-md-9 col-xl-8">
-                            <input require name="password" id="password" placeholder="Nhập vào mật khẩu" type="password"
+                            <input required name="password" id="password" placeholder="Nhập vào mật khẩu" type="password"
                                 class="form-control" value="">
                         </div>
                     </div>
@@ -78,7 +78,7 @@
                         <label for="password_confirmation"
                             class="col-md-3 text-md-right col-form-label">Nhập lại mật khẩu</label>
                         <div class="col-md-9 col-xl-8">
-                            <input require name="password_confirmation" id="password_confirmation" placeholder="Nhập lại mật khẩu" type="password"
+                            <input required name="password_confirmation" id="password_confirmation" placeholder="Nhập lại mật khẩu" type="password"
                                 class="form-control" value="">
                         </div>
                     </div>
