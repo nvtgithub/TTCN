@@ -39,7 +39,7 @@
         <div class="ht-left">
           <div class="mail-service">
             <i class="fa fa-envelope ">
-              electronicstorek64cnpm@gmail.com</i>
+              electronicstorepm@gmail.com</i>
           </div>
           <div class="phone-service">
             <i class="fa fa-phone"><span class="ml-2">0865892696</span> </i>
@@ -105,11 +105,11 @@
                 <div class="cart-hover">
                   <div class="select-items" style="max-height: 250px; overflow-y: scroll;">
                     <table >
-                      <tbody id="show_product_favorite">            
-                        
+                      <tbody id="show_product_favorite">
+
                       </tbody>
                     </table>
-                  </div>           
+                  </div>
                 </div>
               </li>
               <li class="cart-icon">
