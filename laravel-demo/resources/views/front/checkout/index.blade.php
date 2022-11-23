@@ -54,16 +54,7 @@
                             <div class="col-lg-6">
                                 <label for="phone">Số điện thoại <span>*</span></label>
                                 <input name="phone" type="text" id="phone" value="{{ Auth::user()->phone ?? '' }}" required>
-                            </div>
-                            <div class="col-lg-12">
-                                <div class="create-item">
-                                    <label for="acc-create">
-                                        Tạo tài khoản
-                                        <input type="checkbox"  id="acc-create">
-                                        <span class="checkmark"></span>
-                                    </label>
-                                </div>
-                            </div>
+                            </div>                  
                         </div>
                     </div>
                     <div class="col-lg-6">

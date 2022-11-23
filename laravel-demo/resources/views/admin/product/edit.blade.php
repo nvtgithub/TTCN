@@ -114,14 +114,14 @@
             <div class="position-relative row form-group">
               <label for="featured" class="col-md-3 text-md-right col-form-label">Nổi bật</label>
               <div class="col-md-9 col-xl-8">
-                <div class="position-relative form-check pt-sm-2">
+                <div class="position-relative form-check form-check-inline">
                   <input name="featured" id="featured_yes" type="radio" class="form-check-input" value="1" {{ $product->featured == '1' ? 'checked' : ''}}>
-                  <label for="yes" class="form-check-label">Có</label>
-                </div>
-                <div class="position-relative form-check pt-sm-2">
-                <input name="featured" id="featured_no" type="radio" class="form-check-input" value="0" {{ $product->featured == '0' ? 'checked' : ''}}>
-                  <label for="no" class="form-check-label">Không</label>
-                </div>             
+                  <label for="yes" class="form-check-label">Mặc định</label>
+                </div>      
+                <div class="position-relative form-check form-check-inline">                  
+                  <input name="featured" id="featured_no" type="radio" class="form-check-input" value="0" {{ $product->featured == '0' ? 'checked' : ''}}>
+                  <label for="no" class="form-check-label">Ẩn</label>
+                </div>    
               </div>
             </div>
 
@@ -134,7 +134,7 @@
 
             <div class="position-relative row form-group mb-1">
               <div class="col-md-9 col-xl-8 offset-md-2">
-                <a href="#" class="border-0 btn btn-outline-danger mr-1">
+                <a href="./admin/product" class="border-0 btn btn-outline-danger mr-1">
                   <span class="btn-icon-wrapper pr-1 opacity-8">
                     <i class="fa fa-times fa-w-20"></i>
                   </span>
