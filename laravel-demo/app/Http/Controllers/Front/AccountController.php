@@ -89,7 +89,8 @@ class AccountController extends Controller
   public function myOrderShow($id)
   {
     $order = $this->orderService->find($id);
+    $categories = $this->productCategoryService->all();
 
-    return view('front.account.my-order.show', compact('order'));
+    return view('front.account.my-order.show', compact('order', 'categories'));
   }
 }

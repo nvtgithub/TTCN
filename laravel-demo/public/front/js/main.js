@@ -483,7 +483,7 @@ function updateCart(rowId, qty) {
       if (qty === 0) {
         cartHover_existItem.remove();
       } else {
-        cartHover_existItem.find('.product-selected p').text(response['cart'].price.toFixed(2) + 'VNĐ' + ' x ' + response['cart'].qty);
+        cartHover_existItem.find('.product-selected p').text(response['cart'].price.toFixed() + 'VNĐ' + ' x ' + response['cart'].qty);
       }
 
       //Xử lý ở trong trnag "shop/cart"
@@ -492,7 +492,7 @@ function updateCart(rowId, qty) {
       if (qty === 0) {
         cart_existItem.remove();
       } else {
-        cart_existItem.find('.total-price').text((response['cart'].price * response['cart'].qty).toFixed(2) + 'VNĐ');
+        cart_existItem.find('.total-price').text((response['cart'].price * response['cart'].qty).toFixed() + 'VNĐ');
         S
       }
 

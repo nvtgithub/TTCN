@@ -127,7 +127,7 @@
                           <td class="si-text">
                             <div class="product-selected">
                               <h6>{{ $cart->name }}</h6>
-                              <p>{{ number_format($cart->price, 0, '.', '.') }} VNĐ x {{ $cart->qty }}</p>
+                              <p>{{ number_format($cart->price) }} VNĐ x {{ $cart->qty }}</p>
                             </div>
                           </td>
                           <td class="si-close">
