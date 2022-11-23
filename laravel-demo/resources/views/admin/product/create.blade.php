@@ -28,8 +28,8 @@
       <div class="main-card mb-3 card">
         <div class="card-body">
           <form method="post" action="admin/product" enctype="multipart/form-data">
-
             @csrf
+                    @include('admin.components.notification')
             <div class="position-relative row form-group">
               <label for="trademark_id" class="col-md-3 text-md-right col-form-label">Thương hiệu</label>
               <div class="col-md-9 col-xl-8">

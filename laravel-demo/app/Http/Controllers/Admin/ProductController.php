@@ -8,6 +8,7 @@ use App\Services\ProductCategory\ProductCategoryServiceInterface;
 use App\Services\Trademarks\TrademarksService;
 use App\Services\Trademarks\TrademarksServiceInterface;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class ProductController extends Controller
 {
@@ -54,6 +55,17 @@ class ProductController extends Controller
    */
   public function store(Request $request)
   {
+    $nameProducts = DB::table('products')->pluck('name');
+
+    foreach($nameProducts as $nameProduct)
+    {
+        if($nameProduct == $request->get('name'))
+        {
+          return back()
+          ->with('notification', 'ERROR: Sản phẩm này đã tồn tại!');
+        }
+    }
+
     $data = $request->all();
     $data['qty'] = 0; //Khi tạo mới sản phẩm, số lượng = 0
     $product = $this->productService->create($data);
