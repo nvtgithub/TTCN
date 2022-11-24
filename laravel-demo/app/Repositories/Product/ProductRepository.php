@@ -5,7 +5,6 @@ namespace App\Repositories\Product;
 use App\Repositories\BaseRepository;
 use App\Models\Product;
 use App\Models\ProductCategory;
-use GuzzleHttp\Psr7\Request;
 use Illuminate\Http\Request as HttpRequest;
 
 class ProductRepository extends BaseRepository implements ProductRepositoryInterface
@@ -35,7 +34,6 @@ class ProductRepository extends BaseRepository implements ProductRepositoryInter
   {
     $search = $request->search ?? '';
     $products = $this->model->where('name', 'like', '%' . $search . '%');
-    $products = $this->model->where('featured', true);
     $products = $this->filter($products, $request);
     $products = $this->sortAndPagination($products, $request);
     
