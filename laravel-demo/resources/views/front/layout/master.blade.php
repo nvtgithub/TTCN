@@ -39,7 +39,7 @@
         <div class="ht-left">
           <div class="mail-service">
             <i class="fa fa-envelope ">
-              electronicstorepm@gmail.com</i>
+            electronicstorek64cnpm@gmail.com</i>
           </div>
           <div class="phone-service">
             <i class="fa fa-phone"><span class="ml-2">0865892696</span> </i>
@@ -247,7 +247,7 @@
             <ul>
               <li>Địa chỉ: Trâu Qùy, Gia Lâm, Hà Nội</li>
               <li>Số điện thoại: +84 865.892.696</li>
-              <li>Email: electronicstorepm@gmail.com</li>
+              <li>Email: electronicstorek64cnpm@gmail.com</li>
             </ul>
             <div class="footer-social">
               <a href=""><i class="fa fa-facebook"></i></a>
