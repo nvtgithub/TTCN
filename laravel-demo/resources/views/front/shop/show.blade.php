@@ -60,7 +60,7 @@
 
               </div>
               <div class="pd-color">
-                <h6>Color</h6>
+                <h6>Màu sắc</h6>
                 <div class="pd-color-choose">
                   @foreach(array_unique(array_column($product->productDetails->toArray(), 'color')) as $productColor)
                   <div class="cc-item">
@@ -70,10 +70,7 @@
                   @endforeach
                 </div>
               </div>
-              <div class="quantity">
-                <div class="pro-qty ">
-                  <input type="text" value="1">
-                </div>
+              <div class="quantity">               
                 <a href="javascript:addCart({{ $product->id }})" class="primary-btn pd-cart">Thêm vào giỏ hàng</a>
               </div>
               <ul class="pd-tags">
