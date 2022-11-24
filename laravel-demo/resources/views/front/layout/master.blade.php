@@ -246,8 +246,8 @@
             </div>
             <ul>
               <li>Địa chỉ: Trâu Qùy, Gia Lâm, Hà Nội</li>
-              <li>Phone: +84 865.892.696</li>
-              <li>Email: electronicStore@gmail.com</li>
+              <li>Số điện thoại: +84 865.892.696</li>
+              <li>Email: electronicstorepm@gmail.com</li>
             </ul>
             <div class="footer-social">
               <a href=""><i class="fa fa-facebook"></i></a>
