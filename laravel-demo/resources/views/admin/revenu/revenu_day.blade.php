@@ -26,33 +26,34 @@
     <div class="col-md-12">
       <div class="card shadow mb-4">
         <div class="card-body">
-          <br>
-          <div class="table-responsive">
-            <table class="table table-bordered center" id="dataTable" width="100%" cellspacing="0">
-              <thead>
-                <tr>
-                  <th>Đơn hàng ngày</th>
-                  <th>Số lượng đơn hàng</th>
-                  <th>Doanh thu ngày</th>
-                </tr>
-              </thead>
-              <tbody>
-                @foreach ($Revenus as $Revenu)
-                <tr>
-                  <th> {{$Revenu->day}}</th>
-                  <th>{{$Revenu->quantity}}</th>
-                  <th>{{number_format($Revenu->Total)}} VNĐ</th>
-                </tr>
-                @endforeach
-              </tbody>
-            </table>
-            {{$Revenus->links()}}
+          <div class="table-responsive">    
+            <br>
+            <div class="table-responsive">
+              <table class="table table-bordered center" id="dataTable" width="100%" cellspacing="0">
+                <thead>
+                  <tr>
+                    <th>Đơn hàng ngày</th>
+                    <th>Số lượng đơn hàng</th>
+                    <th>Doanh thu ngày</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  @foreach ($Revenus as $Revenu)
+                  <tr>
+                    <th> {{$Revenu->day}}</th>
+                    <th>{{$Revenu->quantity}}</th>
+                    <th>{{number_format($Revenu->Total)}} VNĐ</th>
+                  </tr>
+                  @endforeach
+                </tbody>
+              </table>
+              {{$Revenus->links()}}
+            </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-</div>
-<!-- End Main -->
+  <!-- End Main -->
 
-@endsection
+  @endsection

@@ -52,6 +52,7 @@
     autoplay: true,
   });
 
+
   /*------------------
       Product Slider
   --------------------*/
@@ -597,6 +598,5 @@ function remove_wishlist(clicked_id) {
   location.reload();
 }
 
-
-
+//Doanh thu theo ngày
 
