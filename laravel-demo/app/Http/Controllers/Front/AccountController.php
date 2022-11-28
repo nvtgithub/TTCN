@@ -2,13 +2,16 @@
 
 namespace App\Http\Controllers\Front;
 
+use Illuminate\Support\Facades\Mail;
 use App\Http\Controllers\Controller;
+use App\Models\User;
 use App\Services\Order\OrderService;
 use App\Services\User\UserServiceInterface;
 use App\Services\ProductCategory\ProductCategoryServiceInterface;
 use App\Utilities\Constant;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Str;
 
 class AccountController extends Controller
 {
@@ -92,5 +95,81 @@ class AccountController extends Controller
     $categories = $this->productCategoryService->all();
 
     return view('front.account.my-order.show', compact('order', 'categories'));
+  }
+
+  public function forgotpassword()
+  {
+    $categories = $this->productCategoryService->all();
+    return view('front.account.forgot_password', compact('categories'));
+  }
+
+  public function sendemail(Request $request)
+  {
+    $data = $request->all();
+    
+    $customer = User::where('email',$data['email_account'])->get();
+    $title_email = "Lấy lại mật khẩu";
+    foreach ($customer as $key => $value) {
+      $customer_id = $value -> id;
+    }
+
+    if ($customer) {
+      $count_customer = $customer->count();
+      if ($count_customer == 0) {
+        return back()->with('error','Email không tồn tại!');
+      }
+      else {
+        $token_random = Str::random(6);
+        $customer = User::find($customer_id);
+        $customer->user_token = $token_random;
+        $customer->save();
+        $categories = $this->productCategoryService->all();
+
+        $toEmail = $data['email_account'];
+        $link_reset_pass = url('account/update_newpass?email='.$toEmail.'&token='.$token_random);
+        // $link_reset_pass = 'helo';
+
+        $data = array('name' => $title_email, 'body' => $link_reset_pass, 'email' => $data['email_account'] );
+
+        Mail::send(
+        'front.account.forgot_pass_notify',
+         compact('categories', 'data'),
+         function ($message) use ($title_email,$data) {
+            $message->from('electronicstorek64cnpm@gmail.com',$title_email);
+            $message->to($data['email']);
+            $message->subject($title_email);
+        });
+        return redirect()->back()->with('message','Gửi Email thành công! Vui lòng vào email để reset mật khẩu');
+      }
+    }
+  }
+
+  public function resetnewpass(Request $request)
+  {
+    $categories = $this->productCategoryService->all();
+    $data = $request->all();
+    $token_random = Str::random(6);
+    $customer = User::where('email', $data['email_account'])
+    ->where('user_token',$data['token'])
+    ->get();
+    $count = $customer->count();
+    if ($count>0) {
+      foreach ($customer as $key => $cus) {
+        $customer_id = $cus-> id;
+      }
+      $reset = User::find($customer_id);
+      $reset->password = bcrypt($data['password']);
+      $reset->user_token = $token_random;
+      $reset->save();
+      return redirect('account/forgotpassword')->with('message','Mật khẩu đã cập nhập. Quay lại trang đăng nhập');
+    }else {
+      return redirect('account/forgotpassword')->with('error','Vui lòng nhập lại email vì link đã quá hạn!');
+    }
+  }
+
+  public function updatenewpass(Request $request)
+  {
+    $categories = $this->productCategoryService->all();
+    return view('front.account.new_pass', compact('categories'));
   }
 }

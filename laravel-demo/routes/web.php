@@ -50,6 +50,11 @@ Route::prefix('account')->group(function () {
   Route::get('register', [App\Http\Controllers\Front\AccountController::class, 'register']);
   Route::post('register', [App\Http\Controllers\Front\AccountController::class, 'postRegister']);
 
+  Route::get('forgotpassword', [App\Http\Controllers\Front\AccountController::class, 'forgotpassword']);
+  Route::post('send-email', [App\Http\Controllers\Front\AccountController::class, 'sendemail']);
+  Route::get('update_newpass', [App\Http\Controllers\Front\AccountController::class, 'updatenewpass']);
+  Route::post('reset_newpass', [App\Http\Controllers\Front\AccountController::class, 'resetnewpass']);
+
   Route::prefix('my-order')->middleware('CheckMemberLogin')->group(function () {
     Route::get('/', [App\Http\Controllers\Front\AccountController::class, 'myOrderIndex']);
     Route::get('{id}', [App\Http\Controllers\Front\AccountController::class, 'myOrderShow']);

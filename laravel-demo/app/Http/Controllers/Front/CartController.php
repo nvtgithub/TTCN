@@ -31,8 +31,10 @@ class CartController extends Controller
 
   public function add(Request $request)
   {
+    
     if ($request->ajax()) {
       $product = $this->productService->find($request->productId);
+      
 
       $response['cart'] = Cart::add([
         'id' => $product->id,
@@ -42,6 +44,7 @@ class CartController extends Controller
         'weight' => $product->weight ?? 0,
         'options' => [
           'images' => $product->productImages,
+          'colors' => $product->productColor,
         ],
       ]);
 
