@@ -126,14 +126,14 @@ class AccountController extends Controller
         $categories = $this->productCategoryService->all();
 
         $toEmail = $data['email_account'];
-        // $link_reset_pass = url('/update_new_pass?email='.$toEmail.'$token='.$token_random);
-        $link_reset_pass = 'helo';
+        $link_reset_pass = url('account/update_newpass?email='.$toEmail.'&token='.$token_random);
+        // $link_reset_pass = 'helo';
 
         $data = array('name' => $title_email, 'body' => $link_reset_pass, 'email' => $data['email_account'] );
 
         Mail::send(
         'front.account.forgot_pass_notify',
-         compact('categories'), 
+         compact('categories', 'data'),
          function ($message) use ($title_email,$data) {
             $message->from('electronicstorek64cnpm@gmail.com',$title_email);
             $message->to($data['email']);
@@ -142,5 +142,34 @@ class AccountController extends Controller
         return redirect()->back()->with('message','Gửi Email thành công! Vui lòng vào email để reset mật khẩu');
       }
     }
+  }
+
+  public function resetnewpass(Request $request)
+  {
+    $categories = $this->productCategoryService->all();
+    $data = $request->all();
+    $token_random = Str::random(6);
+    $customer = User::where('email', $data['email_account'])
+    ->where('user_token',$data['token'])
+    ->get();
+    $count = $customer->count();
+    if ($count>0) {
+      foreach ($customer as $key => $cus) {
+        $customer_id = $cus-> id;
+      }
+      $reset = User::find($customer_id);
+      $reset->password = md5($data['password']);
+      $reset->user_token = $token_random;
+      $reset->save();
+      return redirect('account/forgotpassword')->with('message','Mật khẩu đã cập nhập. Quay lại trang đăng nhập');
+    }else {
+      return redirect('account/forgotpassword')->with('error','Vui lòng nhập lại email vì link đã quá hạn!');
+    }
+  }
+
+  public function updatenewpass(Request $request)
+  {
+    $categories = $this->productCategoryService->all();
+    return view('front.account.new_pass', compact('categories'));
   }
 }

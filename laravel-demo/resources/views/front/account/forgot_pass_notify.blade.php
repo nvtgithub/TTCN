@@ -8,7 +8,7 @@
   </head>
   <body>
     <div class="container">
-      <p>Nhấp vào  để nhập lại mật khẩu</p>
+      <p>Nhấp vào {{$data['body']}} để nhập lại mật khẩu</p>
     </div>
   </body>
 </html>
