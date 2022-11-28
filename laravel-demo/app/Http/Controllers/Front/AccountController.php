@@ -158,7 +158,7 @@ class AccountController extends Controller
         $customer_id = $cus-> id;
       }
       $reset = User::find($customer_id);
-      $reset->password = md5($data['password']);
+      $reset->password = bcrypt($data['password']);
       $reset->user_token = $token_random;
       $reset->save();
       return redirect('account/forgotpassword')->with('message','Mật khẩu đã cập nhập. Quay lại trang đăng nhập');
