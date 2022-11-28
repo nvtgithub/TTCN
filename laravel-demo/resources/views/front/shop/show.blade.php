@@ -51,7 +51,7 @@
                   <span>({{ count($product->productComments)}})</span>
               </div>
               <div class="pd-desc">
-                
+
                 @if($product->discount != null)
                 <h4>{{ number_format($product->discount, 0, '.', '.') }} VNĐ <span>{{ number_format($product->price, 0, '.', '.') }} VNĐ</span></h4>
                 @else
@@ -65,12 +65,12 @@
                   @foreach(array_unique(array_column($product->productDetails->toArray(), 'color')) as $productColor)
                   <div class="cc-item">
                     <input type="radio" id="cc-{{ $productColor }}">
-                    <label for="cc-{{ $productColor }}" class="cc-{{ $productColor }}"></label>
+                    <label for="cc-{{ $productColor }}" class="cc-{{ $productColor }}" data-value="{{ $productColor }}" data-inwptooltip="{{ $productColor }}"></label>
                   </div>
                   @endforeach
                 </div>
               </div>
-              <div class="quantity">               
+              <div class="quantity">
                 <a href="javascript:addCart({{ $product->id }})" class="primary-btn pd-cart">Thêm vào giỏ hàng</a>
               </div>
               <ul class="pd-tags">
@@ -111,7 +111,7 @@
               </div>
               <div class="tab-pane fade" id="tab-2" role="tabpanel">
                 <div class="specification-table">
-                  
+
                   {!! $product->content !!}
                 </div>
               </div>

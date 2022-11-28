@@ -394,7 +394,7 @@ function addCart(productId) {
         cartHover_tbody.append(newItem);
       }
 
-      alert('Thêm thành công\nSản phẩm: ' + response['cart'].name + ' Màu: ' +  response['cart'].color);
+      alert('Thêm thành công\nSản phẩm: ' + response['cart'].name + ' Màu: ' +  response['cart'].options.colors[1]);
       console.log(response)
     },
     error: function (response) {
