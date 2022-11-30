@@ -12,8 +12,8 @@ class VNPay
      * config.php
      *
      */
-    static $vnp_TmnCode = "AENFON3L"; //Mã website tại VNPAY
-    static $vnp_HashSecret = "WMIFZEYJTQKBMFQWDCXDSCHRIBHVOWVM"; //Chuỗi bí mật
+    static $vnp_TmnCode = "5XGQZWNQ"; //Mã website tại VNPAY
+    static $vnp_HashSecret = "UFSYUZGTFEUIODQPRPHODYDXMMXXAEHJ"; //Chuỗi bí mật
     static $vnp_Url = "http://sandbox.vnpayment.vn/paymentv2/vpcpay.html";
     static $vnp_Returnurl = "/checkout/vnPayCheck"; //Chú ý cấu hình env('APP_URL') khi sử dụng biến này.
 

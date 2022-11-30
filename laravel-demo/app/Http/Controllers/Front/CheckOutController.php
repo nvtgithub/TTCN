@@ -75,7 +75,7 @@ class CheckOutController extends Controller
       //01. Lấy URL thanh toán VNPay
       $data_url = VNPay::vnpay_create_payment([
         'vnp_TxnRef' => $order->id, //ID của đơn hàng
-        'vnp_OrderInfo' => '',
+        'vnp_OrderInfo' => 'Mô tả',
         'vnp_Amount' => Cart::total(0, '', ''), //Tổng giá của đơn hàng
       ]);
 
