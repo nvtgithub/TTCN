@@ -44,7 +44,6 @@ class CartController extends Controller
         'weight' => $product->weight ?? 0,
         'options' => [
           'images' => $product->productImages,
-          'colors' => $product->productColor,
         ],
       ]);
 
