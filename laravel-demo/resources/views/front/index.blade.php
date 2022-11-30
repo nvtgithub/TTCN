@@ -92,14 +92,14 @@
       <div class="col-lg-8 offset-lg-1">
         <div class="filter-control">
           <ul>
-            <li class="active item" data-tag="*" data-category="Smartphone">All</li>
-            <li class="item" data-tag=".Apple" data-category="Smartphone">Apple</li>
-            <li class="item" data-tag=".SamSung" data-category="Smartphone">SamSung</li>
-            <li class="item" data-tag=".Oppo" data-category="Smartphone">Oppo</li>
-            <li class="item" data-tag=".Xiaomi" data-category="Smartphone">Xiaomi</li>
+            <li class="active item" data-tag="*" data-category="SmartPhone">All</li>
+            <li class="item" data-tag=".Iphone" data-category="SmartPhone">Apple</li>
+            <li class="item" data-tag=".SamSung" data-category="SmartPhone">SamSung</li>
+            <li class="item" data-tag=".Oppo" data-category="SmartPhone">Oppo</li>
+            <li class="item" data-tag=".Xiaomi" data-category="SmartPhone">Xiaomi</li>
           </ul>
         </div>
-        <div class="product-slider owl-carousel SmartPhone">
+        <div class="product-slider owl-carousel Smartphone">
           @foreach ($featuredProducts['SmartPhone'] as $product)
           @include('front.components.product-item')
           @endforeach
@@ -119,7 +119,7 @@
         <p>MacBook Air M1 Là máy tính xách tay mỏng và nhẹ nhất của Apple – nay thay đổi ngoạn mục với chip Apple M1 mạnh mẽ. Tạo ra một cú nhảy vọt về hiệu năng CPU và đồ họa, cùng thời lượng pin lên đến 18 giờ.
         </p>
         <div class="product-price">
-          30.490.000 VNĐ 
+          30.490.000 VNĐ
         </div>
       </div>
       <div class="countdown-timer" id="countdown">
@@ -185,10 +185,10 @@
       <div class="col-lg-8">
         <div class="filter-control">
           <ul>
-            <li class="active">Clothings</li>
-            <li>HandBag</li>
-            <li>Shoes</li>
-            <li>Accessories</li>
+            <li class="active item" data-tag="*" data-category="Smartwatch">All</li>
+            <li class="item" data-tag=".Xiaomi" data-category="Smartwatch">Xiaomi</li>
+            <li class="item" data-tag=".Apple" data-category="Smartwatch">Apple</li>
+            <li class="item" data-tag=".SamSung" data-category="Smartwatch">SamSung</li>
           </ul>
         </div>
         <div class="product-slider owl-carousel">
@@ -200,7 +200,7 @@
       <div class="col-lg-3 offset-lg-1">
         <div class="product-large set-bg" data-setbg="front/img/products/smartwatch.jpg">
           <h2>SmartWatch</h2>
-          <a href="shop/category/Smartwatch">Discover More</a>
+          <a href="shop/category/Smartwatch">Xem thêm</a>
         </div>
       </div>
 
@@ -216,10 +216,10 @@
       <div class="col-lg-8">
         <div class="filter-control">
           <ul>
-            <li class="active">Clothings</li>
-            <li>HandBag</li>
-            <li>Shoes</li>
-            <li>Accessories</li>
+            <li class="active item" data-tag="*" data-category="Headphone">All</li>
+            <li class="item" data-tag=".Xiaomi" data-category="Headphone">Xiaomi</li>
+            <li class="item" data-tag=".Apple" data-category="Headphone">Apple</li>
+            <li class="item" data-tag=".SamSung" data-category="Headphone">SamSung</li>
           </ul>
         </div>
         <div class="product-slider owl-carousel">
@@ -230,7 +230,7 @@
       </div>
       <div class="col-lg-3 offset-lg-1">
         <div class="product-large set-bg" data-setbg="front/img/products/headphone.jpg">
-          <h2>HeadPhone</h2>
+          <h2>Tai nghe</h2>
           <a href="shop/category/Headphone">Xem thêm</a>
         </div>
       </div>
@@ -247,10 +247,10 @@
       <div class="col-lg-8">
         <div class="filter-control">
           <ul>
-            <li class="active">Clothings</li>
-            <li>HandBag</li>
-            <li>Shoes</li>
-            <li>Accessories</li>
+            <li class="active item" data-tag="*" data-category="Accessory">All</li>
+            <li class="item" data-tag=".Xiaomi" data-category="Accessory">Xiaomi</li>
+            <li class="item" data-tag=".Apple" data-category="Accessory">Apple</li>
+            <li class="item" data-tag=".SamSung" data-category="Accessory">SamSung</li>
           </ul>
         </div>
         <div class="product-slider owl-carousel">
@@ -261,7 +261,7 @@
       </div>
       <div class="col-lg-3 offset-lg-1">
         <div class="product-large set-bg" data-setbg="front/img/products/Accessories.jpg">
-          <h2>Accessories</h2>
+          <h2>Phụ kiện</h2>
           <a href="shop/category/Accessory">Xem thêm</a>
         </div>
       </div>
@@ -438,5 +438,6 @@
     </div>
   </div>
 </section>
+
 <!-- Latest Blog Section End -->
 @endsection
