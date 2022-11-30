@@ -78,7 +78,6 @@ Route::prefix('admin')->middleware('CheckAdminLogin')->group(function () {
   // Route::post('revenu_filter_day/filter_by_date', [App\Http\Controllers\Admin\RevenusFilterDayController::class], 'filter_by_date');
   Route::prefix('revenu_filter_day')->group(function () {
     Route::get('/', [App\Http\Controllers\Admin\RevenusFilterDayController::class, 'index']);
-    Route::post('filter_by_date', [App\Http\Controllers\Admin\RevenusFilterDayController::class, 'filter_by_date']);
   });
 
   // Route::post('order_{{id}}', [App\Http\Controllers\Admin\OrderController::class, 'Confirmed']);

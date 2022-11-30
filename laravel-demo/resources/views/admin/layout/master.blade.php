@@ -2314,27 +2314,27 @@
   <script type="text/javascript" src="./dashboard/assets/scripts/main.js"></script>
   <script type="text/javascript" src="./dashboard/assets/scripts/my_script.js"></script>
   <script>
-    $(document).ready(function() {
-      $('#btn_filter_revenus').click(function() {
-        var _token = $('input[name="_token"]').val();
+    // $(document).ready(function() {
+    //   $('#btn_filter_revenus').click(function() {
+    //     var _token = $('input[name="_token"]').val();
 
-        var from_date = $('#from_date').val();
-        var to_date = $('#to_date').val();
+    //     var from_date = $('#from_date').val();
+    //     var to_date = $('#to_date').val();
 
-        $.ajax({
-          url: "{revenu_filter_day/filter_by_date}",
-          method: "POST",
-          data: {
-            from_date: from_date,
-            to_date: to_date,
-            _token: _token
-          },
-          success: function(data) {
+    //     $.ajax({
+    //       url: "{revenu_filter_day/filter_by_date}",
+    //       method: "POST",
+    //       data: {
+    //         from_date: from_date,
+    //         to_date: to_date,
+    //         _token: _token
+    //       },
+    //       success: function(data) {
 
-          }
-        })
-      });
-    });
+    //       }
+    //     })
+    //   });
+    // });
   </script>
 </body>
 

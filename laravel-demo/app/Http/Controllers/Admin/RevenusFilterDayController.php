@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Redis;
 
 class RevenusFilterDayController extends Controller
 {
@@ -13,9 +14,27 @@ class RevenusFilterDayController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {             
-        return view('admin.revenu.revenu_filter_day');
+    public function index(Request $request)
+    {
+        $data = $request->all();
+        $from_date = $data['from_date'] ?? '';
+        $to_date = $data['to_date'] ?? '';
+
+
+        $Revenus = DB::table('orders')->join('order_details', 'orders.id', '=', 'order_details.order_id')->whereBetween('orders.created_at', [$from_date, $to_date])->where('status', 'like', '7')->select(
+            DB::raw("DATE_FORMAT(orders.created_at, '%d-%m-%Y') as day"),
+            DB::raw("sum(total) as Total"),
+            DB::raw("sum(order_details.qty) as quantity")
+        )
+            ->groupBy("day")->orderBy('day', 'DESC')
+            ->paginate(10);
+
+        $total = 0;
+        foreach ($Revenus as $data) {
+            $total += $data->Total;
+        }
+
+        return view('admin.revenu.revenu_filter_day', compact('Revenus', 'total'));
     }
 
     /**
@@ -47,7 +66,6 @@ class RevenusFilterDayController extends Controller
      */
     public function show()
     {
-        
     }
 
     /**
@@ -84,21 +102,20 @@ class RevenusFilterDayController extends Controller
         //
     }
 
-    public function filter_by_date(Request $request)
-    {
-        $data = $request->all();
-        $from_date = $data['from_date'];
-        $to_date = $data['to_date'];
-        
-        $get = DB::table('orders')->join('order_details', 'orders.id', '=', 'order_details.order_id')->whereBetween('orders.created_at', [$from_date, $to_date])->select(
-            DB::raw("DATE_FORMAT(orders.created_at, '%d-%m-%Y') as day"),
-            DB::raw("sum(total) as Total"),
-            // "ProductName as ProductName",
-            DB::raw("sum(order_details.qty) as quantity")
-          )
-            ->groupBy("day")->orderBy('day', 'DESC')
-            ->paginate(10);
+    // public function filter_by_date()
+    // {
+    //     // $data = $request->all();
+    //     // $from_date = $data['from_date'];
+    //     // $to_date = $data['to_date'];
 
-        return view('admin.revenu.revenu_filter_day', compact('get'));
-    }
+    //     // $Revenus = DB::table('orders')->join('order_details', 'orders.id', '=', 'order_details.order_id')->where('status', '=', 7)->select(
+    //     //     DB::raw("DATE_FORMAT(orders.created_at, '%d-%m-%Y') as day"),
+    //     //     DB::raw("sum(total) as Total"),
+    //     //     DB::raw("sum(order_details.qty) as quantity")
+    //     //   )
+    //     //     ->groupBy("day")->orderBy('day', 'DESC')
+    //     //     ->paginate(10);
+
+    //     // return view('admin.revenu.revenu_filter_day', compact('Revenus'));
+    // }
 }

@@ -124,7 +124,7 @@
           <div class="position-relative row form-group">
             <label for="country" class="col-md-3 text-md-right col-form-label">Đất nước</label>
             <div class="col-md-9 col-xl-8">
-              <p>{{ $order->country }}/p>
+              <p>{{ $order->country }}</p>
             </div>
           </div>
 
@@ -140,6 +140,13 @@
             <label for="payment_type" class="col-md-3 text-md-right col-form-label">Phương thức thanh toán</label>
             <div class="col-md-9 col-xl-8">
               <p>{{ $order->payment_type }}</p>
+            </div>
+          </div>
+
+          <div class="position-relative row form-group">
+            <label for="payment_type" class="col-md-3 text-md-right col-form-label">Ngày đặt hàng</label>
+            <div class="col-md-9 col-xl-8">
+              <p>{{ DATE_FORMAT($order->created_at, 'd-m-Y H:i:s') }}</p>      
             </div>
           </div>
 

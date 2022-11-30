@@ -49,12 +49,16 @@
                                                 <button style="margin: auto;" type="submit" class="btn btn-primary" id="btn_filter_revenus">Lọc</button>
                                             </div>
                                         </th>
-                                        
+
                                     </tr>
                                 </thead>
                             </table>
                         </form>
-                        <p>Tổng doanh thu: <span>100000 VNĐ</span></p>
+                        <p>Tổng doanh thu: 
+                            <span id="total_of_filter">
+                                <b>{{ number_format($total) }} VNĐ</b>
+                            </span>
+                        </p>
                     </div>
                     <div class="table-responsive">
                         <table class="table table-bordered center" id="dataTable" width="100%" cellspacing="0">
@@ -62,11 +66,19 @@
                                 <tr>
                                     <th>Đơn hàng ngày</th>
                                     <th>Số lượng đơn hàng</th>
+                                    <th>Số sản phẩm</th>
                                     <th>Doanh thu</th>
                                 </tr>
                             </thead>
                             <tbody>
-
+                                @foreach ($Revenus as $Revenus)
+                                <tr>
+                                    <th>{{$Revenus->day}}</th>
+                                    <th>x</th>
+                                    <th>{{$Revenus->quantity}}</th>
+                                    <th>{{number_format($Revenus->Total)}} VNĐ</th>
+                                </tr>
+                                @endforeach                              
                             </tbody>
                         </table>
 
@@ -78,4 +90,3 @@
     <!-- End Main -->
 
     @endsection
-   
