@@ -39,7 +39,7 @@
         <div class="ht-left">
           <div class="mail-service">
             <i class="fa fa-envelope ">
-            electronicstorek64cnpm@gmail.com</i>
+              electronicstorek64cnpm@gmail.com</i>
           </div>
           <div class="phone-service">
             <i class="fa fa-phone"><span class="ml-2">0865892696</span> </i>
@@ -104,7 +104,7 @@
                 </a>
                 <div class="cart-hover">
                   <div class="select-items" style="max-height: 250px; overflow-y: scroll;">
-                    <table >
+                    <table>
                       <tbody id="show_product_favorite">
 
                       </tbody>
@@ -181,7 +181,7 @@
             <li><a href="">Trang</a>
               <ul class="dropdown">
                 <li><a href="./account/my-order">Đơn hàng của tôi</a></li>
-                <li><a href="./account/my-contact">Thông tin cá nhân</a></li>
+                <li><a href="./account/my-contact/contactuser/{{ Auth::user()->id }}">Thông tin cá nhân</a></li>
                 <li><a href="./checkout">Thanh toán</a></li>
                 <li><a href="account/register">Đăng ký</a></li>
               </ul>

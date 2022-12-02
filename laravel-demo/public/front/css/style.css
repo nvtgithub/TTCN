@@ -1172,7 +1172,7 @@ ol {
 }
 
 .product-item:hover {
-  box-shadow: 0 .5rem 1rem rgba(0,0,0,.15)!important;
+  box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .15) !important;
 }
 
 .product-item:hover .pi-pic .icon {
@@ -1622,9 +1622,7 @@ ol {
   line-height: 26px;
 }
 
-.newslatter-item .subscribe-form {
-  
-}
+.newslatter-item .subscribe-form {}
 
 .newslatter-item .subscribe-form input {
   font-size: 16px;
@@ -4659,3 +4657,45 @@ ol {
   text-decoration: underline;
 }
 
+.com-users-profile__core legend {
+  border-bottom: 1px solid #E0E0E0;
+  color: #201F1E;
+  font-size: 25px;
+  font-weight: 600;
+  padding-bottom: 0.25rem;
+}
+
+.com-users-profile__core dt {
+  border-bottom: 1px dashed #E0E0E0;
+  color: #000;
+  font-weight: 500;
+  margin-top: 0;
+  margin: 0;
+  text-align: left;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  position: relative;
+}
+
+.com-users-profile__core dt::after {
+  content: ':';
+  position: absolute;
+  right: 0;
+}
+
+.com-users-profile__core dd {
+  border-bottom: 1px dashed #E0E0E0;
+  margin: 0;
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+
+.edit-profile {
+  position: relative;
+}
+
+.com-users-profile__core .btn-edit-profile {
+  position: absolute;
+  right: 0;
+  top: 0;
+}

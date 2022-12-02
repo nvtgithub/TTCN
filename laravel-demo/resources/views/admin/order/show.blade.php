@@ -161,8 +161,8 @@
                     <option> {{ \App\Utilities\Constant::$order_status[$order->status] }}</option>
                     <option value="0">Đơn hàng bị hủy</option>
                     <option value="1">Nhận đơn đặt hàng</option>
-                    <option value="2">Chưa xác nhận đơn hàng</option>
-                    <option value="3">Đã xác nhận đơn hàng</option>
+                    <!-- <option value="2">Chưa xác nhận đơn hàng</option> -->
+                    <!-- <option value="3">Đã xác nhận đơn hàng</option> -->
                     <option value="4">Đã thanh toán</option>
                     <option value="5">Đơn hàng đang được xử lý</option>
                     <option value="6">Đang giao hàng</option>
