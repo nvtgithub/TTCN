@@ -61,14 +61,8 @@ Route::prefix('account')->group(function () {
   });
 
   Route::prefix('my-contact')->middleware('CheckMemberLogin')->group(function () {
-    // Route::get('/', [App\Http\Controllers\Front\ContactUserController::class, 'index']);
-    // Route::get('edit', [App\Http\Controllers\Front\ContactUserController::class, 'edit']);
-    // Route::get('update', [App\Http\Controllers\Front\ContactUserController::class, 'update']);
       Route::resource('contactuser', App\Http\Controllers\Front\ContactUserController::class);
   });
-
-  // Route::prefix('my-contact')->middleware('CheckMemberLogin')->group(function () {
-  // });
 });
 
 //Dashboard (Admin)
@@ -84,14 +78,9 @@ Route::prefix('admin')->middleware('CheckAdminLogin')->group(function () {
   Route::resource('order', App\Http\Controllers\Admin\OrderController::class);
   Route::resource('revenu_day', App\Http\Controllers\Admin\RevenusDayController::class);
   Route::resource('revenu_month', App\Http\Controllers\Admin\RevenusMonthController::class);
-  // Route::resource('revenu_filter_day', App\Http\Controllers\Admin\RevenusFilterDayController::class);
-  // Route::post('revenu_filter_day/filter_by_date', [App\Http\Controllers\Admin\RevenusFilterDayController::class], 'filter_by_date');
   Route::prefix('revenu_filter_day')->group(function () {
     Route::get('/', [App\Http\Controllers\Admin\RevenusFilterDayController::class, 'index']);
   });
-
-  // Route::post('order_{{id}}', [App\Http\Controllers\Admin\OrderController::class, 'Confirmed']);
-
   Route::prefix('login')->group(function () {
     Route::get('', [\App\Http\Controllers\Admin\HomeController::class, 'getLogin'])->withoutMiddleware('CheckAdminLogin');
     Route::post('', [App\Http\Controllers\Admin\HomeController::class, 'postLogin'])->withoutMiddleware('CheckAdminLogin');
