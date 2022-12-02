@@ -12,6 +12,7 @@ use App\Utilities\Constant;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
+use Illuminate\Support\Facades\DB;
 
 class AccountController extends Controller
 {
@@ -65,6 +66,17 @@ class AccountController extends Controller
 
   public function postRegister(Request $request)
   {
+    $emails = DB::table('users')->pluck('email');
+
+    foreach($emails as $email)
+    {
+        if($email == $request->get('email'))
+        {
+          return back()
+          ->with('notification', 'ERROR: Tài khoản đã tồn tại!');
+        }
+    }
+
     if ($request->password != $request->password_confirmation) {
       return back()->with('notification', 'Lỗi: Mật khẩu không khớp!');
     }
@@ -172,4 +184,26 @@ class AccountController extends Controller
     $categories = $this->productCategoryService->all();
     return view('front.account.new_pass', compact('categories'));
   }
+
+  // public function myContactIndex()
+  // {
+  //   $categories = $this->productCategoryService->all();
+  //   return view('front.account.my-contact.index', compact('categories'));
+  // }
+
+  // public function editContact(User $user)
+  // {
+  //   $categories = $this->productCategoryService->all();
+  //   return view('front.account.my-contact.edit', compact('user', 'categories'));
+  // }
+
+  // public function updateContact(Request $request, User $user)
+  // {
+  //   $data = $request->all();
+
+  //   //cập nhật dữ liệu
+  //   $this->userService->update($data, $user->id);
+
+  //   return redirect('account.my-contact.edit');
+  // }
 }

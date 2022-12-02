@@ -59,6 +59,16 @@ Route::prefix('account')->group(function () {
     Route::get('/', [App\Http\Controllers\Front\AccountController::class, 'myOrderIndex']);
     Route::get('{id}', [App\Http\Controllers\Front\AccountController::class, 'myOrderShow']);
   });
+
+  Route::prefix('my-contact')->middleware('CheckMemberLogin')->group(function () {
+    Route::get('/', [App\Http\Controllers\Front\ContactUserController::class, 'index']);
+    Route::get('edit', [App\Http\Controllers\Front\ContactUserController::class, 'edit']);
+    Route::get('update', [App\Http\Controllers\Front\ContactUserController::class, 'update']);
+  });
+
+  // Route::prefix('my-contact')->middleware('CheckMemberLogin')->group(function () {
+  //   Route::resource('/', App\Http\Controllers\Front\ContactUserController::class);
+  // });
 });
 
 //Dashboard (Admin)

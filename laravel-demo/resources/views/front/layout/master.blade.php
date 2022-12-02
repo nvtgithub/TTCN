@@ -181,6 +181,7 @@
             <li><a href="">Trang</a>
               <ul class="dropdown">
                 <li><a href="./account/my-order">Đơn hàng của tôi</a></li>
+                <li><a href="./account/my-contact">Thông tin cá nhân</a></li>
                 <li><a href="./checkout">Thanh toán</a></li>
                 <li><a href="account/register">Đăng ký</a></li>
               </ul>
