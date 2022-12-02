@@ -177,7 +177,7 @@
           <ul>
             <li class="{{ (request()->segment(1) == '') ? 'active' : '' }}"><a href="./">Trang chủ</a></li>
             <li class="{{ (request()->segment(1) == 'shop') ? 'active' : '' }}"><a href="./shop">Shop</a></li>
-            <li><a href="/contact">Thông tin</a></li>
+            <li class="{{ (request()->segment(1) == 'contact') ? 'active' : '' }}"><a href="./contact">Thông tin</a></li>
             <li><a href="">Trang</a>
               <ul class="dropdown">
                 <li><a href="./account/my-order">Đơn hàng của tôi</a></li>
