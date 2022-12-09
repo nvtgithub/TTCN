@@ -26,18 +26,16 @@
         <div class="col-md-12">
             <div class="main-card mb-3 card">
                 <div class="card-body">
-                    <form method="post" action="/admin/decoration/{{ $decoration->id }}" enctype="multipart/form-data">
+                    <form method="post" action="/admin/decoration" enctype="multipart/form-data">
                         @csrf
-                        @method('PUT')
-
-                        @include('admin.components.notification')
+                        <!-- @include('admin.components.notification') -->
 
                         <div class="position-relative row form-group">
                             <label for="level" class="col-md-3 text-md-right col-form-label">Danh mục</label>
                             <div class="col-md-9 col-xl-8">
                                 <select required name="category" id="select_category" class="form-control">
                                     @foreach($categories as $category)
-                                    <option value="{{ $category->name }}" {{ $decoration->category_name ==  $category->name ? 'selected' : '' }}>
+                                    <option value="{{ $category->name }}">
                                         {{ $category->name }}
                                     </option>
                                     @endforeach
@@ -48,9 +46,9 @@
                         <div class="position-relative row form-group">
                             <label for="image" class="col-md-3 text-md-right col-form-label">Hình ảnh</label>
                             <div class="col-md-9 col-xl-8">
-                                <img style="cursor: pointer;" class="thumbnail" data-toggle="tooltip" title="Click để chọn hình ảnh" data-placement="bottom" src="front/img/banner/{{ $decoration->image == null ? 'default-image.jpg' : $decoration->image }}" alt="Avatar">
+                                <img style="cursor: pointer;" class="thumbnail" data-toggle="tooltip" title="Click để chọn hình ảnh" data-placement="bottom" src="front/img/banner/default-image.jpg" alt="Avatar">
                                 <input name="image" type="file" onchange="changeImg(this)" class="image form-control-file" style="display: none;" value="">
-                                <input type="hidden" name="image_old" value="{{ $decoration->image }}">
+                                <input type="hidden" name="image_old" value="">
                                 <small class="form-text text-muted">
                                     Chọn hình ảnh đại diện (Cần thiết)
                                 </small>
@@ -60,21 +58,14 @@
                         <div class="position-relative row form-group">
                             <label for="name" class="col-md-3 text-md-right col-form-label">Tiêu đề</label>
                             <div class="col-md-9 col-xl-8">
-                                <input name="title" id="title" placeholder="Tiêu đề" type="text" class="form-control" value="{{ $decoration->title }}">
+                                <input name="title" id="title" placeholder="Tiêu đề" type="text" class="form-control" value="">
                             </div>
                         </div>
 
                         <div class="position-relative row form-group">
                             <label for="name" class="col-md-3 text-md-right col-form-label">Nội dung</label>
                             <div class="col-md-9 col-xl-8">
-                                <input name="content" id="content" placeholder="Nội dung" type="text" class="form-control" value="{{ $decoration->content }}">
-                            </div>
-                        </div>
-
-                        <div class="position-relative row form-group">
-                            <label for="name" class="col-md-3 text-md-right col-form-label">ID sản phẩm (dành cho sản phẩm yêu thích)</label>
-                            <div class="col-md-9 col-xl-8">
-                                <input {{ $decoration->location != 3 ? 'readonly' :'' }} name="product_id" id="product_id" placeholder="Nhập vào id của sản phẩm" type="text" class="form-control" value="{{ $decoration->product_id }}">
+                                <input name="content" id="content" placeholder="Nội dung" type="text" class="form-control" value="">
                             </div>
                         </div>
 

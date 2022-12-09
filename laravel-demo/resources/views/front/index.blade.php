@@ -6,14 +6,17 @@
 <!--Hero Section Begin -->
 <section class="hero-section">
   <div class="hero-items owl-carousel">
-    <div class="single-hero-items set-bg" data-setbg="front/img/hero-1.jpg">
+
+    @foreach($banners as $banner)
+    @if($banner->location == 1)
+    <div class="single-hero-items set-bg" data-setbg="front/img/banner/{{ $banner->image }}">
       <div class="container">
         <div class="row">
           <div class="col-lg-5">
-            <span>SmartPhone</span>
-            <h1>Black Friday</h1>
-            <p>Sự kiện siêu sale, mua nhiều giảm giá!</p>
-            <a href="shop/category/SmartPhone" class="primary-btn">Xem ngay</a>
+            <span>{{ $banner->category_name }}</span>
+            <h1>{{ $banner->title }}</h1>
+            <p>{{ $banner->content }}</p>
+            <a href="shop/category/{{ $banner->category_name }}" class="primary-btn">Xem ngay</a>
           </div>
         </div>
         <div class=off-card>
@@ -21,21 +24,9 @@
         </div>
       </div>
     </div>
-    <div class="single-hero-items set-bg" data-setbg="front/img/hero-2.jpg">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-5">
-            <span>Laptop</span>
-            <h1>Black Friday</h1>
-            <p>Sự kiện siêu sale, mua nhiều giảm giá!</p>
-            <a href="shop/category/Laptop" class="primary-btn">Xem ngay</a>
-          </div>
-        </div>
-        <div class=off-card>
-          <h2>Sales<span>50%</span></h2>
-        </div>
-      </div>
-    </div>
+    @endif
+    @endforeach
+
   </div>
 </section>
 <!--Hero Section End -->
@@ -44,36 +35,22 @@
 <div class="banner-section spad">
   <div class="container-fluid">
     <div class="row">
+
+      @foreach($banners as $banner)
+      @if($banner->location == 2)
       <div class="col-lg-4">
-        <a href="shop/category/Smartphone">
+        <a href="shop/category/{{ $banner->category_name }}">
           <div class="single-banner">
-            <img src="front/img/banner-1.jpg" alt="">
+            <img src="front/img/banner/{{ $banner->image }}" alt="">
             <div class="inner-text">
-              <h4>SmartPhone</h4>
+              <h4>{{ $banner->category_name }}</h4>
             </div>
           </div>
         </a>
       </div>
-      <div class="col-lg-4">
-        <a href="shop/category/Laptop">
-          <div class="single-banner">
-            <img src="front/img/banner-2.jpg" alt="">
-            <div class="inner-text">
-              <h4>Laptop</h4>
-            </div>
-          </div>
-        </a>
-      </div>
-      <div class="col-lg-4">
-        <a href="shop/category/Headphone">
-          <div class="single-banner">
-            <img src="front/img/banner-3.jpg" alt="">
-            <div class="inner-text">
-              <h4>HeadPhone</h4>
-            </div>
-          </div>
-        </a>
-      </div>
+      @endif
+      @endforeach
+
     </div>
   </div>
 </div>
@@ -111,16 +88,19 @@
 <!-- SmartPhone Section End -->
 
 <!-- Deal Of The Week Section Begin -->
-<section class="deal-of-week set-bg spad" data-setbg="front/img/banner-dealofweek.png">
+@foreach($banners as $banner)
+@if($banner->location == 3)
+<section class="deal-of-week set-bg spad" data-setbg="front/img/banner/{{ $banner->image }}">
   <div class="container">
     <div class="col-lg-6 text-center">
       <div class="section-title">
         <h2>Sản phẩm yêu thích trong tuần</h2>
-        <p>MacBook Air M1 Là máy tính xách tay mỏng và nhẹ nhất của Apple – nay thay đổi ngoạn mục với chip Apple M1 mạnh mẽ. Tạo ra một cú nhảy vọt về hiệu năng CPU và đồ họa, cùng thời lượng pin lên đến 18 giờ.
-        </p>
         <div class="product-price">
-          30.490.000 VNĐ
+          {{ $banner->title }}
         </div>
+        <p>
+          {{ $banner->content }}
+        </p>
       </div>
       <div class="countdown-timer" id="countdown">
         <div class="cd-item">
@@ -140,10 +120,12 @@
           <p>Secs</p>
         </div>
       </div>
-      <a href="shop/product/5" class="primary-btn">Xem ngay </a>
+      <a href="shop/product/{{ $banner->product_id }}" class="primary-btn">Xem ngay </a>
     </div>
   </div>
 </section>
+@endif
+@endforeach
 <!-- Deal Of The Week Section End -->
 
 <!-- Laptop Section Begin -->

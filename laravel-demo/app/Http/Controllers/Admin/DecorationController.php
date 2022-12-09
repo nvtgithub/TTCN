@@ -33,7 +33,9 @@ class DecorationController extends Controller
      */
     public function create()
     {
-        //
+        $categories = $this->productCategoryService->all();
+
+        return view('admin.decoration.create', compact('categories'));
     }
 
     /**
@@ -44,51 +46,46 @@ class DecorationController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->all();
+
+        //Xử lý file:
+        if ($request->hasFile('image')) {
+            $data['avatar'] = Common::uploadFile($request->file('image'), 'front/img/banner');
+        }
+
+        $newDecoration = DB::table('decoration')->insert([
+            'location'   => '1',
+            'category_name'   => $data['category'],
+            'image'      => $data['avatar'],
+            'title'      => $data['title'],
+            'content'    => $data['content'],
+        ]);
+        return redirect('admin/decoration');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function show($id)
     {
         //
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function edit(Decoration $decoration)
     {
         $categories = $this->productCategoryService->all();
         return view('admin.decoration.edit', compact('decoration', 'categories'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function update(Request $request, Decoration $decoration)
     {
         $data = $request->all();
         //xử lý file ảnh
         if ($request->hasFile('image')) {
             //Thêm file mới
-            $data['avatar'] = Common::uploadFile($request->file('image'), 'front/img');
+            $data['avatar'] = Common::uploadFile($request->file('image'), 'front/img/banner');
 
             //Xóa file cũ
             $file_name_old = $request->get('image_old');
             if ($file_name_old != '') {
-                unlink('front/img/' . $file_name_old);
+                unlink('front/img/banner/' . $file_name_old);
             }
         }
 
@@ -100,20 +97,23 @@ class DecorationController extends Controller
                 'category_name'  => $data['category'],
                 'title'      => $data['title'],
                 'content'    => $data['content'],
+                'product_id'    => $data['product_id'],
                 'image' => $data['avatar'],
-                ]);
+            ]);
 
         return redirect('admin/decoration');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
+    public function destroy(Decoration $decoration)
     {
-        //
+        DB::table('decoration')->where('id', 'like', $decoration->id)->delete();
+
+        //Xóa file
+        $file_name = $decoration->image;
+        if ($file_name != '') {
+            unlink('front/img/banner/' . $file_name);
+        }
+
+        return redirect('admin/decoration');
     }
 }
