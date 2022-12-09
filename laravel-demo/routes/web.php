@@ -84,6 +84,8 @@ Route::prefix('admin')->middleware('CheckAdminLogin')->group(function () {
     Route::get('/', [App\Http\Controllers\Admin\RevenusFilterDayController::class, 'index']);
   });
 
+  Route::resource('decoration', App\Http\Controllers\Admin\DecorationController::class);
+
   // Route::post('order_{{id}}', [App\Http\Controllers\Admin\OrderController::class, 'Confirmed']);
 
   Route::prefix('login')->group(function () {
