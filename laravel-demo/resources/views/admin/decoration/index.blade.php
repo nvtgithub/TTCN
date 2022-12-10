@@ -149,7 +149,7 @@
                     <tr>
                       <td class="text-center">{{$banner->category_name}}</td>
                       <td class="text-center">{{$banner->title}}</td>
-                      <td class="text-center">{{$banner->content}}</td>
+                      <td class="text-center">{!! $banner->content !!}}</td>
                       <td class="text-center">
                         <div class="widget-content-left mr-3">
                           <div class="widget-content-left">

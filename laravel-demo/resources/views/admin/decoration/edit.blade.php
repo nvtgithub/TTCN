@@ -68,7 +68,8 @@
             <div class="position-relative row form-group {{ $decoration->location == 2 ? 'd-none' :'' }}">
               <label for="name" class="col-md-3 text-md-right col-form-label">Nội dung</label>
               <div class="col-md-9 col-xl-8">
-                <input name="content" id="content {{ $decoration->location == 3 ? 'description' :'' }}" placeholder="Nội dung" type="text" class="form-control decor" value="{{ $decoration->content }}">
+                <input name="content" id="content" placeholder="Nội dung" type="text" class="form-control decor {{ $decoration->location == 3 ? 'd-none' :'' }}" value="{{ $decoration->content }}">
+                <textarea class="form-control {{ $decoration->location != 3 ? 'd-none' :'' }}" name="description" id="description" placeholder="Mô tả sản phẩm">{{ $decoration->content }}</textarea>
               </div>
             </div>
 
