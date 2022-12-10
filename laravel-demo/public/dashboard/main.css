@@ -45103,3 +45103,13 @@ span.multiselect-native-select select {
 #wrapper-revenu {
   flex: 1;
 }
+
+.thumbnail {
+  max-width: 400px;
+  max-height: 400px;
+  object-fit: contain;
+}
+
+.decor {
+  max-width: 40%;
+}
