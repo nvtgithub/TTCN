@@ -67,19 +67,15 @@ class AccountController extends Controller
   public function postRegister(Request $request)
   {
     $emails = DB::table('users')->pluck('email');
-
-    foreach($emails as $email)
-    {
-        if($email == $request->get('email'))
-        {
-          return back()
-          ->with('notification', 'ERROR: Tài khoản đã tồn tại!');
-        }
+    foreach ($emails as $email) {
+      if ($email == $request->get('email')) {
+        return back()->with('notification', 'ERROR: Tài khoản đã tồn tại!');
+      }
     }
 
     if ($request->password != $request->password_confirmation) {
       return back()->with('notification', 'Lỗi: Mật khẩu không khớp!');
-    }
+    } 
 
     $data = [
       'name' => $request->name,
@@ -118,19 +114,18 @@ class AccountController extends Controller
   public function sendemail(Request $request)
   {
     $data = $request->all();
-    
-    $customer = User::where('email',$data['email_account'])->get();
+
+    $customer = User::where('email', $data['email_account'])->get();
     $title_email = "Lấy lại mật khẩu";
     foreach ($customer as $key => $value) {
-      $customer_id = $value -> id;
+      $customer_id = $value->id;
     }
 
     if ($customer) {
       $count_customer = $customer->count();
       if ($count_customer == 0) {
-        return back()->with('error','Email không tồn tại!');
-      }
-      else {
+        return back()->with('error', 'Email không tồn tại!');
+      } else {
         $token_random = Str::random(6);
         $customer = User::find($customer_id);
         $customer->user_token = $token_random;
@@ -138,20 +133,21 @@ class AccountController extends Controller
         $categories = $this->productCategoryService->all();
 
         $toEmail = $data['email_account'];
-        $link_reset_pass = url('account/update_newpass?email='.$toEmail.'&token='.$token_random);
+        $link_reset_pass = url('account/update_newpass?email=' . $toEmail . '&token=' . $token_random);
         // $link_reset_pass = 'helo';
 
-        $data = array('name' => $title_email, 'body' => $link_reset_pass, 'email' => $data['email_account'] );
+        $data = array('name' => $title_email, 'body' => $link_reset_pass, 'email' => $data['email_account']);
 
         Mail::send(
-        'front.account.forgot_pass_notify',
-         compact('categories', 'data'),
-         function ($message) use ($title_email,$data) {
-            $message->from('electronicstorek64cnpm@gmail.com',$title_email);
+          'front.account.forgot_pass_notify',
+          compact('categories', 'data'),
+          function ($message) use ($title_email, $data) {
+            $message->from('electronicstorek64cnpm@gmail.com', $title_email);
             $message->to($data['email']);
             $message->subject($title_email);
-        });
-        return redirect()->back()->with('message','Gửi Email thành công! Vui lòng vào email để reset mật khẩu');
+          }
+        );
+        return redirect()->back()->with('message', 'Gửi Email thành công! Vui lòng vào email để reset mật khẩu');
       }
     }
   }
@@ -162,20 +158,20 @@ class AccountController extends Controller
     $data = $request->all();
     $token_random = Str::random(6);
     $customer = User::where('email', $data['email_account'])
-    ->where('user_token',$data['token'])
-    ->get();
+      ->where('user_token', $data['token'])
+      ->get();
     $count = $customer->count();
-    if ($count>0) {
+    if ($count > 0) {
       foreach ($customer as $key => $cus) {
-        $customer_id = $cus-> id;
+        $customer_id = $cus->id;
       }
       $reset = User::find($customer_id);
       $reset->password = bcrypt($data['password']);
       $reset->user_token = $token_random;
       $reset->save();
-      return redirect('account/forgotpassword')->with('message','Mật khẩu đã cập nhập. Quay lại trang đăng nhập');
-    }else {
-      return redirect('account/forgotpassword')->with('error','Vui lòng nhập lại email vì link đã quá hạn!');
+      return redirect('account/forgotpassword')->with('message', 'Mật khẩu đã cập nhập. Quay lại trang đăng nhập');
+    } else {
+      return redirect('account/forgotpassword')->with('error', 'Vui lòng nhập lại email vì link đã quá hạn!');
     }
   }
 

@@ -69,9 +69,9 @@ Route::prefix('account')->group(function () {
 Route::prefix('admin')->middleware('CheckAdminLogin')->group(function () {
   Route::redirect('', 'admin/user');
 
-  Route::resource('user', App\Http\Controllers\Admin\UserController::class);
+  Route::resource('user', App\Http\Controllers\Admin\UserController::class); //xử lý thêm sửa xóa ngưởi dùng
   Route::resource('category', App\Http\Controllers\Admin\ProductCategoryController::class);
-  Route::resource('trademark', App\Http\Controllers\Admin\TrademarksController::class);
+  Route::resource('trademark', App\Http\Controllers\Admin\TrademarksController::class); //xử lý thêm sửa xóa thương hiệu
   Route::resource('product/{product_id}/image', App\Http\Controllers\Admin\ProductImageController::class);
   Route::resource('product/{product_id}/detail', App\Http\Controllers\Admin\ProductDetailController::class);
   Route::resource('product', App\Http\Controllers\Admin\ProductController::class);
