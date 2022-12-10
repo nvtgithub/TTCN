@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Services\Product\ProductServiceInterface;
 use App\Services\ProductCategory\ProductCategoryServiceInterface;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class HomeController extends Controller
 {
@@ -22,8 +23,9 @@ class HomeController extends Controller
   {
     $featuredProducts = $this->productService->getFeaturedProducts();
     $categories = $this->productCategoryService->all();
+    $banners = DB::table('decoration')->get();
 
-    return view('front.index', compact('featuredProducts', 'categories'));
+    return view('front.index', compact('featuredProducts', 'categories', 'banners'));
   }
 
   public function indexContact() {

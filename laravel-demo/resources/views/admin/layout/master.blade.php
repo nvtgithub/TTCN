@@ -1287,6 +1287,20 @@
                   </li>
                 </ul>
               </li>
+
+              <li class="mm-active">
+                <a href="#">
+                  <i class="metismenu-icon pe-7s-plugin"></i>Quản lý giao diện
+                  <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
+                </a>
+                <ul>
+                  <li>
+                    <a href="/admin/decoration" class="">
+                      <i class="metismenu-icon"></i>Banner và danh mục
+                    </a>
+                  </li>              
+                </ul>
+              </li>
             </ul>
           </div>
         </div>

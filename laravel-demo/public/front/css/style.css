@@ -1014,6 +1014,8 @@ ol {
 
 .single-banner img {
   min-width: 100%;
+  max-height: 380px;
+  object-fit: contain;
 }
 
 .single-banner .inner-text {
@@ -4691,3 +4693,4 @@ button:hover {
 .item-product-shop {
   padding-bottom: 24px;
 }
+
