@@ -97,6 +97,7 @@ class DecorationController extends Controller
         'title'      => $data['title'],
         'content'    => $data['content'],
         'product_id'    => $data['product_id'],
+        'image' => $data['avatar'],
       ]);
 
     return redirect('admin/decoration');

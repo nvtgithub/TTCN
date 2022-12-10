@@ -70,7 +70,7 @@
                 <li class="subtotal">Thành tiền <span class="subtotal-money">{{ $total }} VNĐ</span></li>
                 <li class="cart-total">Tổng tiền <span class="cart-total-money">{{ $subtotal }} VNĐ</span></li>
               </ul>
-              <a href="./checkout" class="proceed-btn">Tiến hành thanh toán</a>
+              <a href="./checkout" class="proceed-btn">Đặt hàng</a>
             </div>
           </div>
         </div>

@@ -485,7 +485,7 @@ ol {
   height: 100%;
   border: none;
   font-size: 16px;
-  color: #d1d1d1;
+  color: black;
   padding-left: 20px;
 }
 
@@ -1015,7 +1015,7 @@ ol {
 .single-banner img {
   min-width: 100%;
   max-height: 380px;
-  object-fit: contain;
+  object-fit: cover;
 }
 
 .single-banner .inner-text {
@@ -3693,6 +3693,14 @@ ol {
 .contact-section {
   padding-top: 75px;
   padding-bottom: 80px;
+}
+
+.contact-section .leave-comment h2 {
+  color: #252525;
+    font-weight: 700;
+    font-size: 24px;
+    margin-bottom: 16px;
+    border-bottom: 1px solid #b2b2b2;
 }
 
 .contact-title {

@@ -139,7 +139,7 @@
 
               <button type="submit" class="btn-shadow btn-hover-shine btn btn-primary">
                 <span class="btn-icon-wrapper pr-2 opacity-8">
-                  <i class="fa fa-download fa-w-20"></i>
+                  <i class="fa fa-save fa-w-20"></i>
                 </span>
                 <span>Lưu</span>
               </button>
