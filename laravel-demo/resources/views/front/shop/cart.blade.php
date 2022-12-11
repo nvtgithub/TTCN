@@ -56,7 +56,7 @@
         </div>
         <div class="row">
           <div class="col-lg-4">
-            <div class="discount-coupon">
+            <div class="discount-coupon d-none">
               <h6>Mã giảm giá</h6>
               <form action="#" class="coupon-form">
                 <input type="text" placeholder="Nhập mã giảm giá">

@@ -35,19 +35,19 @@
           <form action="" method="post">
             @csrf
             <div class="group-input">
-              <label for="name">Họ tên *</label>
+              <label for="name">Họ tên <span class="importance">*</span> </label>
               <input required type="text" id="name" name="name">
             </div>
             <div class="group-input">
-              <label for="email">Địa chỉ email *</label>
+              <label for="email">Địa chỉ email <span class="importance">*</span></label>
               <input required type="email" id="email" name="email">
             </div>
             <div class="group-input">
-              <label for="pass">Mật khẩu *</label>
+              <label for="pass">Mật khẩu <span class="importance">*</span></label>
               <input required type="password" id="pass" name="password">
             </div>
             <div class="group-input">
-              <label for="con-pass">Nhập lại mật khẩu *</label>
+              <label for="con-pass">Nhập lại mật khẩu <span class="importance">*</span></label>
               <input required type="password" id="con-pass" name="password_confirmation">
             </div>
             <button type="submit" class="site-btn register-btn">ĐĂNG KÝ</button>

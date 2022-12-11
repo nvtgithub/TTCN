@@ -43,42 +43,6 @@ body {
   font-smoothing: antialiased;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  margin: 0;
-  color: #111111;
-  font-weight: 400;
-  font-family: "Muli", sans-serif;
-}
-
-h1 {
-  font-size: 70px;
-}
-
-h2 {
-  font-size: 36px;
-}
-
-h3 {
-  font-size: 30px;
-}
-
-h4 {
-  font-size: 24px;
-}
-
-h5 {
-  font-size: 18px;
-}
-
-h6 {
-  font-size: 16px;
-}
-
 p {
   font-size: 16px;
   font-family: "Muli", sans-serif;
@@ -509,7 +473,7 @@ ol {
   list-style: none;
   display: inline-block;
   font-size: 20px;
-  margin-left: 15px;
+  margin-left: 25px;
 }
 
 .inner-header .nav-right li.heart-icon a {
@@ -1043,6 +1007,9 @@ ol {
   border-radius: 2px;
 }
 
+.single-banner .inner-text h4:hover {
+  text-decoration: underline;
+}
 
 /*---------------------
   Women Banner Section
@@ -1076,6 +1043,7 @@ ol {
   font-weight: 500;
   display: inline-block;
   position: relative;
+  transition: all 0.2s ease;
 }
 
 .product-large a:before {
@@ -1086,6 +1054,14 @@ ol {
   height: 2px;
   background: #ffffff;
   content: "";
+}
+
+.product-large a:hover {
+  color: orange;
+}
+
+.product-large a:hover::before {
+  background: orange;
 }
 
 .filter-control {
@@ -1170,7 +1146,7 @@ ol {
 }
 
 .product-item {
-  margin-bottom: 26px;
+  margin: 26px 8px;
 }
 
 .product-item:hover {
@@ -1189,6 +1165,7 @@ ol {
 .product-item .pi-pic {
   overflow: hidden;
   position: relative;
+  padding-top: 1rem;
 }
 
 .product-item .pi-pic img {
@@ -1340,10 +1317,11 @@ ol {
 -----------------------*/
 
 .man-banner {
+  box-shadow: rgb(0 0 0 / 5%) 0px 6px 7px;
   padding-right: 65px;
   padding-left: 65px;
-  padding-top: 80px;
-  padding-bottom: 80px;
+  padding-top: 40px;
+  padding-bottom: 40px;
 }
 
 
@@ -1504,9 +1482,19 @@ ol {
   Partner Logo
 -----------------------*/
 
-.partner-logo {
-  background: #303030;
+.partner-logos {
+  /* background: #303030; */
+  border-top: 1px solid #cbcbcb;
   padding: 38px 0;
+}
+
+.partner-logos .logo-carousels {
+  display: flex;
+  justify-content: space-around;
+}
+
+.partner-logos .logo-carousels img {
+  max-height: 40px;
 }
 
 .logo-carousel .logo-item {
@@ -1772,7 +1760,13 @@ ol {
   display: inline-block;
   color: #636363;
   font-size: 16px;
-  line-height: 39px;
+  line-height: 30px;
+  transition: all 0.2s;
+}
+
+.filter-widget .filter-catagories li a:hover {
+  color: orange;
+  text-decoration: underline;
 }
 
 .filter-widget .fw-brand-check .bc-item {
@@ -2194,6 +2188,7 @@ ol {
 .product-details .pd-title h3 {
   color: #252525;
   font-weight: 700;
+  font-size: 24px;
 }
 
 .product-details .pd-title .heart-icon {
@@ -2205,7 +2200,9 @@ ol {
 }
 
 .product-details .pd-rating {
-  margin-bottom: 10px;
+  display: flex;
+  gap: 20px;
+  margin-bottom: 20px;
 }
 
 .product-details .pd-rating i {
@@ -3697,10 +3694,10 @@ ol {
 
 .contact-section .leave-comment h2 {
   color: #252525;
-    font-weight: 700;
-    font-size: 24px;
-    margin-bottom: 16px;
-    border-bottom: 1px solid #b2b2b2;
+  font-weight: 700;
+  font-size: 24px;
+  margin-bottom: 16px;
+  border-bottom: 1px solid #b2b2b2;
 }
 
 .contact-title {
@@ -3866,6 +3863,8 @@ ol {
 .login-form h2 {
   color: #252525;
   font-weight: 700;
+  font-size: 40px;
+  text-transform: uppercase;
   text-align: center;
   margin-bottom: 35px;
 }
@@ -3912,19 +3911,12 @@ ol {
   color: #252525;
   font-size: 14px;
   letter-spacing: 2px;
-  text-transform: uppercase;
-  position: relative;
+  list-style: unset;
 }
 
-.register-form .switch-login .or-login:before,
-.login-form .switch-login .or-login:before {
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  height: 2px;
-  width: 100%;
-  background: #9f9f9f;
-  content: "";
+.register-form .switch-login .or-login:hover,
+.login-form .switch-login .or-login:hover {
+  text-decoration: underline;
 }
 
 .login-form .group-input.gi-check {
@@ -3936,6 +3928,7 @@ ol {
 }
 
 .login-form .group-input .gi-more label {
+  display: none;
   position: relative;
   cursor: pointer;
   padding-left: 28px;
@@ -3987,6 +3980,9 @@ ol {
   color: #6B6B6B;
 }
 
+.login-form .group-input .gi-more .forget-pass:hover {
+  text-decoration: underline;
+}
 
 /* Rating */
 
@@ -4702,3 +4698,24 @@ button:hover {
   padding-bottom: 24px;
 }
 
+.importance {
+  color: red;
+}
+
+.gallery-detali-product .owl-item img {
+  max-height: 100px;
+}
+
+@media screen and (max-width: 1200px) {
+.product-shop-filter {
+    display: none;
+  }
+}
+.heart-icon.button-wishlist:hover {
+  cursor: pointer;
+}
+
+.list-item-product {
+  display: flex;
+  align-items: center;
+}

@@ -35,11 +35,11 @@
           <form action="" method="post">
             @csrf
             <div class="group-input">
-              <label for="email">Địa chỉ email *</label>
+              <label for="email">Địa chỉ email <span class="importance">*</span></label>
               <input type="email" id="email" name="email">
             </div>
             <div class="group-input">
-              <label for="pass">Mật khẩu *</label>
+              <label for="pass">Mật khẩu <span class="importance">*</span></label>
               <input type="password" id="pass" name="password">
             </div>
             <div class="group-input gi-check">

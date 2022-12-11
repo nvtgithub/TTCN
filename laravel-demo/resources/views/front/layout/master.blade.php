@@ -201,32 +201,37 @@
 
 
   <!-- Parter Logo Section Begin -->
-  <div class="partner-logo">
+  <div class="partner-logos">
     <div class="contain er">
-      <div class="logo-carousel owl-carousel">
-        <div class="logo-item">
+      <div class="logo-carousels">
+        <div class="logo-items">
           <div class="tablecell-inner">
             <img src="front/img/logo-carousel/logo-1.png" alt="">
           </div>
         </div>
-        <div class="logo-item">
+        <div class="logo-items">
           <div class="tablecell-inner">
             <img src="front/img/logo-carousel/logo-2.png" alt="">
           </div>
         </div>
-        <div class="logo-item">
+        <div class="logo-items">
           <div class="tablecell-inner">
             <img src="front/img/logo-carousel/logo-3.png" alt="">
           </div>
         </div>
-        <div class="logo-item">
+        <div class="logo-items">
           <div class="tablecell-inner">
             <img src="front/img/logo-carousel/logo-4.png" alt="">
           </div>
         </div>
-        <div class="logo-item">
+        <div class="logo-items">
           <div class="tablecell-inner">
             <img src="front/img/logo-carousel/logo-5.png" alt="">
+          </div>
+        </div>
+        <div class="logo-items">
+          <div class="tablecell-inner">
+            <img src="front/img/logo-carousel/logo-6.png" alt="">
           </div>
         </div>
       </div>
@@ -280,7 +285,7 @@
           </div>
         </div>
         <div class="col-lg-4">
-          <div class="newslatter-item">
+          <div class="newslatter-item d-none">
             <h5>Tham gia Bản tin của chúng tôi ngay bây giờ</h5>
             <p>Nhận thông tin cập nhật qua email về cửa hàng mới nhất của chúng tôi và các ưu đãi đặc biệt.</p>
             <form action="#" class="subscribe-form">
@@ -295,9 +300,7 @@
       <div class="container">
         <div class="row">
           <div class="col-lg-12">
-            <div class="copyright-text">
-              Copyright ©2022 Được thiết kế bởi: <i class="fa fa-heart-o" aria-hidden="true"></i> Ngoc Anh, Nguyen Tien, Minh Thinh, Quang Huy
-            </div>
+            <div class="copyright-text">©2022 Được thiết kế bởi: <i class="fa fa-heart-o" aria-hidden="true"></i> Ngoc Anh, Nguyen Tien, Minh Thinh, Quang Huy</div>
             <div class="payment-pic">
               <img src="front/img/payment-method.png" alt="">
             </div>

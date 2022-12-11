@@ -48,7 +48,7 @@
             <div class="position-relative row form-group">
               <label for="image" class="col-md-3 text-md-right col-form-label">Hình ảnh</label>
               <div class="col-md-9 col-xl-8 image-banner">
-                <img style="cursor: pointer;" class="thumbnail" data-toggle="tooltip" title="Click để chọn hình ảnh" data-placement="bottom" src="front/img/banner/{{ $decoration->image == null ? 'default-image.jpg' : $decoration->image }}" alt="Avatar">
+                <img value="{{ $decoration->image }}" style="cursor: pointer;" class="thumbnail" data-toggle="tooltip" title="Click để chọn hình ảnh" data-placement="bottom" src="front/img/banner/{{ $decoration->image == null ? 'default-image.jpg' : $decoration->image }}" alt="Avatar">
                 <input name="image" type="file" onchange="changeImg(this)" class="image form-control-file" style="display: none;" value="">
                 <input type="hidden" name="image_old" value="{{ $decoration->image }}">
                 <small class="form-text text-muted">

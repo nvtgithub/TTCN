@@ -66,8 +66,8 @@
           <a href="shop/category/Smartphone">Xem thêm</a>
         </div>
       </div>
-      <div class="col-lg-8 offset-lg-1">
-        <div class="filter-control">
+      <div class="col-lg-8 offset-lg-1 list-item-product">
+        <div class="filter-control d-none">
           <ul>
             <li class="active item" data-tag="*" data-category="SmartPhone">All</li>
             <li class="item" data-tag=".Iphone" data-category="SmartPhone">Apple</li>
@@ -132,8 +132,8 @@
 <section class="man-banner spad">
   <div class="container-fluid">
     <div class="row">
-      <div class="col-lg-8">
-        <div class="filter-control">
+      <div class="col-lg-8 list-item-product">
+        <div class="filter-control d-none">
           <ul>
             <li class="active item" data-tag="*" data-category="Laptop">All</li>
             <li class="item" data-tag=".MacBook" data-category="Laptop">MacBook</li>
@@ -164,8 +164,8 @@
 <section class="man-banner spad">
   <div class="container-fluid">
     <div class="row">
-      <div class="col-lg-8">
-        <div class="filter-control">
+      <div class="col-lg-8 list-item-product">
+        <div class="filter-control d-none">
           <ul>
             <li class="active item" data-tag="*" data-category="Smartwatch">All</li>
             <li class="item" data-tag=".Xiaomi" data-category="Smartwatch">Xiaomi</li>
@@ -195,8 +195,8 @@
 <section class="man-banner spad">
   <div class="container-fluid">
     <div class="row">
-      <div class="col-lg-8">
-        <div class="filter-control">
+      <div class="col-lg-8 list-item-product">
+        <div class="filter-control d-none">
           <ul>
             <li class="active item" data-tag="*" data-category="Headphone">All</li>
             <li class="item" data-tag=".Xiaomi" data-category="Headphone">Xiaomi</li>
@@ -226,8 +226,8 @@
 <section class="man-banner spad">
   <div class="container-fluid">
     <div class="row">
-      <div class="col-lg-8">
-        <div class="filter-control">
+      <div class="col-lg-8 list-item-product">
+        <div class="filter-control d-none">
           <ul>
             <li class="active item" data-tag="*" data-category="Accessory">All</li>
             <li class="item" data-tag=".Xiaomi" data-category="Accessory">Xiaomi</li>
