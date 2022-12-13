@@ -2274,11 +2274,16 @@ ol {
 }
 
 .product-details .pd-color .pd-color-choose .cc-item label {
-  height: 15px;
-  width: 15px;
   border-radius: 50%;
+  box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+  height: 30px;
+  width: 30px;
   cursor: pointer;
   margin-bottom: 0;
+}
+
+.product-details .pd-color .pd-color-choose .cc-item label:focus {
+  border-color: black;
 }
 
 .product-details .pd-color .pd-color-choose .cc-item input[type="radio"]:checked {

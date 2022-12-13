@@ -53,7 +53,7 @@
                     <i class="fa fa-star-o"></i>
                     @endif
                     @endfor
-                    <span>({{ count($product->productComments)}})</span>
+                    <span>({{ count($product->productComments)}} đánh giá)</span>
                 </div>
 
               </div>
@@ -72,7 +72,7 @@
                   @foreach($product->productDetails->toArray() as $productColor)
                   <div class="cc-item">
                     <input type="radio" name="color" data-color-name="{{ $productColor['color'] }}" id="cc-{{ $productColor['color'] }}" value="{{$productColor['id']}}">
-                    <label for="cc-{{ $productColor['color'] }}" class="cc-{{ $productColor['color'] }}" data-value="{{ $productColor['color'] }}" data-inwptooltip="{{ $productColor['color'] }}" style="background: {{$productColor['color_code']}}"></label>
+                    <label  for="cc-{{ $productColor['color'] }}" class="cc-{{ $productColor['color'] }}" data-value="{{ $productColor['color'] }}" data-inwptooltip="{{ $productColor['color'] }}" style="background: {{$productColor['color_code']}}"></label>
                   </div>
                   @endforeach
                 </div>
@@ -162,13 +162,13 @@
 
                       <div class="row">
                         <div class="col-lg-6">
-                          <input type="text" placeholder="Name" name="name">
+                          <input required type="text" placeholder="Tên" name="name">
                         </div>
                         <div class="col-lg-6">
-                          <input type="text" placeholder="Email" name="email">
+                          <input required type="text" placeholder="Email" name="email">
                         </div>
                         <div class="col-lg-12">
-                          <textarea placeholder="Messages" name="messages"></textarea>
+                          <textarea required placeholder="Bình luận ..." name="messages"></textarea>
                           <div class="personal-rating">
                             <h6>Đánh giá của bạn</h6>
                             <div class="rate">
@@ -180,7 +180,7 @@
                               <label for="star3" title="text">3 sao</label>
                               <input type="radio" id="star2" name="rating" value="2" />
                               <label for="star2" title="text">2 sao</label>
-                              <input type="radio" id="star1" name="rating" value="1" />
+                              <input required type="radio" id="star1" name="rating" value="1" />
                               <label for="star1" title="text">1 sao</label>
                             </div>
                           </div>
