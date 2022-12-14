@@ -1,20 +1,11 @@
-/*  ---------------------------------------------------
-    Template Name: codelean
-    Description: codelean eCommerce HTML Template
-    Author: CodeLean
-    Author URI: https://CodeLean.vn/
-    Version: 1.0
-    Created: CodeLean
----------------------------------------------------------  */
-
 'use strict';
 
-(function ($) {
+(function($) {
 
     /*------------------
         Preloader
     --------------------*/
-    $(window).on('load', function () {
+    $(window).on('load', function() {
         $(".loader").fadeOut();
         $("#preloder").delay(200).fadeOut("slow");
     });
@@ -22,7 +13,7 @@
     /*------------------
         Background Set
     --------------------*/
-    $('.set-bg').each(function () {
+    $('.set-bg').each(function() {
         var bg = $(this).data('setbg');
         $(this).css('background-image', 'url(' + bg + ')');
     });
@@ -144,9 +135,9 @@
 
 
     // Use this for real timer date
-    /* var timerdate = "2020/01/01"; */
+    // var timerdate = "2020/01/01";
 
-    $("#countdown").countdown(timerdate, function (event) {
+    $("#countdown").countdown(timerdate, function(event) {
         $(this).html(event.strftime("<div class='cd-item'><span>%D</span> <p>Days</p> </div>" + "<div class='cd-item'><span>%H</span> <p>Hrs</p> </div>" + "<div class='cd-item'><span>%M</span> <p>Mins</p> </div>" + "<div class='cd-item'><span>%S</span> <p>Secs</p> </div>"));
     });
 
@@ -172,7 +163,7 @@
                 '<i class="ti-close"></i>' +
                 '</button>' +
                 '</div>' +
-                '    <ul>' +              
+                '    <ul>' +
                 '      <li class="quick-view">' +
                 '        <a href="' + url + '">+ Chi tiết sản phẩm</a>' +
                 '      </li>' +
@@ -223,12 +214,12 @@
     /*----------------------------------------------------
      Language Flag js
     ----------------------------------------------------*/
-    $(document).ready(function (e) {
+    $(document).ready(function(e) {
         //no use
         try {
             var pages = $("#pages").msDropdown({
                 on: {
-                    change: function (data, ui) {
+                    change: function(data, ui) {
                         var val = data.value;
                         if (val != "")
                             window.location = val;
@@ -246,7 +237,7 @@
         $("#ver").html(msBeautify.version.msDropdown);
 
         //convert
-        $(".language_drop").msDropdown({roundedBorder: false});
+        $(".language_drop").msDropdown({ roundedBorder: false });
         $("#tech").data("dd");
     });
     /*-------------------
@@ -265,7 +256,7 @@
         min: minPrice,
         max: maxPrice,
         values: [minValue, maxValue],
-        slide: function (event, ui) {
+        slide: function(event, ui) {
             minamount.val(ui.values[0]);
             maxamount.val(ui.values[1]);
         }
@@ -276,7 +267,7 @@
     /*-------------------
     Radio Btn
   --------------------- */
-    $(".fw-size-choose .sc-item label, .pd-size-choose .sc-item label").on('click', function () {
+    $(".fw-size-choose .sc-item label, .pd-size-choose .sc-item label").on('click', function() {
         $(".fw-size-choose .sc-item label, .pd-size-choose .sc-item label").removeClass('active');
         $(this).addClass('active');
     });
@@ -289,14 +280,14 @@
     /*------------------
     Single Product
   --------------------*/
-    $('.product-thumbs-track .pt').on('click', function () {
+    $('.product-thumbs-track .pt').on('click', function() {
         $('.product-thumbs-track .pt').removeClass('active');
         $(this).addClass('active');
         var imgurl = $(this).data('imgbigurl');
         var bigImg = $('.product-big-img').attr('src');
         if (imgurl != bigImg) {
-            $('.product-big-img').attr({src: imgurl});
-            $('.zoomImg').attr({src: imgurl});
+            $('.product-big-img').attr({ src: imgurl });
+            $('.zoomImg').attr({ src: imgurl });
         }
     });
 
@@ -308,7 +299,7 @@
     var proQty = $('.pro-qty');
     proQty.prepend('<span class="dec qtybtn">-</span>');
     proQty.append('<span class="inc qtybtn">+</span>');
-    proQty.on('click', '.qtybtn', function () {
+    proQty.on('click', '.qtybtn', function() {
         var $button = $(this);
         var oldValue = $button.parent().find('input').val();
         if ($button.hasClass('inc')) {
@@ -332,7 +323,7 @@
     const product_Laptop = $(".product-slider.Laptop");
 
 
-    $('.filter-control').on('click', '.item', function () {
+    $('.filter-control').on('click', '.item', function() {
         const $item = $(this);
         const filter = $item.data('tag');
         const category = $item.data('category');
@@ -359,7 +350,7 @@ function addCart(productId) {
             productId: productId,
             color: $('input[name=color]:checked').val()
         },
-        success: function (response) {
+        success: function(response) {
             $('.cart-count').text(response['count']);
             $('.cart-price').text(response['total'] + ' VNĐ');
             $('.select-total h5').text(response['total'] + ' VNĐ');
@@ -375,8 +366,8 @@ function addCart(productId) {
                     '<td class="si-pic"><img width="70px" src="front/img/products/' + response['cart'].options.images[0].path + '" alt=""></td>\n' +
                     '<td class="si-text">\n' +
                     '  <div class="product-selected">\n' +
-                    '        <h6 class="text-truncate" style="max-width: 100px;">' + response['cart'].name + '</h6>\n' + '<span> - '+ response['cart'].options['colorProduct'] + '</span>'
-                    '        <p>' + response['cart'].price.toFixed() + 'VNĐ' + ' x ' + response['cart'].qty + '</p>\n' +
+                    '        <h6 class="text-truncate" style="max-width: 100px;">' + response['cart'].name + '</h6>\n' + '<span> - ' + response['cart'].options['colorProduct'] + '</span>'
+                '        <p>' + response['cart'].price.toFixed() + 'VNĐ' + ' x ' + response['cart'].qty + '</p>\n' +
                     '    </div>\n' +
                     '</td>\n' +
                     '<td class="si-close">\n' +
@@ -395,7 +386,7 @@ function addCart(productId) {
             alert('Thêm thành công\nSản phẩm: ' + response['cart'].name);
             console.log(response)
         },
-        error: function (response) {
+        error: function(response) {
             alert('Thêm thất bại! ');
             console.log(response)
         },
@@ -406,8 +397,8 @@ function removeCart(rowId, name) {
     $.ajax({
         type: "GET",
         url: "cart/delete",
-        data: {rowId: rowId },
-        success: function (response) {
+        data: { rowId: rowId },
+        success: function(response) {
             //Xử lý phần cart hover (trang master-page)
             $('.cart-count').text(response['count']);
             $('.cart-price').text(response['total'] + ' VNĐ');
@@ -430,7 +421,7 @@ function removeCart(rowId, name) {
             alert('Xóa thành công \n Sản phẩm: ' + name);
             console.log(response)
         },
-        error: function (response) {
+        error: function(response) {
             alert('Xóa thất bại');
             console.log(response)
         },
@@ -442,7 +433,7 @@ function destroyCart() {
         type: "GET",
         url: "cart/destroy",
         data: {},
-        success: function (response) {
+        success: function(response) {
             //Xử lý phần cart hover (trang master-page)
             $('.cart-count').text('0');
             $('.cart-price').text('0');
@@ -462,7 +453,7 @@ function destroyCart() {
             alert('Thêm thành công\nSản phẩm: ' + response['cart'].name);
             console.log(response)
         },
-        error: function (response) {
+        error: function(response) {
             alert('Xóa thất bại!');
             console.log(response)
         },
@@ -473,8 +464,8 @@ function updateCart(rowId, qty) {
     $.ajax({
         type: "GET",
         url: "cart/update",
-        data: {rowId: rowId, qty: qty},
-        success: function (response) {
+        data: { rowId: rowId, qty: qty },
+        success: function(response) {
             //Xử lý phần cart hover (trang master-page)
             $('.cart-count').text(response['count']);
             $('.cart-price').text(response['total'] + ' VNĐ');
@@ -508,7 +499,7 @@ function updateCart(rowId, qty) {
             // alert('Update successfull\nProduct: '+ response['cart'].name);
             console.log(response)
         },
-        error: function (response) {
+        error: function(response) {
             alert('Cập nhật thất bại!');
             console.log(response)
         },
@@ -560,7 +551,7 @@ function add_wishlist(clicked_id) {
     var old_data = JSON.parse(localStorage.getItem('data'));
 
     // check thông báo khi trùng sp yêu thích
-    var matches = $.grep(old_data, function (obj) {
+    var matches = $.grep(old_data, function(obj) {
         return obj.id == id;
     })
 
@@ -605,6 +596,3 @@ function remove_wishlist(clicked_id) {
 }
 
 //Doanh thu theo ngày
-
-
-

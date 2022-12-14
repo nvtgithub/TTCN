@@ -1296,9 +1296,9 @@
                 <ul>
                   <li>
                     <a href="/admin/decoration" class="">
-                      <i class="metismenu-icon"></i>Banner và danh mục
+                      <i class="metismenu-icon"></i>Banner và danh mục nổi bật
                     </a>
-                  </li>              
+                  </li>
                 </ul>
               </li>
             </ul>

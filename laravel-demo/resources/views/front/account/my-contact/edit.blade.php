@@ -17,7 +17,7 @@
 
             <div class="col-lg-12">
               <label for="fir">Họ và tên <span class="importance">*</span></label>
-              <input required name="first_name" type="text" id="fir" value="{{ Auth::user()->name ?? '' }}">
+              <input required name="first_name" type="text" id="fir" value="{{ Auth::user()->name ?? '' }}" required>
             </div>
             <div class="col-lg-12">
               <label for="cun-name">Tên công ty</label>
@@ -41,7 +41,7 @@
             </div>
             <div class="col-lg-6">
               <label for="email">Địa chỉ email</label>
-              <input name="email" type="text" id="email" value="{{ Auth::user()->email ?? '' }}">
+              <input name="email" type="text" id="email" value="{{ Auth::user()->email ?? '' }}" readonly>
             </div>
             <div class="col-lg-6">
               <label for="phone">Số điện thoại</label>
