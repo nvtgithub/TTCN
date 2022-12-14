@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Front\AjaxLoginController;
 
 /*
 |--------------------------------------------------------------------------
@@ -96,3 +97,9 @@ Route::prefix('admin')->middleware('CheckAdminLogin')->group(function () {
   Route::get('logout', [App\Http\Controllers\Admin\HomeController::class, 'logout']);
 });
 
+//Contact
+Route::group(['prefix' => 'ajax'], function(){
+  Route::post('/login', [AjaxLoginController::class, 'login'])->name('ajax.login');
+  Route::get('/logout', [AjaxLoginController::class, 'logout'])->name('ajax.logout');
+  Route::get('users/{id}', [UserController::class, 'index'])->name('user.index');
+});
