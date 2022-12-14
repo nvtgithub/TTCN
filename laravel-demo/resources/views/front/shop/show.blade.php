@@ -40,7 +40,7 @@
               <div class="pd-title">
                 <span class="d-none">{{ $product->tag }}</span>
                 <h3 class="d-flex">{{ $product->name }}
-                  <div class="ml-1" id="product-color"></div>
+                  <span class="ml-1" id="product-color"></span>
                 </h3>
 
               </div>
