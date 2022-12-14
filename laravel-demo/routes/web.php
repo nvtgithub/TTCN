@@ -62,7 +62,7 @@ Route::prefix('account')->group(function () {
   });
 
   Route::prefix('my-contact')->middleware('CheckMemberLogin')->group(function () {
-      Route::resource('contactuser', App\Http\Controllers\Front\ContactUserController::class);
+    Route::resource('contactuser', App\Http\Controllers\Front\ContactUserController::class);
   });
 });
 
@@ -70,18 +70,25 @@ Route::prefix('account')->group(function () {
 Route::prefix('admin')->middleware('CheckAdminLogin')->group(function () {
   Route::redirect('', 'admin/user');
 
-  Route::resource('user', App\Http\Controllers\Admin\UserController::class);
+  Route::resource('user', App\Http\Controllers\Admin\UserController::class); //xử lý thêm sửa xóa ngưởi dùng
   Route::resource('category', App\Http\Controllers\Admin\ProductCategoryController::class);
-  Route::resource('trademark', App\Http\Controllers\Admin\TrademarksController::class);
+  Route::resource('trademark', App\Http\Controllers\Admin\TrademarksController::class); //xử lý thêm sửa xóa thương hiệu
   Route::resource('product/{product_id}/image', App\Http\Controllers\Admin\ProductImageController::class);
   Route::resource('product/{product_id}/detail', App\Http\Controllers\Admin\ProductDetailController::class);
   Route::resource('product', App\Http\Controllers\Admin\ProductController::class);
   Route::resource('order', App\Http\Controllers\Admin\OrderController::class);
   Route::resource('revenu_day', App\Http\Controllers\Admin\RevenusDayController::class);
   Route::resource('revenu_month', App\Http\Controllers\Admin\RevenusMonthController::class);
+  // Route::resource('revenu_filter_day', App\Http\Controllers\Admin\RevenusFilterDayController::class);
+  // Route::post('revenu_filter_day/filter_by_date', [App\Http\Controllers\Admin\RevenusFilterDayController::class], 'filter_by_date');
   Route::prefix('revenu_filter_day')->group(function () {
     Route::get('/', [App\Http\Controllers\Admin\RevenusFilterDayController::class, 'index']);
   });
+
+  Route::resource('decoration', App\Http\Controllers\Admin\DecorationController::class);
+
+  // Route::post('order_{{id}}', [App\Http\Controllers\Admin\OrderController::class, 'Confirmed']);
+
   Route::prefix('login')->group(function () {
     Route::get('', [\App\Http\Controllers\Admin\HomeController::class, 'getLogin'])->withoutMiddleware('CheckAdminLogin');
     Route::post('', [App\Http\Controllers\Admin\HomeController::class, 'postLogin'])->withoutMiddleware('CheckAdminLogin');

@@ -39,7 +39,7 @@
           <form action="./account/send-email" method="post">
             @csrf
             <div class="group-input">
-              <label for="email">Địa chỉ email *</label>
+              <label for="email">Địa chỉ email <span class="importance">*</span></label>
               <input type="email" id="email" name="email_account" placeholder="Email ...">
             </div>
             <button type="submit" class="site-btn">Gửi</button>

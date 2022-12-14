@@ -16,8 +16,8 @@
             <input type="hidden" id="user_id" name="user_id" value="{{ Auth::user()->id ?? '' }}">
 
             <div class="col-lg-12">
-              <label for="fir">Họ và tên</label>
-              <input name="first_name" type="text" id="fir" value="{{ Auth::user()->name ?? '' }}">
+              <label for="fir">Họ và tên <span class="importance">*</span></label>
+              <input required name="first_name" type="text" id="fir" value="{{ Auth::user()->name ?? '' }}">
             </div>
             <div class="col-lg-12">
               <label for="cun-name">Tên công ty</label>
@@ -45,7 +45,7 @@
             </div>
             <div class="col-lg-6">
               <label for="phone">Số điện thoại</label>
-              <input name="phone" type="text" id="phone" value="{{ Auth::user()->phone ?? '' }}">
+              <input name="phone" type="tel" pattern="[0-9]{4}[0-9]{3}[0-9]{3}" id="phone" value="{{ Auth::user()->phone ?? '' }}">
             </div>
             <div class="col-lg-6 d-flex justify-content-end mb-3">
               <button type="submit" class="btn-shadow btn-hover-shine btn btn-primary">

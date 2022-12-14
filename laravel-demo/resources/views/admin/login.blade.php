@@ -42,13 +42,13 @@
                                             <div class="form-row">
                                                 <div class="col-md-12">
                                                     <div class="position-relative form-group">
-                                                        <input name="email" id="exampleEmail" placeholder="Email"
+                                                        <input required name="email" id="exampleEmail" placeholder="Email"
                                                             type="email" class="form-control">
                                                     </div>
                                                 </div>
                                                 <div class="col-md-12">
                                                     <div class="position-relative form-group">
-                                                        <input name="password" id="examplePassword"
+                                                        <input required name="password" id="examplePassword"
                                                             placeholder="Mật khẩu" type="password"
                                                             class="form-control">
                                                     </div>

@@ -75,7 +75,7 @@
       <div class="col-lg-7 offset-lg-1">
         {{-- <div class="contact-form">
           <div class="leave-comment">
-            <h4>Để lại bình luận</h4>
+            <h2>BÌNH LUẬN:</h2>
             <p>Nhân viên của chúng tôi sẽ gọi lại sau và trả lời câu hỏi câu hỏi của bạn</p>
             <form action="#" class="comment-form">
               <div class="row">

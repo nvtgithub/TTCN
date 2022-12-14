@@ -117,11 +117,11 @@
                 <div class="position-relative form-check form-check-inline">
                   <input name="featured" id="featured_yes" type="radio" class="form-check-input" value="1" {{ $product->featured == '1' ? 'checked' : ''}}>
                   <label for="yes" class="form-check-label">Mặc định</label>
-                </div>      
-                <div class="position-relative form-check form-check-inline">                  
+                </div>
+                <div class="position-relative form-check form-check-inline">
                   <input name="featured" id="featured_no" type="radio" class="form-check-input" value="0" {{ $product->featured == '0' ? 'checked' : ''}}>
                   <label for="no" class="form-check-label">Ẩn</label>
-                </div>    
+                </div>
               </div>
             </div>
 
@@ -132,22 +132,20 @@
               </div>
             </div>
 
-            <div class="position-relative row form-group mb-1">
-              <div class="col-md-9 col-xl-8 offset-md-2">
-                <a href="./admin/product" class="border-0 btn btn-outline-danger mr-1">
-                  <span class="btn-icon-wrapper pr-1 opacity-8">
-                    <i class="fa fa-times fa-w-20"></i>
-                  </span>
-                  <span>Hủy</span>
-                </a>
+            <div class="position-relative row form-group mb-1 d-flex justify-content-center">
+              <a href="./admin/product" class="border-0 btn btn-outline-danger mr-1">
+                <span class="btn-icon-wrapper pr-1 opacity-8">
+                  <i class="fa fa-times fa-w-20"></i>
+                </span>
+                <span>Hủy</span>
+              </a>
 
-                <button type="submit" class="btn-shadow btn-hover-shine btn btn-primary">
-                  <span class="btn-icon-wrapper pr-2 opacity-8">
-                    <i class="fa fa-download fa-w-20"></i>
-                  </span>
-                  <span>Lưu</span>
-                </button>
-              </div>
+              <button type="submit" class="btn-shadow btn-hover-shine btn btn-primary">
+                <span class="btn-icon-wrapper pr-2 opacity-8">
+                  <i class="fa fa-save fa-w-20"></i>
+                </span>
+                <span>Lưu</span>
+              </button>
             </div>
           </form>
         </div>

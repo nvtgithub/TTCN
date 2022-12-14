@@ -26,6 +26,38 @@
 </head>
 
 <body>
+  <!-- Messenger Plugin chat Code -->
+  <div id="fb-root"></div>
+
+  <!-- Your Plugin chat code -->
+  <div id="fb-customer-chat" class="fb-customerchat">
+  </div>
+
+  <script>
+    var chatbox = document.getElementById('fb-customer-chat');
+    chatbox.setAttribute("page_id", "104702632486616");
+    chatbox.setAttribute("attribution", "biz_inbox");
+  </script>
+
+  <!-- Your SDK code -->
+  <script>
+    window.fbAsyncInit = function() {
+      FB.init({
+        xfbml: true,
+        version: 'v15.0'
+      });
+    };
+
+    (function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s);
+      js.id = id;
+      js.src = 'https://connect.facebook.net/vi_VN/sdk/xfbml.customerchat.js';
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+  </script>
+
   <!-- Start coding here -->
   <!-- Page Preloder -->
   <div id="preloder">
@@ -126,12 +158,12 @@
                           <td class="si-pic"><img width="70px" src="front/img/products/{{ $cart->options->images[0]->path }}" alt=""></td>
                           <td class="si-text">
                             <div class="product-selected">
-                              <h6>{{ $cart->name }}</h6>
+                              <h6>{{ $cart->name }} <span> - {{$cart->options['colorProduct']->color}} </span></h6>
                               <p>{{ number_format($cart->price) }} VNĐ x {{ $cart->qty }}</p>
                             </div>
                           </td>
                           <td class="si-close">
-                            <i onclick="removeCart('{{ $cart->rowId }}')" class="si-close">
+                            <i onclick="removeCart('{{ $cart->rowId }}', ' {{ $cart->name }}')" class="si-close">
                               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bag-x" viewBox="0 0 16 16">
                                 <path fill-rule="evenodd" d="M6.146 8.146a.5.5 0 0 1 .708 0L8 9.293l1.146-1.147a.5.5 0 1 1 .708.708L8.707 10l1.147 1.146a.5.5 0 0 1-.708.708L8 10.707l-1.146 1.147a.5.5 0 0 1-.708-.708L7.293 10 6.146 8.854a.5.5 0 0 1 0-.708z" />
                                 <path d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1zm3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4h-3.5zM2 5h12v9a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V5z" />
@@ -173,12 +205,11 @@
             </ul>
           </div>
         </div>
-        <nav class="nav-menu mobile-menu" style="float: right;">
+        <nav class="nav-menu mobile-menu">
           <ul>
             <li class="{{ (request()->segment(1) == '') ? 'active' : '' }}"><a href="./">Trang chủ</a></li>
             <li class="{{ (request()->segment(1) == 'shop') ? 'active' : '' }}"><a href="./shop">Shop</a></li>
-            <li class="{{ (request()->segment(1) == 'contact') ? 'active' : '' }}"><a href="./contact">Thông tin</a></li>
-            <li><a href="">Trang</a>
+            <li><a>Trang</a>
               <ul class="dropdown">
                 <li><a href="./account/my-order">Đơn hàng của tôi</a></li>
                 <li><a href="./account/my-contact/contactuser/{{ Auth::user()->id ?? '' }}">Thông tin cá nhân</a></li>
@@ -186,6 +217,7 @@
                 <li><a href="account/register">Đăng ký</a></li>
               </ul>
             </li>
+            <li class="{{ (request()->segment(1) == 'contact') ? 'active' : '' }}"><a href="./contact">Liên hệ</a></li>
           </ul>
         </nav>
         <div id="mobile-menu-wrap">
@@ -201,32 +233,37 @@
 
 
   <!-- Parter Logo Section Begin -->
-  <div class="partner-logo">
+  <div class="partner-logos">
     <div class="contain er">
-      <div class="logo-carousel owl-carousel">
-        <div class="logo-item">
+      <div class="logo-carousels">
+        <div class="logo-items">
           <div class="tablecell-inner">
             <img src="front/img/logo-carousel/logo-1.png" alt="">
           </div>
         </div>
-        <div class="logo-item">
+        <div class="logo-items">
           <div class="tablecell-inner">
             <img src="front/img/logo-carousel/logo-2.png" alt="">
           </div>
         </div>
-        <div class="logo-item">
+        <div class="logo-items">
           <div class="tablecell-inner">
             <img src="front/img/logo-carousel/logo-3.png" alt="">
           </div>
         </div>
-        <div class="logo-item">
+        <div class="logo-items">
           <div class="tablecell-inner">
             <img src="front/img/logo-carousel/logo-4.png" alt="">
           </div>
         </div>
-        <div class="logo-item">
+        <div class="logo-items">
           <div class="tablecell-inner">
             <img src="front/img/logo-carousel/logo-5.png" alt="">
+          </div>
+        </div>
+        <div class="logo-items">
+          <div class="tablecell-inner">
+            <img src="front/img/logo-carousel/logo-6.png" alt="">
           </div>
         </div>
       </div>
@@ -280,7 +317,7 @@
           </div>
         </div>
         <div class="col-lg-4">
-          <div class="newslatter-item">
+          <div class="newslatter-item d-none">
             <h5>Tham gia Bản tin của chúng tôi ngay bây giờ</h5>
             <p>Nhận thông tin cập nhật qua email về cửa hàng mới nhất của chúng tôi và các ưu đãi đặc biệt.</p>
             <form action="#" class="subscribe-form">
@@ -295,9 +332,7 @@
       <div class="container">
         <div class="row">
           <div class="col-lg-12">
-            <div class="copyright-text">
-              Copyright ©2022 Được thiết kế bởi: <i class="fa fa-heart-o" aria-hidden="true"></i> Ngoc Anh, Nguyen Tien, Minh Thinh, Quang Huy
-            </div>
+            <div class="copyright-text">©2022 Được thiết kế bởi: <i class="fa fa-heart-o" aria-hidden="true"></i> Ngoc Anh, Nguyen Tien, Minh Thinh, Quang Huy</div>
             <div class="payment-pic">
               <img src="front/img/payment-method.png" alt="">
             </div>
@@ -321,6 +356,8 @@
   <script src="front/js/owl.carousel.min.js"></script>
   <script src="front/js/owl.carousel2-filter.min.js"></script>
   <script src="front/js/main.js"></script>
+
+  @yield('script')
 </body>
 
 </html>

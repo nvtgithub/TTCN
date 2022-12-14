@@ -2,12 +2,16 @@
 
 @section('title', 'Product')
 
+@section('script')
+<script src="front/js/cart.js"></script>
+@endsection
+
 @section('body')
 <!-- Product Shop Section Begin -->
 <section class="product-shop spad page-details">
   <div class="container">
     <div class="row">
-      <div class="col-lg-3">
+      <div class="col-lg-3 product-shop-filter">
 
         @include('front.shop.components.products-sidebar-filter')
 
@@ -22,7 +26,7 @@
               </div>
             </div>
             <div class="product-thumbs">
-              <div class="product-thumbs-track ps-slider owl-carousel">
+              <div class="product-thumbs-track ps-slider owl-carousel gallery-detali-product">
                 @foreach($product->productImages as $productImage)
                 <div class="pt active" data-imgbigurl="front/img/products/{{ $productImage->path }}">
                   <img src="front/img/products/{{ $productImage->path }}" alt="">
@@ -34,21 +38,24 @@
           <div class="col-lg-6">
             <div class="product-details">
               <div class="pd-title">
-                <span>{{ $product->tag }}</span>
-                <h3>{{ $product->name }}</h3>
-                <a href="#" class="heart-icon">
-                  <i class="icon_heart_alt"></i>
-                </a>
+                <span class="d-none">{{ $product->tag }}</span>
+                <h3 class="d-flex">{{ $product->name }}
+                  <div class="ml-1" id="product-color"></div>
+                </h3>
+
               </div>
               <div class="pd-rating">
+                <div class="p-code">Sku : {{ $product->sku }} </div>
+                <div>
+                  @for($i = 1; $i<=5; $i++) @if( $i <=$product->avgRating )
+                    <i class="fa fa-star"></i>
+                    @else
+                    <i class="fa fa-star-o"></i>
+                    @endif
+                    @endfor
+                    <span>({{ count($product->productComments)}} đánh giá)</span>
+                </div>
 
-                @for($i = 1; $i<=5; $i++) @if( $i <=$product->avgRating )
-                  <i class="fa fa-star"></i>
-                  @else
-                  <i class="fa fa-star-o"></i>
-                  @endif
-                  @endfor
-                  <span>({{ count($product->productComments)}})</span>
               </div>
               <div class="pd-desc">
 
@@ -61,24 +68,29 @@
               </div>
               <div class="pd-color">
                 <h6>Màu sắc</h6>
-                <div class="pd-color-choose">
-                  @foreach(array_unique(array_column($product->productDetails->toArray(), 'color')) as $productColor)
+                <div id="choose-color" class="pd-color-choose">
+                  @foreach($product->productDetails->toArray() as $productColor)
                   <div class="cc-item">
-                    <input type="radio" id="cc-{{ $productColor }}">
-                    <label for="cc-{{ $productColor }}" class="cc-{{ $productColor }}" data-value="{{ $productColor }}" data-inwptooltip="{{ $productColor }}"></label>
+                    <input type="radio" name="color" data-color-name="{{ $productColor['color'] }}" id="cc-{{ $productColor['color'] }}" value="{{$productColor['id']}}">
+                    <label  for="cc-{{ $productColor['color'] }}" class="cc-{{ $productColor['color'] }}" data-value="{{ $productColor['color'] }}" data-inwptooltip="{{ $productColor['color'] }}" style="background: {{$productColor['color_code']}}"></label>
                   </div>
                   @endforeach
                 </div>
               </div>
               <div class="quantity">
-                <a href="javascript:addCart({{ $product->id }})" class="primary-btn pd-cart">Thêm vào giỏ hàng</a>
+                <button data-product-id="{{ $product->id }}" class="primary-btn pd-cart" id="add-to-cart">
+                  Thêm vào giỏ hàng
+                </button>
               </div>
               <ul class="pd-tags">
                 <li><span>Loại sản phẩm</span>: {{ $product->productCategory->name }}</li>
                 <li><span>TAGS</span>: {{ $product->tag }}</li>
               </ul>
               <div class="pd-share">
-                <div class="p-code">Sku : {{ $product->sku }} </div>
+                <a title="Thêm vào yêu thích" class="heart-icon button-wishlist" id="{{$product->id}}" onclick="add_wishlist(this.id)">
+                  <i class="icon_heart_alt"></i>
+                </a>
+
                 <div class="pd-social">
                   <a href=""><i class="ti-facebook"></i></a>
                   <a href=""><i class="ti-twitter"></i></a>
@@ -150,13 +162,13 @@
 
                       <div class="row">
                         <div class="col-lg-6">
-                          <input type="text" placeholder="Name" name="name">
+                          <input required type="text" placeholder="Tên" name="name">
                         </div>
                         <div class="col-lg-6">
-                          <input type="text" placeholder="Email" name="email">
+                          <input required type="text" placeholder="Email" name="email">
                         </div>
                         <div class="col-lg-12">
-                          <textarea placeholder="Messages" name="messages"></textarea>
+                          <textarea required placeholder="Bình luận ..." name="messages"></textarea>
                           <div class="personal-rating">
                             <h6>Đánh giá của bạn</h6>
                             <div class="rate">
@@ -168,11 +180,11 @@
                               <label for="star3" title="text">3 sao</label>
                               <input type="radio" id="star2" name="rating" value="2" />
                               <label for="star2" title="text">2 sao</label>
-                              <input type="radio" id="star1" name="rating" value="1" />
+                              <input required type="radio" id="star1" name="rating" value="1" />
                               <label for="star1" title="text">1 sao</label>
                             </div>
                           </div>
-                          <button type="submit" class="site-btn">Gửi tin nhắn</button>
+                          <button type="submit" class="site-btn">Gửi bình luận</button>
                         </div>
                       </div>
                     </form>
