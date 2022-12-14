@@ -12,6 +12,11 @@
         <input type="hidden" id="user_id" name="user_id" value="{{ Auth::user()->id ?? '' }}">
         <fieldset id="users-profile-core" class="com-users-profile__core">
           <legend>Thông tin cá nhân</legend>
+          @if(session('notification'))
+          <div class="alert alert-warning" role="alert" style="text-align: center;">
+            {{ session('notification') }}
+          </div>
+          @endif
           <dl class="dl-horizontal row">
             <dt class="col-sm-3"> Họ và tên </dt>
             <dd class="col-sm-9"> {{ Auth::user()->name ?? '' }} </dd>
