@@ -158,7 +158,7 @@
                           <td class="si-pic"><img width="70px" src="front/img/products/{{ $cart->options->images[0]->path }}" alt=""></td>
                           <td class="si-text">
                             <div class="product-selected">
-                              <h6>{{ $cart->name }} <span> - {{$cart->options['colorProduct']->color}} </span></h6>
+                              <h6 class="text-truncate" style="max-width: 150px;">{{ $cart->name }} <span> - {{$cart->options['colorProduct']->color}} </span></h6>
                               <p>{{ number_format($cart->price) }} VNĐ x {{ $cart->qty }}</p>
                             </div>
                           </td>

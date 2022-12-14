@@ -78,11 +78,11 @@
                     <div class="widget-content-wrapper">
                       <div class="widget-content-left mr-3">
                         <div class="widget-content-left">
-                          <img style="height: 60px;" src="front/img/products/{{$product->productImages[0]->path ?? ''}}" alt="{{$product->name}}">
+                          <img style="height: 60px;" src="front/img/products/{{$product->productImages[0]->path ?? 'default.jpg'}}" alt="{{$product->name}}">
                         </div>
                       </div>
                       <div class="widget-content-left flex2">
-                        <div class="widget-heading">{{$product->name}}</div>
+                        <div class="widget-heading text-truncate" style="max-width: 200px;">{{$product->name}}</div>
                         <div class="widget-subheading opacity-7">{{$product->trademarks->name}}</div>
                       </div>
                     </div>
