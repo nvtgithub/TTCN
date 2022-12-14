@@ -22,6 +22,17 @@
     </div>
   </div>
 
+  <ul class="body-tabs body-tabs-layout tabs-animated body-tabs-animated nav">
+    <li class="nav-item">
+      <a href="./admin/product/{{ $product->id }}" class="nav-link">
+        <span class="btn-icon-wrapper pr-2 opacity-8">
+          <i class="fa fa-chevron-circle-left"></i>
+        </span>
+        <span>Quay lại</span>
+      </a>
+    </li>
+  </ul>
+
   <div class="row">
     <div class="col-md-12">
       <div class="main-card mb-3 card">
@@ -71,8 +82,8 @@
             </div>
           </div>
 
-          <div class="position-relative row form-group mb-1">
-            <div class="col-md-9 col-xl-8 offset-md-3">
+          <div class="position-relative row form-group mb-1 ">
+            <div class="col-md-9 col-xl-8 offset-md-3 d-flex justify-content-center">
               <a href="./admin/product/{{ $product->id }}" class="btn-shadow btn-hover-shine btn btn-primary">
                 <span class="btn-icon-wrapper pr-2 opacity-8">
                   <i class="fa fa-check fa-w-20"></i>
