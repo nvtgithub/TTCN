@@ -151,73 +151,73 @@
     });
 
     // //Sản phẩm yêu thích
-    // if (localStorage.getItem('data').length != null) {
-    //     var data = JSON.parse(localStorage.getItem('data'));
-    //     data.reverse();
+    if (localStorage.getItem('data')) {
+        var data = JSON.parse(localStorage.getItem('data'));
+        data.reverse();
 
-    //     for (var i = 0; i < data.length; i++) {
-    //         var id = data[i].id;
-    //         var name = data[i].name;
-    //         var price = data[i].price;
-    //         var image = data[i].image;
-    //         var url = data[i].url;
+        for (var i = 0; i < data.length; i++) {
+            var id = data[i].id;
+            var name = data[i].name;
+            var price = data[i].price;
+            var image = data[i].image;
+            var url = data[i].url;
 
-    //         var item =
-    //             '<div class="col-lg-3 col-sm-6">' +
-    //             '<div class="product-item item {{$product->tag}} shadow-sm p-3">' +
-    //             '  <div class="pi-pic">' +
-    //             '     <img style=" max-height: 150px;" id="wishlist_productimage' + id + '" src="' + image + '" alt="">' +
-    //             '<div class="icon">' +
-    //             '<button type="" style="outline: none;" class="button-wishlist" id="' + id + '" onclick="remove_wishlist(this.id)">' +
-    //             '<i class="ti-close"></i>' +
-    //             '</button>' +
-    //             '</div>' +
-    //             '    <ul>' +              
-    //             '      <li class="quick-view">' +
-    //             '        <a href="' + url + '">+ Chi tiết sản phẩm</a>' +
-    //             '      </li>' +
-    //             '      <li class="w-icon d-none">' +
-    //             '        <a href=""><i class="fa fa-random"></i></a>' +
-    //             '      </li>' +
-    //             '    </ul>' +
-    //             '  </div>' +
-    //             '  <div class="pi-text">' +
-    //             '    <a id="wishlist_producturl' + id + '" href="shop/product/' + id + '">' +
-    //             '      <h5 class="text-truncate" style="max-width: 150px;">' + name + '</h5>' +
-    //             '      <input type="hidden" name="" value="' + name + '" id="wishlist_productname' + id + '">' +
-    //             '    </a>' +
-    //             '    <div class="product-price">' +
-    //             '      ' + price + '' +
-    //             '      <input type="hidden" name="" value="' + price + ' VNĐ" id="wishlist_productprice' + id + '">' +
-    //             '    </div>' +
-    //             '  </div>' +
-    //             ' </div>' +
-    //             ' </div>';
+            var item =
+                '<div class="col-lg-3 col-sm-6">' +
+                '<div class="product-item item {{$product->tag}} shadow-sm p-3">' +
+                '  <div class="pi-pic">' +
+                '     <img style=" max-height: 150px;" id="wishlist_productimage' + id + '" src="' + image + '" alt="">' +
+                '<div class="icon">' +
+                '<button type="" style="outline: none;" class="button-wishlist" id="' + id + '" onclick="remove_wishlist(this.id)">' +
+                '<i class="ti-close"></i>' +
+                '</button>' +
+                '</div>' +
+                '    <ul>' +              
+                '      <li class="quick-view">' +
+                '        <a href="' + url + '">+ Chi tiết sản phẩm</a>' +
+                '      </li>' +
+                '      <li class="w-icon d-none">' +
+                '        <a href=""><i class="fa fa-random"></i></a>' +
+                '      </li>' +
+                '    </ul>' +
+                '  </div>' +
+                '  <div class="pi-text">' +
+                '    <a id="wishlist_producturl' + id + '" href="shop/product/' + id + '">' +
+                '      <h5 class="text-truncate" style="max-width: 150px;">' + name + '</h5>' +
+                '      <input type="hidden" name="" value="' + name + '" id="wishlist_productname' + id + '">' +
+                '    </a>' +
+                '    <div class="product-price">' +
+                '      ' + price + '' +
+                '      <input type="hidden" name="" value="' + price + ' VNĐ" id="wishlist_productprice' + id + '">' +
+                '    </div>' +
+                '  </div>' +
+                ' </div>' +
+                ' </div>';
 
-    //         var selectItems =
-    //             '<tr>' +
-    //             '<td class="si-pic"><img width="70px" src="' + image + '" alt=""></td>' +
-    //             '<td class="si-text">' +
-    //             '  <div class="product-selected">' +
-    //             '    <h6><a href="shop/product/' + id + '" class="text-truncate" style="max-width: 150px;"> ' + name + '</a></h6>' +
-    //             '    <p>' + price + '</p>' +
-    //             '  </div>' +
-    //             '</td>' +
-    //             '<td class="si-close">' +
-    //             '  <svg id="' + id + '" onclick="remove_wishlist(this.id)" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x" viewBox="0 0 16 16">' +
-    //             '    <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>' +
-    //             '  </svg>' +
-    //             '</td>' +
-    //             '</tr>';
+            var selectItems =
+                '<tr>' +
+                '<td class="si-pic"><img width="70px" src="' + image + '" alt=""></td>' +
+                '<td class="si-text">' +
+                '  <div class="product-selected">' +
+                '    <h6><a href="shop/product/' + id + '" class="text-truncate" style="max-width: 150px;"> ' + name + '</a></h6>' +
+                '    <p>' + price + '</p>' +
+                '  </div>' +
+                '</td>' +
+                '<td class="si-close">' +
+                '  <svg id="' + id + '" onclick="remove_wishlist(this.id)" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x" viewBox="0 0 16 16">' +
+                '    <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>' +
+                '  </svg>' +
+                '</td>' +
+                '</tr>';
 
-    //         $("#show_product_favorite").append(selectItems);
-    //         $("#favorite").append(item);
-    //     }
+            $("#show_product_favorite").append(selectItems);
+            $("#favorite").append(item);
+        }
 
-    //     $("#product_favorite_count").append(data.length);
-    // } else {
-    //     $("#product_favorite_count").append('0');
-    // }
+        $("#product_favorite_count").append(data.length);
+    } else {
+        $("#product_favorite_count").append('0');
+    }
 
 
     /*----------------------------------------------------
