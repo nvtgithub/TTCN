@@ -99,12 +99,13 @@
 
           <form action="" method="POST" role="form">
             <div class="form-group">
+              <legend><i>Xin chào bạn: {{ Auth::user()->name }}</i></legend>
               <label for="">Nội dung bình luận</label>
               <input type="hidden" value="" name="">
-              <textarea id="comment-content" class="form-control" rows="3" required="required" placeholder="Nhập nội dung bình luận...(*)"></textarea>
+              <textarea id="comment-content" class="form-control" placeholder="Nhập nội dung bình luận...(*)"></textarea>
             </div>
 
-            <button type="submit" class="btn btn-primary" id="btn-comment">Bình luận</button>
+            <button type="button" class="btn btn-primary" id="btn-comment" onclick="myFunctionComment()">Bình luận</button>
           </form><br><br>
 
           @else
@@ -245,11 +246,10 @@ function myFunctionLogin()
    console.log(email, password,_csrf,_loginUrl);
 }
 
-$('#btn-commnet').click(function(ev){
-  ev.preventDefault();
+function myFunctionComment(){
   let content = $('#comment-content').val();
   console.log(content);
-})
+}
 </script>
 
 

@@ -63,7 +63,7 @@ class CartController extends Controller
 
   public function delete(Request $request)
   {
-    if ($request->ajax()) {
+    if ($request->ajax()) { 
       $response['cart'] = Cart::remove($request->rowId);
 
       $response['count'] = Cart::count();

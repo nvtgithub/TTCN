@@ -100,6 +100,7 @@ Route::prefix('admin')->middleware('CheckAdminLogin')->group(function () {
 //Contact
 Route::group(['prefix' => 'ajax'], function(){
   Route::post('/login', [AjaxLoginController::class, 'login'])->name('ajax.login');
+  Route::post('/comment', [UserController::class, 'login'])->name('ajax.login');
   Route::get('/logout', [AjaxLoginController::class, 'logout'])->name('ajax.logout');
-  Route::get('users/{id}', [UserController::class, 'index'])->name('user.index');
+
 });
