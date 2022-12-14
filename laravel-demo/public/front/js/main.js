@@ -172,10 +172,7 @@
                 '<i class="ti-close"></i>' +
                 '</button>' +
                 '</div>' +
-                '    <ul>' +
-                '      <li class="w-icon active">' +
-                '        <a href="javascript:addCart(' + id + ')"><i class="icon_bag_alt"></i></a>' +
-                '      </li>' +
+                '    <ul>' +              
                 '      <li class="quick-view">' +
                 '        <a href="' + url + '">+ Chi tiết sản phẩm</a>' +
                 '      </li>' +
