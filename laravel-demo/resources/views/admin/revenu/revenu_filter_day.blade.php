@@ -15,7 +15,7 @@
                 <div>
                     Lọc doanh thu
                     <div class="page-title-subheading">
-                        <!-- Xem chi tiết, tạo mới, cập nhật, xóa và quản lý. -->
+                       Thống kê doanh thu từ ngày ... đến ngày ...
                     </div>
                 </div>
             </div>
@@ -54,7 +54,7 @@
                                 </thead>
                             </table>
                         </form>
-                        <p>Tổng doanh thu: 
+                        <p>Tổng doanh thu:
                             <span id="total_of_filter">
                                 <b>{{ number_format($total) }} VNĐ</b>
                             </span>
@@ -78,7 +78,7 @@
                                     <th>{{$Revenus->quantity}}</th>
                                     <th>{{number_format($Revenus->Total)}} VNĐ</th>
                                 </tr>
-                                @endforeach                              
+                                @endforeach
                             </tbody>
                         </table>
 
