@@ -10,7 +10,7 @@
         <i class="icon_heart_alt"></i>
       </button>
     </div>
-    <ul>     
+    <ul>
       <li class="quick-view">
         <a href="shop/product/{{$product->id}}">+ Chi tiết sản phẩm</a>
       </li>
@@ -21,8 +21,8 @@
   </div>
   <div class="pi-text">
     <div class="catagory-name">{{$product->tag}}</div>
-    <a id="wishlist_producturl{{$product->id}}" href="shop/product/{{$product->id}}">
-      <h5>{{$product->name}}</h5>
+    <a id="wishlist_producturl{{$product->id}}" href="shop/product/{{$product->id}}" class="d-flex justify-content-center">
+      <h5 class="text-truncate" style="max-width: 500px;">{{$product->name}}</h5>
       <input type="hidden" name="" value="{{$product->name}}" id="wishlist_productname{{$product->id}}">
     </a>
     <div class="product-price">
