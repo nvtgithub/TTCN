@@ -104,7 +104,7 @@
       </div>
       <div class="countdown-timer" id="countdown">
         <div class="cd-item">
-          <span>56</span>
+          <span>7</span>
           <p>Days</p>
         </div>
         <div class="cd-item">

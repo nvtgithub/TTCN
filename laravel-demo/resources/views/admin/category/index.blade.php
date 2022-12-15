@@ -49,12 +49,12 @@
             </div>
           </form>
 
-          <div class="btn-actions-pane-right">
+          {{-- <div class="btn-actions-pane-right">
             <div role="group" class="btn-group-sm btn-group">
               <button class="btn btn-focus">Tuẩn này</button>
               <button class="active btn btn-focus">Tất cả</button>
             </div>
-          </div>
+          </div> --}}
         </div>
 
         <div class="table-responsive">

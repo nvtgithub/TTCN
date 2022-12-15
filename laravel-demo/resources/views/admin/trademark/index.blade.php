@@ -48,12 +48,12 @@
             </div>
           </form>
 
-          <div class="btn-actions-pane-right">
+          {{-- <div class="btn-actions-pane-right">
             <div role="group" class="btn-group-sm btn-group">
               <button class="btn btn-focus">Tuần này</button>
               <button class="active btn btn-focus">Tất cả</button>
             </div>
-          </div>
+          </div> --}}
         </div>
 
         <div class="table-responsive">
@@ -86,7 +86,7 @@
                     </span>
                   </a>
                   <form class="d-inline" action="admin/trademark/{{$trademark->id}}" method="post">
-                  @csrf  
+                  @csrf
                   @method('DELETE')
                     <button class="btn btn-hover-shine btn-outline-danger border-0 btn-sm" type="submit" data-toggle="tooltip" title="Delete" data-placement="bottom" onclick="return confirm('Bạn có muốn xóa thương hiệu này?')">
                       <span class="btn-icon-wrapper opacity-8">
