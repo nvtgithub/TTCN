@@ -9,6 +9,7 @@ use App\Services\ProductCategory\ProductCategoryServiceInterface;
 use App\Services\Trademarks\TrademarksService;
 use App\Services\Trademarks\TrademarksServiceInterface;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
 
 class ShopController extends Controller
@@ -37,8 +38,9 @@ class ShopController extends Controller
     $trademarks = $this->trademarksService->all();
     $product = $this->productService->find($id);
     $relatedProducts = $this->productService->getRelatedProducts($product);
+    $product_detail = DB::table('product_details')->get('qty');
 
-    return view('front.shop.show', compact('product', 'relatedProducts', 'categories', 'trademarks'));
+    return view('front.shop.show', compact('product', 'relatedProducts', 'categories', 'trademarks', 'product_detail'));
   }
 
   public function postComment(Request $request)

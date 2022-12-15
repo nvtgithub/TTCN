@@ -65,7 +65,6 @@
                             <thead>
                                 <tr>
                                     <th>Đơn hàng ngày</th>
-                                    <th>Số lượng đơn hàng</th>
                                     <th>Số sản phẩm</th>
                                     <th>Doanh thu</th>
                                 </tr>
@@ -74,7 +73,6 @@
                                 @foreach ($Revenus as $Revenus)
                                 <tr>
                                     <th>{{$Revenus->day}}</th>
-                                    <th>x</th>
                                     <th>{{$Revenus->quantity}}</th>
                                     <th>{{number_format($Revenus->Total)}} VNĐ</th>
                                 </tr>

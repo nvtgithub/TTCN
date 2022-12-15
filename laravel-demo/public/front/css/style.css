@@ -959,6 +959,7 @@ ol {
 }
 
 .single-banner {
+  height: 100%;
   position: relative;
   z-index: 1;
 }
@@ -989,6 +990,7 @@ ol {
 .single-banner img {
   min-width: 100%;
   max-height: 320px;
+  height: 100%;
   object-fit: cover;
 }
 

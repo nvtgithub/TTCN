@@ -17,10 +17,10 @@ class Constant
   public static $order_status = [
     self::order_status_Cancel => 'Đơn hàng bị hủy',
     self::order_status_ReceiveOrders => 'Nhận đơn đặt hàng',
-    self::order_status_Unconfirmed => 'Chưa xác nhận đơn hàng',
-    self::order_status_Confirmed => 'Đã xác nhận đơn hàng',
+    // self::order_status_Unconfirmed => 'Chưa xác nhận đơn hàng',
+    // self::order_status_Confirmed => 'Đã xác nhận đơn hàng',
     self::order_status_Paid => 'Đã thanh toán',
-    self::order_status_Processing => 'Đơn hàng đang được xử lý',
+    // self::order_status_Processing => 'Đơn hàng đang được xử lý',
     self::order_status_Shipping => 'Đang giao hàng',
     self::order_status_Finish => 'Đã hoàn thành',
   ];

@@ -32,7 +32,7 @@
               <thead>
                 <tr>
                   <th>Đơn hàng Tháng</th>
-                  <th>Số lượng đơn hàng</th>
+                  <th>Số lượng sản phẩm</th>
                   <th>Doanh thu tháng</th>
                 </tr>
               </thead>

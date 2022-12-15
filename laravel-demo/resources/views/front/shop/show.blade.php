@@ -72,13 +72,17 @@
                   @foreach($product->productDetails->toArray() as $productColor)
                   <div class="cc-item">
                     <input type="radio" name="color" data-color-name="{{ $productColor['color'] }}" id="cc-{{ $productColor['color'] }}" value="{{$productColor['id']}}">
-                    <label  for="cc-{{ $productColor['color'] }}" class="cc-{{ $productColor['color'] }}" data-value="{{ $productColor['color'] }}" data-inwptooltip="{{ $productColor['color'] }}" style="background: {{$productColor['color_code']}}"></label>
+                    <label for="cc-{{ $productColor['color'] }}" class="{{$productColor['qty']==0 ? 'd-none': ''}} cc-{{ $productColor['color'] }}" data-value="{{ $productColor['color'] }}" data-inwptooltip="{{ $productColor['color'] }}" style="background: {{$productColor['color_code']}}"></label>
                   </div>
                   @endforeach
                 </div>
               </div>
+              <div class="pd-color">
+                <h6>Trạng thái: @if ($product->qty == 0) <span class="ml-4" style="color: red;">Hết hàng</span> @else <span class="ml-4" style="color: #636363;">Còn hàng</span> @endif
+                </h6>
+              </div>
               <div class="quantity">
-                <button data-product-id="{{ $product->id }}" class="primary-btn pd-cart" id="add-to-cart">
+                <button data-product-id="{{ $product->id }}" class="primary-btn pd-cart {{$product->qty == 0 ? 'd-none':''}}" id="add-to-cart">
                   Thêm vào giỏ hàng
                 </button>
               </div>

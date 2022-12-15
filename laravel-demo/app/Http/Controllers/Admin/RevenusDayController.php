@@ -18,7 +18,7 @@ class RevenusDayController extends Controller
     $Revenus = DB::table('orders')->join('order_details', 'orders.id', '=', 'order_details.order_id')->where('status', '=', 7)->select(
       DB::raw("DATE_FORMAT(orders.created_at, '%d-%m-%Y') as day"),
       DB::raw("sum(total) as Total"),
-      // "ProductName as ProductName",
+      // DB::raw("array_count_values(order_details.order_id) as orders"),
       DB::raw("sum(order_details.qty) as quantity")
     )
       ->groupBy("day")->orderBy('day', 'DESC')

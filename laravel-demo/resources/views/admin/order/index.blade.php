@@ -58,7 +58,7 @@
                                                 <th class="text-center">Địa chỉ</th>
                                                 <th class="text-center">Tổng tiền</th>
                                                 <th class="text-center">Trạng thái</th>
-                                                <th class="text-center">Hàng động</th>
+                                                <th class="text-center">Hành động</th>
                                             </tr>
                                         </thead>
                                         <tbody>
