@@ -28,7 +28,7 @@
     <div class="product-price">
       @if ($product->discount != null)
       {{number_format($product->discount)}} VNĐ
-      <span>${{number_format($product->price)}}</span>
+      <span class="d-block">{{number_format($product->price)}} VNĐ</span>
       <input type="hidden" name="" value="{{number_format($product->discount)}} VNĐ" id="wishlist_productprice{{$product->id}}">
       @else
       {{number_format($product->price)}} VNĐ

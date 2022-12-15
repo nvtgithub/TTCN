@@ -507,6 +507,16 @@ ol {
   top: 40px;
 }
 
+.inner-header .nav-right li.cart-icon .cart-hover .product-selected h6 {
+  width: 170px;
+  overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: 25px;
+    -webkit-line-clamp: 1;
+    height: 25px;
+    -webkit-box-orient: vertical;
+}
+
 .inner-header .nav-right li.cart-icon a {
   color: #252525;
   position: relative;
@@ -978,7 +988,7 @@ ol {
 
 .single-banner img {
   min-width: 100%;
-  max-height: 380px;
+  max-height: 320px;
   object-fit: cover;
 }
 
@@ -2175,15 +2185,7 @@ ol {
   margin-bottom: 6px;
 }
 
-.product-details .pd-title span {
-  display: block;
-  font-size: 12px;
-  color: #b2b2b2;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  font-weight: 700;
-  line-height: 23px;
-}
+.product-details .pd-title span {}
 
 .product-details .pd-title h3 {
   color: #252525;
