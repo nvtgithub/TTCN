@@ -15,7 +15,7 @@
         <div>
           Doanh thu theo tháng
           <div class="page-title-subheading">
-            <!-- Xem chi tiết, tạo mới, cập nhật, xóa và quản lý. -->
+            Thống kê doanh thu theo tháng
           </div>
         </div>
       </div>

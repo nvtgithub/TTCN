@@ -15,7 +15,7 @@
         <div>
           Doanh thu theo ngày
           <div class="page-title-subheading">
-            <!-- Xem chi tiết, tạo mới, cập nhật, xóa và quản lý. -->
+            Thống kê doanh thu theo ngày
           </div>
         </div>
       </div>
@@ -26,7 +26,7 @@
     <div class="col-md-12">
       <div class="card shadow mb-4">
         <div class="card-body">
-          <div class="table-responsive">    
+          <div class="table-responsive">
             <br>
             <div class="table-responsive">
               <table class="table table-bordered center" id="dataTable" width="100%" cellspacing="0">

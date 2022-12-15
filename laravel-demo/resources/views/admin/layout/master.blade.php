@@ -1242,13 +1242,8 @@
                     </a>
                   </li>
                   <li>
-                    <a href="/admin/order" class="{{ (request()->segment(2) == 'order') ? 'nm-active' : '' }}">
-                      <i class="metismenu-icon"></i>Đơn hàng
-                    </a>
-                  </li>
-                  <li>
-                    <a href="/admin/product" class="{{ (request()->segment(2) == 'product') ? 'nm-active' : '' }}">
-                      <i class="metismenu-icon"></i>Sản phẩm
+                    <a href="/admin/trademark" class="{{ (request()->segment(2) == 'brand') ? 'nm-active' : '' }}">
+                      <i class="metismenu-icon"></i>Thương hiệu
                     </a>
                   </li>
                   <li>
@@ -1257,8 +1252,13 @@
                     </a>
                   </li>
                   <li>
-                    <a href="/admin/trademark" class="{{ (request()->segment(2) == 'brand') ? 'nm-active' : '' }}">
-                      <i class="metismenu-icon"></i>Thương hiệu
+                    <a href="/admin/product" class="{{ (request()->segment(2) == 'product') ? 'nm-active' : '' }}">
+                      <i class="metismenu-icon"></i>Sản phẩm
+                    </a>
+                  </li>
+                  <li>
+                    <a href="/admin/order" class="{{ (request()->segment(2) == 'order') ? 'nm-active' : '' }}">
+                      <i class="metismenu-icon"></i>Đơn hàng
                     </a>
                   </li>
                 </ul>
@@ -1296,9 +1296,9 @@
                 <ul>
                   <li>
                     <a href="/admin/decoration" class="">
-                      <i class="metismenu-icon"></i>Banner và danh mục
+                      <i class="metismenu-icon"></i>Banner và danh mục nổi bật
                     </a>
-                  </li>              
+                  </li>
                 </ul>
               </li>
             </ul>

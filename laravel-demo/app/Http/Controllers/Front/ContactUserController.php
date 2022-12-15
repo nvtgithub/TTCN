@@ -9,6 +9,7 @@ use App\Services\User\UserServiceInterface;
 use App\Services\ProductCategory\ProductCategoryServiceInterface;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
+use Validator;
 
 
 class ContactUserController extends Controller
@@ -83,11 +84,12 @@ class ContactUserController extends Controller
    */
   public function update(Request $request, $id)
   {
+
     $data = $request->all();
     //cập nhật dữ liệu
     $this->userService->update($data, $id);
 
-    return redirect('account/my-contact/contactuser');
+    return redirect('account/my-contact/contactuser')->with('notification', 'Cập nhật thông tin thành công!');
   }
 
   /**

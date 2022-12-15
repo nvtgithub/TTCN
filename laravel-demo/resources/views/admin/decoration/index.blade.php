@@ -15,7 +15,9 @@
         <div>
           Trang trí shop
           <div class="page-title-subheading">
-            <!-- Xem chi tiết, tạo mới, cập nhật, xóa và quản lý. -->
+            Xem, sửa, xoá banner sự kiện khuyến mãi<br>
+            Xem, sửa danh mục nổi bật của cửa hàng<br>  
+            Xem, sửa sản phẩm yêu thích nhất trong tuần
           </div>
         </div>
       </div>
