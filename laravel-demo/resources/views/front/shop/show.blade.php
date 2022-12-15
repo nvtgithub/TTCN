@@ -70,10 +70,12 @@
                 <h6>Màu sắc</h6>
                 <div id="choose-color" class="pd-color-choose">
                   @foreach($product->productDetails->toArray() as $productColor)
+                  @if($productColor['qty'] > 0)
                   <div class="cc-item">
                     <input type="radio" name="color" data-color-name="{{ $productColor['color'] }}" id="cc-{{ $productColor['color'] }}" value="{{$productColor['id']}}">
                     <label for="cc-{{ $productColor['color'] }}" class="{{$productColor['qty']==0 ? 'd-none': ''}} cc-{{ $productColor['color'] }}" data-value="{{ $productColor['color'] }}" data-inwptooltip="{{ $productColor['color'] }}" style="background: {{$productColor['color_code']}}"></label>
                   </div>
+                  @endif
                   @endforeach
                 </div>
               </div>
