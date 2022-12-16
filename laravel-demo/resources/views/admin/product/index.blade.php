@@ -64,7 +64,7 @@
                 <th>Tên / Thương hiệu</th>
                 <th class="text-center">Giá</th>
                 <th class="text-center">Số Lượng</th>
-                <th class="text-center">Featured</th>
+                <th class="text-center">Hiện thị ở trang chủ</th>
                 <th class="text-center">Tùy chọn</th>
               </tr>
             </thead>

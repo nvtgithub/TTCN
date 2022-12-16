@@ -45113,3 +45113,7 @@ span.multiselect-native-select select {
 .decor {
   max-width: 40%;
 }
+
+.importance {
+  color: red;
+}
