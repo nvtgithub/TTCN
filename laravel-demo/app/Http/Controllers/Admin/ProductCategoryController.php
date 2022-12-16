@@ -92,6 +92,15 @@ class ProductCategoryController extends Controller
   public function update(Request $request, $id)
   {
     $data = $request->all();
+    $categoriesName = DB::table('product_categories')->pluck('name');
+
+    foreach ($categoriesName as $name) {
+      if (strcasecmp($name, $data['name'])) {
+        return back()
+          ->with('notification', 'ERROR: Danh mục này đã tồn tại!');
+      }
+    }
+
     $this->productCategoryService->update($data, $id);
     return redirect('admin/category');
   }
