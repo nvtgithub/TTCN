@@ -28,6 +28,9 @@
         <div class="card-body">
           <form method="post" action="admin/trademark/{{$trademark->id}}" enctype="multipart/form-data">
             @csrf
+
+            @include('admin.components.notification')
+
             @method('PUT')
             <div class="position-relative row form-group">
               <label for="name" class="col-md-3 text-md-right col-form-label">Tên</label>

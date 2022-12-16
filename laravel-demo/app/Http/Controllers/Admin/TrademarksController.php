@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Services\Trademarks\TrademarksServiceInterface;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class TrademarksController extends Controller
 {
@@ -43,6 +44,14 @@ class TrademarksController extends Controller
    */
   public function store(Request $request)
   {
+    $nameTrademarks = DB::table('trademarks')->pluck('name');
+
+    foreach($nameTrademarks as $name){
+        if(strcasecmp($name, $request->get('name')) == 0){
+            return back()
+            ->with('notification', 'ERROR: Thương hiệu này đã tồn tại!');
+        }
+    }
     $data = $request->all();
     $this->trademarksService->create($data);
     return redirect('admin/trademark');
@@ -80,6 +89,16 @@ class TrademarksController extends Controller
    */
   public function update(Request $request, $id)
   {
+    $data = $request->all();
+    $nameTrademarks = DB::table('trademarks')->pluck('name');
+
+    foreach($nameTrademarks as $name){
+        if(strcasecmp($name, $data['name']) == 0){
+            return back()
+            ->with('notification', 'ERROR: Thương hiệu này đã tồn tại!');
+        }
+    }
+
     $data = $request->all();
     $this->trademarksService->update($data, $id);
     return redirect('admin/trademark');
