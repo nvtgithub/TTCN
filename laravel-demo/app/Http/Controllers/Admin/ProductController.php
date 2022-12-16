@@ -55,11 +55,12 @@ class ProductController extends Controller
    */
   public function store(Request $request)
   {
+
     $nameProducts = DB::table('products')->pluck('name');
 
-    foreach($nameProducts as $nameProduct)
+    foreach($nameProducts as $name)
     {
-        if($nameProduct == $request->get('name'))
+        if(strcasecmp($name, $request->get('name')))
         {
           return back()
           ->with('notification', 'ERROR: Sản phẩm này đã tồn tại!');
@@ -96,7 +97,7 @@ class ProductController extends Controller
 
     $trademarks = $this->trademarksService->all();
     $productCategories = $this->productCategoryService->all();
-    
+
     return view('admin.product.edit', compact('product', 'trademarks', 'productCategories'));
   }
 
@@ -110,6 +111,14 @@ class ProductController extends Controller
   public function update(Request $request, $id)
   {
     $data = $request->all();
+    $nameProducts = DB::table('products')->pluck('name');
+
+    foreach($nameProducts as $name){
+        if(strcasecmp($name, $data['name']) ==0 ){
+            return back()
+            ->with('notification', 'ERROR: Sản phẩm đã tồn tại!');  
+        }
+    }
     $this->productService->update($data, $id);
 
     return redirect('admin/product/' . $id);
@@ -124,7 +133,7 @@ class ProductController extends Controller
   public function destroy($id)
   {
      $this->productService->delete($id);
-     
+
      return redirect('admin/product');
   }
 }

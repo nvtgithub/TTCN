@@ -99,7 +99,6 @@ class TrademarksController extends Controller
         }
     }
 
-    $data = $request->all();
     $this->trademarksService->update($data, $id);
     return redirect('admin/trademark');
   }
