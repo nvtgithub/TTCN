@@ -48,7 +48,7 @@ class ProductCategoryController extends Controller
     $categoriesName = DB::table('product_categories')->pluck('name');
 
     foreach ($categoriesName as $name) {
-      if (strcasecmp($name, $request->get('name'))) {
+      if (strcasecmp($name, $request->get('name')) == 0) {
         return back()
           ->with('notification', 'ERROR: Danh mục này đã tồn tại!');
       }
@@ -95,7 +95,7 @@ class ProductCategoryController extends Controller
     $categoriesName = DB::table('product_categories')->pluck('name');
 
     foreach ($categoriesName as $name) {
-      if (strcasecmp($name, $data['name'])) {
+      if (strcasecmp($name, $data['name']) == 0) {
         return back()
           ->with('notification', 'ERROR: Danh mục này đã tồn tại!');
       }
