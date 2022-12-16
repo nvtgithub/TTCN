@@ -63,7 +63,7 @@
             </div>
 
             <div class="position-relative row form-group">
-              <label for="name" class="col-md-3 text-md-right col-form-label">Tên sản phẩm</label>
+              <label for="name" class="col-md-3 text-md-right col-form-label">Tên sản phẩm <span class="importance">*</span></label>
               <div class="col-md-9 col-xl-8">
                 <input required name="name" id="name" placeholder="Tên sản phẩm" type="text" class="form-control" value="">
               </div>
@@ -78,7 +78,7 @@
             </div>
 
             <div class="position-relative row form-group">
-              <label for="price" class="col-md-3 text-md-right col-form-label">Giá bán</label>
+              <label for="price" class="col-md-3 text-md-right col-form-label">Giá bán <span class="importance">*</span></label>
               <div class="col-md-9 col-xl-8">
                 <input required name="price" id="price" placeholder="Giá bán" type="text" class="form-control" value="">
               </div>
@@ -99,25 +99,25 @@
             </div>
 
             <div class="position-relative row form-group">
-              <label for="sku" class="col-md-3 text-md-right col-form-label">SKU</label>
+              <label for="sku" class="col-md-3 text-md-right col-form-label">SKU <span class="importance">*</span></label>
               <div class="col-md-9 col-xl-8">
                 <input required name="sku" id="sku" placeholder="Mã SKU" type="text" class="form-control" value="">
               </div>
             </div>
 
             <div class="position-relative row form-group">
-              <label for="tag" class="col-md-3 text-md-right col-form-label">Tag</label>
+              <label for="tag" class="col-md-3 text-md-right col-form-label">Tag <span class="importance">*</span></label>
               <div class="col-md-9 col-xl-8">
                 <input required name="tag" id="tag" placeholder="Tag" type="text" class="form-control" value="">
               </div>
             </div>
 
             <div class="position-relative row form-group">
-              <label for="featured" class="col-md-3 text-md-right col-form-label">Featured</label>
+              <label for="featured" class="col-md-3 text-md-right col-form-label">Hiển thị ở trang chủ</label>
               <div class="col-md-9 col-xl-8">
                 <div class="position-relative form-check pt-sm-2">
                   <input name="featured" id="featured" type="checkbox" value="1" class="form-check-input" checked>
-                  <label for="featured" class="form-check-label">Featured</label>
+                  <label for="featured" class="form-check-label">Hiện / Ẩn</label>
                 </div>
               </div>
             </div>

@@ -158,9 +158,9 @@
           </div>
 
           <div class="position-relative row form-group">
-            <label for="featured" class="col-md-3 text-md-right col-form-label">Nổi bật</label>
+            <label for="featured" class="col-md-3 text-md-right col-form-label">Hiện thị ở trang chủ</label>
             <div class="col-md-9 col-xl-8">
-              <p>{{$product->featured ? 'Yes' : 'No'}}</p>
+              <p>{{$product->featured ? 'Có' : 'Không'}}</p>
             </div>
           </div>
 

@@ -112,11 +112,11 @@
             </div>
 
             <div class="position-relative row form-group">
-              <label for="featured" class="col-md-3 text-md-right col-form-label">Nổi bật</label>
+              <label for="featured" class="col-md-3 text-md-right col-form-label">Hiện thị ở trang chủ</label>
               <div class="col-md-9 col-xl-8">
                 <div class="position-relative form-check form-check-inline">
                   <input name="featured" id="featured_yes" type="radio" class="form-check-input" value="1" {{ $product->featured == '1' ? 'checked' : ''}}>
-                  <label for="yes" class="form-check-label">Mặc định</label>
+                  <label for="yes" class="form-check-label">Hiện</label>
                 </div>
                 <div class="position-relative form-check form-check-inline">
                   <input name="featured" id="featured_no" type="radio" class="form-check-input" value="0" {{ $product->featured == '0' ? 'checked' : ''}}>
