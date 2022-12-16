@@ -50,7 +50,7 @@ class UserController extends Controller
     $emails = DB::table('users')->pluck('email');
 
     foreach ($emails as $email) {
-      if ($email == $request->get('email')) {
+      if (strcasecmp($email, $request->get('email'))) {
         return back()
           ->with('notification', 'ERROR: Tài khoản đã tồn tại!');
       }

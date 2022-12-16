@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Services\ProductCategory\ProductCategoryServiceInterface;
 use Facade\FlareClient\View;
+use Illuminate\Support\Facades\DB;
 
 class ProductCategoryController extends Controller
 {
@@ -44,6 +45,15 @@ class ProductCategoryController extends Controller
    */
   public function store(Request $request)
   {
+    $categoriesName = DB::table('product_categories')->pluck('name');
+
+    foreach ($categoriesName as $name) {
+      if (strcasecmp($name, $request->get('name'))) {
+        return back()
+          ->with('notification', 'ERROR: Danh mục này đã tồn tại!');
+      }
+    }
+
     $data = $request->all();
     $this->productCategoryService->create($data);
     return redirect('admin/category');
