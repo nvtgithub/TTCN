@@ -177,7 +177,7 @@
                 <form action="admin/order/{{$order->id}}" method="post">
                   @csrf
                   @method('PUT')
-                  <select required name="status" id="status" class="badge badge-dark">
+                  <select required name="status" id="status" class="badge badge-dark" @if($order->status==7) disabled @endif>
                     @foreach (\App\Utilities\Constant::$order_status as $key => $order_status)
                     <option value="{{$key}}" {{$key == $order->status? 'selected' : ''}}>{{ $order_status}}</option>
                     @endforeach
