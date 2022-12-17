@@ -55,19 +55,21 @@ class ProductController extends Controller
    */
   public function store(Request $request)
   {
-
+    $data = $request->all();
     $nameProducts = DB::table('products')->pluck('name');
 
-    foreach($nameProducts as $name)
-    {
-        if(strcasecmp($name, $request->get('name')))
-        {
-          return back()
+    foreach ($nameProducts as $name) {
+      if (strcasecmp($name, $request->get('name')) == 0) {
+        return back()
           ->with('notification', 'ERROR: Sản phẩm này đã tồn tại!');
-        }
+      }
     }
 
-    $data = $request->all();
+    if ($data['price'] <= $data['discount']) {
+      return back()
+        ->with('notification', 'ERROR: Giá khuyến mại phải nhỏ hơn giá bán!');
+    }
+
     $data['qty'] = 0; //Khi tạo mới sản phẩm, số lượng = 0
     $product = $this->productService->create($data);
     return redirect('admin/product/' . $product->id);
@@ -111,14 +113,21 @@ class ProductController extends Controller
   public function update(Request $request, $id)
   {
     $data = $request->all();
-    $nameProducts = DB::table('products')->pluck('name');
+    $thisProduct = DB::table('products')->where('id', $id)->first();
+    $products = DB::table('products')->where('name', '<>', $thisProduct->name)->get();
 
-    foreach($nameProducts as $name){
-        if(strcasecmp($name, $data['name']) ==0 ){
-            return back()
-            ->with('notification', 'ERROR: Sản phẩm đã tồn tại!');
-        }
+    foreach ($products as $product) {
+      if (strcasecmp($product->name, $data['name']) == 0) {
+        return back()
+          ->with('notification', 'ERROR: Sản phẩm đã tồn tại!');
+      }
     }
+
+    if ($data['price'] <= $data['discount']) {
+      return back()
+        ->with('notification', 'ERROR: Giá khuyến mại phải nhỏ hơn giá bán!');
+    }
+
     $this->productService->update($data, $id);
 
     return redirect('admin/product/' . $id);
@@ -132,8 +141,8 @@ class ProductController extends Controller
    */
   public function destroy($id)
   {
-     $this->productService->delete($id);
+    $this->productService->delete($id);
 
-     return redirect('admin/product');
+    return redirect('admin/product');
   }
 }

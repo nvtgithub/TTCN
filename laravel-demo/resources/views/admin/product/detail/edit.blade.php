@@ -37,23 +37,23 @@
             </div>
 
             <div class="position-relative row form-group">
-              <label for="color" class="col-md-3 text-md-right col-form-label">Màu sắc</label>
+              <label for="color" class="col-md-3 text-md-right col-form-label">Tên màu <span class="importance">*</span></label>
               <div class="col-md-9 col-xl-8">
                 <input required name="color" id="color" placeholder="Color" type="text" class="form-control" value="{{ $productDetail->color }}">
               </div>
             </div>
 
             <div class="position-relative row form-group">
-              <label for="color" class="col-md-3 text-md-right col-form-label">Mã màu</label>
+              <label for="color" class="col-md-3 text-md-right col-form-label">Mã màu <span class="importance">*</span></label>
               <div class="col-md-9 col-xl-8">
                 <input type="color" class="form-control-color" id="color" name="color_code" value="{{ $productDetail->color_code }}" title="Chọn 1 màu">
               </div>
             </div>
 
             <div class="position-relative row form-group">
-              <label for="qty" class="col-md-3 text-md-right col-form-label">Số lượng</label>
+              <label for="qty" class="col-md-3 text-md-right col-form-label">Số lượng <span class="importance">*</span></label>
               <div class="col-md-9 col-xl-8">
-                <input required name="qty" id="qty" placeholder="Size" type="text" class="form-control" value="{{ $productDetail->qty }}">
+                <input required name="qty" id="qty" placeholder="Size" type="number" class="form-control" value="{{ $productDetail->qty }}">
               </div>
             </div>
 

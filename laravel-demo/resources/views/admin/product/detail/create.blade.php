@@ -38,23 +38,23 @@
             </div>
 
             <div class="position-relative row form-group">
-              <label for="color" class="col-md-3 text-md-right col-form-label">Tên màu</label>
+              <label for="color" class="col-md-3 text-md-right col-form-label">Tên màu <span class="importance">*</span></label>
               <div class="col-md-9 col-xl-8">
                 <input required name="color" id="color" placeholder="Color" type="text" class="form-control" value="">
               </div>
             </div>
 
             <div class="position-relative row form-group">
-              <label for="color" class="col-md-3 text-md-right col-form-label">Mã màu</label>
+              <label for="color" class="col-md-3 text-md-right col-form-label">Mã màu <span class="importance">*</span></label>
               <div class="col-md-9 col-xl-8">
                 <input type="color" class="form-control-color" id="color" name="color_code" value="#563d7c" title="Chọn 1 màu">
               </div>
             </div>
 
             <div class="position-relative row form-group">
-              <label for="qty" class="col-md-3 text-md-right col-form-label">Số lượng</label>
+              <label for="qty" class="col-md-3 text-md-right col-form-label">Số lượng <span class="importance">*</span></label>
               <div class="col-md-9 col-xl-8">
-                <input required name="qty" id="qty" placeholder="Số lượng" type="text" class="form-control" value="">
+                <input required name="qty" id="qty" placeholder="Số lượng" type="number" class="form-control" value="">
               </div>
             </div>
 

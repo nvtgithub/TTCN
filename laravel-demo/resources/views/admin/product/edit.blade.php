@@ -29,9 +29,9 @@
           <form method="post" action="admin/product/{{ $product->id }}" enctype="multipart/form-data">
             @csrf
             @method('PUT')
-
+            @include('admin.components.notification')
             <div class="position-relative row form-group">
-              <label for="trademark_id" class="col-md-3 text-md-right col-form-label">Thương hiệu</label>
+              <label for="trademark_id" class="col-md-3 text-md-right col-form-label">Thương hiệu <span class="importance">*</span></label>
               <div class="col-md-9 col-xl-8">
                 <select required name="trademark_id" id="trademark_id" class="form-control">
 
@@ -46,7 +46,7 @@
             </div>
 
             <div class="position-relative row form-group">
-              <label for="product_category_id" class="col-md-3 text-md-right col-form-label">Category</label>
+              <label for="product_category_id" class="col-md-3 text-md-right col-form-label">Danh mục <span class="importance">*</span></label>
               <div class="col-md-9 col-xl-8">
                 <select required name="product_category_id" id="product_category_id" class="form-control">
                   <option value="">-- Category --</option>
@@ -63,7 +63,7 @@
 
 
             <div class="position-relative row form-group">
-              <label for="name" class="col-md-3 text-md-right col-form-label">Tên sản phẩm</label>
+              <label for="name" class="col-md-3 text-md-right col-form-label">Tên sản phẩm <span class="importance">*</span></label>
               <div class="col-md-9 col-xl-8">
                 <input required name="name" id="name" placeholder="Tên sản phẩm" type="text" class="form-control" value="{{ $product->name }}">
               </div>
@@ -77,35 +77,35 @@
             </div>
 
             <div class="position-relative row form-group">
-              <label for="price" class="col-md-3 text-md-right col-form-label">Giá bán</label>
+              <label for="price" class="col-md-3 text-md-right col-form-label">Giá bán <span class="importance">*</span></label>
               <div class="col-md-9 col-xl-8">
-                <input required name="price" id="price" placeholder="Giá bán" type="text" class="form-control" value="{{ $product->price }}">
+                <input required name="price" id="price" placeholder="Giá bán" type="number" class="form-control" value="{{ $product->price }}">
               </div>
             </div>
 
             <div class="position-relative row form-group">
               <label for="discount" class="col-md-3 text-md-right col-form-label">Giá khuyến mãi</label>
               <div class="col-md-9 col-xl-8">
-                <input name="discount" id="discount" placeholder="Giá khuyến mãi" type="text" class="form-control" value="{{ $product->discount }}">
+                <input name="discount" id="discount" placeholder="Giá khuyến mãi" type="number" class="form-control" value="{{ $product->discount }}">
               </div>
             </div>
 
             <div class="position-relative row form-group">
               <label for="weight" class="col-md-3 text-md-right col-form-label">Khối lượng</label>
               <div class="col-md-9 col-xl-8">
-                <input name="weight" id="weight" placeholder="Khối lượng sản phẩm" type="text" class="form-control" value="{{ $product->weight }}">
+                <input name="weight" id="weight" placeholder="Khối lượng sản phẩm" type="number" class="form-control" value="{{ $product->weight }}">
               </div>
             </div>
 
             <div class="position-relative row form-group">
-              <label for="sku" class="col-md-3 text-md-right col-form-label">SKU</label>
+              <label for="sku" class="col-md-3 text-md-right col-form-label">SKU <span class="importance">*</span></label>
               <div class="col-md-9 col-xl-8">
                 <input required name="sku" id="sku" placeholder="Mã SKU" type="text" class="form-control" value="{{ $product->sku }}">
               </div>
             </div>
 
             <div class="position-relative row form-group">
-              <label for="tag" class="col-md-3 text-md-right col-form-label">Tag</label>
+              <label for="tag" class="col-md-3 text-md-right col-form-label">Tag <span class="importance">*</span></label>
               <div class="col-md-9 col-xl-8">
                 <input required name="tag" id="tag" placeholder="Tag" type="text" class="form-control" value="{{ $product->tag }}">
               </div>
