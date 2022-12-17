@@ -28,7 +28,7 @@
             <thead>
               <tr>
                 <th>Hình ảnh</th>
-                <th>Id</th>
+                <th>Ngày mua hàng</th>
                 <th>Sản phẩm</th>
                 <th>Tổng tiền</th>
                 <th>Chi tiết sản phẩm</th>
@@ -41,7 +41,9 @@
                 <td class="cart-pic first-row">
                   <img style="max-width: 100px; margin: auto;" src="front/img/products/{{ $order->orderDetails[0]->product->productImages[0]->path }}" alt="">
                 </td>
-                <td class="first-row">{{ $order->id }}</td>
+
+                <td class="first-row" >{{ date('H:i, d/m/Y',strtotime($order->created_at)) }}</td>
+
                 <td class="cart-title first-row">
                   <h5>
                     {{ $order->orderDetails[0]->product->name }}

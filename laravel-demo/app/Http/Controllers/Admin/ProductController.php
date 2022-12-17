@@ -116,7 +116,7 @@ class ProductController extends Controller
     foreach($nameProducts as $name){
         if(strcasecmp($name, $data['name']) ==0 ){
             return back()
-            ->with('notification', 'ERROR: Sản phẩm đã tồn tại!');  
+            ->with('notification', 'ERROR: Sản phẩm đã tồn tại!');
         }
     }
     $this->productService->update($data, $id);

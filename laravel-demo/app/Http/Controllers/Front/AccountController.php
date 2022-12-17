@@ -75,7 +75,7 @@ class AccountController extends Controller
 
     if ($request->password != $request->password_confirmation) {
       return back()->with('notification', 'Lỗi: Mật khẩu không khớp!');
-    } 
+    }
 
     $data = [
       'name' => $request->name,
@@ -101,6 +101,7 @@ class AccountController extends Controller
   {
     $order = $this->orderService->find($id);
     $categories = $this->productCategoryService->all();
+
 
     return view('front.account.my-order.show', compact('order', 'categories'));
   }
