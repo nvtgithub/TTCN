@@ -22574,6 +22574,11 @@ legend {
   align-items: center
 }
 
+.widget-content .widget-content-wrapper img {
+  max-height: 40px;
+  object-fit: cover;
+}
+
 .widget-content .widget-content-left .widget-heading {
   opacity: .8;
   font-weight: bold

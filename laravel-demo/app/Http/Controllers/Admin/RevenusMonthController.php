@@ -16,7 +16,7 @@ class RevenusMonthController extends Controller
   public function index()
   {
     $orders = DB::table('orders')->join('order_details', 'orders.id', '=', 'order_details.order_id')->where('status', '=', 7)->select(
-      DB::raw("DATE_FORMAT(orders.created_at, '%m-%Y') as month"),
+      DB::raw("DATE_FORMAT(orders.updated_at, '%m-%Y') as month"),
       DB::raw("sum(total) as Total"),
       DB::raw("count(status) as Status"),
     )

@@ -22,7 +22,7 @@ class RevenusFilterDayController extends Controller
 
 
         $Revenus = DB::table('orders')->join('order_details', 'orders.id', '=', 'order_details.order_id')->whereBetween('orders.created_at', [$from_date, $to_date])->where('status', 'like', '7')->select(
-            DB::raw("DATE_FORMAT(orders.created_at, '%d-%m-%Y') as day"),
+            DB::raw("DATE_FORMAT(orders.updated_at, '%d-%m-%Y') as day"),
             DB::raw("sum(total) as Total"),
             DB::raw("sum(order_details.qty) as quantity")
         )
