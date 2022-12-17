@@ -33,6 +33,7 @@
                 <thead>
                   <tr>
                     <th>Đơn hàng ngày</th>
+                    <th>Số đơn hàng</th>
                     <th>Số sản phẩm</th>
                     <th>Doanh thu ngày</th>
                   </tr>
@@ -41,6 +42,7 @@
                   @foreach ($Revenus as $Revenu)
                   <tr>
                     <th> {{$Revenu->day}}</th>
+                    <th> {{$Revenu->countOrder}}</th>
                     <th>{{$Revenu->quantity}}</th>
                     <th>{{number_format($Revenu->Total)}} VNĐ</th>
                   </tr>

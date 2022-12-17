@@ -18,7 +18,8 @@ class RevenusMonthController extends Controller
     $orders = DB::table('orders')->join('order_details', 'orders.id', '=', 'order_details.order_id')->where('status', '=', 7)->select(
       DB::raw("DATE_FORMAT(orders.updated_at, '%m-%Y') as month"),
       DB::raw("sum(total) as Total"),
-      DB::raw("count(status) as Status"),
+      DB::raw("count(DISTINCT(order_details.order_id)) as countOrder"),
+      DB::raw("sum(order_details.qty) as quantity"),
     )
       ->groupBy("month")->orderBy('month', 'DESC')
       ->paginate(5);

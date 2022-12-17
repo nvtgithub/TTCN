@@ -32,6 +32,7 @@
               <thead>
                 <tr>
                   <th>Đơn hàng Tháng</th>
+                  <th>Số đơn hàng</th>
                   <th>Số lượng sản phẩm</th>
                   <th>Doanh thu tháng</th>
                 </tr>
@@ -40,7 +41,8 @@
                 @foreach ($orders as $order)
                 <tr>
                   <th> {{$order->month}}</th>
-                  <th>{{$order->Status}}</th>
+                  <th>{{$order->countOrder}}</th>
+                  <th>{{$order->quantity}}</th>
                   <th>{{number_format($order->Total)}} VNĐ</th>
                 </tr>
                 @endforeach
