@@ -12,6 +12,7 @@ $(document).ready(function () {
             });
             $(this).parent().css("border-color","black")
             $('#product-color').text('- ' + $(this).data('color-name'))
+            $('#product-color-qty').text($(this).data('color-qty') + ' sản phẩm')
         }
     })
 

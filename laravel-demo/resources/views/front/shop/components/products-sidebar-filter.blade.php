@@ -29,8 +29,8 @@
     <div class="filter-range-wrap">
       <div class="range-slider">
         <div class="price-input">
-          <input type="text" id="minamount" name="price_min">
-          <input type="text" id="maxamount" name="price_max">
+          <input type="number" id="minamount" name="price_min">
+          <input type="number" id="maxamount" name="price_max">
           <span>VNĐ</span>
         </div>
       </div>

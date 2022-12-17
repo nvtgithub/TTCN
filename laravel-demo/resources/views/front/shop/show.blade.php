@@ -66,12 +66,12 @@
                 @endif
 
               </div>
-              <div class="pd-color">
+              <div class="pd-color {{$product->qty == 0 ? 'd-none':''}}">
                 <h6>Màu sắc</h6>
                 <div id="choose-color" class="pd-color-choose">
                   @foreach($product->productDetails->toArray() as $productColor)
                   <div class="cc-item">
-                    <input type="radio" name="color" data-color-name="{{ $productColor['color'] }}" id="cc-{{ $productColor['color'] }}" value="{{$productColor['id']}}">
+                    <input type="radio" name="color" data-color-qty="{{ $productColor['qty'] }}" data-color-name="{{ $productColor['color'] }}" id="cc-{{ $productColor['color'] }}" value="{{$productColor['id']}}">
                     <label for="cc-{{ $productColor['color'] }}" class="{{$productColor['qty']==0 ? 'd-none': ''}} cc-{{ $productColor['color'] }}" data-value="{{ $productColor['color'] }}" data-inwptooltip="{{ $productColor['color'] }}" style="background: {{$productColor['color_code']}}"></label>
                   </div>
                   @endforeach
@@ -81,6 +81,12 @@
                 <h6>Trạng thái: @if ($product->qty == 0) <span class="ml-4" style="color: red;">Hết hàng</span> @else <span class="ml-4" style="color: #636363;">Còn hàng</span> @endif
                 </h6>
               </div>
+
+              <div class="pd-color {{$product->qty == 0 ? 'd-none':''}}">
+                <h6>Số lượng: <span class="ml-4" style="color: #636363;" id="product-color-qty"></span></h6>
+
+              </div>
+
               <div class="quantity">
                 <button data-product-id="{{ $product->id }}" class="primary-btn pd-cart {{$product->qty == 0 ? 'd-none':''}}" id="add-to-cart">
                   Thêm vào giỏ hàng
@@ -92,7 +98,7 @@
               </ul>
               <div class="pd-share">
                 <a title="Thêm vào yêu thích" class="heart-icon button-wishlist" id="{{$product->id}}" onclick="add_wishlist(this.id)">
-                  <i class="icon_heart_alt"></i>
+                  <i class="icon_heart_alt mr-2"></i> Thêm vào mục yêu thích
                 </a>
 
                 <div class="pd-social">
