@@ -13,6 +13,9 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\DB;
+use App\Models\Order;
+use App\Models\OrderDetail;
+
 
 class AccountController extends Controller
 {
@@ -91,7 +94,7 @@ class AccountController extends Controller
 
   public function myOrderIndex()
   {
-    $orders = $this->orderService->getOrderByUserId(Auth::id());
+    $orders = $this->orderService->getOrderByUserId(Auth::id())->sortByDesc('id');
     $categories = $this->productCategoryService->all();
 
     return view('front.account.my-order.index', compact('orders', 'categories'));

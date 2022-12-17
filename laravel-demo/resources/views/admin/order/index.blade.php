@@ -56,6 +56,7 @@
                                                 <th class="text-center">ID</th>
                                                 <th>Khách hàng / Sản phẩm</th>
                                                 <th class="text-center">Địa chỉ</th>
+                                                <th class="text-center">Ngày đặt hàng</th>
                                                 <th class="text-center">Tổng tiền</th>
                                                 <th class="text-center">Trạng thái</th>
                                                 <th class="text-center">Hành động</th>
@@ -92,6 +93,8 @@
                                                         </div>
                                                     </div>
                                                 </td>
+
+                                                <td class="text-center">{{ }}</td>
                                                 <!-- địa chỉ -->
                                                 <td class="text-center">
                                                     {{ $order->street_address . ' - ' . $order->town_city }}
