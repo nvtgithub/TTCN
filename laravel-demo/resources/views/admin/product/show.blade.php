@@ -137,13 +137,6 @@
           </div>
 
           <div class="position-relative row form-group">
-            <label for="weight" class="col-md-3 text-md-right col-form-label">Cân nặng</label>
-            <div class="col-md-9 col-xl-8">
-              <p>{{$product->weight}}</p>
-            </div>
-          </div>
-
-          <div class="position-relative row form-group">
             <label for="sku" class="col-md-3 text-md-right col-form-label">SKU</label>
             <div class="col-md-9 col-xl-8">
               <p>{{$product->sku}}</p>

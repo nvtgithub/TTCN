@@ -91,13 +91,6 @@
             </div>
 
             <div class="position-relative row form-group">
-              <label for="weight" class="col-md-3 text-md-right col-form-label">Khối lượng</label>
-              <div class="col-md-9 col-xl-8">
-                <input name="weight" id="weight" placeholder="Khối lượng sản phẩm" type="number" class="form-control" value="{{ $product->weight }}">
-              </div>
-            </div>
-
-            <div class="position-relative row form-group">
               <label for="sku" class="col-md-3 text-md-right col-form-label">SKU <span class="importance">*</span></label>
               <div class="col-md-9 col-xl-8">
                 <input required name="sku" id="sku" placeholder="Mã SKU" type="text" class="form-control" value="{{ $product->sku }}">
