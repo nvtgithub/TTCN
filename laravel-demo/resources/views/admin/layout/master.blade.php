@@ -24,7 +24,12 @@
   <div class="app-container app-theme-white body-tabs-shadow fixed-header fixed-sidebar">
     <div class="app-header header-shadow">
       <div class="app-header__logo">
-        <div><img src="front/img/ELECTRONICSTORE.png" alt="logo"></div>
+        <div style="height: 100%;
+                    width: 150px;
+                    background: url(front/img/ELECTRONICSTORE.png);
+                    background-repeat: no-repeat;">
+
+        </div>
         <div class="header__pane ml-auto">
           <div>
             <button type="button" class="hamburger close-sidebar-btn hamburger--elastic" data-class="closed-sidebar">
