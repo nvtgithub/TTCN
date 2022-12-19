@@ -54,7 +54,7 @@
             <div class="position-relative row form-group">
               <label for="email" class="col-md-3 text-md-right col-form-label">Email <span class="importance">*</span></label>
               <div class="col-md-9 col-xl-8">
-                <input required name="email" id="email" placeholder="Email" type="email" class="form-control" value="{{ $user->email }}">
+                <input required readonly name="email" id="email" placeholder="Email" type="email" class="form-control" value="{{ $user->email }}">
               </div>
             </div>
 

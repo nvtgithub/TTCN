@@ -80,14 +80,14 @@
             <div class="position-relative row form-group">
               <label for="price" class="col-md-3 text-md-right col-form-label">Giá bán <span class="importance">*</span></label>
               <div class="col-md-9 col-xl-8">
-                <input required name="price" id="price" placeholder="Giá bán" type="number" class="form-control" value="">
+                <input required name="price" id="price" placeholder="Giá bán" type="number" class="form-control" value="" min="0">
               </div>
             </div>
 
             <div class="position-relative row form-group">
               <label for="discount" class="col-md-3 text-md-right col-form-label">Giá khuyến mãi</label>
               <div class="col-md-9 col-xl-8">
-                <input name="discount" id="discount" placeholder="Giá khuyến mãi" type="number" class="form-control" value="">
+                <input name="discount" id="discount" placeholder="Giá khuyến mãi" type="number" class="form-control" value="" min="0">
               </div>
             </div>
 

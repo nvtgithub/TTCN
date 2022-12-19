@@ -53,7 +53,7 @@
             <div class="position-relative row form-group">
               <label for="qty" class="col-md-3 text-md-right col-form-label">Số lượng <span class="importance">*</span></label>
               <div class="col-md-9 col-xl-8">
-                <input required name="qty" id="qty" placeholder="Size" type="number" class="form-control" value="{{ $productDetail->qty }}">
+                <input min="0" required name="qty" id="qty" placeholder="Size" type="number" class="form-control" value="{{ $productDetail->qty }}">
               </div>
             </div>
 
