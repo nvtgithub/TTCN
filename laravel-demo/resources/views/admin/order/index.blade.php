@@ -94,11 +94,12 @@
                                                     </div>
                                                 </td>
 
-                                                <td class="text-center">{{ }}</td>
                                                 <!-- địa chỉ -->
                                                 <td class="text-center">
                                                     {{ $order->street_address . ' - ' . $order->town_city }}
                                                 </td>
+                                                <!-- ngày tháng -->                                          
+                                                <td class="text-center">{{ $order->created_at }}</td>
                                                 <!-- tổng tiền -->
                                                 <td class="text-center">{{ number_format(array_sum(array_column($order->orderDetails->toArray(), 'total')),0, '.', '.') }} VNĐ</td>
                                                 <!-- trạng thái đơn hàng -->

@@ -183,7 +183,10 @@
                     @endforeach
                   </select>
 
+                  @if($order->status !=7)
                   <button type="submit" class="btn btn-primary">Cập nhật</button>
+                  @endif
+
                 </form>
 
               </div>

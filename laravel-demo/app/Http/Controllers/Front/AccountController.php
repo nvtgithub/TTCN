@@ -41,14 +41,14 @@ class AccountController extends Controller
     $credentials = [
       'email' => $request->email,
       'password' => $request->password,
-      'level' => Constant::user_level_client, //Tài khoản cắp độ khách hàng bình thường
+      'level' => Constant::user_level_client || Constant::user_level_admin, //Tài khoản cắp độ khách hàng bình thường hoặc admin
     ];
 
     $remember = $request->remember;
 
     if (Auth::attempt($credentials, $remember)) {
       //return redirect('');
-      return redirect()->intended(''); //Mặc định là : trnag chủ
+      return redirect()->intended(''); //Mặc định là : trang chủ
     } else {
       return back()->with('notification', 'Đăng nhập thất bại: Email hoặc mật khẩu không chính xác');
     }
