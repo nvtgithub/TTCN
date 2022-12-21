@@ -31,18 +31,19 @@ class HomeController extends Controller
 
   public function indexContact() {
     $categories = $this->productCategoryService->all();
-    // $users = $this->user;
 
-    // $comments = DB::table('comments')
-    // ->join('users', 'comments.user_id', '=', 'users.id')
-    // ->select(
-    //     DB::raw("users.name as name"),
-    //     DB::raw("comments.content as content")
-    // )->orderBy("id","DESC");
+    $data = DB::table('comments')
+    ->join('users', 'comments.user_id', '=', 'users.id')
+    ->select(
+        DB::raw("comments.id as id"),
+        DB::raw("users.name as name"),
+        DB::raw("comments.reply_id as replies"),
+        DB::raw("comments.content as content")
+    )->orderBy("comments.id","DESC")->get();
 
-    // return view('front.contact', compact('comments'));
+    return view('front.contact', compact('data','categories'));
 
-    return view('front.contact', compact('categories'));
+    // return view('front.contact', compact('categories'));
   }
 
   public function favoriteProducts() {
