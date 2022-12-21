@@ -47,7 +47,8 @@ class AjaxLoginController extends Controller
         if($validator->passes()){
             $data = [
                 'user_id' => $user_id,
-                'content' => $request->content
+                'content' => $request->content,
+                'reply_id' => $request->reply_id ? $request->reply_id : 0
             ];
 
             if($comment = Comment::create($data)){
