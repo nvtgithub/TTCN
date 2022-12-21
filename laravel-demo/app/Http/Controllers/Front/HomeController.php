@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Front;
 
 use App\Http\Controllers\Controller;
 use App\Services\Product\ProductServiceInterface;
+use App\Services\User\UserServiceInterface;
 use App\Services\ProductCategory\ProductCategoryServiceInterface;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -30,6 +31,17 @@ class HomeController extends Controller
 
   public function indexContact() {
     $categories = $this->productCategoryService->all();
+    // $users = $this->user;
+
+    // $comments = DB::table('comments')
+    // ->join('users', 'comments.user_id', '=', 'users.id')
+    // ->select(
+    //     DB::raw("users.name as name"),
+    //     DB::raw("comments.content as content")
+    // )->orderBy("id","DESC");
+
+    // return view('front.contact', compact('comments'));
+
     return view('front.contact', compact('categories'));
   }
 

@@ -111,6 +111,17 @@ class AppServiceProvider extends ServiceProvider
       UserServiceInterface::class,
       UserService::class
     );
+
+    //Comment
+    // Trademarks
+    $this->app->singleton(
+        CommentRepositoryInterface::class,
+        CommentRepository::class
+      );
+      $this->app->singleton(
+        CommentServiceInterface::class,
+        CommentService::class
+      );
   }
 
   /**
