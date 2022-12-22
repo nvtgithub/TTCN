@@ -112,7 +112,7 @@
           <div class="col-lg-2 col-md-2">
             <div class="logo">
               <a href="/">
-                <img src="front/img/logo-1.png" height="30" alt="">
+                <img src="front/img/logo-02.png" height="30" alt="">
               </a>
             </div>
           </div>
@@ -233,7 +233,7 @@
       <div class="logo-carousels">
         <div class="logo-items">
           <div class="tablecell-inner">
-            <img src="front/img/logo-carousel/logo-1.png" alt="">
+            <img src="front/img/logo-carousel/logo-02.png" alt="">
           </div>
         </div>
         <div class="logo-items">
@@ -274,7 +274,7 @@
           <div class="footer-left">
             <div class="footer-logo">
               <a href="index.html">
-                <img src="front/img/logo-1.png" height="25" alt="">
+                <img src="front/img/logo-02.png" height="25" alt="">
               </a>
             </div>
             <ul>
@@ -312,13 +312,11 @@
           </div>
         </div>
         <div class="col-lg-4">
-          <div class="newslatter-item d-none">
-            <h5>Tham gia Bản tin của chúng tôi ngay bây giờ</h5>
+          <div class="newslatter-item">
+            <h5>Tham gia với chúng tôi ngay bây giờ</h5>
             <p>Nhận thông tin cập nhật qua email về cửa hàng mới nhất của chúng tôi và các ưu đãi đặc biệt.</p>
-            <form action="#" class="subscribe-form">
-              <input type="text" placeholder="Nhập Email">
-              <button type="button">Đăng ký</button>
-            </form>
+            <br>
+            <a href="/account/register" class="site-btn register-btn">Đăng ký</a>
           </div>
         </div>
       </div>
