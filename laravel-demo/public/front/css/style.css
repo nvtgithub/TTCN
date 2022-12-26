@@ -40,7 +40,7 @@ body {
   height: 100%;
   font-family: "Muli", sans-serif;
   -webkit-font-smoothing: antialiased;
-  font-smoothing: antialiased;
+  font-smooth: antialiased;
 }
 
 p {
@@ -3697,7 +3697,23 @@ ol {
 /*---------------------
   Contact Section
 -----------------------*/
+strong {
+    font-size: 17px;
+}
+.comment-user-client {
 
+    padding: 6px;
+    color: brown;
+}
+.comment-user-admin {
+
+    padding: 6px;
+    color:red    ;
+}
+.comment-avatar {
+    max-width: 100%;
+    height: 65px;
+}
 .contact-section {
   padding-top: 75px;
   padding-bottom: 80px;

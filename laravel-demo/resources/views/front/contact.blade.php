@@ -42,8 +42,8 @@
         <section class="container">
             <div class="row">
                 <div class="col-lg-4">
-                    <div class="contact-title">
-                        <h4>Liên hệ với chúng tôi</h4>
+                    <div class="leave-comment">
+                        <h2>LIÊN HỆ VỚI CHÚNG TÔI</h2>
                     </div>
                     <div class="contact-widget">
                         <div class="cw-item">
@@ -78,12 +78,14 @@
                 <div class="col-lg-7 offset-lg-1">
 
                     <div class="container">
-                        <h3>Bình luận</h3><br>
+                        <div class="leave-comment">
+                            <h2>BÌNH LUẬN <p>Nhân viên của chúng tôi sẽ gọi lại sau và trả lời câu hỏi câu hỏi của bạn</p></h2>
+
                         @if (Auth::check())
                             <form action="" method="POST" role="form">
                                 <div class="form-group">
-                                    <legend><i>Xin chào bạn: {{ Auth::user()->name }}</i></legend>
-                                    <label for="">Nội dung bình luận</label>
+                                    {{-- <legend><i>Xin chào bạn: {{ Auth::user()->name }}</i></legend> --}}
+                                    <label for=""><strong>Nội dung bình luận</strong></label>
                                     <input type="hidden" value="" name="">
                                     <textarea id="content" class="form-control" placeholder="Nhập nội dung bình luận...(*)"></textarea>
                                     <small id="comment-error"
