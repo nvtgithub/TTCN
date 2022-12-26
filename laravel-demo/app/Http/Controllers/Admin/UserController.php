@@ -50,7 +50,7 @@ class UserController extends Controller
     $emails = DB::table('users')->pluck('email');
 
     foreach ($emails as $email) {
-      if (strcasecmp($email, $request->get('email'))) {
+      if (strcasecmp($email, $request->get('email')) == 0) {
         return back()
           ->with('notification', 'ERROR: Tài khoản đã tồn tại!');
       }
@@ -106,7 +106,6 @@ class UserController extends Controller
   public function update(Request $request, User $user)
   {
     $data = $request->all();
-
     //xử lý mật khẩu
     if ($request->get('password') != null) {
       if ($request->get('password') != $request->get('password_confirmation')) {
