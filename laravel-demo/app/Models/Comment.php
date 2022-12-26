@@ -11,6 +11,9 @@ class Comment extends Model
 
     protected $table = 'comments';
     protected $primaryKey = 'id';
+
+    protected $fillable =['user_id','reply_id','content'];
+    
     protected $guarded = [];
 
     public function user()
