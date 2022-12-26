@@ -58,7 +58,7 @@ $(document).ready(function () {
                     color = ''
                     $('input[name="color"]:checked').parent().css("border-color","rgba(255, 255, 255, 0)")
 
-                    alert('Thêm thành công\nSản phẩm: ' + response['cart'].name);
+                  alert('Thêm thành công\nSản phẩm: ' + response['cart'].name + ' - ' + response['cart'].options['colorProduct'].color);
                     console.log(response)
                 },
                 error: function (response) {
