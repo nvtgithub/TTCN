@@ -13,7 +13,6 @@
         @if(Cart::count() > 0)
         <div class="col-lg-6">
           <div class="checkout-content">
-            <a href="login.html" class="content-btn">Click để đăng nhập</a>
           </div>
           <h4>Chi tiết thanh toán</h4>
           <div class="row">
@@ -58,7 +57,7 @@
           </div>
         </div>
         <div class="col-lg-6">
-          <div class="checkout-content" style="height: 55px;">
+          <div class="checkout-content">
             <input class="d-none" type="text" placeholder="Nhập mã giảm giá của bạn">
           </div>
           <div class="place-order">

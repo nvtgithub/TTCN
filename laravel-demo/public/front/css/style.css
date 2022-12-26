@@ -4730,3 +4730,9 @@ button:hover {
   display: flex;
   align-items: center;
 }
+
+.shop-navigation span[aria-current="page"] span.text-gray-500 {
+  background: orange !important;
+  border-color: orange !important;
+  color: #fff !important;
+}

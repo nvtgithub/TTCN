@@ -63,7 +63,9 @@
           </div>
         </div>
         <br>
-        {{ $products->links() }}
+        <div class="shop-navigation">
+          {{ $products->links() }}
+        </div>
       </div>
     </div>
   </div>
