@@ -92,14 +92,14 @@
 
                                 <button type="button" class="btn btn-primary" id="btn-comment"
                                     onclick="myFunctionComment()">Bình luận</button>
-                            </form><br><br>
+                            </form><br>
                         @else
                             <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modelId">Vui
-                                lòng đăng nhập để bình luận</button>
-                            <hr>
+                                lòng đăng nhập để bình luận</button><br><br><hr><br>
+
                         @endif
 
-                        <h3>Các bình luận(10)</h3>
+                        {{-- <h3>Các bình luận</h3> --}}
                         <div id="comment">
 
                             @include('front.list-comment',['comments' => $comments])

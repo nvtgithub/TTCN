@@ -33,20 +33,15 @@ class HomeController extends Controller
   public function indexContact() {
     $categories = $this->productCategoryService->all();
 
-    // $data = DB::table('comments')
-    // ->join('users', 'comments.user_id', '=', 'users.id')
-    // ->select(
-    //     DB::raw("comments.id as id"),
-    //     DB::raw("users.name as name"),
-    //     DB::raw("comments.reply_id as replies"),
-    //     DB::raw("comments.content as content")
-    // )->orderBy("comments.id","DESC")->get();
+    $count = DB::table('comments')
+    ->where('reply_id', '=', 0)
+    ->count();
 
     $comments = Comment::where(['reply_id' => 0])
                 ->orderBy('id','DESC')
                 ->get();
 
-    return view('front.contact', compact('categories','comments'));
+    return view('front.contact', compact('categories','comments','count'));
 
     // return view('front.contact', compact('categories'));
   }
