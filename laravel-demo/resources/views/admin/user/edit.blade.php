@@ -123,10 +123,10 @@
             </div>
 
             <div class="position-relative row form-group">
-              <label for="level" class="col-md-3 text-md-right col-form-label">Cấp</label>
+              <label for="level" class="col-md-3 text-md-right col-form-label">Cấp <span class="importance">*</span></label>
               <div class="col-md-9 col-xl-8">
                 <select required name="level" id="level" class="form-control">
-                  <option value="">-- Cấp --</option>
+                  <option value="">-- Cấp -- </option>
 
                   @foreach(\App\Utilities\Constant::$user_level as $key => $value)
                   <option value={{ $key }} {{ $user->level == $key ? 'selected' : ''}}>
