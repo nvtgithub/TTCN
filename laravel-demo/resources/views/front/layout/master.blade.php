@@ -233,7 +233,7 @@
       <div class="logo-carousels">
         <div class="logo-items">
           <div class="tablecell-inner">
-            <img src="front/img/logo-carousel/logo-02.png" alt="">
+            <img src="front/img/logo-carousel/logo-1.png" alt="">
           </div>
         </div>
         <div class="logo-items">
