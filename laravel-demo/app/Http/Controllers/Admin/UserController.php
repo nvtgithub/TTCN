@@ -146,6 +146,11 @@ class UserController extends Controller
   {
     $this->userService->delete($user->id);
 
+    //xóa comments
+    DB::table('comments')
+              ->where('user_id', '=', $user->id)
+              ->delete();
+
     //Xóa file
     $file_name = $user->avatar;
     if ($file_name != '') {
