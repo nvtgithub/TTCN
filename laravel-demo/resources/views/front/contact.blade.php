@@ -19,24 +19,6 @@
     </div>
     <!-- Breadcrumb Section End -->
 
-
-    <!-- Map Section Begin -->
-    <div class="map spad">
-        <div class="container">
-            <div class="map-inner">
-                <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14898.414840214122!2d105.92858623003993!3d21.008516807558404!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135a8cfa8c9b137%3A0xd8bc142d32495692!2zVHLDonUgUXXhu7MsIEdpYSBMw6JtLCBIw6AgTuG7mWksIFZp4buHdCBOYW0!5e0!3m2!1svi!2s!4v1669215289641!5m2!1svi!2s"
-                    height="610 " style="border:0; " allowfullscreen=" " loading="lazy "
-                    referrerpolicy="no-referrer-when-downgrade ">
-                </iframe>
-                <div class="icon d-none">
-                    <i class="fa fa-map-marker"></i>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Map Section End -->
-
     <!-- Contact Section Begin -->
     <section class="contact-section spad">
         <section class="container">

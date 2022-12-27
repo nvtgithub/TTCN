@@ -7,7 +7,7 @@
     @endif
     <div class="icon">
       <button type="" style="outline: none;" class="button-wishlist" id="{{$product->id}}" onclick="add_wishlist(this.id)">
-        <i class="icon_heart_alt"></i>
+        <i class="icon_heart_alt" id="icon_heart"></i>
       </button>
     </div>
     <ul>
