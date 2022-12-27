@@ -26,10 +26,10 @@
                     <div class="mx-auto app-login-box col-md-8">
                         <div class="modal-dialog w-100 mx-auto">
                             <div class="modal-content">
-                                
-                                <form class="" method="post" action="">                          
+
+                                <form class="" method="post" action="">
                                     @csrf
-                                    
+
                                     <div class="modal-body">
                                         <div class="h5 modal-title text-center">
                                             <h4 class="mt-2">
@@ -54,15 +54,15 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="position-relative form-check">
+                                            {{-- <div class="position-relative form-check">
                                                 <input name="remember" id="exampleCheck" type="checkbox"
                                                     class="form-check-input">
                                                 <label for="exampleCheck" class="form-check-label">Ghi nhớ đăng nhập</label>
-                                            </div>
+                                            </div> --}}
                                     </div>
                                     <div class="modal-footer clearfix">
-                                        <div class="float-right">
-                                            <button type="submit" class="btn btn-primary btn-lg">Đăng nhập
+                                        <div class="center">
+                                            <button type="submit" class="btn btn-primary btn-lg" >Đăng nhập
 
                                             </button>
                                         </div>
