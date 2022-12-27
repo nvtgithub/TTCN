@@ -14,12 +14,10 @@
             @if ($comment->user->level == 1)
                 <h4 class="media-heading"><strong>{{ $comment->user->name }} - <span
                             class="comment-user-admin"><i>Admin</i></span></strong></h4>
-                <br>
-                <p>{{ $comment->content }}</p>
+                <p class="comment-content">{{ $comment->content }}</p>
             @else
                 <h4 class="media-heading"><strong>{{ $comment->user->name }}</strong></h4>
-                <br>
-                <p>{{ $comment->content }}</p>
+                <p class="comment-content">{{ $comment->content }}</p>
             @endif
 
             @if (Auth::User())
@@ -74,12 +72,10 @@
                         @if ($child->user->level == 1)
                             <h4 class="media-heading"><strong>{{ $child->user->name }} - <span
                                         class="comment-user-admin"><i>Admin</i></span></strong></h4>
-                            <br>
                         @else
                             <h4 class="media-heading"><strong>{{ $child->user->name }} </span></strong></h4>
-                            <br>
                         @endif
-                        <p>{{ $child->content }}</p><br>
+                        <p class="comment-content">{{ $child->content }}</p><br>
                         {{-- <p>
 
                             @if (Auth::check())
