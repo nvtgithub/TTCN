@@ -12,7 +12,7 @@
                     <i class="pe-7s-ticket icon-gradient bg-mean-fruit"></i>
                 </div>
                 <div>
-                    Chi tiết sản phẩm
+                    Chi tiết màu sản phẩm
                     <div class="page-title-subheading">
                         Xem chi tiết, tạo mới, cập nhật, xóa và quản lý.
                     </div>
@@ -99,11 +99,12 @@
                                             <i class="fa fa-edit fa-w-20"></i>
                                         </span>
                                     </a>
+                                    
                                     <form class="d-inline" action="admin/product/{{ $product->id }}/detail/{{ $productDetail->id }}" method="post">
                                         @csrf
                                         @method('DELETE')
 
-                                        <button class="btn btn-hover-shine btn-outline-danger border-0 btn-sm" type="submit" data-toggle="tooltip" title="Delete" data-placement="bottom" onclick="return confirm('Bạn có muốn xóa sản phẩm này?')">
+                                        <button class="btn btn-hover-shine btn-outline-danger border-0 btn-sm" type="submit" data-toggle="tooltip" title="Delete" data-placement="bottom" onclick="return confirm('Bạn có muốn xóa sản phẩm màu này?')">
                                             <span class="btn-icon-wrapper opacity-8">
                                                 <i class="fa fa-trash fa-w-20"></i>
                                             </span>

@@ -79,13 +79,11 @@
 
                     <div class="container">
                         <div class="leave-comment">
-                            <h2>BÌNH LUẬN <p>Nhân viên của chúng tôi sẽ gọi lại sau và trả lời câu hỏi câu hỏi của bạn</p></h2>
+                            <h2>TƯ VẤN & HỎI ĐÁP<p><i>"Nhân viên của chúng tôi sẽ gọi lại sau và trả lời câu hỏi câu hỏi của bạn"</i></p></h2>
 
                         @if (Auth::check())
                             <form action="" method="POST" role="form">
                                 <div class="form-group">
-                                    {{-- <legend><i>Xin chào bạn: {{ Auth::user()->name }}</i></legend> --}}
-                                    <label for=""><strong>Nội dung bình luận</strong></label>
                                     <input type="hidden" value="" name="">
                                     <textarea id="content" class="form-control" placeholder="Nhập nội dung bình luận...(*)"></textarea>
                                     <small id="comment-error"
@@ -93,16 +91,16 @@
                                 </div>
 
                                 <button type="button" class="btn btn-primary" id="btn-comment"
-                                    onclick="myFunctionComment()">Bình luận</button>
+                                    onclick="myFunctionComment()">Gửi</button>
                             </form><br>
-                        @else
+                        {{-- @else
                             <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modelId">Vui
-                                lòng đăng nhập để bình luận</button><br><br><hr><br>
+                                lòng đăng nhập để bình luận</button><br><br><hr><br> --}}
 
                         @endif
 
                         {{-- <h3>Các bình luận</h3> --}}
-                       
+
                         <div id="comment">
 
                             @include('front.list-comment',['comments' => $comments])
@@ -119,7 +117,7 @@
 
 
     <!-- The Modal -->
-    <div class="modal fade" id="modelId" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+    {{-- <div class="modal fade" id="modelId" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
         <div class="modal-dialog odal-sm" role="document">
             <div class="modal-content">
 
@@ -153,7 +151,7 @@
                 <!-- Modal footer -->
             </div>
         </div>
-    </div>
+    </div> --}}
 
 
     <script>

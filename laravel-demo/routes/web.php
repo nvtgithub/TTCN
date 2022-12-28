@@ -79,6 +79,10 @@ Route::prefix('admin')->middleware('CheckAdminLogin')->group(function () {
   Route::resource('order', App\Http\Controllers\Admin\OrderController::class);
   Route::resource('revenu_day', App\Http\Controllers\Admin\RevenusDayController::class);
   Route::resource('revenu_month', App\Http\Controllers\Admin\RevenusMonthController::class);
+  Route::resource('comment', App\Http\Controllers\Admin\CommentController::class);
+    Route::resource('comment/{comment_id}/detail', App\Http\Controllers\Admin\CommentReplyController::class);
+
+  //Route::post('comment/{comment_id}/detail/{reply_comment_id}',App\Http\Controllers\Admin\CommentReplyController::class, 'destroy');
   // Route::resource('revenu_filter_day', App\Http\Controllers\Admin\RevenusFilterDayController::class);
   // Route::post('revenu_filter_day/filter_by_date', [App\Http\Controllers\Admin\RevenusFilterDayController::class], 'filter_by_date');
   Route::prefix('revenu_filter_day')->group(function () {

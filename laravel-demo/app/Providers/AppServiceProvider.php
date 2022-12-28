@@ -17,6 +17,10 @@ use App\Repositories\Trademarks\TrademarksRepository;
 use App\Repositories\Trademarks\TrademarksRepositoryInterface;
 use App\Repositories\User\UserRepository;
 use App\Repositories\User\UserRepositoryInterface;
+use App\Repositories\Comment\CommentRepository;
+use App\Repositories\Comment\CommentRepositoryInterface;
+use App\Services\Comment\CommentService;
+use App\Services\Comment\CommentServiceInterface;
 use App\Services\Order\OrderService;
 use App\Services\Order\OrderServiceInterface;
 use App\Services\OrderDetail\OrderDetailService;
@@ -113,7 +117,6 @@ class AppServiceProvider extends ServiceProvider
     );
 
     //Comment
-    // Trademarks
     $this->app->singleton(
         CommentRepositoryInterface::class,
         CommentRepository::class

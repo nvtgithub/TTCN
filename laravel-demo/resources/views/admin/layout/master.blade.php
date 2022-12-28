@@ -1266,6 +1266,11 @@
                       <i class="metismenu-icon"></i>Đơn hàng
                     </a>
                   </li>
+                  <li>
+                    <a href="/admin/comment" class="{{ (request()->segment(2) == 'comment') ? 'nm-active' : '' }}">
+                      <i class="metismenu-icon"></i>Bình luận
+                    </a>
+                  </li>
                 </ul>
               </li>
 
