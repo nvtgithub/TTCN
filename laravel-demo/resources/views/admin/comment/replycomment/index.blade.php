@@ -6,7 +6,8 @@
     <!-- Main -->
     <div class="app-main__inner">
         <div class="app-page-title">
-            <div class="page-title-wrapper">
+            <div class="page-title-wrapper justify-content-between">
+
                 <div class="page-title-heading">
                     <div class="page-title-icon">
                         <i class="pe-7s-ticket icon-gradient bg-mean-fruit"></i>
@@ -15,10 +16,13 @@
                         <div>
                             Chi tiết bình luận trả lời ID: <strong><i>{{ $dt->id}}</i></strong> của người dùng:
                             <strong><i>{{ $dt->user->name }}</i></strong>(id: <strong>{{ $dt->user->id}}</strong>)
-                            <div class="page-title-subheading">
-                                Xem chi tiết, cập nhật và xóa.
-                            </div>
                     @endforeach
+                </div>
+                <div class="notifi">@if(session('notification'))
+                    <div class="alert alert-warning" role="alert" style="text-align: center;">
+                      {{ session('notification') }}
+                    </div>
+                    @endif
                 </div>
             </div>
         </div>

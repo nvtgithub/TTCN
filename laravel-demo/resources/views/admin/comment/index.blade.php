@@ -6,7 +6,7 @@
 <!-- Main -->
 <div class="app-main__inner">
   <div class="app-page-title">
-    <div class="page-title-wrapper">
+    <div class="page-title-wrapper justify-content-between">
       <div class="page-title-heading">
         <div class="page-title-icon">
           <i class="pe-7s-ticket icon-gradient bg-mean-fruit"></i>
@@ -14,10 +14,18 @@
         <div>
          Bình luận
           <div class="page-title-subheading">
-            Xem chi tiết, cập nhật và xóa.
+            Xem chi tiết và xóa.
+
           </div>
+
         </div>
       </div>
+      <div class="notifi">@if(session('notification'))
+        <div class="alert alert-warning" role="alert" style="text-align: center;">
+          {{ session('notification') }}
+        </div>
+        @endif
+    </div>
     </div>
   </div>
 
@@ -27,17 +35,6 @@
 
         <div class="card-header">
 
-          <form>
-            <div class="input-group">
-              <input type="search" name="search" value="{{request('search')}}" id="search" placeholder="Tìm kiếm bình luận" class="form-control">
-              <span class="input-group-append">
-                <button type="submit" class="btn btn-primary">
-                  <i class="fa fa-search"></i>&nbsp;
-                  Tìm kiếm
-                </button>
-              </span>
-            </div>
-          </form>
         </div>
 
         <div class="table-responsive">

@@ -97,6 +97,6 @@ class CommentController extends Controller
   {
     Comment::find($id)->delete();
 
-    return redirect('admin/comment');
+    return redirect('admin/comment')->with('notification', 'Xoá thành công!');
   }
 }

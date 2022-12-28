@@ -7,7 +7,7 @@
 <!-- Main -->
 <div class="app-main__inner">
   <div class="app-page-title">
-    <div class="page-title-wrapper">
+    <div class="page-title-wrapper ">
       <div class="page-title-heading">
         <div class="page-title-icon">
           <i class="pe-7s-ticket icon-gradient bg-mean-fruit"></i>
@@ -19,7 +19,12 @@
           </div>
         </div>
       </div>
-
+      <div class="notifi">@if(session('notification'))
+        <div class="alert alert-warning" role="alert" style="text-align: center;">
+          {{ session('notification') }}
+        </div>
+        @endif
+    </div>
       <div class="page-title-actions">
         <a href="admin/category/create" class="btn-shadow btn-hover-shine mr-3 btn btn-primary">
           <span class="btn-icon-wrapper pr-2 opacity-7">
