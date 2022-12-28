@@ -531,7 +531,7 @@ function view() {
             var image = data[i].image;
             var url = data[i].url;
 
-            $("#row_wishlist").append('<div class="row" style="margin:10px 0; max-height: 100px;"><div class="col-md-4"><img src="' + image + '" class="width:100%;"></div><div class="col-md-8 info_wishlist"><p class="text-truncate" style="max-width: 150px;">' + name + '</p><p style="color:#e7ab3c">' + price + '</p><button type="" style="outline: none;" class="button-wishlist " id="' + id + '" onclick="remove_wishlist(this.id)"><i class="icon_heart_alt"></i></button><a href="' + url + '">Xem</a></div></div>');
+            $("#row_wishlist").append('<div class="row" style="margin:10px 0; max-height: 100px;"><div class="col-md-4"><img src="' + image + '" class="width:100%;"></div><div class="col-md-8 info_wishlist"><p class="text-truncate" style="max-width: 150px;">' + name + '</p><p style="color:#e7ab3c">' + price + '</p><button type="" style="outline: none;" class="button-wishlist " id="' + id + '" onclick="remove_wishlist(this.id)"><i class="icon_heart"></i></button><a href="' + url + '">Xem</a></div></div>');
         }
     }
 }
@@ -588,7 +588,7 @@ function add_wishlist(clicked_id) {
             '</tr>';
 
         $("#show_product_favorite").append(selectItems);
-        $("#row_wishlist").append('<div class="row" style="margin:10px 0; max-height: 100px;"><div class="col-md-4"><img src="' + image + '" class="width:100%;"></div><div class="col-md-8 info_wishlist"><p class="text-truncate" style="max-width: 150px;">' + name + '</p><p style="color:#e7ab3c">' + price + '</p><button type="" style="outline: none;" class="button-wishlist " id="' + id + '" onclick="remove_wishlist(this.id)"><i class="icon_heart_alt"></i></button><a href="' + url + '">Xem</a></div></div>');
+        $("#row_wishlist").append('<div class="row" style="margin:10px 0; max-height: 100px;"><div class="col-md-4"><img src="' + image + '" class="width:100%;"></div><div class="col-md-8 info_wishlist"><p class="text-truncate" style="max-width: 150px;">' + name + '</p><p style="color:#e7ab3c">' + price + '</p><button type="" style="outline: none;" class="button-wishlist " id="' + id + '" onclick="remove_wishlist(this.id)"><i class="icon_heart"></i></button><a href="' + url + '">Xem</a></div></div>');
     }
 
     localStorage.setItem('data', JSON.stringify(old_data));

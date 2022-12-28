@@ -172,10 +172,10 @@
 
                       <div class="row">
                         <div class="col-lg-6">
-                          <input required type="text" placeholder="Tên" name="name">
+                          <input required type="text" placeholder="Tên" name="name" value="{{ Auth::user()->name ?? '' }}">
                         </div>
                         <div class="col-lg-6">
-                          <input required type="text" placeholder="Email" name="email">
+                          <input required type="text" placeholder="Email" name="email" value="{{ Auth::user()->email ?? '' }}">
                         </div>
                         <div class="col-lg-12">
                           <textarea required placeholder="Bình luận ..." name="messages"></textarea>

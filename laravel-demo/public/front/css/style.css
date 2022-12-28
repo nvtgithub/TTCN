@@ -129,8 +129,6 @@ ol {
 }
 
 .spad {
-    padding-top: 100px;
-    padding-bottom: 100px;
 }
 
 .text-white h1,
@@ -3665,13 +3663,11 @@ ol {
   Map
 -----------------------*/
 
-.map {
-    padding-top: 80px;
-    padding-bottom: 0;
+.map iframe{
+  max-height: 300px;
 }
 
 .map-inner {
-    height: 610px;
     position: relative;
 }
 
